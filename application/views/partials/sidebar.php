@@ -12,21 +12,15 @@
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#dasboards" aria-expanded="false" aria-controls="dasboards">
               <i class="fa fa-home menu-icon"></i>
-              <span class="menu-title">Dasboards</span>
+              <span class="menu-title">Subdit Pemolaan</span>
               <i class="menu-arrow"></i>
             </a>
             <div class="collapse" id="dasboards">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="index.html">Analytics</a></li>
+                <li class="nav-item"><a class="nav-link <?php if($this->uri->segment(1)=="perkembangan-kawasan"){echo "active";}?>" href="<?=base_url('perkembangan-kawasan')?>">Perkembangan Kawasan</a></li>
                 <li class="nav-item"><a class="nav-link" href="index2.html">Market</a></li>
               </ul>
             </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="pages/widgets/widgets.html">
-              <i class="fa fa-puzzle-piece menu-icon"></i>
-              <span class="menu-title">Widgets</span>
-            </a>
           </li>
         </ul>
       </nav>
