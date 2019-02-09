@@ -14,34 +14,118 @@
                 <div class="row">
                     <div class="col-md-12 grid-margin">
                     <div class="d-flex align-items-baseline flex-wrap mt-3">
-                        <h2 class="mr-4 mb-0">Perkembangan Kawasan</h2>
+                        <h2 class="mr-4 mb-0">Dashboard</h2>
                         <div class="d-flex align-items-baseline mt-2 mt-sm-0">
                         <i class="fas fa-home mr-1 text-muted"></i>
                         <i class="fas fa-chevron-right fa-xs mr-1 text-muted"></i>
-                        <p class="mb-0 mr-1">Subdit Pemolaan</p>
+                        <p class="mb-0 mr-1">Dashboard</p>
                         <i class="fas fa-chevron-right fa-xs mr-1 text-muted"></i>
-                        <p class="mb-0">Perkembangan Kawasan</p>
+                        <p class="mb-0">Widgets</p>
                         </div>
                     </div>
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-sm-4">
-                        <div class="nav flex-column nav-tabs" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                            <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Home</a>
-                            <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Profile</a>
-                            <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Messages</a>
-                            <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Settings</a>
-                        </div>
-                    </div>
-                    <div class="col-sm-8">
-                        <div class="tab-content" id="v-pills-tabContent">
-                            <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
-                                Fugiat id quis dolor culpa eiusmod anim velit excepteur proident dolor aute qui magna. Ad proident laboris ullamco esse anim Lorem Lorem veniam quis Lorem irure occaecat velit nostrud magna nulla. Velit et et proident Lorem do ea tempor officia dolor. Reprehenderit Lorem aliquip labore est magna commodo est ea veniam consectetur.
+                    <div class="col-md-12">
+                        <div class="card">
+                            <div class="card-header">
+                                <h4>Daftar Kawasan Konservasi</h4>
+                                <button class="btn btn-primary float-right" data-toggle="modal" data-target="#modals1"> Tambah</button>
                             </div>
-                            <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">...</div>
-                            <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">...</div>
-                            <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">...</div>
+                            <div class="row">
+                                <div class="col-3">
+                                    <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
+                                        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" role="tab" aria-controls="v-pills-home" aria-selected="true">Taman Wisata Alam</a>
+                                        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Taman Hutan Raya</a>
+                                        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Taman Buru</a>
+                                        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Taman Nasional</a>
+                                        <a class="nav-link" id="v-pills-suaka-tab" data-toggle="pill" href="#v-pills-suaka" role="tab" aria-controls="v-pills-suaka" aria-selected="false">Suaka Margasatwa</a>
+                                        <a class="nav-link" id="v-pills-cagar-tab" data-toggle="pill" href="#v-pills-cagar" role="tab" aria-controls="v-pills-cagar" aria-selected="false">Cagar Alam</a>
+                                        <a class="nav-link" id="v-pills-ks-tab" data-toggle="pill" href="#v-pills-ks" role="tab" aria-controls="v-pills-ks" aria-selected="false">KS/PA</a>
+                                    </div>
+                                </div>
+                                <div class="col-9">
+                                <div class="tab-content" id="v-pills-tabContent">
+                                    <div class="tab-pane fade show active" id="v-pills-home" role="tabpanel" aria-labelledby="v-pills-home-tab">
+                                        <h4>Daftar Taman Wisata Alam</h4>
+                                        <table class="table">
+                                            <thead>
+                                                <th>Register</th>
+                                                <th>Nama Kawasan</th>
+                                                <th>Luas Kawasan</th>
+                                                <th>Action</th>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                    <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                                    <h4>Daftar Taman Hutan Raya (TAHURA)</h4>
+                                        <table class="table">
+                                            <thead>
+                                                <th>Register</th>
+                                                <th>Nama Kawasan</th>
+                                                <th>Luas Kawasan</th>
+                                                <th>Action</th>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                    <div class="tab-pane fade" id="v-pills-cagar" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                                    <h4>Daftar Cagar Alam</h4>
+                                        <table class="table">
+                                            <thead>
+                                                <th>Register</th>
+                                                <th>Nama Kawasan</th>
+                                                <th>Luas Kawasan</th>
+                                                <th>Action</th>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                    <div class="tab-pane fade" id="v-pills-ks" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                                    <h4>Daftar Kawasan Suaka Alam (KSA) / Kawasan Pelestarian Alam (KPA)</h4>
+                                        <table class="table">
+                                            <thead>
+                                                <th>Register</th>
+                                                <th>Nama Kawasan</th>
+                                                <th>Luas Kawasan</th>
+                                                <th>Action</th>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                    <div class="tab-pane fade" id="v-pills-suaka" role="tabpanel" aria-labelledby="v-pills-profile-tab">
+                                    <h4>Daftar Suaka Margasatwa</h4>
+                                        <table class="table">
+                                            <thead>
+                                                <th>Register</th>
+                                                <th>Nama Kawasan</th>
+                                                <th>Luas Kawasan</th>
+                                                <th>Action</th>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                    <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
+                                       <h4>Daftar Taman Buru</h4>
+                                        <table class="table">
+                                            <thead>
+                                                <th>Register</th>
+                                                <th>Nama Kawasan</th>
+                                                <th>Luas Kawasan</th>
+                                                <th>Action</th>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                    <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
+                                        <h4>Daftar Taman Nasional</h4>
+                                        <table class="table">
+                                            <thead>
+                                                <th>Register</th>
+                                                <th>Nama Kawasan</th>
+                                                <th>Luas Kawasan</th>
+                                                <th>Action</th>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>

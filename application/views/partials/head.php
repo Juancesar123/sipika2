@@ -7,6 +7,7 @@
   <!-- plugins:css -->
   <link rel="stylesheet" href="<?php echo base_url('vendors/iconfonts/font-awesome/css/all.min.css')?>">
   <link rel="stylesheet" href="<?php echo base_url('vendors/css/vendor.bundle.base.css')?>">
+  <link rel="stylesheet" href="<?php echo base_url('css/style.css')?>">
   <link rel="stylesheet" href="<?php echo base_url('vendors/css/vendor.bundle.addons.css')?>">
   <!-- endinject -->
   <!-- plugin css for this page -->
