@@ -27,4 +27,9 @@ class PerkembanganKawasanController extends CI_Controller {
         $hasil =  json_decode($data,true);
         echo json_encode($hasil);
     }
+    public function destroy($id){
+        $client     = new GuzzleHttp\Client();
+        $result = $client->delete(constant('API_URL').'/perkembangan-kawasan/'.$id);
+        echo'sukses';
+    }
 }

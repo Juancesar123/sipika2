@@ -197,15 +197,28 @@
     <?php $this->load->view('partials/script') ?>
     <script src="<?php echo base_url('js/data-table.js')?>"></script>
     <script>
+            function myfunc(id){
+                $.ajax({
+                    url:'/DeletedDataKonservasi/'+id,
+                    type:'GET',
+                    success:function(){
+                        Swal.fire(
+                            'Sukses!',
+                            'Data Sukses di simpan!',
+                            'success'
+                        )
+                        table.ajax.reload();
+                    }
+                })
+            }
+           
             $(document).ready(function(){
                    console.log($('#v-pills-home').val());
                    var table =  $('.table').DataTable({
                         ajax: {
-                            "url": "/getDataKonservasi",
-                            "type": "GET",
-                            "error": function (e) {
-                            },
-                            "dataSrc": function (d) {
+                            url: "/getDataKonservasi",
+                            type: "GET",
+                            dataSrc: function (d) {
                                 return d
                             }
                         },
@@ -216,12 +229,13 @@
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary'>Edit</button> <button class='btn btn-danger'>Delete</button>";
+                                    return "<button class='btn btn-primary'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button>";
                                 }
                             }
                         ]
-                    });
+                    });   
                 $('#SaveAction').click(function(){
+                    
                     var namakawasan = $('#namakawasan').val();
                     var fungsi = $('#fungsi').val();
                     var register = $('#register').val();
@@ -253,7 +267,7 @@
                                 'Data Sukses di simpan!',
                                 'success'
                             )
-                            table.ajax.reload();
+                            table.fnDraw();
                         }
                     })
                 })
