@@ -12,4 +12,5 @@
   <script src="<?php echo base_url('js/todolist.js')?>"></script>
   <!-- endinject -->
   <!-- Custom js for this page-->
+  <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
   <script src="<?php echo base_url('js/dashboard.js')?>"></script>
