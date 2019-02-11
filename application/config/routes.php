@@ -50,11 +50,13 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'welcome';
+//Route untuk perkembangan kawasan
 $route['perkembangan-kawasan'] ='perkembanganKawasanController';
 $route['savedDatakawasan'] = 'perkembanganKawasanController/store';
 $route['getDataKonservasi'] = 'perkembanganKawasanController/get';
 $route['DeletedDataKonservasi/(:any)'] = 'perkembanganKawasanController/destroy/$1';
 $route['ubahDataKawasan'] = 'perkembanganKawasanController/update';
 $route['getsingleDataKonservasi/(:any)']='perkembanganKawasanController/show/$1';
+//end routenya
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

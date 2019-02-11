@@ -273,6 +273,10 @@
                 })
             }
            function editfunc(id){
+               /*
+                    digunakan untuk get data spesific berdasarkan id lalu isinya
+                    di tampilkan ke form
+               */
                 $.ajax({
                     url:'getsingleDataKonservasi/'+id,
                     type:'GET',
@@ -367,6 +371,7 @@
                                 'Data Sukses di simpan!',
                                 'success'
                             )
+                            //reload table ajax
                             table.ajax.reload();
                         }
                     })
