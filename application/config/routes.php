@@ -54,5 +54,7 @@ $route['perkembangan-kawasan'] ='perkembanganKawasanController';
 $route['savedDatakawasan'] = 'perkembanganKawasanController/store';
 $route['getDataKonservasi'] = 'perkembanganKawasanController/get';
 $route['DeletedDataKonservasi/(:any)'] = 'perkembanganKawasanController/destroy/$1';
+$route['ubahDataKawasan'] = 'perkembanganKawasanController/update';
+$route['getsingleDataKonservasi/(:any)']='perkembanganKawasanController/show/$1';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

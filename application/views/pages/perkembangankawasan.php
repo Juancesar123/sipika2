@@ -189,6 +189,67 @@
                         </div>
                     </div>
                 </div>
+                <div class="modal fade" id="modals2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                    <div class="modal-dialog" role="document">
+                        <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title">Ubah Perkembangan kawasan</h5>
+                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                            </button>
+                        </div>
+                        <div class="modal-body">
+                            <div class="row">
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label>Register</label>
+                                        <input class="form-control" type="text" id="registeredit">
+                                        <input class="form-control" type="hidden" id="idedit">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Fungsi</label>
+                                        <select class="form-control" id="fungsiedit">
+                                            <option value="1">KSA/KPA</option>
+                                            <option value="2">Cagar Alam</option>
+                                            <option value="3">Suaka Margasatwa</option>
+                                            <option value="4">Taman Buru</option>
+                                            <option value="5">Taman Nasional</option>
+                                            <option value="6">Taman Wisata Alam</option>
+                                            <option value="7">Taman Hutan Raya</option>
+                                        </select>
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Pulau</label>
+                                        <input class="form-control" type="text" id="pulauedit">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Provinsi Temp</label>
+                                        <input class="form-control" type="text" id="provinsitempedit">
+                                    </div>
+                                </div>
+                                <div class="col-6">
+                                    <div class="form-group">
+                                        <label>Provinsi</label>
+                                        <input class="form-control" type="text" id="provinsiedit">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Nama Kawasan</label>
+                                        <input class="form-control" type="text" id="namakawasanedit">
+                                    </div>
+                                    <div class="form-group">
+                                        <label>Luas Kawasan (Hektare)</label>
+                                        <input class="form-control" type="text" id="luaskawasanedit">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-primary" id="UpdateAction">Save changes</button>
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        </div>
+                        </div>
+                    </div>
+                </div>
                 </div>
             <?php $this->load->view('partials/footer')?>
             </div>
@@ -211,10 +272,27 @@
                     }
                 })
             }
-           
+           function editfunc(id){
+                $.ajax({
+                    url:'getsingleDataKonservasi/'+id,
+                    type:'GET',
+                    success:function(data){
+                        var hasil = JSON.parse(data);
+                        $('#namakawasanedit').val(hasil.nama_kawasan);
+                        $('#pulauedit').val(hasil.pulau);
+                        $('#fungsiedit').val(hasil.fungsi);
+                        $('#provinsiedit').val(hasil.provinsi);
+                        $('#registeredit').val(hasil.register);
+                        $('#luaskawasanedit').val(hasil.luas_kawasan);
+                        $('#provinsitempedit').val(hasil.kabupaten);
+                        $('#idedit').val(hasil.id);
+                    }
+                })
+           }
             $(document).ready(function(){
                    console.log($('#v-pills-home').val());
                    var table =  $('.table').DataTable({
+                        deferRender: true,
                         ajax: {
                             url: "/getDataKonservasi",
                             type: "GET",
@@ -229,7 +307,7 @@
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button>";
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button>";
                                 }
                             }
                         ]
@@ -243,15 +321,7 @@
                     var provinsi = $('#provinsi').val();
                     var provinsitemp = $('#provinsitemp').val();
                     var luaskawasan = $('#luaskawasan').val();
-                    var data = {
-                                'namakawasan':namakawasan,
-                                'luaskawasan':luaskawasan,
-                                'fungsi' : fungsi,
-                                'register':register,
-                                'pulau' :pulau,
-                                'provinsi':provinsi,
-                                'provinsitemp' : provinsitemp
-                            }
+                    
                     $.ajax({
                         url:'/savedDatakawasan',
                         method:'POST',
@@ -267,7 +337,37 @@
                                 'Data Sukses di simpan!',
                                 'success'
                             )
-                            table.fnDraw();
+                            table.ajax.reload();
+                        }
+                    })
+                })
+                $('#UpdateAction').click(function(){
+                    var namakawasan = $('#namakawasanedit').val();
+                    var fungsi = $('#fungsiedit').val();
+                    var register = $('#registeredit').val();
+                    var pulau = $('#pulauedit').val();
+                    var provinsi = $('#provinsiedit').val();
+                    var provinsitemp = $('#provinsitempedit').val();
+                    var luaskawasan = $('#luaskawasanedit').val();
+                    var id = $('#idedit').val();
+                    console.log(id);
+                    $.ajax({
+                        url:'/ubahDataKawasan',
+                        method:'POST',
+                        data:"namakawasan="+namakawasan+"&luaskawasan="+luaskawasan+
+                             "&fungsi="+fungsi+
+                             "&register="+register+
+                             "&pulau="+pulau+
+                             "&provinsi="+provinsi+
+                             "&provinsitemp="+provinsitemp+
+                             "&id="+id,
+                        success:function(){
+                            Swal.fire(
+                                'Sukses!',
+                                'Data Sukses di simpan!',
+                                'success'
+                            )
+                            table.ajax.reload();
                         }
                     })
                 })

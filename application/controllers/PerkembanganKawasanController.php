@@ -32,4 +32,28 @@ class PerkembanganKawasanController extends CI_Controller {
         $result = $client->delete(constant('API_URL').'/perkembangan-kawasan/'.$id);
         echo'sukses';
     }
+    public function show($id){
+        $client     = new GuzzleHttp\Client();
+        $result = $client->get(constant('API_URL').'/perkembangan-kawasan/'.$id);
+        $data = $result->getBody()->getContents();
+        $hasil =  json_decode($data,true);
+        echo json_encode($hasil);
+
+    }
+    public function update(){
+        $client     = new GuzzleHttp\Client();
+        $id = $this->input->post('id');
+        $client->put(constant('API_URL').'/perkembangan-kawasan/'.$id, [
+            'form_params' => [
+                'nama_kawasan' => $this->input->post('namakawasan'),
+                'luas_kawasan' => $this->input->post('luaskawasan'),
+                'register' => $this->input->post('register'),
+                'fungsi' => $this->input->post('fungsi'),
+                'pulau' => $this->input->post('pulau'),
+                'provinsi' => $this->input->post('provinsi'),
+                'kabupaten' => $this->input->post('provinsitemp')
+            ]
+            ]);
+      return 'sukses';
+    }
 }
