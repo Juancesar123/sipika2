@@ -58,5 +58,7 @@ $route['DeletedDataKonservasi/(:any)'] = 'perkembanganKawasanController/destroy/
 $route['ubahDataKawasan'] = 'perkembanganKawasanController/update';
 $route['getsingleDataKonservasi/(:any)']='perkembanganKawasanController/show/$1';
 //end routenya
+//routeuntukkphktn
+$route['kphk-tn'] ='KphktnController';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
