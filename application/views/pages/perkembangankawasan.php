@@ -81,7 +81,7 @@
                                     </div>
                                     <div class="tab-pane fade" id="v-pills-ks" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                                     <h4>Daftar Kawasan Suaka Alam (KSA) / Kawasan Pelestarian Alam (KPA)</h4>
-                                        <table class="table table-responsive" id="myTable">
+                                        <table class="table" id="myTable">
                                             <thead>
                                                 <th>Register</th>
                                                 <th>Nama Kawasan</th>
@@ -258,32 +258,6 @@
     <?php $this->load->view('partials/script') ?>
     <script src="<?php echo base_url('js/data-table.js')?>"></script>
     <script>
-            var table=null
-            function initTable() {
-            if (table) table.destroy()
-                table = $('.table').DataTable({
-                            deferRender: true,
-                            responsive: true,
-                            ajax: {
-                                url: "/getDataKonservasi",
-                                type: "GET",
-                                dataSrc: function (d) {
-                                    return d
-                                }
-                            },
-                            columns: [
-                                { data: 'register' },
-                                { data: 'nama_kawasan' },
-                                { data: 'luas_kawasan' },                            	
-                                {
-                                    data: null,
-                                    render: function ( data, type, row ) {
-                                        return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button>";
-                                    }
-                                }
-                            ]
-                        });   
-            }
             function myfunc(id){
                 $.ajax({
                     url:'/DeletedDataKonservasi/'+id,
@@ -320,7 +294,28 @@
                 })
            }
             $(document).ready(function(){
-                initTable();
+                   console.log($('#v-pills-home').val());
+                   var table =  $('.table').DataTable({
+                        deferRender: true,
+                        ajax: {
+                            url: "/getDataKonservasi",
+                            type: "GET",
+                            dataSrc: function (d) {
+                                return d
+                            }
+                        },
+                        columns: [
+                            { data: 'register' },
+                            { data: 'nama_kawasan' },
+                            { data: 'luas_kawasan' },                            	
+                            {
+                                data: null,
+                                render: function ( data, type, row ) {
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button>";
+                                }
+                            }
+                        ]
+                    });   
                 $('#SaveAction').click(function(){
                     
                     var namakawasan = $('#namakawasan').val();
@@ -330,6 +325,9 @@
                     var provinsi = $('#provinsi').val();
                     var provinsitemp = $('#provinsitemp').val();
                     var luaskawasan = $('#luaskawasan').val();
+                    table.on('xhr',function(){
+                        console.log(table.ajax.json());
+                    })
                     $.ajax({
                         url:'/savedDatakawasan',
                         method:'POST',
@@ -345,8 +343,7 @@
                                 'Data Sukses di simpan!',
                                 'success'
                             )
-                            initTable();
-                            //table.ajax.reload();
+                            table.ajax.reload();
                         }
                     })
                 })

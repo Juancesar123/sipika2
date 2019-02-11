@@ -33,17 +33,49 @@
                                     <button class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">Tambah</button>
                                 </div>
                                 <div class="card-body">
-                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
+                                <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog modal-lg" role="document">
                                         <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
+                                            <h5 class="modal-title" id="exampleModalLabel">Form Input KPHK TN</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            ...
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label>Tahun Pengesahan</label>
+                                                        <input class="form-control" type="text">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Luas KPHK</label>
+                                                        <input class="form-control" type="text">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Provinsi</label>
+                                                        <input class="form-control" type="text">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Kabupaten/Kota KPHK</label>
+                                                        <input class="form-control" type="text">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <h3>SK KPHK</h3>
+                                                        <label>Judul SK</label>
+                                                        <input class="form-control" type="text">
+                                                        <label>Nomor SK</label>
+                                                        <input class="form-control" type="text">
+                                                        <label>Tanggal SK</label>
+                                                        <input class="form-control" type="date">
+                                                        <label>Dokumen SK</label>
+                                                        <input class="form-control" type="file">
+                                                    </div>
+                                                </div>
+                                            </div>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
@@ -54,7 +86,10 @@
                                     </div>
                                     <table class="table" id="myTable">
                                         <thead>
-                                            <th>Nama KPHK</th>
+                                            <th>Tahun Pengesahan</th>
+                                            <th>Luas KPHK</th>
+                                            <th>Provinsi</th>
+                                            <th>Action</th>
                                         </thead>
                                     </table>
                                 </div>
@@ -70,7 +105,27 @@
     <script src="<?php echo base_url('js/data-table.js')?>"></script>
     <script>
         $('document').ready(function(){
-            $('#myTable').DataTable();
+            var table =  $('#myTable').DataTable({
+                        deferRender: true,
+                        ajax: {
+                            url: "/getDatakphkTn",
+                            type: "GET",
+                            dataSrc: function (d) {
+                                return d
+                            }
+                        },
+                        columns: [
+                            { data: 'tahun_pengesahan' },
+                            { data: 'luas_kphk' },
+                            { data: 'provinsi' },                            	
+                            {
+                                data: null,
+                                render: function ( data, type, row ) {
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button>";
+                                }
+                            }
+                        ]
+                    });
         })
     </script>
 </body>

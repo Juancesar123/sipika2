@@ -60,5 +60,7 @@ $route['getsingleDataKonservasi/(:any)']='perkembanganKawasanController/show/$1'
 //end routenya
 //routeuntukkphktn
 $route['kphk-tn'] ='KphktnController';
+$route['getDatakphkTn'] ='KphktnController/get';
+
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
