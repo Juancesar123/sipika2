@@ -66,5 +66,13 @@ $route['updateDataKphkTn'] ='KphktnController/update';
 $route['deleteDatakphkTn/(:any)']='KphktnController/destroy/$1';
 $route['showDatakphkTn/(:any)']='KphktnController/show/$1';
 //endroutenya
+//Route KPHK non TN
+$route['kphk-nontn'] ='KphknontnController';
+$route['getDatakphkNonTn'] ='KphknontnController/get';
+$route['savedDatakphkNonTn'] ='KphknontnController/store';
+$route['updateDataKphkNonTn'] ='KphknontnController/update';
+$route['deleteDatakphkNonTn/(:any)']='KphknontnController/destroy/$1';
+$route['showDatakphkNonTn/(:any)']='KphknontnController/show/$1';
+//Endroute
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
