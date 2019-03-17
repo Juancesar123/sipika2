@@ -74,5 +74,13 @@ $route['updateDataKphkNonTn'] ='KphknontnController/update';
 $route['deleteDatakphkNonTn/(:any)']='KphknontnController/destroy/$1';
 $route['showDatakphkNonTn/(:any)']='KphknontnController/show/$1';
 //Endroute
+//ROute untuk Usulan Tahura
+$route['usulan-tahura'] ='UsulantahuraController';
+$route['getDataUsulanTahura'] ='UsulantahuraController/get';
+$route['savedDataUsulanTahura'] ='UsulantahuraController/store';
+$route['updateDataUsulanTahura'] ='UsulantahuraController/update';
+$route['deleteDataUsulanTahura/(:any)']='UsulantahuraController/destroy/$1';
+$route['showDataUsulanTahura/(:any)']='UsulantahuraController/show/$1';
+//endroute
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
