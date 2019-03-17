@@ -59,7 +59,7 @@
                                     </div>
                                     <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                                     <h4>Daftar Taman Hutan Raya (TAHURA)</h4>
-                                        <table class="table" id="myTable">
+                                        <table class="table" id="myTable1">
                                             <thead>
                                                 <th>Register</th>
                                                 <th>Nama Kawasan</th>
@@ -70,7 +70,7 @@
                                     </div>
                                     <div class="tab-pane fade" id="v-pills-cagar" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                                     <h4>Daftar Cagar Alam</h4>
-                                        <table class="table" id="myTable">
+                                        <table class="table" id="myTable2">
                                             <thead>
                                                 <th>Register</th>
                                                 <th>Nama Kawasan</th>
@@ -81,7 +81,7 @@
                                     </div>
                                     <div class="tab-pane fade" id="v-pills-ks" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                                     <h4>Daftar Kawasan Suaka Alam (KSA) / Kawasan Pelestarian Alam (KPA)</h4>
-                                        <table class="table" id="myTable">
+                                        <table class="table" id="myTable3">
                                             <thead>
                                                 <th>Register</th>
                                                 <th>Nama Kawasan</th>
@@ -92,7 +92,7 @@
                                     </div>
                                     <div class="tab-pane fade" id="v-pills-suaka" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                                     <h4>Daftar Suaka Margasatwa</h4>
-                                        <table class="table" id="myTable">
+                                        <table class="table" id="myTable4">
                                             <thead>
                                                 <th>Register</th>
                                                 <th>Nama Kawasan</th>
@@ -103,7 +103,7 @@
                                     </div>
                                     <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
                                        <h4>Daftar Taman Buru</h4>
-                                        <table class="table" id="myTable">
+                                        <table class="table" id="myTable5">
                                             <thead>
                                                 <th>Register</th>
                                                 <th>Nama Kawasan</th>
@@ -114,7 +114,7 @@
                                     </div>
                                     <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
                                         <h4>Daftar Taman Nasional</h4>
-                                        <table class="table" id="myTable">
+                                        <table class="table" id="myTable6">
                                             <thead>
                                                 <th>Register</th>
                                                 <th>Nama Kawasan</th>
@@ -268,7 +268,13 @@
                             'Data Sukses di simpan!',
                             'success'
                         )
-                        table.ajax.reload();
+                            table.ajax.reload();
+                            table1.ajax.reload();
+                            table2.ajax.reload();
+                            table3.ajax.reload();
+                            table4.ajax.reload();
+                            table5.ajax.reload();
+                            table6.ajax.reload();
                     }
                 })
             }
@@ -294,8 +300,28 @@
                 })
            }
             $(document).ready(function(){
-                   console.log($('#v-pills-home').val());
-                   var table =  $('.table').DataTable({
+                   var table =  $('#myTable').DataTable({
+                        deferRender: true,
+                        ajax: {
+                            url: "/getDataKonservasi",
+                            type: "GET",
+                            dataSrc: function (d) {
+                                return d
+                            }
+                        },
+                        columns: [
+                            { data: 'register' },
+                            { data: 'nama_kawasan' },
+                            { data: 'luas_kawasan' },                            	
+                            {
+                                data: null,
+                                render: function ( data, type, row ) {
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button>";
+                                }
+                            }
+                        ]
+                    });
+                    var table1 =  $('#myTable1').DataTable({
                         deferRender: true,
                         ajax: {
                             url: "/getDataKonservasi",
@@ -316,6 +342,90 @@
                             }
                         ]
                     });   
+                    var table2 =  $('#myTable2').DataTable({
+                        deferRender: true,
+                        ajax: {
+                            url: "/getDataKonservasi",
+                            type: "GET",
+                            dataSrc: function (d) {
+                                return d
+                            }
+                        },
+                        columns: [
+                            { data: 'register' },
+                            { data: 'nama_kawasan' },
+                            { data: 'luas_kawasan' },                            	
+                            {
+                                data: null,
+                                render: function ( data, type, row ) {
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button>";
+                                }
+                            }
+                        ]
+                    });
+                    var table3 =  $('#myTable3').DataTable({
+                        deferRender: true,
+                        ajax: {
+                            url: "/getDataKonservasi",
+                            type: "GET",
+                            dataSrc: function (d) {
+                                return d
+                            }
+                        },
+                        columns: [
+                            { data: 'register' },
+                            { data: 'nama_kawasan' },
+                            { data: 'luas_kawasan' },                            	
+                            {
+                                data: null,
+                                render: function ( data, type, row ) {
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button>";
+                                }
+                            }
+                        ]
+                    });
+                    var table4 =  $('#myTable4').DataTable({
+                        deferRender: true,
+                        ajax: {
+                            url: "/getDataKonservasi",
+                            type: "GET",
+                            dataSrc: function (d) {
+                                return d
+                            }
+                        },
+                        columns: [
+                            { data: 'register' },
+                            { data: 'nama_kawasan' },
+                            { data: 'luas_kawasan' },                            	
+                            {
+                                data: null,
+                                render: function ( data, type, row ) {
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button>";
+                                }
+                            }
+                        ]
+                    });
+                    var table5 =  $('#myTable5').DataTable({
+                        deferRender: true,
+                        ajax: {
+                            url: "/getDataKonservasi",
+                            type: "GET",
+                            dataSrc: function (d) {
+                                return d
+                            }
+                        },
+                        columns: [
+                            { data: 'register' },
+                            { data: 'nama_kawasan' },
+                            { data: 'luas_kawasan' },                            	
+                            {
+                                data: null,
+                                render: function ( data, type, row ) {
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button>";
+                                }
+                            }
+                        ]
+                    });
                 $('#SaveAction').click(function(){
                     
                     var namakawasan = $('#namakawasan').val();
@@ -344,6 +454,12 @@
                                 'success'
                             )
                             table.ajax.reload();
+                            table1.ajax.reload();
+                            table2.ajax.reload();
+                            table3.ajax.reload();
+                            table4.ajax.reload();
+                            table5.ajax.reload();
+                            table6.ajax.reload();
                         }
                     })
                 })
@@ -375,6 +491,12 @@
                             )
                             //reload table ajax
                             table.ajax.reload();
+                            table1.ajax.reload();
+                            table2.ajax.reload();
+                            table3.ajax.reload();
+                            table4.ajax.reload();
+                            table5.ajax.reload();
+                            table6.ajax.reload();
                         }
                     })
                 })
