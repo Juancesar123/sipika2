@@ -50,5 +50,37 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 |		my-controller/my-method	-> my_controller/my_method
 */
 $route['default_controller'] = 'welcome';
+//Route untuk perkembangan kawasan
+$route['perkembangan-kawasan'] ='perkembanganKawasanController';
+$route['savedDatakawasan'] = 'perkembanganKawasanController/store';
+$route['getDataKonservasi'] = 'perkembanganKawasanController/get';
+$route['DeletedDataKonservasi/(:any)'] = 'perkembanganKawasanController/destroy/$1';
+$route['ubahDataKawasan'] = 'perkembanganKawasanController/update';
+$route['getsingleDataKonservasi/(:any)']='perkembanganKawasanController/show/$1';
+//end routenya
+//routeuntukkphktn
+$route['kphk-tn'] ='KphktnController';
+$route['getDatakphkTn'] ='KphktnController/get';
+$route['savedDatakphktn'] ='KphktnController/store';
+$route['updateDataKphkTn'] ='KphktnController/update';
+$route['deleteDatakphkTn/(:any)']='KphktnController/destroy/$1';
+$route['showDatakphkTn/(:any)']='KphktnController/show/$1';
+//endroutenya
+//Route KPHK non TN
+$route['kphk-nontn'] ='KphknontnController';
+$route['getDatakphkNonTn'] ='KphknontnController/get';
+$route['savedDatakphkNonTn'] ='KphknontnController/store';
+$route['updateDataKphkNonTn'] ='KphknontnController/update';
+$route['deleteDatakphkNonTn/(:any)']='KphknontnController/destroy/$1';
+$route['showDatakphkNonTn/(:any)']='KphknontnController/show/$1';
+//Endroute
+//ROute untuk Usulan Tahura
+$route['usulan-tahura'] ='UsulantahuraController';
+$route['getDataUsulanTahura'] ='UsulantahuraController/get';
+$route['savedDataUsulanTahura'] ='UsulantahuraController/store';
+$route['updateDataUsulanTahura'] ='UsulantahuraController/update';
+$route['deleteDataUsulanTahura/(:any)']='UsulantahuraController/destroy/$1';
+$route['showDataUsulanTahura/(:any)']='UsulantahuraController/show/$1';
+//endroute
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
