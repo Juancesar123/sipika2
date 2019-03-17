@@ -95,31 +95,41 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <div class="form-group">
-                                                <label>Tahun Pengesahan</label>
-                                                <input class="form-control" type="text" id="tahunpengesahanedit">
-                                                <input class="form-control" type="hidden" id="idkphkedit">
-                                                <input class="form-control" type="hidden" id="dokumenskhide">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Tanggal Pengesahan</label>
-                                                <input class="form-control" type="date" id="tangglpengesahanedit">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Nama KPHK</label>
-                                                <input class="form-control" type="text" id="namakphkedit">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Luas KPHK</label>
-                                                <input class="form-control" type="text" id="luaskphkedit">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Provinsi</label>
-                                                <input class="form-control" type="text" id="provinsiedit">
-                                            </div>
-                                            <div class="form-group">
-                                                <label>Kabupaten/Kota KPHK</label>
-                                                <input class="form-control" type="text" id="kabupatenkotaedit">
+                                            <div class="row">
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label>Provinsi</label>
+                                                        <input class="form-control" type="text" id="provinsiedit">
+                                                        <input class="form-control" type="hidden" id="petahide">
+                                                        <input class="form-control" type="hidden" id="idtahuraedit">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Kabupaten / Kota</label>
+                                                        <input class="form-control" type="text" id="kabupaten_kotaedit">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Pengusul</label>
+                                                        <input class="form-control" type="text" id="pengusuledit">
+                                                    </div>
+                                                </div>
+                                                <div class="col-6">
+                                                    <div class="form-group">
+                                                        <label>Lokasi</label>
+                                                        <input class="form-control" type="text" id="lokasiedit">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Luas</label>
+                                                        <input class="form-control" type="text" id="luasedit">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Fungsi Hutan / Kawasan</label>
+                                                        <input class="form-control" type="text" id="fungsi_hutanedit">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Peta (.jpg)</label>
+                                                        <input class="form-control" type="file" id="petaedit">
+                                                    </div>
+                                                </div>
                                             </div>  
                                         </div>
                                         <div class="modal-footer">
@@ -168,22 +178,18 @@
         }
         function editfunc(id){
             $.ajax({
-                url:'/showDatakphkNonTn/'+id,
+                url:'/showDataUsulanTahura/'+id,
                 type:'GET',
                 success:function(data){
                     var hasil = JSON.parse(data);
-                    $( '#tahunpengesahanedit' ).val(hasil.tahun_pengesahaan);
-                    $( '#tanggalpengesahanedit' ).val(hasil.tanggal_pengesahaan);
-                    $( '#namakphkedit' ).val(hasil.nama_kphk);
-                    $( '#namakawasanedit' ).val(hasil.nama_kawasan);
-                    $( '#luaskphkedit' ).val(hasil.luas_kphk);
                     $( '#provinsiedit' ).val(hasil.provinsi);
-                    $( '#judulskedit' ).val(hasil.judul_sk);
-                    $( '#nomorskedit' ).val(hasil.nomor_sk);
-                    $( '#tanggalskedit' ).val(hasil.tanggal_sk);
-                    $( '#kabupatenkotaedit' ).val(hasil.kabupaten_kota_kphk);
-                    $( '#dokumenskhide' ).val(hasil.dokumen_sk);
-                    $( '#idkphkedit' ).val(hasil.id);
+                    $( '#petahide' ).val(hasil.peta);
+                    $( '#kabupaten_kotaedit' ).val(hasil.kabupaten_kota);
+                    $( '#pengusuledit' ).val(hasil.pengusul);
+                    $( '#lokasiedit' ).val(hasil.lokasi);
+                    $( '#luasedit' ).val(hasil.luas);
+                    $( '#fungsi_hutanedit' ).val(hasil.fungsi_hutan);
+                    $( '#idtahuraedit' ).val(hasil.id);
                 }
             })
         }
@@ -213,25 +219,21 @@
                     });
         $('document').ready(function(){
             $('#UpdateData').click(function(){
-                var file = $('#dokumenskedit')[0].files[0];
+                var file = $('#petaedit')[0].files[0];
                 if(file == undefined){
                     var data;
                     data = new FormData();
-                    data.append( 'tahunpengesahan', $( '#tahunpengesahanedit' ).val());
-                    data.append( 'luaskphk', $( '#luaskphkedit' ).val());
+                    data.append( 'idtahura', $( '#idtahuraedit' ).val());
                     data.append( 'provinsi', $( '#provinsiedit' ).val());
-                    data.append( 'kabupaten_kota_kphk', $( '#kabupatenkotaedit' ).val());
-                    data.append( 'judulsk', $( '#judulskedit' ).val());
-                    data.append( 'nomorsk', $( '#nomorskedit' ).val());
-                    data.append( 'tanggalsk', $( '#tanggalskedit' ).val());
-                    data.append( 'namakphk', $( '#namakphkedit' ).val());
-                    data.append( 'tanggalpengesahan', $( '#tangglpengesahanedit' ).val());
-                    data.append( 'namakawasan', $( '#namakawasanedit' ).val());
-                    data.append( 'idkphk', $( '#idkphkedit' ).val());
-                    data.append( 'dokumensk',  $( '#dokumenskhide' ).val());
+                    data.append( 'peta', $( '#petahide' ).val());
+                    data.append( 'kabupaten_kota', $( '#kabupaten_kotaedit' ).val());
+                    data.append( 'pengusul', $( '#pengusuledit' ).val());
+                    data.append( 'lokasi', $( '#lokasiedit' ).val());
+                    data.append( 'luas', $( '#luasedit' ).val());
+                    data.append( 'fungsi_hutan', $( '#fungsi_hutanedit' ).val());
                     data.append( 'status',  'filenotfound');
                     $.ajax({
-                        url:'/updateDataKphkNonTn',
+                        url:'/updateDataUsulanTahura',
                         method:'POST',
                         data:data,
                         contentType: false,
@@ -248,20 +250,16 @@
                 }else{
                     var data;
                     data = new FormData();
-                    data.append( 'dokumensk', $( '#dokumenskedit' )[0].files[0] );
-                    data.append( 'tahunpengesahan', $( '#tahunpengesahanedit' ).val());
-                    data.append( 'luaskphk', $( '#luaskphkedit' ).val());
+                    data.append( 'peta', $( '#petaedit' )[0].files[0] );
                     data.append( 'provinsi', $( '#provinsiedit' ).val());
-                    data.append( 'namakphk', $( '#namakphkedit' ).val());
-                    data.append( 'tanggalpengesahan', $( '#tangglpengesahanedit' ).val());
-                    data.append( 'namakawasan', $( '#namakawasanedit' ).val());
-                    data.append( 'kabupaten_kota_kphk', $( '#kabupatenkotaedit' ).val());
-                    data.append( 'judulsk', $( '#judulskedit' ).val());
-                    data.append( 'nomorsk', $( '#nomorskedit' ).val());
-                    data.append( 'tanggalsk', $( '#tanggalskedit' ).val());
-                    data.append( 'idkphk', $( '#idkphkedit' ).val());
+                    data.append( 'kabupaten_kota', $( '#kabupaten_kotaedit' ).val());
+                    data.append( 'pengusul', $( '#pengusuledit' ).val());
+                    data.append( 'lokasi', $( '#lokasiedit' ).val());
+                    data.append( 'luas', $( '#luasedit' ).val());
+                    data.append( 'fungsi_hutan', $( '#fungsi_hutanedit' ).val());
+                    data.append( 'idtahura', $( '#idtahuraedit' ).val());
                     $.ajax({
-                        url:'/updateDataKphkNonTn',
+                        url:'/updateDataUsulanTahura',
                         method:'POST',
                         data:data,
                         contentType: false,

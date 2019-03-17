@@ -84,113 +84,78 @@ class UsulantahuraController extends CI_Controller {
         $client     = new GuzzleHttp\Client();
         $status = $this->input->post('status');
         if($status == 'filenotfound'){
-            $id = $this->input->post('idkphk');
-            var_dump($id);
+            $id = $this->input->post('idtahura');
             $result = $client->put(constant('API_URL').'/usulan-tahura/'.$id,[
                 'multipart'=>[
                     [
-                        'name' => 'dokumen_sk',
-                        'contents' => $this->input->post('dokumensk')
-                    ],
-                    [
-                        'name' => 'tanggal_pengesahan',
-                        'contents' => $this->input->post('tanggalpengesahan')
-                    ],
-                    [
-                        'name' => 'nama_kphk',
-                        'contents' => $this->input->post('namakhpk')
-                    ],
-                    [
-                        'name' => 'nama_kawasan',
-                        'contents' => $this->input->post('namakawasan')
-                    ],
-                
-                    [
-                        'name' => 'tahun_pengesahaan',
-                        'contents' => $this->input->post('tahunpengesahan')
-                    ],
-                    [
-                        'name' => 'luas_kphk',
-                        'contents' => $this->input->post('luaskphk')
+                        'name' => 'peta',
+                        'contents' => $this->input->post('peta')
                     ],
                     [
                         'name' => 'provinsi',
                         'contents' => $this->input->post('provinsi')
                     ],
                     [
-                        'name' => 'kabupaten_kota_kphk',
-                        'contents' => $this->input->post('kabupaten_kota_kphk')
+                        'name' => 'kabupaten_kota',
+                        'contents' => $this->input->post('kabupaten_kota')
                     ],
                     [
-                        'name' => 'judul_sk',
-                        'contents' => $this->input->post('judulsk')
+                        'name' => 'pengusul',
+                        'contents' => $this->input->post('pengusul')
+                    ],
+                    
+                    [
+                        'name' => 'lokasi',
+                        'contents' => $this->input->post('lokasi')
                     ],
                     [
-                        'name' => 'nomor_sk',
-                        'contents' => $this->input->post('nomorsk')
+                        'name' => 'luas',
+                        'contents' => $this->input->post('luas')
                     ],
                     [
-                        'name' => 'tanggal_sk',
-                        'contents' => $this->input->post('tanggalsk')
+                        'name' => 'fungsi_hutan',
+                        'contents' => $this->input->post('fungsi_hutan')
                     ],
                 ]
             ]);
         }else{
-            
-        $id = $this->input->post('idkphk');
-       
-            $name = $_FILES['dokumensk']['name'];
-            var_dump($id);
+            $id = $this->input->post('idtahura');
+            $name = $_FILES['peta']['name'];
             $result = $client->put(constant('API_URL').'/usulan-tahura/'.$id,[
                 'multipart'=>[
                     [
-                        'name' => 'dokumen_sk',
-                        'contents' => fopen($_FILES['dokumensk']['tmp_name'], 'r'),
+                        'name' => 'peta',
+                        'contents' => fopen($_FILES['peta']['tmp_name'], 'r'),
                         'filename' => $name
                     ],
                     [
-                        'name' => 'dokumen_sk',
-                        'contents' => 'skkphktn/'.$name
-                    ],
-                    [
-                        'name' => 'tanggal_pengesahan',
-                        'contents' => $this->input->post('tanggalpengesahan')
-                    ],
-                    [
-                        'name' => 'nama_kphk',
-                        'contents' => $this->input->post('namakhpk')
-                    ],
-                    [
-                        'name' => 'nama_kawasan',
-                        'contents' => $this->input->post('namakawasan')
-                    ],
-                    [
-                        'name' => 'tahun_pengesahaan',
-                        'contents' => $this->input->post('tahunpengesahan')
-                    ],
-                    [
-                        'name' => 'luas_kphk',
-                        'contents' => $this->input->post('luaskphk')
+                        'name' => 'peta',
+                        'contents' => 'petatahura/'.$name
                     ],
                     [
                         'name' => 'provinsi',
                         'contents' => $this->input->post('provinsi')
                     ],
                     [
-                        'name' => 'kabupaten_kota_kphk',
-                        'contents' => $this->input->post('kabupaten_kota_kphk')
+                        'name' => 'kabupaten_kota',
+                        'contents' => $this->input->post('kabupaten_kota')
                     ],
                     [
-                        'name' => 'judul_sk',
-                        'contents' => $this->input->post('judulsk')
+                        'name' => 'pengusul',
+                        'contents' => $this->input->post('pengusul')
+                    ],
+                    
+                    [
+                        'name' => 'lokasi',
+                        'contents' => $this->input->post('lokasi')
                     ],
                     [
-                        'name' => 'nomor_sk',
-                        'contents' => $this->input->post('nomorsk')
+                        'name' => 'luas',
+                        'contents' => $this->input->post('luas')
                     ],
                     [
-                        'name' => 'tanggal_sk',
-                        'contents' => $this->input->post('tanggalsk')
+                        'name' => 'fungsi_hutan',
+                        'contents' => $this->input->post('fungsi_hutan')
                     ],
                 ]
             ]);
