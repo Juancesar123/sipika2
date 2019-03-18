@@ -24,6 +24,18 @@
             </div>
           </li>
           <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#subditiika" aria-expanded="false" aria-controls="subditiika">
+              <i class="fa fa-home menu-icon"></i>
+              <span class="menu-title">Subdit IIKA</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="subditiika">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"><a class="nav-link <?php if($this->uri->segment(1)=="sketsa-sejarah"){echo "active";}?>" href="<?=base_url('sketsa-sejarah')?>">Sketsa Sejarah</a></li>
+              </ul>
+            </div>
+          </li>
+          <li class="nav-item">
             <a class="nav-link <?php if($this->uri->segment(1)=="perkembangan-kawasan"){echo "active";}?>" href="<?=base_url('perkembangan-kawasan')?>">
               <i class="fa fa-home menu-icon"></i>
               <span class="menu-title">Kawasan Konservasi</span>

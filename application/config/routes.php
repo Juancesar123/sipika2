@@ -82,5 +82,13 @@ $route['updateDataUsulanTahura'] ='UsulantahuraController/update';
 $route['deleteDataUsulanTahura/(:any)']='UsulantahuraController/destroy/$1';
 $route['showDataUsulanTahura/(:any)']='UsulantahuraController/show/$1';
 //endroute
+//ROute untuk Sketsa Sejarah
+$route['sketsa-sejarah'] ='SketsasejarahController';
+$route['getDataSketsaSejarah'] ='SketsasejarahController/get';
+$route['savedDataSketsaSejarah'] ='SketsasejarahController/store';
+$route['updateDataSketsaSejarah'] ='SketsasejarahController/update';
+$route['destroyDataSketsaSejarah/(:any)']='SketsasejarahController/destroy/$1';
+$route['showDataSketsaSejarah/(:any)']='SketsasejarahController/show/$1';
+//endroute
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
