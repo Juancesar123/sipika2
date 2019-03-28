@@ -90,5 +90,13 @@ $route['updateDataSketsaSejarah'] ='SketsasejarahController/update';
 $route['destroyDataSketsaSejarah/(:any)']='SketsasejarahController/destroy/$1';
 $route['showDataSketsaSejarah/(:any)']='SketsasejarahController/show/$1';
 //endroute
+//Route untuk master provinsi
+$route['master-provinsi'] ='MasterProvinsiController';
+$route['getDataMasterProvinsi'] ='MasterProvinsiController/get';
+$route['savedDataMasterProvinsi'] ='MasterProvinsiController/store';
+$route['updateDataMasterProvinsi'] ='MasterProvinsiController/update';
+$route['showDataMasterProvinsi/(:any)'] ='MasterProvinsiController/show/$1';
+$route['deleteDataMasterProvinsi/(:any)'] ='MasterProvinsiController/destroy/$1';
+//endroute
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
