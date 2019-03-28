@@ -87,7 +87,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php if($this->uri->segment(1)=="perkembangan-kawasan"){echo "active";}?>" href="<?=base_url('perkembangan-kawasan')?>">
+            <a class="nav-link <?php if($this->uri->segment(1)=="peraturan"){echo "active";}?>" href="<?=base_url('peraturan')?>">
               <i class="fa fa-exclamation-circle  menu-icon"></i>
               <span class="menu-title">Peraturan</span>
             </a>
