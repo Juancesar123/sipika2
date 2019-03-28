@@ -98,5 +98,13 @@ $route['updateDataMasterProvinsi'] ='MasterProvinsiController/update';
 $route['showDataMasterProvinsi/(:any)'] ='MasterProvinsiController/show/$1';
 $route['deleteDataMasterProvinsi/(:any)'] ='MasterProvinsiController/destroy/$1';
 //endroute
+//Route untuk master peraturan
+$route['peraturan'] ='PeraturanController';
+$route['getDataPeraturan'] ='PeraturanController/get';
+$route['savedDataPeraturan'] ='PeraturanController/store';
+$route['updateDataPeraturan'] ='PeraturanController/update';
+$route['showDataPeraturan/(:any)'] ='PeraturanController/show/$1';
+$route['deleteDataPeraturan/(:any)'] ='PeraturanController/destroy/$1';
+//endroute
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
