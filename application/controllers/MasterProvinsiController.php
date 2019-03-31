@@ -11,6 +11,7 @@ class MasterProvinsiController extends CI_Controller {
         return $this->load->view('pages/masterprovinsi');
     }
     public function get(){
+        $hasilarray = [];
         $client     = new GuzzleHttp\Client();
         $result = $client->get(constant('API_URL').'/master-provinsi');
         /*
@@ -18,8 +19,15 @@ class MasterProvinsiController extends CI_Controller {
             ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
         */
         $data = $result->getBody()->getContents();
-        $hasil =  json_decode($data,true);
-        echo json_encode($hasil);
+        $hasil =  json_decode($data);
+        if(is_array($hasil)){
+            foreach($hasil as $key=>$item){
+                if(strlen($item->kode) == '2'){
+                    $hasilarray[] = $item;
+                }
+            }
+            echo json_encode($hasilarray);
+        }
     }
     public function store(){
         /*
@@ -30,14 +38,15 @@ class MasterProvinsiController extends CI_Controller {
         */
         $client     = new GuzzleHttp\Client();
         $client->post(constant('API_URL').'/master-provinsi', [
-                /*
-                    isi yang akan di lempar ke api.
-                    'nama_kawasan' variable apinya.
-                */
-                'form_params' => [
-                    'nama' => $this->input->post('nama')
-                ]
-            ]);
+            /*
+                isi yang akan di lempar ke api.
+                'nama_kawasan' variable apinya.
+            */
+            'form_params' => [
+                'nama' => $this->input->post('nama'),
+                'kode' => $this->input->post('kodeprovinsi')
+            ]
+        ]);
     }
     public function destroy($id){
         $client     = new GuzzleHttp\Client();
@@ -56,9 +65,9 @@ class MasterProvinsiController extends CI_Controller {
         $client     = new GuzzleHttp\Client();
         $id = $this->input->post('idprovinsi');
         $client->patch(constant('API_URL').'/master-provinsi/'.$id, [
-                'form_params' => [
-                    'nama' => $this->input->post('nama')
-                ]
-            ]);
+            'form_params' => [
+                'nama' => $this->input->post('nama')
+            ]
+        ]);
     }
 }
