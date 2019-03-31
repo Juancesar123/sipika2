@@ -44,6 +44,10 @@
                                         </div>
                                         <div class="modal-body">
                                             <div class="form-group">
+                                                <label>Kode Provinsi</label>
+                                                <input class="form-control" type="text" id="kodeprovinsi">
+                                            </div>
+                                            <div class="form-group">
                                                 <label>Nama Provinsi</label>
                                                 <input class="form-control" type="text" id="namaprovinsi">
                                             </div>
@@ -56,10 +60,10 @@
                                     </div>
                                     </div>
                                     <div class="modal fade bd-example-modal-lg" id="modals2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Form Ubah Master Data</h5>
+                                            <h5 class="modal-title" id="exampleModalLabel">Form Ubah Master Data Provinsi</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                             </button>
@@ -69,6 +73,10 @@
                                                 <label>Nama Provinsi</label>
                                                 <input class="form-control" type="text" id="namaprovinsiedit">
                                                 <input type="hidden" id="idprovinsi">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Kode Provinsi</label>
+                                                <input class="form-control" type="text" id="kodeprovinsiedit">
                                             </div>
                                         </div>
                                         <div class="modal-footer">
@@ -116,7 +124,8 @@
                 type:'GET',
                 success:function(data){
                     var hasil = JSON.parse(data);
-                    $( '#idprovinsi' ).val(hasil.id);
+                    $( '#idprovinsi' ).val(hasil.kode);
+                    $( '#kodeprovinsiedit' ).val(hasil.kode);
                     $( '#namaprovinsiedit' ).val(hasil.nama);
                 }
             })
@@ -135,7 +144,7 @@
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button>";
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.kode+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.kode+")'>Delete</button>";
                                 }
                             }
                         ]
@@ -166,6 +175,7 @@
                 var data;
                 data = new FormData();
                 data.append( 'nama', $( '#namaprovinsi' ).val());
+                data.append('kodeprovinsi', $( '#kodeprovinsi' ).val())
                 $.ajax({
                     url:'/savedDataMasterProvinsi',
                     method:'POST',
