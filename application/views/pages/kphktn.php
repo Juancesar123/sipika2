@@ -53,9 +53,12 @@
                                                         <label>Luas KPHK</label>
                                                         <input class="form-control" type="text" id="luaskphk">
                                                     </div>
+                                                   
                                                     <div class="form-group">
                                                         <label>Provinsi</label>
-                                                        <input class="form-control" type="text" id="provinsi">
+                                                        <select class="form-control" style="width:100%" name="states[]" multiple="multiple" id="provinsi">
+                                                           
+                                                        </select>
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Kabupaten/Kota KPHK</label>
@@ -201,7 +204,7 @@
                         columns: [
                             { data: 'tahun_pengesahaan' },
                             { data: 'luas_kphk' },
-                            { data: 'provinsi' },                            	
+                            { data: 'master_provinsi.nama' },                            	
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
@@ -211,6 +214,21 @@
                         ]
                     });
         $('document').ready(function(){
+            $.ajax({
+                type:'GET',
+                url:'/getDataMasterProvinsi',
+                dataType:'json',
+                success:function(data){
+                    var html;
+                    data.forEach(element => {
+                         html = "<option value="+element.kode+">"+element.nama+"</option>";
+                         $("#provinsi").append(html);
+                    });
+                }
+            })
+            $('#provinsi').select2({  
+                theme: "bootstrap"
+            });
             $('#UpdateData').click(function(){
                 var file = $('#dokumenskedit')[0].files[0];
                 if(file == undefined){

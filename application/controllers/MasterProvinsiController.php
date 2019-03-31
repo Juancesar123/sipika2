@@ -13,7 +13,7 @@ class MasterProvinsiController extends CI_Controller {
     public function get(){
         $hasilarray = [];
         $client     = new GuzzleHttp\Client();
-        $result = $client->get(constant('API_URL').'/master-provinsi');
+        $result = $client->get(constant('API_URL').'/master_provinsi');
         /*
             Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
             ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
@@ -37,7 +37,7 @@ class MasterProvinsiController extends CI_Controller {
             di ubah untuk semua.
         */
         $client     = new GuzzleHttp\Client();
-        $client->post(constant('API_URL').'/master-provinsi', [
+        $client->post(constant('API_URL').'/master_provinsi', [
             /*
                 isi yang akan di lempar ke api.
                 'nama_kawasan' variable apinya.
@@ -50,12 +50,12 @@ class MasterProvinsiController extends CI_Controller {
     }
     public function destroy($id){
         $client     = new GuzzleHttp\Client();
-        $result = $client->delete(constant('API_URL').'/master-provinsi/'.$id);
+        $result = $client->delete(constant('API_URL').'/master_provinsi/'.$id);
         echo'sukses';
     }
     public function show($id){
         $client     = new GuzzleHttp\Client();
-        $result = $client->get(constant('API_URL').'/master-provinsi/'.$id);
+        $result = $client->get(constant('API_URL').'/master_provinsi/'.$id);
         $data = $result->getBody()->getContents();
         $hasil =  json_decode($data,true);
         echo json_encode($hasil);
@@ -64,7 +64,7 @@ class MasterProvinsiController extends CI_Controller {
     public function update(){
         $client     = new GuzzleHttp\Client();
         $id = $this->input->post('idprovinsi');
-        $client->patch(constant('API_URL').'/master-provinsi/'.$id, [
+        $client->patch(constant('API_URL').'/master_provinsi/'.$id, [
             'form_params' => [
                 'nama' => $this->input->post('nama')
             ]
