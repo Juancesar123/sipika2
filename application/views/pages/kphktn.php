@@ -62,7 +62,9 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Kabupaten/Kota KPHK</label>
-                                                        <input class="form-control" type="text" id="kabupatenkota">
+                                                        <select class="form-control" style="width:100%" name="states[]" multiple="multiple" id="kabupatenkota">
+                                                           
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-6">
@@ -226,7 +228,22 @@
                     });
                 }
             })
+            $.ajax({
+                type:'GET',
+                url:'/getDataKabupaten',
+                dataType:'json',
+                success:function(data){
+                    var html;
+                    data.forEach(element => {
+                         html = "<option value="+element.kode+">"+element.nama+"</option>";
+                         $("#kabupatenkota").append(html);
+                    });
+                }
+            })
             $('#provinsi').select2({  
+                theme: "bootstrap"
+            });
+            $('#kabupatenkota').select2({  
                 theme: "bootstrap"
             });
             $('#UpdateData').click(function(){

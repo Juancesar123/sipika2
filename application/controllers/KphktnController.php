@@ -23,51 +23,59 @@ class KphktnController extends CI_Controller {
     }
     public function store(){
         $provinsi = $this->input->post('provinsi');
+        $kabupaten = $this->input->post('kabupaten_kota_kphk');
         $hasil = explode(',',$provinsi);
-        foreach ($hasil as $key => $value) {
-            $client     = new GuzzleHttp\Client();
-            $name = $_FILES['dokumensk']['name'];
-            $result = $client->post(constant('API_URL').'/kphk_tn',[
-                'multipart'=>[
-                    [
-                        'name' => 'dokumen_sk',
-                        'contents' => fopen($_FILES['dokumensk']['tmp_name'], 'r'),
-                        'filename' => $name
-                    ],
-                    [
-                        'name' => 'dokumen_sk',
-                        'contents' => 'skkphktn/'.$name
-                    ],
-                    [
-                        'name' => 'tahun_pengesahaan',
-                        'contents' => $this->input->post('tahunpengesahan')
-                    ],
-                    [
-                        'name' => 'luas_kphk',
-                        'contents' => $this->input->post('luaskphk')
-                    ],
-                    [
-                        'name' => 'kode_provinsi',
-                        'contents' => $value
-                    ],
-                    [
-                        'name' => 'kabupaten_kota_kphk',
-                        'contents' => $this->input->post('kabupaten_kota_kphk')
-                    ],
-                    [
-                        'name' => 'judul_sk',
-                        'contents' => $this->input->post('judulsk')
-                    ],
-                    [
-                        'name' => 'nomor_sk',
-                        'contents' => $this->input->post('nomorsk')
-                    ],
-                    [
-                        'name' => 'tanggal_sk',
-                        'contents' => $this->input->post('tanggalsk')
-                    ],
-                ]
-            ]);
+       // $datatemp = array();
+        $hasilkabupaten = explode(',',$kabupaten);
+        //print_r($hasilkabupaten);
+        for($i=0; $i < count($hasil);$i++){
+            //echo $hasil[$i];
+            for ($j=0; $i < count($hasilkabupaten);$j++) {
+               
+                $client     = new GuzzleHttp\Client();
+                $name = $_FILES['dokumensk']['name'];
+                $result = $client->post(constant('API_URL').'/kphk_tn',[
+                    'multipart'=>[
+                        [
+                            'name' => 'dokumen_sk',
+                            'contents' => fopen($_FILES['dokumensk']['tmp_name'], 'r'),
+                            'filename' => $name
+                        ],
+                        [
+                            'name' => 'dokumen_sk',
+                            'contents' => 'skkphktn/'.$name
+                        ],
+                        [
+                            'name' => 'tahun_pengesahaan',
+                            'contents' => $this->input->post('tahunpengesahan')
+                        ],
+                        [
+                            'name' => 'luas_kphk',
+                            'contents' => $this->input->post('luaskphk')
+                        ],
+                        [
+                            'name' => 'kode_provinsi',
+                            'contents' => $hasil[$i]
+                        ],
+                        [
+                            'name' => 'kode_kabupaten',
+                            'contents' => $hasilkabupaten[$j]
+                        ],
+                        [
+                            'name' => 'judul_sk',
+                            'contents' => $this->input->post('judulsk')
+                        ],
+                        [
+                            'name' => 'nomor_sk',
+                            'contents' => $this->input->post('nomorsk')
+                        ],
+                        [
+                            'name' => 'tanggal_sk',
+                            'contents' => $this->input->post('tanggalsk')
+                        ],
+                    ]
+                ]);
+            }
         }
       
     }
