@@ -9,6 +9,7 @@
   <link rel="stylesheet" href="<?php echo base_url('vendors/css/vendor.bundle.base.css')?>">
   <link rel="stylesheet" href="<?php echo base_url('css/style.css')?>">
   <link rel="stylesheet" href="<?php echo base_url('vendors/css/vendor.bundle.addons.css')?>">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet" />
   <!-- endinject -->
   <!-- plugin css for this page -->
   <!-- End plugin css for this page -->

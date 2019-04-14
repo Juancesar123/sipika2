@@ -93,6 +93,7 @@ $route['showDataSketsaSejarah/(:any)']='SketsasejarahController/show/$1';
 //Route untuk master provinsi
 $route['master-provinsi'] ='MasterProvinsiController';
 $route['getDataMasterProvinsi'] ='MasterProvinsiController/get';
+$route['getDataKabupaten'] ='MasterProvinsiController/getKabupaten';
 $route['savedDataMasterProvinsi'] ='MasterProvinsiController/store';
 $route['updateDataMasterProvinsi'] ='MasterProvinsiController/update';
 $route['showDataMasterProvinsi/(:any)'] ='MasterProvinsiController/show/$1';
