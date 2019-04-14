@@ -113,11 +113,15 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Provinsi</label>
-                                                        <input class="form-control" type="text" id="provinsiedit">
+                                                        <select class="form-control" style="width:100%" name="states[]" multiple="multiple" id="provinsiedit">
+                                                           
+                                                        </select>
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Kabupaten/Kota KPHK</label>
-                                                        <input class="form-control" type="text" id="kabupatenkotaedit">
+                                                        <select class="form-control" style="width:100%" name="states[]" multiple="multiple" id="kabupatenkotaedit">
+                                                           
+                                                        </select>
                                                     </div>
                                                 </div>
                                                 <div class="col-6">
@@ -146,7 +150,7 @@
                                         <thead>
                                             <th>Tahun Pengesahan</th>
                                             <th>Luas KPHK</th>
-                                            <th>Provinsi</th>
+                                            <th>Provinsi Atau Kabupaten</th>
                                             <th>Action</th>
                                         </thead>
                                     </table>
@@ -182,13 +186,16 @@
                 type:'GET',
                 success:function(data){
                     var hasil = JSON.parse(data);
+                    console.log(hasil.master_provinsi.kode);
                     $( '#tahunpengesahanedit' ).val(hasil.tahun_pengesahaan);
                     $( '#luaskphkedit' ).val(hasil.luas_kphk);
-                    $( '#provinsiedit' ).val(hasil.provinsi);
+                    $( '#provinsiedit' ).val(hasil.master_provinsi.kode);
+                    $('#provinsiedit').select2().trigger('change');
                     $( '#judulskedit' ).val(hasil.judul_sk);
                     $( '#nomorskedit' ).val(hasil.nomor_sk);
                     $( '#tanggalskedit' ).val(hasil.tanggal_sk);
-                    $( '#kabupatenkotaedit' ).val(hasil.kabupaten_kota_kphk);
+                    $( '#kabupatenkotaedit' ).val(hasil.master_provinsi.kode);
+                    $('#kabupatenkotaedit').select2().trigger('change');
                     $( '#dokumenskhide' ).val(hasil.dokumen_sk);
                     $( '#idkphkedit' ).val(hasil.id);
                 }
@@ -225,6 +232,7 @@
                     data.forEach(element => {
                          html = "<option value="+element.kode+">"+element.nama+"</option>";
                          $("#provinsi").append(html);
+                         $("#provinsiedit").append(html);
                     });
                 }
             })
@@ -237,6 +245,7 @@
                     data.forEach(element => {
                          html = "<option value="+element.kode+">"+element.nama+"</option>";
                          $("#kabupatenkota").append(html);
+                         $("#kabupatenkotaedit").append(html);
                     });
                 }
             })
@@ -246,6 +255,12 @@
             $('#kabupatenkota').select2({  
                 theme: "bootstrap"
             });
+            $('#provinsiedit').select2({  
+                theme: "bootstrap"
+            });
+            $('#kabupatenkotaedit').select2({  
+                theme: "bootstrap"
+            });
             $('#UpdateData').click(function(){
                 var file = $('#dokumenskedit')[0].files[0];
                 if(file == undefined){
@@ -253,8 +268,8 @@
                     data = new FormData();
                     data.append( 'tahunpengesahan', $( '#tahunpengesahan' ).val());
                     data.append( 'luaskphk', $( '#luaskphk' ).val());
-                    data.append( 'provinsi', $( '#provinsi' ).val());
-                    data.append( 'kabupaten_kota_kphk', $( '#kabupatenkota' ).val());
+                    data.append( 'provinsi', $( '#provinsiedit' ).val());
+                    data.append( 'kabupaten_kotaedit', $( '#kabupatenkotaedit' ).val());
                     data.append( 'judulsk', $( '#judulsk' ).val());
                     data.append( 'nomorsk', $( '#nomorsk' ).val());
                     data.append( 'tanggalsk', $( '#tanggalsk' ).val());

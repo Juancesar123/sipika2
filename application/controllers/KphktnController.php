@@ -28,54 +28,87 @@ class KphktnController extends CI_Controller {
        // $datatemp = array();
         $hasilkabupaten = explode(',',$kabupaten);
         //print_r($hasilkabupaten);
+        for($i=0; $i < count ($hasilkabupaten); $i++){
+            $client     = new GuzzleHttp\Client();
+            $name = $_FILES['dokumensk']['name'];
+            $result = $client->post(constant('API_URL').'/kphk_tn',[
+                'multipart'=>[
+                    [
+                        'name' => 'dokumen_sk',
+                        'contents' => fopen($_FILES['dokumensk']['tmp_name'], 'r'),
+                        'filename' => $name
+                    ],
+                    [
+                        'name' => 'dokumen_sk',
+                        'contents' => 'skkphktn/'.$name
+                    ],
+                    [
+                        'name' => 'tahun_pengesahaan',
+                        'contents' => $this->input->post('tahunpengesahan')
+                    ],
+                    [
+                        'name' => 'luas_kphk',
+                        'contents' => $this->input->post('luaskphk')
+                    ],
+                    [
+                        'name' => 'kode',
+                        'contents' => $hasilkabupaten[$i]
+                    ],
+                    [
+                        'name' => 'judul_sk',
+                        'contents' => $this->input->post('judulsk')
+                    ],
+                    [
+                        'name' => 'nomor_sk',
+                        'contents' => $this->input->post('nomorsk')
+                    ],
+                    [
+                        'name' => 'tanggal_sk',
+                        'contents' => $this->input->post('tanggalsk')
+                    ],
+                ]
+            ]);  
+        }
         for($i=0; $i < count($hasil);$i++){
-            //echo $hasil[$i];
-            for ($j=0; $i < count($hasilkabupaten);$j++) {
-               
-                $client     = new GuzzleHttp\Client();
-                $name = $_FILES['dokumensk']['name'];
-                $result = $client->post(constant('API_URL').'/kphk_tn',[
-                    'multipart'=>[
-                        [
-                            'name' => 'dokumen_sk',
-                            'contents' => fopen($_FILES['dokumensk']['tmp_name'], 'r'),
-                            'filename' => $name
-                        ],
-                        [
-                            'name' => 'dokumen_sk',
-                            'contents' => 'skkphktn/'.$name
-                        ],
-                        [
-                            'name' => 'tahun_pengesahaan',
-                            'contents' => $this->input->post('tahunpengesahan')
-                        ],
-                        [
-                            'name' => 'luas_kphk',
-                            'contents' => $this->input->post('luaskphk')
-                        ],
-                        [
-                            'name' => 'kode_provinsi',
-                            'contents' => $hasil[$i]
-                        ],
-                        [
-                            'name' => 'kode_kabupaten',
-                            'contents' => $hasilkabupaten[$j]
-                        ],
-                        [
-                            'name' => 'judul_sk',
-                            'contents' => $this->input->post('judulsk')
-                        ],
-                        [
-                            'name' => 'nomor_sk',
-                            'contents' => $this->input->post('nomorsk')
-                        ],
-                        [
-                            'name' => 'tanggal_sk',
-                            'contents' => $this->input->post('tanggalsk')
-                        ],
-                    ]
-                ]);
-            }
+            $client     = new GuzzleHttp\Client();
+            $name = $_FILES['dokumensk']['name'];
+            $result = $client->post(constant('API_URL').'/kphk_tn',[
+                'multipart'=>[
+                    [
+                        'name' => 'dokumen_sk',
+                        'contents' => fopen($_FILES['dokumensk']['tmp_name'], 'r'),
+                        'filename' => $name
+                    ],
+                    [
+                        'name' => 'dokumen_sk',
+                        'contents' => 'skkphktn/'.$name
+                    ],
+                    [
+                        'name' => 'tahun_pengesahaan',
+                        'contents' => $this->input->post('tahunpengesahan')
+                    ],
+                    [
+                        'name' => 'luas_kphk',
+                        'contents' => $this->input->post('luaskphk')
+                    ],
+                    [
+                        'name' => 'kode',
+                        'contents' => $hasil[$i]
+                    ],
+                    [
+                        'name' => 'judul_sk',
+                        'contents' => $this->input->post('judulsk')
+                    ],
+                    [
+                        'name' => 'nomor_sk',
+                        'contents' => $this->input->post('nomorsk')
+                    ],
+                    [
+                        'name' => 'tanggal_sk',
+                        'contents' => $this->input->post('tanggalsk')
+                    ],
+                ]
+            ]);
         }
       
     }
@@ -99,91 +132,163 @@ class KphktnController extends CI_Controller {
         $client     = new GuzzleHttp\Client();
         $status = $this->input->post('status');
         if($status == 'filenotfound'){
-            $id = $this->input->post('idkphk');
-            var_dump($id);
-            $result = $client->put(constant('API_URL').'/kphk_tn/'.$id,[
-                'multipart'=>[
-                    [
-                        'name' => 'dokumen_sk',
-                        'contents' => $this->input->post('dokumensk')
-                    ],
-                    [
-                        'name' => 'tahun_pengesahaan',
-                        'contents' => $this->input->post('tahunpengesahan')
-                    ],
-                    [
-                        'name' => 'luas_kphk',
-                        'contents' => $this->input->post('luaskphk')
-                    ],
-                    [
-                        'name' => 'provinsi',
-                        'contents' => $this->input->post('provinsi')
-                    ],
-                    [
-                        'name' => 'kabupaten_kota_kphk',
-                        'contents' => $this->input->post('kabupaten_kota_kphk')
-                    ],
-                    [
-                        'name' => 'judul_sk',
-                        'contents' => $this->input->post('judulsk')
-                    ],
-                    [
-                        'name' => 'nomor_sk',
-                        'contents' => $this->input->post('nomorsk')
-                    ],
-                    [
-                        'name' => 'tanggal_sk',
-                        'contents' => $this->input->post('tanggalsk')
-                    ],
-                ]
-            ]);
+            if(empty($this->input->post('kabupaten_kotaedit'))){
+                $id = $this->input->post('idkphk');
+                var_dump($id);
+                $result = $client->put(constant('API_URL').'/kphk_tn/'.$id,[
+                    'multipart'=>[
+                        [
+                            'name' => 'dokumen_sk',
+                            'contents' => $this->input->post('dokumensk')
+                        ],
+                        [
+                            'name' => 'tahun_pengesahaan',
+                            'contents' => $this->input->post('tahunpengesahan')
+                        ],
+                        [
+                            'name' => 'luas_kphk',
+                            'contents' => $this->input->post('luaskphk')
+                        ],
+                        [
+                            'name' => 'kode',
+                            'contents' => $this->input->post('provinsiedit')
+                        ],
+                        [
+                            'name' => 'judul_sk',
+                            'contents' => $this->input->post('judulsk')
+                        ],
+                        [
+                            'name' => 'nomor_sk',
+                            'contents' => $this->input->post('nomorsk')
+                        ],
+                        [
+                            'name' => 'tanggal_sk',
+                            'contents' => $this->input->post('tanggalsk')
+                        ],
+                    ]
+                ]);
+            }else{
+                $id = $this->input->post('idkphk');
+                var_dump($id);
+                $result = $client->put(constant('API_URL').'/kphk_tn/'.$id,[
+                    'multipart'=>[
+                        [
+                            'name' => 'dokumen_sk',
+                            'contents' => $this->input->post('dokumensk')
+                        ],
+                        [
+                            'name' => 'tahun_pengesahaan',
+                            'contents' => $this->input->post('tahunpengesahan')
+                        ],
+                        [
+                            'name' => 'luas_kphk',
+                            'contents' => $this->input->post('luaskphk')
+                        ],
+                        [
+                            'name' => 'kode',
+                            'contents' => $this->input->post('kabupaten_kotaedit')
+                        ],
+                        [
+                            'name' => 'judul_sk',
+                            'contents' => $this->input->post('judulsk')
+                        ],
+                        [
+                            'name' => 'nomor_sk',
+                            'contents' => $this->input->post('nomorsk')
+                        ],
+                        [
+                            'name' => 'tanggal_sk',
+                            'contents' => $this->input->post('tanggalsk')
+                        ],
+                    ]
+                ]);
+            }
         }else{
-            
-        $id = $this->input->post('idkphk');
-       
-            $name = $_FILES['dokumensk']['name'];
-            var_dump($id);
-            $result = $client->put(constant('API_URL').'/kphk_tn/'.$id,[
-                'multipart'=>[
-                    [
-                        'name' => 'dokumen_sk',
-                        'contents' => fopen($_FILES['dokumensk']['tmp_name'], 'r'),
-                        'filename' => $name
-                    ],
-                    [
-                        'name' => 'dokumen_sk',
-                        'contents' => 'skkphktn/'.$name
-                    ],
-                    [
-                        'name' => 'tahun_pengesahaan',
-                        'contents' => $this->input->post('tahunpengesahan')
-                    ],
-                    [
-                        'name' => 'luas_kphk',
-                        'contents' => $this->input->post('luaskphk')
-                    ],
-                    [
-                        'name' => 'provinsi',
-                        'contents' => $this->input->post('provinsi')
-                    ],
-                    [
-                        'name' => 'kabupaten_kota_kphk',
-                        'contents' => $this->input->post('kabupaten_kota_kphk')
-                    ],
-                    [
-                        'name' => 'judul_sk',
-                        'contents' => $this->input->post('judulsk')
-                    ],
-                    [
-                        'name' => 'nomor_sk',
-                        'contents' => $this->input->post('nomorsk')
-                    ],
-                    [
-                        'name' => 'tanggal_sk',
-                        'contents' => $this->input->post('tanggalsk')
-                    ],
-                ]
-            ]);
+            if(empty($this->input->post('kabupaten_kotaedit'))){
+                $id = $this->input->post('idkphk');
+                $name = $_FILES['dokumensk']['name'];
+                $result = $client->put(constant('API_URL').'/kphk_tn/'.$id,[
+                    'multipart'=>[
+                        [
+                            'name' => 'dokumen_sk',
+                            'contents' => fopen($_FILES['dokumensk']['tmp_name'], 'r'),
+                            'filename' => $name
+                        ],
+                        [
+                            'name' => 'dokumen_sk',
+                            'contents' => 'skkphktn/'.$name
+                        ],
+                        [
+                            'name' => 'tahun_pengesahaan',
+                            'contents' => $this->input->post('tahunpengesahan')
+                        ],
+                        [
+                            'name' => 'luas_kphk',
+                            'contents' => $this->input->post('luaskphk')
+                        ],
+                        [
+                            'name' => 'kode',
+                            'contents' => $this->input->post('provinsiedit')
+                        ],
+                        [
+                            'name' => 'judul_sk',
+                            'contents' => $this->input->post('judulsk')
+                        ],
+                        [
+                            'name' => 'nomor_sk',
+                            'contents' => $this->input->post('nomorsk')
+                        ],
+                        [
+                            'name' => 'tanggal_sk',
+                            'contents' => $this->input->post('tanggalsk')
+                        ],
+                    ]
+                ]);
+            }else{
+                $id = $this->input->post('idkphk');
+                $name = $_FILES['dokumensk']['name'];
+                $result = $client->put(constant('API_URL').'/kphk_tn/'.$id,[
+                    'multipart'=>[
+                        [
+                            'name' => 'dokumen_sk',
+                            'contents' => fopen($_FILES['dokumensk']['tmp_name'], 'r'),
+                            'filename' => $name
+                        ],
+                        [
+                            'name' => 'dokumen_sk',
+                            'contents' => 'skkphktn/'.$name
+                        ],
+                        [
+                            'name' => 'tahun_pengesahaan',
+                            'contents' => $this->input->post('tahunpengesahan')
+                        ],
+                        [
+                            'name' => 'luas_kphk',
+                            'contents' => $this->input->post('luaskphk')
+                        ],
+                        [
+                            'name' => 'provinsi',
+                            'contents' => $this->input->post('provinsi')
+                        ],
+                        [
+                            'name' => 'kode',
+                            'contents' => $this->input->post('kabupaten_kotaedit')
+                        ],
+                        [
+                            'name' => 'judul_sk',
+                            'contents' => $this->input->post('judulsk')
+                        ],
+                        [
+                            'name' => 'nomor_sk',
+                            'contents' => $this->input->post('nomorsk')
+                        ],
+                        [
+                            'name' => 'tanggal_sk',
+                            'contents' => $this->input->post('tanggalsk')
+                        ],
+                    ]
+                ]);
+            }
         }
     }
 }
