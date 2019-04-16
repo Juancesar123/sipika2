@@ -404,7 +404,7 @@
             $('#SaveData').click(function(){
                 var data;
                 data = new FormData();
-                data.append( 'dokumensk', $( '#dokumensk' )[0].files[0] );
+                data.append( 'dokumensk', $( '#dokumensk' )[0].files[0]);
                 data.append( 'datasurat', $( '#datasurat' ).val());
                 data.append( 'namakawasan', $( '#namakawasan' ).val());
                 data.append( 'luas', $( '#luas' ).val());
