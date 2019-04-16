@@ -110,7 +110,7 @@ $route['deleteDataPeraturan/(:any)'] ='PeraturanController/destroy/$1';
 //Route untuk Perkembangan Zonasi TN
 $route['perkembangan-zonasi-tn'] ='PerkembanganZonasiTnController';
 $route['getDataPerkembanganzonasiTn'] ='PerkembanganZonasiTnController/get';
-$route['savedDataPeraturan'] ='PeraturanController/store';
+$route['savedDataperkembanganzonasitn'] ='PerkembanganZonasiTnController/store';
 $route['updateDataPeraturan'] ='PeraturanController/update';
 $route['showDataPeraturan/(:any)'] ='PeraturanController/show/$1';
 $route['deletePerkembanganZonasiTn/(:any)'] ='PerkembanganZonasiTnController/destroy/$1';

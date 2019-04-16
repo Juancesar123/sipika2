@@ -405,15 +405,29 @@
                 var data;
                 data = new FormData();
                 data.append( 'dokumensk', $( '#dokumensk' )[0].files[0] );
-                data.append( 'tahunpengesahan', $( '#tahunpengesahan' ).val());
-                data.append( 'luaskphk', $( '#luaskphk' ).val());
-                data.append( 'provinsi', $( '#provinsi' ).val());
-                data.append( 'kabupaten_kota_kphk', $( '#kabupatenkota' ).val());
+                data.append( 'datasurat', $( '#datasurat' ).val());
+                data.append( 'namakawasan', $( '#namakawasan' ).val());
+                data.append( 'luas', $( '#luas' ).val());
+                data.append( 'statuszonasi', $( '#statuszonasi' ).val());
                 data.append( 'judulsk', $( '#judulsk' ).val());
                 data.append( 'nomorsk', $( '#nomorsk' ).val());
                 data.append( 'tanggalsk', $( '#tanggalsk' ).val());
+                data.append( 'penataankawasan', $( '#penataankawasan' )[0].files[0] );
+                data.append( 'peta', $( '#peta' )[0].files[0] );
+                data.append( 'petashp', $( '#petashp' )[0].files[0] );
+                data.append( 'deskripsi', $( '#deskripsi' ).val());
+                data.append( 'dataluaszona', $( '#dataluaszona' ).val());
+                data.append( 'zonainti', $( '#zonainti' ).val());
+                data.append( 'zonapemanfaatan', $( '#zonapemanfaatan' ).val());
+                data.append( 'zonatradisional', $( '#zonatradisional' ).val());
+                data.append( 'zonareligi', $( '#zonareligi' ).val());
+                data.append( 'zonarimba', $( '#zonarimba' ).val());
+                data.append( 'zonaperlindunganbahari', $( '#zonaperlindunganbahari' ).val());
+                data.append( 'zonarehabilitasi', $( '#zonarehabilitasi' ).val());
+                data.append( 'zonakhusus', $( '#zonakhusus' ).val());
+                data.append( 'zonalainnya', $( '#zonalainnya' ).val())
                 $.ajax({
-                    url:'/savedDatakphktn',
+                    url:'/savedDataperkembanganzonasitn',
                     method:'POST',
                     data:data,
                     contentType: false,

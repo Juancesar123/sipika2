@@ -37,34 +37,92 @@ class PerkembanganZonasiTnController extends CI_Controller {
                     'contents' => 'skkphktn/'.$name
                 ],
                 [
-                    'name' => 'tanggal_pengesahan',
-                    'contents' => $this->input->post('tanggalpengesahan')
-                ],
-                [
-                    'name' => 'nama_kphk',
-                    'contents' => $this->input->post('namakhpk')
+                    'name' => 'datasurat',
+                    'contents' => $this->input->post('datasurat')
                 ],
                 [
                     'name' => 'nama_kawasan',
                     'contents' => $this->input->post('namakawasan')
                 ],
+                [
+                    'name' => 'status_zonasi',
+                    'contents' => $this->input->post('statuszonasi')
+                ],
                 
-                
                 [
-                    'name' => 'tahun_pengesahaan',
-                    'contents' => $this->input->post('tahunpengesahan')
+                    'name' => 'penataan_kawasan',
+                    'contents' => fopen($_FILES['penataankawasan']['tmp_name'], 'r'),
+                    'filename' => $name
                 ],
                 [
-                    'name' => 'luas_kphk',
-                    'contents' => $this->input->post('luaskphk')
+                    'name' => 'penataan_kawasan',
+                    'contents' => 'dokumenpenataankawasan/'.$name
                 ],
                 [
-                    'name' => 'provinsi',
-                    'contents' => $this->input->post('provinsi')
+                    'name' => 'peta',
+                    'contents' => fopen($_FILES['peta']['tmp_name'], 'r'),
+                    'filename' => $name
                 ],
                 [
-                    'name' => 'kabupaten_kota_kphk',
-                    'contents' => $this->input->post('kabupaten_kota_kphk')
+                    'name' => 'peta',
+                    'contents' => 'dokumenpeta/'.$name
+                ],
+                [
+                    'name' => 'peta_shp',
+                    'contents' => 'dokumenpetashp/'.$name
+                ],
+                [
+                    'name' => 'peta_shp',
+                    'contents' => fopen($_FILES['petashp']['tmp_name'], 'r'),
+                    'filename' => $name
+                ],
+                [
+                    'name' => 'deskripsi',
+                    'contents' => $this->input->post('deskripsi')
+                ],
+                [
+                    'name' => 'data_luas_zona',
+                    'contents' => $this->input->post('dataluaszona')
+                ],
+                [
+                    'name' => 'zona_inti',
+                    'contents' => $this->input->post('zonainti')
+                ],
+                [
+                    'name' => 'zona_pemanfaatan',
+                    'contents' => $this->input->post('zonapemanfaatan')
+                ],
+                [
+                    'name' => 'zona_tradisional',
+                    'contents' => $this->input->post('zonatradisional')
+                ],
+                [
+                    'name' => 'zona_inti',
+                    'contents' => $this->input->post('zonainti')
+                ],
+                [
+                    'name' => 'zona_religi',
+                    'contents' => $this->input->post('zonareligi')
+                ],
+                [
+                    'name' => 'zona_rimba',
+                    'contents' => $this->input->post('zonarimba')
+                ],
+                [
+                    'name' => 'zona_perlindungan_bahari',
+                    'contents' => $this->input->post('zonaperlindunganbahari')
+                ],
+                [
+                    'name' => 'zona_rehabilitasi',
+                    'contents' => $this->input->post('zonarehabilitasi')
+                ],
+                [
+                    'name' => 'zona_khusus',
+                    'contents' => $this->input->post('zonakhusus')
+                ],
+                [
+                    'name' => 'zona_lainnya',
+                    'contents' => $this->input->post('zonalainnya')
                 ],
                 [
                     'name' => 'judul_sk',
