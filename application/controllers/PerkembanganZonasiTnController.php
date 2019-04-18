@@ -24,7 +24,7 @@ class PerkembanganZonasiTnController extends CI_Controller {
     public function store(){
         $client     = new GuzzleHttp\Client();
         $name = $_FILES['dokumensk']['name'];
-        var_dump( $this->input->post('tahunpengesahan'));
+        echo $this->input->post('luas');
         $result = $client->post(constant('API_URL').'/perkembanganzonasi-tn',[
             'multipart'=>[
                 [
@@ -86,7 +86,7 @@ class PerkembanganZonasiTnController extends CI_Controller {
                 ],
                 [
                     'name' => 'zona_inti',
-                    'contents' => $this->input->post('zonainti')
+                    'contents' => '2'
                 ],
                 [
                     'name' => 'zona_pemanfaatan',
