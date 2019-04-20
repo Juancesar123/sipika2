@@ -115,5 +115,13 @@ $route['updateDataPeraturan'] ='PeraturanController/update';
 $route['showDataPeraturan/(:any)'] ='PeraturanController/show/$1';
 $route['deletePerkembanganZonasiTn/(:any)'] ='PerkembanganZonasiTnController/destroy/$1';
 //endroute
+//Route untuk Roles
+$route['roles'] ='RolesController';
+$route['getDataRoles'] ='RolesController/get';
+$route['savedDataRoles'] ='RolesController/store';
+$route['updateDataRoles'] ='RolesController/update';
+$route['showDataRoles/(:any)'] ='RolesController/show/$1';
+$route['destroyDataRoles/(:any)'] ='RolesController/destroy/$1';
+//endroute
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

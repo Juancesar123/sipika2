@@ -42,10 +42,17 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php if($this->uri->segment(1)=="perkembangan-kawasan"){echo "active";}?>" href="<?=base_url('perkembangan-kawasan')?>">
+            <a class="nav-link" data-toggle="collapse" href="#usermanagement" aria-expanded="false" aria-controls="usermanagement">
               <i class="fa fa-users menu-icon"></i>
               <span class="menu-title">User Management</span>
+              <i class="menu-arrow"></i>
             </a>
+            <div class="collapse" id="usermanagement">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"><a class="nav-link <?php if($this->uri->segment(1)=="perkembangan-zonasi-tn"){echo "active";}?>" href="<?=base_url('roles')?>">Roles</a></li>
+                <li class="nav-item"><a class="nav-link <?php if($this->uri->segment(1)=="kphk-nontn"){echo "active";}?>" href="<?=base_url('users')?>">Users</a></li>
+              </ul>
+            </div>
           </li>
           <li class="nav-item">
             <a class="nav-link <?php if($this->uri->segment(1)=="perkembangan-kawasan"){echo "active";}?>" href="<?=base_url('perkembangan-kawasan')?>">
@@ -68,7 +75,6 @@
                 <li class="nav-item"><a class="nav-link <?php if($this->uri->segment(1)=="usulan-tahura"){echo "active";}?>" href="<?=base_url('usulan-tahura')?>">Progres PIAPS</a></li>
               </ul>
             </div>
-          </li>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#penataan" aria-expanded="false" aria-controls="dasboards">
