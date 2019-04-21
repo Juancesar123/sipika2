@@ -123,5 +123,13 @@ $route['updateDataRoles'] ='RolesController/update';
 $route['showDataRoles/(:any)'] ='RolesController/show/$1';
 $route['destroyDataRoles/(:any)'] ='RolesController/destroy/$1';
 //endroute
+//Route untuk Users
+$route['users'] ='UsersController';
+$route['getDataUsers'] ='UsersController/get';
+$route['savedDataUsers'] ='UsersController/store';
+$route['updateDataUsers'] ='UsersController/update';
+$route['showDataUsers/(:any)'] ='UsersController/show/$1';
+$route['destroyDataUsers/(:any)'] ='UsersController/destroy/$1';
+//endroute
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
