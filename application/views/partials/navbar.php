@@ -122,7 +122,7 @@
                 <i class="fa fa-cog text-primary"></i>
                 Settings
               </a>
-              <a class="dropdown-item">
+              <a class="dropdown-item" href="logout">
                 <i class="fa fa-sign-out-alt text-primary"></i>
                 Logout
               </a>
