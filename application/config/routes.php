@@ -131,5 +131,11 @@ $route['updateDataUsers'] ='UsersController/update';
 $route['showDataUsers/(:any)'] ='UsersController/show/$1';
 $route['destroyDataUsers/(:any)'] ='UsersController/destroy/$1';
 //endroute
+//route untuk login
+$route['login'] = 'AuthtenticationController/login';
+$route['process_login'] = 'AuthtenticationController/processlogin';
+$route['register'] = 'AuthtenticationController/register';
+$route['logout'] = 'AuthtenticationController/logout';
+//endroute
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
