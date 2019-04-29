@@ -2,7 +2,15 @@
 defined('BASEPATH') OR exit('No direct script access allowed');
 
 class Welcome extends CI_Controller {
-
+	public function __construct()
+    {
+			parent::__construct();
+			$userdata = $this->session->userdata('userdata');
+			if(is_null($userdata)){
+				redirect('/login','refresh');
+			}
+          
+    }
 	/**
 	 * Index Page for this controller.
 	 *
@@ -20,6 +28,7 @@ class Welcome extends CI_Controller {
 	 */
 	public function index()
 	{
-		$this->load->view('homepage');
+		$data['userdata'] = $this->session->userdata('userdata');
+		$this->load->view('homepage',$data);
 	}
 }
