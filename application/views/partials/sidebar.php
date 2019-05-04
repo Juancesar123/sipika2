@@ -77,18 +77,16 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#penataan" aria-expanded="false" aria-controls="dasboards">
+            <a class="nav-link" data-toggle="collapse" href="#pks" aria-expanded="false" aria-controls="dasbopksards">
               <i class="fa fa-exclamation-triangle  menu-icon"></i>
               <span class="menu-title">Subdit PKS</span>
               <i class="menu-arrow"></i>
             </a>
-            <div class="collapse" id="penataan">
+            <div class="collapse" id="pks">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link <?php if($this->uri->segment(1)=="zonasi-tn"){echo "active";}?>" href="<?=base_url('zonasi-tn')?>">Perkembangan Zonasi TN</a></li>
-                <li class="nav-item"><a class="nav-link <?php if($this->uri->segment(1)=="kphk-nontn"){echo "active";}?>" href="<?=base_url('kphk-nontn')?>">Perkembangan Blok TN</a></li>
-                <li class="nav-item"><a class="nav-link <?php if($this->uri->segment(1)=="usulan-tahura"){echo "active";}?>" href="<?=base_url('usulan-tahura')?>">Progres Blok</a></li>
-                <li class="nav-item"><a class="nav-link <?php if($this->uri->segment(1)=="usulan-tahura"){echo "active";}?>" href="<?=base_url('usulan-tahura')?>">Progres Zonasi</a></li>
-                <li class="nav-item"><a class="nav-link <?php if($this->uri->segment(1)=="usulan-tahura"){echo "active";}?>" href="<?=base_url('usulan-tahura')?>">Progres PIAPS</a></li>
+                <li class="nav-item"><a class="nav-link <?php if($this->uri->segment(1)=="zonasi-tn"){echo "active";}?>" href="<?=base_url('zonasi-tn')?>">Penguatan Fungsi KK</a></li>
+                <li class="nav-item"><a class="nav-link <?php if($this->uri->segment(1)=="kphk-nontn"){echo "active";}?>" href="<?=base_url('kphk-nontn')?>">Pembangunan Strategis</a></li>
+                <li class="nav-item"><a class="nav-link <?php if($this->uri->segment(1)=="usulan-tahura"){echo "active";}?>" href="<?=base_url('usulan-tahura')?>">Kemitraan Konservarsi</a></li>
               </ul>
             </div>
           </li>

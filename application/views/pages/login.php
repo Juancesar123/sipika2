@@ -7,7 +7,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Appular Admin</title>
+  <title>Sipika Admin</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="<?php echo base_url('vendors/iconfonts/font-awesome/css/all.min.css')?>">
   <link rel="stylesheet" href="<?php echo base_url('vendors/css/vendor.bundle.base.css')?>">
@@ -29,7 +29,8 @@
           <div class="col-lg-6 d-flex align-items-center justify-content-center">
             <div class="auth-form-transparent text-left p-3">
               <div class="brand-logo">
-                <img src="../../../../images/logo.svg" alt="logo">
+              <h1> SIPIKA</h1>
+                <!-- <img src="../../../../images/logo.svg" alt="logo"> -->
               </div>
               <h4>Welcome back!</h4>
               <h6 class="font-weight-light">Happy to see you again!</h6>
