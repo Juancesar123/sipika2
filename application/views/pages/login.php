@@ -43,7 +43,7 @@
                         <i class="fa fa-user text-primary"></i>
                       </span>
                     </div>
-                    <input type="text" class="form-control form-control-lg border-left-0" id="exampleInputEmail" placeholder="Username">
+                    <input type="text" class="form-control form-control-lg border-left-0" id="exampleInputEmail" placeholder="Username" name="username">
                   </div>
                 </div>
                 <div class="form-group">
@@ -54,7 +54,7 @@
                         <i class="fas fa-lock text-primary"></i>
                       </span>
                     </div>
-                    <input type="password" class="form-control form-control-lg border-left-0" id="exampleInputPassword" placeholder="Password">                        
+                    <input type="password" class="form-control form-control-lg border-left-0" id="exampleInputPassword" placeholder="Password" name="password">                        
                   </div>
                 </div>
                 <div class="my-2 d-flex justify-content-between align-items-center">

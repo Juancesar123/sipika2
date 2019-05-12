@@ -4,7 +4,7 @@
             <div class="profile-wrapper">
               <img src="../../images/faces/face28.jpg" alt="profile">
               <div class="profile-details">
-                <p class="name"><?php echo $userdata['name']?></p>
+                <p class="name"><?php echo $userdata['fullname']?></p>
                 <small class="designation">Business Analyst</small>
               </div>
             </div>
