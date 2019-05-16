@@ -137,5 +137,8 @@ $route['process_login'] = 'AuthtenticationController/processlogin';
 $route['register'] = 'AuthtenticationController/register';
 $route['logout'] = 'AuthtenticationController/logout';
 //endroute
+//route untuk login
+$route['managekawasan/(:any)'] = 'ManagekawasankonservasiController/show/$1';
+//endroute
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

@@ -5,7 +5,7 @@
               <img src="../../images/faces/face28.jpg" alt="profile">
               <div class="profile-details">
                 <p class="name"><?php echo $userdata['fullname']?></p>
-                <small class="designation">Business Analyst</small>
+                <small class="designation"> <?php echo $userdata['role']['roles']; ?></small>
               </div>
             </div>
           </li>

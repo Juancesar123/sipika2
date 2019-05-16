@@ -30,7 +30,7 @@ class RolesController extends CI_Controller {
         $client     = new GuzzleHttp\Client();
         $result = $client->post(constant('API_URL').'/roles',[
             'form_params' => [
-                'roles' => $this->input->post('roles')
+                'roles' => strtoupper($this->input->post('roles'))
             ]
         ]);
     }

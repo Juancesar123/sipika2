@@ -16,11 +16,11 @@
                     <div class="d-flex align-items-baseline flex-wrap mt-3">
                         <h2 class="mr-4 mb-0">Perkembangan Kawasan</h2>
                         <div class="d-flex align-items-baseline mt-2 mt-sm-0">
-                        <i class="fas fa-home mr-1 text-muted"></i>
-                        <i class="fas fa-chevron-right fa-xs mr-1 text-muted"></i>
-                        <p class="mb-0 mr-1">Subdit Pemoalaan</p>
-                        <i class="fas fa-chevron-right fa-xs mr-1 text-muted"></i>
-                        <p class="mb-0">Perkembangan kawasan</p>
+                            <i class="fas fa-home mr-1 text-muted"></i>
+                            <i class="fas fa-chevron-right fa-xs mr-1 text-muted"></i>
+                            <p class="mb-0 mr-1">Subdit Pemoalaan</p>
+                            <i class="fas fa-chevron-right fa-xs mr-1 text-muted"></i>
+                            <p class="mb-0">Perkembangan kawasan</p>
                         </div>
                     </div>
                     </div>
@@ -316,7 +316,7 @@
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button>";
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button> <a href='managekawasan/"+data.id+"' class='btn btn-success'>Manage</a>";
                                 }
                             }
                         ]
