@@ -139,6 +139,7 @@ $route['logout'] = 'AuthtenticationController/logout';
 //endroute
 //route untuk login
 $route['managekawasan/(:any)'] = 'ManagekawasankonservasiController/show/$1';
+$route['updatedatakawasan'] = 'ManagekawasankonservasiController/update';
 //endroute
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
