@@ -221,8 +221,8 @@
                                                                 <input class="form-control" type="file" id="perkembangan_tata_batas" >
                                                             </div>
                                                             <div class="form-group">
-                                                                <label>Luas</label>
-                                                                <input class="form-control" type="text" id="luas" >
+                                                                <label>Luas(Ha)</label>
+                                                                <input class="form-control" type="number" id="luas" >
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>UPT</label>
@@ -310,8 +310,8 @@
                                                                 <input class="form-control" type="hidden" id="perkembangan_tata_batashidden" >
                                                             </div>
                                                             <div class="form-group">
-                                                                <label>Luas</label>
-                                                                <input class="form-control" type="text" id="luasedit" >
+                                                                <label>Luas(Ha)</label>
+                                                                <input class="form-control" type="number" id="luasedit" >
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>UPT</label>
