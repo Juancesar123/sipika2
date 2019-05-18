@@ -141,5 +141,12 @@ $route['logout'] = 'AuthtenticationController/logout';
 $route['managekawasan/(:any)'] = 'ManagekawasankonservasiController/show/$1';
 $route['updatedatakawasan'] = 'ManagekawasankonservasiController/update';
 //endroute
+//routeuntukpengukuhankawasan
+$route['getDataPengukuhanKawasan'] ='PengukuhanKawasanController/getData';
+$route['savedDataPengukuhanKawasan'] ='PengukuhanKawasanController/store';
+$route['updateDataPengukuhanKawasan'] ='PengukuhanKawasanController/update';
+$route['showDataPengukuhanKawasan/(:any)'] ='PengukuhanKawasanController/show/$1';
+$route['deleteDataPengukuhanKawasan/(:any)'] ='PengukuhanKawasanController/destroy/$1';
+//endroute
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
