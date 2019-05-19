@@ -48,7 +48,7 @@
                                         </div>
                                         <div class="list-group list-group-flush">
                                             <a data-toggle="tab" href="#pengukuhankawasan" class="list-group-item list-group-item-action bg-light">Perkembangan Pengukuhan kawasan</a>
-                                            <a href="#" class="list-group-item list-group-item-action bg-light">Evaluasi Fungsi Desk Study</a>
+                                            <a data-toggle="tab" href="#evaluasifungsideskstudy" class="list-group-item list-group-item-action bg-light">Evaluasi Fungsi Desk Study</a>
                                             <a href="#" class="list-group-item list-group-item-action bg-light">Evaluasi Fungsi EKF Lapangan</a>
                                             <a href="#" class="list-group-item list-group-item-action bg-light">Indikasi Tora Dalam KK</a>
                                             <a href="#" class="list-group-item list-group-item-action bg-light">Hutan Adat Dalam KK</a>
@@ -380,6 +380,123 @@
                                         </table>
                                     </div>
                                 </div>
+                                <div id="evaluasifungsideskstudy" class="card tab-pane fade">
+                                    <div class="card-header">
+                                        Evaluasi Fungsi Desk Study
+                                    </div>
+                                    <div class="card-body">
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal3">Tambah Data</button>
+                                        <div class="modal fade" id="myModal3">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Input Evaluasi Fungsi Desk Study</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+
+                                                <!-- Modal body -->
+                                                <div class="modal-body">
+                                                    <div class="form-group">
+                                                        <label>Rekomendasi</label>
+                                                        <select class="form-control" id="rekomendasi">
+                                                            <option value="EKF">EKF</option>
+                                                            <option value="PE">PE</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Tahun Pelaksanaan</label>
+                                                        <select class="form-control" id="tahunpelaksanaan">
+                                                            <option value="2019">2019</option>
+                                                            <option value="2018">2018</option>
+                                                            <option value="2017">2017</option>
+                                                            <option value="2016">2016</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>UPT</label>
+                                                        <select class="form-control" id="uptevaluasifungsideskstudy">
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Nama Kawasan</label>
+                                                        <input class="form-control" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Modal footer -->
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary" id="SaveDataevaluasifungsideskstudy">Simpan</button>
+                                                </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal fade" id="myModal4">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Ubah Evaluasi Fungsi Desk Study</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+
+                                                <!-- Modal body -->
+                                                <div class="modal-body">
+                                                    <div class="form-group">
+                                                        <label>Rekomendasi</label>
+                                                        <select class="form-control" id="rekomendasiedit">
+                                                            <option value="EKF">EKF</option>
+                                                            <option value="PE">PE</option>
+                                                        </select>
+                                                        <input type="hidden" id="idevaluasifungsideskstudy">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Tahun Pelaksanaan</label>
+                                                        <select class="form-control" id="tahunpelaksanaanedit">
+                                                            <option value="2019">2019</option>
+                                                            <option value="2018">2018</option>
+                                                            <option value="2017">2017</option>
+                                                            <option value="2016">2016</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>UPT</label>
+                                                        <select class="form-control" id="uptevaluasifungsideskstudyedit">
+                                                            <option value="1">1</option>
+                                                            <option value="2">2</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Nama Kawasan</label>
+                                                        <input class="form-control" id="namakawasanedit" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Modal footer -->
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary" id="UpdateDataEvaluasiDeskStudy">Simpan</button>
+                                                </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <table class="table" id="myTable2" style="width:100%">
+                                            <thead>
+                                                <th>Rekomendasi</th>
+                                                <th>Tahun Pelaksanaan</th>
+                                                <th>UPT</th>
+                                                <th>Action</th>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -405,6 +522,21 @@
                 }
             })
         }
+        function myfunc1(id){
+            $.ajax({
+                url:'/deleteEvaluasiFungsiDeskStudy/'+id,
+                type:'GET',
+                success:function(){
+                    Swal.fire(
+                                'Sukses!',
+                                'Data Sukses di hapus!',
+                                'success'
+                            )
+                            table1.ajax.reload();
+                }
+            })
+        }
+        
         function editfunc(id){
             $.ajax({
                 url:'/showDataPengukuhanKawasan/'+id,
@@ -426,6 +558,19 @@
                 }
             })
         }
+        function editfunc1(id){
+            $.ajax({
+                url:'/showDataEvaluasiFungsiDeskStudy/'+id,
+                type:'GET',
+                success:function(data){
+                    var hasil = JSON.parse(data);
+                    $( '#idevaluasifungsideskstudy' ).val(hasil.id);
+                    $( '#tanggalpelaksanaanedit' ).val(hasil.tanggal_pelaksanaan);
+                    $( '#uptevaluasifungsideskstudyedit' ).val(hasil.upt);
+                    $( '#rekomendasiedit' ).val(hasil.rekomendasi);
+                }
+            })
+        }
         var table =  $('#myTable1').DataTable({
                         deferRender: true,
                         ajax: {
@@ -443,6 +588,27 @@
                                 data: null,
                                 render: function ( data, type, row ) {
                                     return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button>";
+                                }
+                            }
+                        ]
+                    });
+            var table1 =  $('#myTable2').DataTable({
+                        deferRender: true,
+                        ajax: {
+                            url: "/getDataEvaluasiFungsiDeskStudy",
+                            type: "GET",
+                            dataSrc: function (d) {
+                                return d
+                            }
+                        },
+                        columns: [
+                            { data: 'rekomendasi' },
+                            { data: 'tahun_pelaksanaan' },
+                            { data: 'upt' },
+                            {
+                                data: null,
+                                render: function ( data, type, row ) {
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal4'onclick='editfunc1("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc1("+data.id+")'>Delete</button>";
                                 }
                             }
                         ]
@@ -576,6 +742,53 @@
                         }
                     })
                 }
+            })
+            $('#SaveDataevaluasifungsideskstudy').click(function(){
+                var data;
+                data = new FormData();
+                data.append('rekomendasi', $('#rekomendasi').val());
+                data.append('tahunpelaksanaan',$('#tahunpelaksanaan').val());
+                data.append('namakawasan', $('#namakawasan').val());
+                data.append('upt', $('#uptevaluasifungsideskstudy').val());
+                $.ajax({
+                    url:'/savedDataEvaluasiFungsiDeskStudy',
+                    method:'POST',
+                    data:data,
+                    contentType: false,
+                    processData:false,
+                    success:function(){
+                         Swal.fire(
+                                'Sukses!',
+                                'Data Sukses di simpan!',
+                                'success'
+                            )
+                            table1.ajax.reload();
+                    }
+                })
+            })
+            $('#UpdateDataEvaluasiDeskStudy').click(function(){
+                var data;
+                data = new FormData();
+                data.append('rekomendasi', $('#rekomendasiedit').val());
+                data.append('idevaluasifungsideskstudy', $('#idevaluasifungsideskstudy').val());
+                data.append('tahunpelaksanaan',$('#tahunpelaksanaanedit').val());
+                data.append('namakawasan', $('#namakawasanedit').val());
+                data.append('upt', $('#uptevaluasifungsideskstudyedit').val());
+                $.ajax({
+                    url:'/updateDataEvaluasiFungsiDeskStudy',
+                    method:'POST',
+                    data:data,
+                    contentType: false,
+                    processData:false,
+                    success:function(){
+                         Swal.fire(
+                                'Sukses!',
+                                'Data Sukses di simpan!',
+                                'success'
+                            )
+                            table1.ajax.reload();
+                    }
+                })
             })
         })
     </script>

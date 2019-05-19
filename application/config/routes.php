@@ -148,5 +148,12 @@ $route['updateDataPengukuhanKawasan'] ='PengukuhanKawasanController/update';
 $route['showDataPengukuhanKawasan/(:any)'] ='PengukuhanKawasanController/show/$1';
 $route['deleteDataPengukuhanKawasan/(:any)'] ='PengukuhanKawasanController/destroy/$1';
 //endroute
+//routeuntukevaluasifungsiDeskStudy
+$route['getDataEvaluasiFungsiDeskStudy'] ='EvaluasiFungsiDeskStudyController/getData';
+$route['savedDataEvaluasiFungsiDeskStudy'] ='EvaluasiFungsiDeskStudyController/store';
+$route['updateDataEvaluasiFungsiDeskStudy'] ='EvaluasiFungsiDeskStudyController/update';
+$route['showDataEvaluasiFungsiDeskStudy/(:any)'] ='EvaluasiFungsiDeskStudyController/show/$1';
+$route['deleteEvaluasiFungsiDeskStudy/(:any)'] ='EvaluasiFungsiDeskStudyController/destroy/$1';
+//endroute
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
