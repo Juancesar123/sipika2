@@ -50,7 +50,7 @@
                                             <a data-toggle="tab" href="#pengukuhankawasan" class="list-group-item list-group-item-action bg-light">Perkembangan Pengukuhan kawasan</a>
                                             <a data-toggle="tab" href="#evaluasifungsideskstudy" class="list-group-item list-group-item-action bg-light">Evaluasi Fungsi Desk Study</a>
                                             <a  data-toggle="tab" href="#evaluasifungsiekflapangan" class="list-group-item list-group-item-action bg-light">Evaluasi Fungsi EKF Lapangan</a>
-                                            <a href="#" class="list-group-item list-group-item-action bg-light">Indikasi Tora Dalam KK</a>
+                                            <a data-toggle="tab" href="#indikasitoradalamkk" class="list-group-item list-group-item-action bg-light">Indikasi Tora Dalam KK</a>
                                             <a href="#" class="list-group-item list-group-item-action bg-light">Hutan Adat Dalam KK</a>
                                         </div>
                                         <br>
@@ -655,6 +655,137 @@
                                         </table>
                                     </div>
                                 </div>
+                                <div id="indikasitoradalamkk" class="card tab-pane fade">
+                                    <div class="card-header">
+                                        Indikasi Tora Dalam KK
+                                    </div>
+                                    <div class="card-body">
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal7">Tambah Data</button>
+                                        <div class="modal fade" id="myModal7">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Input Evaluasi Fungsi Ekf Lapangan</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+
+                                                <!-- Modal body -->
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <div class="form-group">
+                                                                <label>Peta (JPEG)</label>
+                                                                <input type="file" class="form-control" id="petaindikasitora">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Luas(HA)</label>
+                                                                <input type="number" class="form-control" id="luasindikasitora">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Nama Kawasan</label>
+                                                                <input type="text" class="form-control" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Luas Kawasan(HA)</label>
+                                                                <input type="number" class="form-control" id="luaskawasanindikasitora">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="form-group">
+                                                                <h3>SK Keseluruhan</h3>
+                                                                <label>Judul SK</label>
+                                                                <input class="form-control" type="text" id="judulskindikasitora">
+                                                                <label>Nomor SK</label>
+                                                                <input class="form-control" type="text" id="nomorskindikasitora">
+                                                                <label>Tanggal SK</label>
+                                                                <input class="form-control" type="date" id="tanggalskindikasitora">
+                                                                <label>Dokumen SK</label>
+                                                                <input class="form-control" type="file" id="dokumenskindikasitora">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Modal footer -->
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary" id="SaveDataIndikasiTora">Simpan</button>
+                                                </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal fade" id="myModal8">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Ubah Evaluasi Fungsi Ekf Lapangan</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+
+                                                <!-- Modal body -->
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <div class="form-group">
+                                                                <label>Peta (JPEG)</label>
+                                                                <input type="file" class="form-control" id="petaindikasitoraedit">
+                                                                <input type="hidden" id="petaindikasitorahidden">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Luas(HA)</label>
+                                                                <input type="number" class="form-control" id="luasindikasitoraedit">
+                                                                <input type="hidden" id="idindikasitora">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Nama Kawasan</label>
+                                                                <input type="text" class="form-control" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Luas Kawasan(HA)</label>
+                                                                <input type="number" class="form-control" id="luaskawasanindikasitoraedit">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="form-group">
+                                                                <h3>SK Keseluruhan</h3>
+                                                                <label>Judul SK</label>
+                                                                <input class="form-control" type="text" id="judulskindikasitoraedit">
+                                                                <label>Nomor SK</label>
+                                                                <input class="form-control" type="text" id="nomorskindikasitoraedit">
+                                                                <label>Tanggal SK</label>
+                                                                <input class="form-control" type="date" id="tanggalskindikasitoraedit">
+                                                                <label>Dokumen SK</label>
+                                                                <input class="form-control" type="file" id="dokumenskindikasitoraedit">
+                                                                <input type="hidden" id="dokumenskindikasitorahidden">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Modal footer -->
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary" id="UpdateDataIndikasiTora">Simpan</button>
+                                                </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <table class="table" id="myTable4" style="width:100%">
+                                            <thead>
+                                                <th>Nama Kawasan</th>
+                                                <th>Luas</th>
+                                                <th>Luas Kawasan</th>
+                                                <th>Action</th>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -708,7 +839,20 @@
                 }
             })
         }
-        
+        function myfunc3(id){
+            $.ajax({
+                url:'/deleteIndikasiTora/'+id,
+                type:'GET',
+                success:function(){
+                    Swal.fire(
+                                'Sukses!',
+                                'Data Sukses di hapus!',
+                                'success'
+                            )
+                            table3.ajax.reload();
+                }
+            })
+        }
         function editfunc(id){
             $.ajax({
                 url:'/showDataPengukuhanKawasan/'+id,
@@ -759,6 +903,23 @@
                     $( '#rekomendasievaluasifungsiekflapanganedit' ).val(hasil.rekomendasi);
                     $( '#tahunpelaksanaanevaluasifungsiekflapanganedit' ).val(hasil.tahun_pelaksanaan);
                     $( '#uptevaluasifungsiekflapangan' ).val(hasil.upt);
+                }
+            })
+        }
+        function editfunc3(id){
+            $.ajax({
+                url:'/showDataIndikasiTora/'+id,
+                type:'GET',
+                success:function(data){
+                    var hasil = JSON.parse(data);
+                    $( '#idindikasitora' ).val(hasil.id);
+                    $( '#dokumenskindikasitorahidden' ).val(hasil.dokumen_sk);
+                    $( '#petaindikasitorahidden' ).val(hasil.peta);
+                    $( '#judulskindikasitoraedit' ).val(hasil.judul_sk);
+                    $( '#nomorskindikasitoraedit' ).val(hasil.nomor_Sk);
+                    $( '#tanggalskindikasitoraedit' ).val(hasil.tanggal_sk);
+                    $( '#luaskawasanindikasitoraedit' ).val(hasil.luas_kawasan);
+                    $( '#luasindikasitoraedit' ).val(hasil.luas);
                 }
             })
         }
@@ -821,6 +982,27 @@
                                 data: null,
                                 render: function ( data, type, row ) {
                                     return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal6'onclick='editfunc2("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc2("+data.id+")'>Delete</button>";
+                                }
+                            }
+                        ]
+                    });
+            var table3 =  $('#myTable4').DataTable({
+                        deferRender: true,
+                        ajax: {
+                            url: "/getDataIndikasiTora",
+                            type: "GET",
+                            dataSrc: function (d) {
+                                return d
+                            }
+                        },
+                        columns: [
+                            { data: 'nama_kawasan' },
+                            { data: 'luas' },
+                            { data: 'luas_kawasan' },
+                            {
+                                data: null,
+                                render: function ( data, type, row ) {
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal8'onclick='editfunc3("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc3("+data.id+")'>Delete</button>";
                                 }
                             }
                         ]
@@ -1087,6 +1269,92 @@
                                     'success'
                                 )
                                 table2.ajax.reload();
+                        }
+                    })
+                }
+            })
+            $('#SaveDataIndikasiTora').click(function(){
+                var data;
+                data = new FormData();
+                data.append('luas', $('#luasindikasitora').val());
+                data.append('luas_kawasan',$('#luaskawasanindikasitora').val());
+                data.append('namakawasan', $('#namakawasan').val());
+                data.append('judulsk', $('#judulskindikasitora').val());
+                data.append('nomorsk', $('#nomorskindikasitora').val());
+                data.append('tanggalsk', $('#tanggalskindikasitora').val());
+                data.append('dokumensk', $('#dokumenskindikasitora')[0].files[0]);
+                data.append('peta', $('#petaindikasitora')[0].files[0]);
+                $.ajax({
+                    url:'/savedDataIndikasiTora',
+                    method:'POST',
+                    data:data,
+                    contentType: false,
+                    processData:false,
+                    success:function(){
+                         Swal.fire(
+                                'Sukses!',
+                                'Data Sukses di simpan!',
+                                'success'
+                            )
+                            table3.ajax.reload();
+                    }
+                })
+            })
+            $('#UpdateDataIndikasiTora').click(function(){
+                var file = $('#dokumenskindikasitoraedit')[0].files[0];
+                if(file == undefined){
+                    var data;
+                    data = new FormData();
+                    data.append('idindikasitora', $('#idindikasitora').val());
+                    data.append('luas', $('#luasindikasitoraedit').val());
+                    data.append('luas_kawasan',$('#luaskawasanindikasitoraedit').val());
+                    data.append('namakawasan', $('#namakawasan').val());
+                    data.append('judulsk', $('#judulskindikasitoraedit').val());
+                    data.append('nomorsk', $('#nomorskindikasitoraedit').val());
+                    data.append('tanggalsk', $('#tanggalskindikasitoraedit').val());
+                    data.append('dokumensk', $('#dokumenskindikasitorahidden').val());
+                    data.append('peta', $('#petaindikasitorahidden').val());
+                    data.append( 'status',  'filenotfound');
+                    $.ajax({
+                        url:'/updateDataIndikasiTora',
+                        method:'POST',
+                        data:data,
+                        contentType: false,
+                        processData:false,
+                        success:function(){
+                            Swal.fire(
+                                    'Sukses!',
+                                    'Data Sukses di simpan!',
+                                    'success'
+                                )
+                                table3.ajax.reload();
+                        }
+                    })
+                }else{
+                    var data;
+                    data = new FormData();
+                    data.append('idindikasitora', $('#idindikasitora').val());
+                    data.append('luas', $('#luasindikasitoraedit').val());
+                    data.append('luas_kawasan',$('#luaskawasanindikasitoraedit').val());
+                    data.append('namakawasan', $('#namakawasan').val());
+                    data.append('judulsk', $('#judulskindikasitoraedit').val());
+                    data.append('nomorsk', $('#nomorskindikasitoraedit').val());
+                    data.append('tanggalsk', $('#tanggalskindikasitoraedit').val());
+                    data.append('dokumensk', $('#dokumenskindikasitoraedit')[0].files[0]);
+                    data.append('peta', $('#petaindikasitoraedit')[0].files[0]);
+                    $.ajax({
+                        url:'/updateDataIndikasiTora',
+                        method:'POST',
+                        data:data,
+                        contentType: false,
+                        processData:false,
+                        success:function(){
+                            Swal.fire(
+                                    'Sukses!',
+                                    'Data Sukses di simpan!',
+                                    'success'
+                                )
+                                table3.ajax.reload();
                         }
                     })
                 }

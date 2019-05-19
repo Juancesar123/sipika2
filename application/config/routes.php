@@ -162,5 +162,12 @@ $route['updateDataEvaluasiFungsiEkfLapangan'] ='EvaluasiFungsiEkfLapanganControl
 $route['showDataEvaluasiFungsiEkfLapangan/(:any)'] ='EvaluasiFungsiEkfLapanganController/show/$1';
 $route['deleteEvaluasiFungsiEkfLapangan/(:any)'] ='EvaluasiFungsiEkfLapanganController/destroy/$1';
 //endroute
+//route untuk Evaluasi Ekf Lapangan
+$route['getDataIndikasiTora'] ='IndikasiToraController/getData';
+$route['savedDataIndikasiTora'] ='IndikasiToraController/store';
+$route['updateDataIndikasiTora'] ='IndikasiToraController/update';
+$route['showDataIndikasiTora/(:any)'] ='IndikasiToraController/show/$1';
+$route['deleteIndikasiTora/(:any)'] ='IndikasiToraController/destroy/$1';
+//endroute
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
