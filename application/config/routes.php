@@ -155,5 +155,12 @@ $route['updateDataEvaluasiFungsiDeskStudy'] ='EvaluasiFungsiDeskStudyController/
 $route['showDataEvaluasiFungsiDeskStudy/(:any)'] ='EvaluasiFungsiDeskStudyController/show/$1';
 $route['deleteEvaluasiFungsiDeskStudy/(:any)'] ='EvaluasiFungsiDeskStudyController/destroy/$1';
 //endroute
+//route untuk Evaluasi Ekf Lapangan
+$route['getDataEvaluasiFungsiEkfLapangan'] ='EvaluasiFungsiEkfLapanganController/getData';
+$route['savedDataEvaluasiFungsiEkfLapangan'] ='EvaluasiFungsiEkfLapanganController/store';
+$route['updateDataEvaluasiFungsiEkfLapangan'] ='EvaluasiFungsiEkfLapanganController/update';
+$route['showDataEvaluasiFungsiEkfLapangan/(:any)'] ='EvaluasiFungsiEkfLapanganController/show/$1';
+$route['deleteEvaluasiFungsiEkfLapangan/(:any)'] ='EvaluasiFungsiEkfLapanganController/destroy/$1';
+//endroute
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

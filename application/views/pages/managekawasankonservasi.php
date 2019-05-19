@@ -49,7 +49,7 @@
                                         <div class="list-group list-group-flush">
                                             <a data-toggle="tab" href="#pengukuhankawasan" class="list-group-item list-group-item-action bg-light">Perkembangan Pengukuhan kawasan</a>
                                             <a data-toggle="tab" href="#evaluasifungsideskstudy" class="list-group-item list-group-item-action bg-light">Evaluasi Fungsi Desk Study</a>
-                                            <a href="#" class="list-group-item list-group-item-action bg-light">Evaluasi Fungsi EKF Lapangan</a>
+                                            <a  data-toggle="tab" href="#evaluasifungsiekflapangan" class="list-group-item list-group-item-action bg-light">Evaluasi Fungsi EKF Lapangan</a>
                                             <a href="#" class="list-group-item list-group-item-action bg-light">Indikasi Tora Dalam KK</a>
                                             <a href="#" class="list-group-item list-group-item-action bg-light">Hutan Adat Dalam KK</a>
                                         </div>
@@ -497,6 +497,164 @@
                                         </table>
                                     </div>
                                 </div>
+                                <div id="evaluasifungsiekflapangan" class="card tab-pane fade">
+                                    <div class="card-header">
+                                        Evaluasi Fungsi EKF Lapangan
+                                    </div>
+                                    <div class="card-body">
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal5">Tambah Data</button>
+                                        <div class="modal fade" id="myModal5">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Input Evaluasi Fungsi Ekf Lapangan</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+
+                                                <!-- Modal body -->
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <div class="form-group">
+                                                                <label>Rekomendasi</label>
+                                                                <textarea class="form-control" type="text" id="rekomendasievaluasifungsiekflapangan"></textarea>
+                                                                
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Tahun Pelaksanaan</label>
+                                                               <select class="form-control" id="tahunpelaksanaanevaluasifungsiekflapangan">
+                                                                    <option value="2019">2019</option>
+                                                                    <option value="2018">2018</option>
+                                                                    <option value="2017">2017</option>
+                                                                    <option value="2016">2016</option>
+                                                               </select>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>UPT</label>
+                                                                <select class="form-control" type="text" id="uptevaluasifungsiekflapangan" >
+                                                                    <option value="1">1</option>
+                                                                    <option value="2">2</option>
+                                                                    <option value="3">3</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Peta</label>
+                                                                <input class="form-control" type="file" id="petaevaluasifungsiekflapangan" >
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Nama Kawasan</label>
+                                                                <input class="form-control" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled >
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="form-group">
+                                                                <h3>SK </h3>
+                                                                <label>Judul SK</label>
+                                                                <input class="form-control" type="text" id="judulskevaluasifungsiekflapangan">
+                                                                <label>Nomor SK</label>
+                                                                <input class="form-control" type="text" id="nomorskevaluasifungsiekflapangan">
+                                                                <label>Tanggal SK</label>
+                                                                <input class="form-control" type="date" id="tanggalskevaluasifungsiekflapangan">
+                                                                <label>Dokumen SK</label>
+                                                                <input class="form-control" type="file" id="dokumenskevaluasifungsiekflapangan">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Modal footer -->
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary" id="SaveDataEvaluasiFungsiEkfLapangan">Simpan</button>
+                                                </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal fade" id="myModal6">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Ubah Evaluasi Fungsi Ekf Lapangan</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+
+                                                <!-- Modal body -->
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <div class="form-group">
+                                                                <label>Rekomendasi</label>
+                                                                <textarea class="form-control" type="text" id="rekomendasievaluasifungsiekflapanganedit"></textarea>
+                                                                <input type="hidden" id="idevaluasifungsiekflapangan">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Tahun Pelaksanaan</label>
+                                                               <select class="form-control" id="tahunpelaksanaanevaluasifungsiekflapanganedit">
+                                                                    <option value="2019">2019</option>
+                                                                    <option value="2018">2018</option>
+                                                                    <option value="2017">2017</option>
+                                                                    <option value="2016">2016</option>
+                                                               </select>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>UPT</label>
+                                                                <select class="form-control" type="text" id="uptevaluasifungsiekflapanganedit" >
+                                                                    <option value="1">1</option>
+                                                                    <option value="2">2</option>
+                                                                    <option value="3">3</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Peta</label>
+                                                                <input class="form-control" type="file" id="petaevaluasifungsiekflapanganedit" >
+                                                                <input type="hidden" id="petaevaluasifungsiekflapanganhidden">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Nama Kawasan</label>
+                                                                <input class="form-control" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled >
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="form-group">
+                                                                <h3>SK </h3>
+                                                                <label>Judul SK</label>
+                                                                <input class="form-control" type="text" id="judulskevaluasifungsiekflapanganedit">
+                                                                <label>Nomor SK</label>
+                                                                <input class="form-control" type="text" id="nomorskevaluasifungsiekflapanganedit">
+                                                                <label>Tanggal SK</label>
+                                                                <input class="form-control" type="date" id="tanggalskevaluasifungsiekflapanganedit">
+                                                                <label>Dokumen SK</label>
+                                                                <input class="form-control" type="file" id="dokumenskevaluasifungsiekflapanganedit">
+                                                                <input type="hidden" id="dokumenskevaluasifungsiekflapanganhidden">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Modal footer -->
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary" id="UpdateDataEvaluasiFungsiEkfLapangan">Simpan</button>
+                                                </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <table class="table" id="myTable3" style="width:100%">
+                                            <thead>
+                                                <th>Rekomendasi</th>
+                                                <th>Tahun Pelaksanaan</th>
+                                                <th>UPT</th>
+                                                <th>Action</th>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -536,6 +694,20 @@
                 }
             })
         }
+        function myfunc2(id){
+            $.ajax({
+                url:'/deleteEvaluasiFungsiEkfLapangan/'+id,
+                type:'GET',
+                success:function(){
+                    Swal.fire(
+                                'Sukses!',
+                                'Data Sukses di hapus!',
+                                'success'
+                            )
+                            table2.ajax.reload();
+                }
+            })
+        }
         
         function editfunc(id){
             $.ajax({
@@ -558,6 +730,7 @@
                 }
             })
         }
+        
         function editfunc1(id){
             $.ajax({
                 url:'/showDataEvaluasiFungsiDeskStudy/'+id,
@@ -568,6 +741,24 @@
                     $( '#tanggalpelaksanaanedit' ).val(hasil.tanggal_pelaksanaan);
                     $( '#uptevaluasifungsideskstudyedit' ).val(hasil.upt);
                     $( '#rekomendasiedit' ).val(hasil.rekomendasi);
+                }
+            })
+        }
+        function editfunc2(id){
+            $.ajax({
+                url:'/showDataEvaluasiFungsiEkfLapangan/'+id,
+                type:'GET',
+                success:function(data){
+                    var hasil = JSON.parse(data);
+                    $( '#idevaluasifungsiekflapangan' ).val(hasil.id);
+                    $( '#dokumenskevaluasifungsiekflapanganhidden' ).val(hasil.dokmen_sk);
+                    $( '#petaevaluasifungsiekflapanganhidden' ).val(hasil.peta);
+                    $( '#judulskevaluasifungsiekflapanganedit' ).val(hasil.judul_sk);
+                    $( '#nomorskevaluasifungsiekflapanganedit' ).val(hasil.nomor_Sk);
+                    $( '#tanggalskevaluasifungsiekflapanganedit' ).val(hasil.tanggal_sk);
+                    $( '#rekomendasievaluasifungsiekflapanganedit' ).val(hasil.rekomendasi);
+                    $( '#tahunpelaksanaanevaluasifungsiekflapanganedit' ).val(hasil.tahun_pelaksanaan);
+                    $( '#uptevaluasifungsiekflapangan' ).val(hasil.upt);
                 }
             })
         }
@@ -609,6 +800,27 @@
                                 data: null,
                                 render: function ( data, type, row ) {
                                     return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal4'onclick='editfunc1("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc1("+data.id+")'>Delete</button>";
+                                }
+                            }
+                        ]
+                    });
+            var table2 =  $('#myTable3').DataTable({
+                        deferRender: true,
+                        ajax: {
+                            url: "/getDataEvaluasiFungsiEkfLapangan",
+                            type: "GET",
+                            dataSrc: function (d) {
+                                return d
+                            }
+                        },
+                        columns: [
+                            { data: 'rekomendasi' },
+                            { data: 'tahun_pelaksanaan' },
+                            { data: 'upt' },
+                            {
+                                data: null,
+                                render: function ( data, type, row ) {
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal6'onclick='editfunc2("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc2("+data.id+")'>Delete</button>";
                                 }
                             }
                         ]
@@ -789,6 +1001,95 @@
                             table1.ajax.reload();
                     }
                 })
+            })
+            $('#SaveDataEvaluasiFungsiEkfLapangan').click(function(){
+                var data;
+                data = new FormData();
+                data.append('rekomendasi', $('#rekomendasievaluasifungsiekflapangan').val());
+                data.append('tahunpelaksanaan',$('#tahunpelaksanaanevaluasifungsiekflapangan').val());
+                data.append('namakawasan', $('#namakawasan').val());
+                data.append('judulsk', $('#judulskevaluasifungsiekflapangan').val());
+                data.append('nomorsk', $('#nomorskevaluasifungsiekflapangan').val());
+                data.append('tanggalsk', $('#tanggalskevaluasifungsiekflapangan').val());
+                data.append('dokumensk', $('#dokumenskevaluasifungsiekflapangan')[0].files[0]);
+                data.append('peta', $('#petaevaluasifungsiekflapangan')[0].files[0]);
+                data.append('upt', $('#uptevaluasifungsiekflapangan').val());
+                $.ajax({
+                    url:'/savedDataEvaluasiFungsiEkfLapangan',
+                    method:'POST',
+                    data:data,
+                    contentType: false,
+                    processData:false,
+                    success:function(){
+                         Swal.fire(
+                                'Sukses!',
+                                'Data Sukses di simpan!',
+                                'success'
+                            )
+                            table2.ajax.reload();
+                    }
+                })
+            })
+            $('#UpdateDataEvaluasiFungsiEkfLapangan').click(function(){
+                var file = $('#dokumenskevaluasifungsiekflapanganedit')[0].files[0];
+                if(file == undefined){
+                    var data;
+                    data = new FormData();
+                    data.append('idevaluasifungsiekflapangan', $('#idevaluasifungsiekflapangan').val());
+                    data.append('rekomendasi', $('#rekomendasievaluasifungsiekflapanganedit').val());
+                    data.append('tahunpelaksanaan',$('#tahunpelaksanaanevaluasifungsiekflapanganedit').val());
+                    data.append('namakawasan', $('#namakawasanedit').val());
+                    data.append('judulsk', $('#judulskevaluasifungsiekflapanganedit').val());
+                    data.append('nomorsk', $('#nomorskevaluasifungsiekflapanganedit').val());
+                    data.append('tanggalsk', $('#tanggalskevaluasifungsiekflapanganedit').val());
+                    data.append('dokumensk', $('#dokumenskevaluasifungsiekflapanganhidden').val());
+                    data.append('peta', $('#petaevaluasifungsiekflapanganhidden').val());
+                    data.append('upt', $('#uptevaluasifungsiekflapanganedit').val());
+                    data.append( 'status',  'filenotfound');
+                    $.ajax({
+                        url:'/updateDataEvaluasiFungsiEkfLapangan',
+                        method:'POST',
+                        data:data,
+                        contentType: false,
+                        processData:false,
+                        success:function(){
+                            Swal.fire(
+                                    'Sukses!',
+                                    'Data Sukses di simpan!',
+                                    'success'
+                                )
+                                table2.ajax.reload();
+                        }
+                    })
+                }else{
+                    var data;
+                    data = new FormData();
+                    data.append('idevaluasifungsiekflapangan', $('#idevaluasifungsiekflapangan').val());
+                    data.append('rekomendasi', $('#rekomendasievaluasifungsiekflapanganedit').val());
+                    data.append('tahunpelaksanaan',$('#tahunpelaksanaanevaluasifungsiekflapanganedit').val());
+                    data.append('namakawasan', $('#namakawasanedit').val());
+                    data.append('judulsk', $('#judulskevaluasifungsiekflapanganedit').val());
+                    data.append('nomorsk', $('#nomorskevaluasifungsiekflapanganedit').val());
+                    data.append('tanggalsk', $('#tanggalskevaluasifungsiekflapanganedit').val());
+                    data.append('dokumensk', $('#dokumenskevaluasifungsiekflapanganedit')[0].files[0]);
+                    data.append('peta', $('#petaevaluasifungsiekflapanganedit')[0].files[0]);
+                    data.append('upt', $('#uptevaluasifungsiekflapanganedit').val());
+                    $.ajax({
+                        url:'/updateDataEvaluasiFungsiEkfLapangan',
+                        method:'POST',
+                        data:data,
+                        contentType: false,
+                        processData:false,
+                        success:function(){
+                            Swal.fire(
+                                    'Sukses!',
+                                    'Data Sukses di simpan!',
+                                    'success'
+                                )
+                                table2.ajax.reload();
+                        }
+                    })
+                }
             })
         })
     </script>
