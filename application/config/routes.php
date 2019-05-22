@@ -169,5 +169,12 @@ $route['updateDataIndikasiTora'] ='IndikasiToraController/update';
 $route['showDataIndikasiTora/(:any)'] ='IndikasiToraController/show/$1';
 $route['deleteIndikasiTora/(:any)'] ='IndikasiToraController/destroy/$1';
 //endroute
+//route untuk Hutan Adat dalam KK
+$route['getDataHutanadat'] ='HutanadatController/getData';
+$route['savedDataHutanadat'] ='HutanadatController/store';
+$route['updateDataHutanadat'] ='HutanadatController/update';
+$route['showDataHutanadat/(:any)'] ='HutanadatController/show/$1';
+$route['deleteHutanadat/(:any)'] ='HutanadatController/destroy/$1';
+//endroute
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

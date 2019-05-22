@@ -51,7 +51,7 @@
                                             <a data-toggle="tab" href="#evaluasifungsideskstudy" class="list-group-item list-group-item-action bg-light">Evaluasi Fungsi Desk Study</a>
                                             <a  data-toggle="tab" href="#evaluasifungsiekflapangan" class="list-group-item list-group-item-action bg-light">Evaluasi Fungsi EKF Lapangan</a>
                                             <a data-toggle="tab" href="#indikasitoradalamkk" class="list-group-item list-group-item-action bg-light">Indikasi Tora Dalam KK</a>
-                                            <a href="#" class="list-group-item list-group-item-action bg-light">Hutan Adat Dalam KK</a>
+                                            <a data-toggle="tab" href="#hutanadatdalamkk" class="list-group-item list-group-item-action bg-light">Hutan Adat Dalam KK</a>
                                         </div>
                                         <br>
                                         <div class="sidebar-heading">
@@ -786,6 +786,144 @@
                                         </table>
                                     </div>
                                 </div>
+                                <div id="hutanadatdalamkk" class="card tab-pane fade">
+                                    <div class="card-header">
+                                        Hutan adat dalam KK
+                                    </div>
+                                    <div class="card-body">
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal9">Tambah Data</button>
+                                        <div class="modal fade" id="myModal9">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Input Hutan Adat Dalam KK</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+
+                                                <!-- Modal body -->
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <div class="form-group">
+                                                                <label>Provinsi</label>
+                                                                <input type="text" class="form-control" id="provinsihutanadat">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Kabpaten Kota</label>
+                                                                <input type="text" class="form-control" id="kabupatenkotahutanadat">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Nama Kawasan</label>
+                                                                <input type="text" class="form-control" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Luas</label>
+                                                                <input type="number" class="form-control" id="luashutanadat">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Nama Adat</label>
+                                                                <input type="text" class="form-control" id="namaadat">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="form-group">
+                                                                <h3>SK</h3>
+                                                                <label>Judul SK</label>
+                                                                <input class="form-control" type="text" id="judulskhutanadat">
+                                                                <label>Nomor SK</label>
+                                                                <input class="form-control" type="text" id="nomorskhutanadat">
+                                                                <label>Tanggal SK</label>
+                                                                <input class="form-control" type="date" id="tanggalskhutanadat">
+                                                                <label>Dokumen SK</label>
+                                                                <input class="form-control" type="file" id="dokumenskhutanadat">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Modal footer -->
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary" id="SaveDataHutanAdat">Simpan</button>
+                                                </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal fade" id="myModal10">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Ubah Hutan adat dalam KK</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+
+                                                <!-- Modal body -->
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <div class="form-group">
+                                                                <label>Provinsi</label>
+                                                                <input type="text" class="form-control" id="provinsihutanadatedit">
+                                                                <input type="hidden" id="idhutanadat">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Kabpaten Kota</label>
+                                                                <input type="text" class="form-control" id="kabupatenkotahutanadatedit">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Nama Kawasan</label>
+                                                                <input type="text" class="form-control" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Luas</label>
+                                                                <input type="number" class="form-control" id="luashutanadatedit">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Nama Adat</label>
+                                                                <input type="text" class="form-control" id="namaadatedit">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="form-group">
+                                                                <h3>SK</h3>
+                                                                <label>Judul SK</label>
+                                                                <input class="form-control" type="text" id="judulskhutanadatedit">
+                                                                <label>Nomor SK</label>
+                                                                <input class="form-control" type="text" id="nomorskhutanadatedit">
+                                                                <label>Tanggal SK</label>
+                                                                <input class="form-control" type="date" id="tanggalskhutanadatedit">
+                                                                <label>Dokumen SK</label>
+                                                                <input class="form-control" type="file" id="dokumenskhutanadatedit">
+                                                                <input type="hidden" id="dokumenskhutanadathidden">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Modal footer -->
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary" id="UpdateDataHutanadat">Simpan</button>
+                                                </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <table class="table" id="myTable5" style="width:100%">
+                                            <thead>
+                                                <th>Nama Kawasan</th>
+                                                <th>Luas</th>
+                                                <th>Nama Adat</th>
+                                                <th>Action</th>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -850,6 +988,20 @@
                                 'success'
                             )
                             table3.ajax.reload();
+                }
+            })
+        }
+        function myfunc4(id){
+            $.ajax({
+                url:'/deleteHutanadat/'+id,
+                type:'GET',
+                success:function(){
+                    Swal.fire(
+                                'Sukses!',
+                                'Data Sukses di hapus!',
+                                'success'
+                            )
+                            table4.ajax.reload();
                 }
             })
         }
@@ -920,6 +1072,24 @@
                     $( '#tanggalskindikasitoraedit' ).val(hasil.tanggal_sk);
                     $( '#luaskawasanindikasitoraedit' ).val(hasil.luas_kawasan);
                     $( '#luasindikasitoraedit' ).val(hasil.luas);
+                }
+            })
+        }
+        function editfunc4(id){
+            $.ajax({
+                url:'/showDataHutanadat/'+id,
+                type:'GET',
+                success:function(data){
+                    var hasil = JSON.parse(data);
+                    $( '#idhutanadat' ).val(hasil.id);
+                    $( '#provinsihutanadatedit' ).val(hasil.provinsi);
+                    $( '#kabupatenkotahutanadatedit' ).val(hasil.kabupaten);
+                    $( '#namaadatedit' ).val(hasil.nama_adat);
+                    $( '#dokumenskhutanadathidden' ).val(hasil.dokumen_sk);
+                    $( '#judulskhutanadatedit' ).val(hasil.judul_sk);
+                    $( '#nomorskhutanadatedit' ).val(hasil.nomor_sk);
+                    $( '#tanggalskhutanadatedit' ).val(hasil.tanggal_sk);
+                    $( '#luashutanadatedit' ).val(hasil.luas);
                 }
             })
         }
@@ -1003,6 +1173,27 @@
                                 data: null,
                                 render: function ( data, type, row ) {
                                     return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal8'onclick='editfunc3("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc3("+data.id+")'>Delete</button>";
+                                }
+                            }
+                        ]
+                    });
+            var table4 =  $('#myTable5').DataTable({
+                        deferRender: true,
+                        ajax: {
+                            url: "/getDataHutanadat",
+                            type: "GET",
+                            dataSrc: function (d) {
+                                return d
+                            }
+                        },
+                        columns: [
+                            { data: 'nama_kawasan' },
+                            { data: 'luas' },
+                            { data: 'nama_adat' },
+                            {
+                                data: null,
+                                render: function ( data, type, row ) {
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal10'onclick='editfunc4("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc4("+data.id+")'>Delete</button>";
                                 }
                             }
                         ]
@@ -1355,6 +1546,95 @@
                                     'success'
                                 )
                                 table3.ajax.reload();
+                        }
+                    })
+                }
+            })
+            $('#SaveDataHutanAdat').click(function(){
+                var data;
+                data = new FormData();
+                data.append('luas', $('#luashutanadat').val());
+                data.append('nama_kawasan',$('#namakawasan').val());
+                data.append('nama_adat', $('#namaadat').val());
+                data.append('provinsi',$('#provinsihutanadat').val());
+                data.append('kabupaten', $('#kabupatenkotahutanadat').val());
+                data.append('judulsk', $('#judulskhutanadat').val());
+                data.append('nomorsk', $('#nomorskhutanadat').val());
+                data.append('tanggalsk', $('#tanggalskhutanadat').val());
+                data.append('dokumensk', $('#dokumenskhutanadat')[0].files[0]);
+                $.ajax({
+                    url:'/savedDataHutanadat',
+                    method:'POST',
+                    data:data,
+                    contentType: false,
+                    processData:false,
+                    success:function(){
+                         Swal.fire(
+                                'Sukses!',
+                                'Data Sukses di simpan!',
+                                'success'
+                            )
+                            table4.ajax.reload();
+                    }
+                })
+            })
+            $('#UpdateDataHutanadat').click(function(){
+                var file = $('#dokumenskindikasitoraedit')[0].files[0];
+                if(file == undefined){
+                    var data;
+                    data = new FormData();
+                    data.append('idhutanadat', $('#idhutanadat').val())
+                    data.append('luas', $('#luashutanadatedit').val());
+                    data.append('nama_kawasan',$('#namakawasan').val());
+                    data.append('nama_adat', $('#namaadatedit').val());
+                    data.append('provinsi',$('#provinsihutanadatedit').val());
+                    data.append('kabupaten', $('#kabupatenkotahutanadatedit').val());
+                    data.append('judulsk', $('#judulskhutanadatedit').val());
+                    data.append('nomorsk', $('#nomorskhutanadatedit').val());
+                    data.append('tanggalsk', $('#tanggalskhutanadatedit').val());
+                    data.append('dokumensk', $('#dokumenskhutanadathidden').val());
+                    data.append( 'status',  'filenotfound');
+                    $.ajax({
+                        url:'/updateDataHutanadat',
+                        method:'POST',
+                        data:data,
+                        contentType: false,
+                        processData:false,
+                        success:function(){
+                            Swal.fire(
+                                    'Sukses!',
+                                    'Data Sukses di simpan!',
+                                    'success'
+                                )
+                                table4.ajax.reload();
+                        }
+                    })
+                }else{
+                    var data;
+                    data = new FormData();
+                    data.append('idhutanadat', $('#idhutanadat').val())
+                    data.append('luas', $('#luashutanadatedit').val());
+                    data.append('nama_kawasan',$('#namakawasan').val());
+                    data.append('nama_adat', $('#namaadatedit').val());
+                    data.append('provinsi',$('#provinsihutanadatedit').val());
+                    data.append('kabupaten', $('#kabupatenkotahutanadatedit').val());
+                    data.append('judulsk', $('#judulskhutanadatedit').val());
+                    data.append('nomorsk', $('#nomorskhutanadatedit').val());
+                    data.append('tanggalsk', $('#tanggalskhutanadatedit').val());
+                    data.append('dokumensk', $('#dokumenskhutanadatedit')[0].files[0]);
+                    $.ajax({
+                        url:'/updateDataHutanadat',
+                        method:'POST',
+                        data:data,
+                        contentType: false,
+                        processData:false,
+                        success:function(){
+                            Swal.fire(
+                                    'Sukses!',
+                                    'Data Sukses di simpan!',
+                                    'success'
+                                )
+                                table4.ajax.reload();
                         }
                     })
                 }
