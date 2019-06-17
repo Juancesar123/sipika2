@@ -137,5 +137,44 @@ $route['process_login'] = 'AuthtenticationController/processlogin';
 $route['register'] = 'AuthtenticationController/register';
 $route['logout'] = 'AuthtenticationController/logout';
 //endroute
+//route untuk login
+$route['managekawasan/(:any)'] = 'ManagekawasankonservasiController/show/$1';
+$route['updatedatakawasan'] = 'ManagekawasankonservasiController/update';
+//endroute
+//routeuntukpengukuhankawasan
+$route['getDataPengukuhanKawasan'] ='PengukuhanKawasanController/getData';
+$route['savedDataPengukuhanKawasan'] ='PengukuhanKawasanController/store';
+$route['updateDataPengukuhanKawasan'] ='PengukuhanKawasanController/update';
+$route['showDataPengukuhanKawasan/(:any)'] ='PengukuhanKawasanController/show/$1';
+$route['deleteDataPengukuhanKawasan/(:any)'] ='PengukuhanKawasanController/destroy/$1';
+//endroute
+//routeuntukevaluasifungsiDeskStudy
+$route['getDataEvaluasiFungsiDeskStudy'] ='EvaluasiFungsiDeskStudyController/getData';
+$route['savedDataEvaluasiFungsiDeskStudy'] ='EvaluasiFungsiDeskStudyController/store';
+$route['updateDataEvaluasiFungsiDeskStudy'] ='EvaluasiFungsiDeskStudyController/update';
+$route['showDataEvaluasiFungsiDeskStudy/(:any)'] ='EvaluasiFungsiDeskStudyController/show/$1';
+$route['deleteEvaluasiFungsiDeskStudy/(:any)'] ='EvaluasiFungsiDeskStudyController/destroy/$1';
+//endroute
+//route untuk Evaluasi Ekf Lapangan
+$route['getDataEvaluasiFungsiEkfLapangan'] ='EvaluasiFungsiEkfLapanganController/getData';
+$route['savedDataEvaluasiFungsiEkfLapangan'] ='EvaluasiFungsiEkfLapanganController/store';
+$route['updateDataEvaluasiFungsiEkfLapangan'] ='EvaluasiFungsiEkfLapanganController/update';
+$route['showDataEvaluasiFungsiEkfLapangan/(:any)'] ='EvaluasiFungsiEkfLapanganController/show/$1';
+$route['deleteEvaluasiFungsiEkfLapangan/(:any)'] ='EvaluasiFungsiEkfLapanganController/destroy/$1';
+//endroute
+//route untuk Evaluasi Ekf Lapangan
+$route['getDataIndikasiTora'] ='IndikasiToraController/getData';
+$route['savedDataIndikasiTora'] ='IndikasiToraController/store';
+$route['updateDataIndikasiTora'] ='IndikasiToraController/update';
+$route['showDataIndikasiTora/(:any)'] ='IndikasiToraController/show/$1';
+$route['deleteIndikasiTora/(:any)'] ='IndikasiToraController/destroy/$1';
+//endroute
+//route untuk Hutan Adat dalam KK
+$route['getDataHutanadat'] ='HutanadatController/getData';
+$route['savedDataHutanadat'] ='HutanadatController/store';
+$route['updateDataHutanadat'] ='HutanadatController/update';
+$route['showDataHutanadat/(:any)'] ='HutanadatController/show/$1';
+$route['deleteHutanadat/(:any)'] ='HutanadatController/destroy/$1';
+//endroute
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
