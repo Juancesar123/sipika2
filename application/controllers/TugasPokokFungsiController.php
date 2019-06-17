@@ -11,6 +11,10 @@ class TugasPokokFungsiController extends CI_Controller {
           
     }
     public function index(){
+        $client     = new GuzzleHttp\Client();
+        $result = $client->get(constant('API_URL').'/tugas-pokok-fungsi/');
+        $hasil = $result->getBody()->getContents();
+        $data['hasil'] =  json_decode($hasil,true);
         $data['userdata'] = $this->session->userdata('userdata');
         return $this->load->view('pages/tugaspokokfungsi',$data);
     }
