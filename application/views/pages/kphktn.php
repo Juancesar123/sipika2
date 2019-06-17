@@ -51,7 +51,7 @@
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Luas KPHK</label>
-                                                        <input class="form-control" type="text" id="luaskphk">
+                                                        <input class="form-control" type="number" id="luaskphk">
                                                     </div>
                                                    
                                                     <div class="form-group">
@@ -167,18 +167,30 @@
     <script src="<?php echo base_url('js/data-table.js')?>"></script>
     <script>
         function myfunc(id){
-            $.ajax({
-                url:'/deleteDatakphkTn/'+id,
-                type:'GET',
-                success:function(){
-                    Swal.fire(
-                                'Sukses!',
-                                'Data Sukses di hapus!',
-                                'success'
-                            )
-                            table.ajax.reload();
-                }
-            })
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.value) {
+                        $.ajax({
+                            url:'/deleteDatakphkTn/'+id,
+                            type:'GET',
+                            success:function(){
+                                Swal.fire(
+                                            'Sukses!',
+                                            'Data Sukses di hapus!',
+                                            'success'
+                                        )
+                                        table.ajax.reload();
+                            }
+                        })
+                    }
+                })
         }
         function editfunc(id){
             $.ajax({
