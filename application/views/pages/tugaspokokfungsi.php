@@ -30,7 +30,11 @@
                             <div class="card">
                                 <div class="card-header">
                                     <h4>Tugas Pokok Fungsi</h4>
-                                    <button class="btn btn-warning float-right" data-toggle="modal" data-target="#exampleModal">Edit</button>
+                                    <?php if(empty($hasil)) { ?>
+                                        <button class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal1">Tambah Baru</button>
+                                    <?php }else{?>
+                                        <button class="btn btn-warning float-right" data-toggle="modal" data-target="#exampleModal">Edit</button>
+                                    <?php } ?>
                                 </div>
                                 <div class="card-body">
                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
@@ -46,6 +50,7 @@
                                             <div class="form-group">
                                                 <label>Peraturan</label>
                                                 <input class="form-control" type="text" id="peraturan" value="<?php echo $hasil[0]['peraturan'];?>">
+                                                <input type="hidden" id="idperaturan" value="<?php echo $hasil[0]['id'];?>">
                                             </div>
                                             <div class="form-group">
                                                 <label>Tugas</label>
@@ -53,7 +58,7 @@
                                             </div>
                                             <div class="form-group">
                                                 <label>Fungsi</label>
-                                                <textarea class="form-control" value="<?php echo $hasil[0]['fungsi'];?>">
+                                                <textarea class="form-control" value="<?php echo $hasil[0]['fungsi'];?>" id="fungsi">
                                                     <?php echo $hasil[0]['fungsi'];?>
                                                 </textarea>
                                             </div>
@@ -65,30 +70,35 @@
                                         </div>
                                     </div>
                                     </div>
-                                    <div class="modal fade bd-example-modal-lg" id="modals2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-lg" role="document">
+                                    <div class="modal fade" id="exampleModal1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                    <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Form Ubah Sketsa Sejarah</h5>
+                                            <h5 class="modal-title" id="exampleModalLabel">Ubah Tugas Pokok Fungsi</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
                                         <div class="modal-body">
                                             <div class="form-group">
-                                                <label>Judul Sketsa Sejarah</label>
-                                                <input class="form-control" type="text" id="juduledit">
-                                                <input type="hidden" id="idsketsasejarah">
-                                                <input type="hidden" id="filehidden">
+                                                <label>Peraturan</label>
+                                                <input class="form-control" type="text" id="peraturan" value="<?php echo $hasil[0]['peraturan'];?>">
+                                                <input type="hidden" id="idperaturan" value="<?php echo $hasil[0]['id'];?>">
                                             </div>
                                             <div class="form-group">
-                                                <label>File Sketsa Sejarah</label>
-                                                <input class="form-control" type="file" id="fileedit">
-                                            </div>  
+                                                <label>Tugas</label>
+                                                <input class="form-control" type="text" id="tugas" value="<?php echo $hasil[0]['tugas'];?>">
+                                            </div>
+                                            <div class="form-group">
+                                                <label>Fungsi</label>
+                                                <textarea class="form-control" value="<?php echo $hasil[0]['fungsi'];?>" id="fungsi">
+                                                    <?php echo $hasil[0]['fungsi'];?>
+                                                </textarea>
+                                            </div>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary" id="UpdateData">Save changes</button>
+                                            <button type="button" class="btn btn-primary" id="SaveData">Save changes</button>
                                         </div>
                                         </div>
                                     </div>
@@ -116,18 +126,7 @@
     <?php $this->load->view('partials/script') ?>
     <script src="<?php echo base_url('js/data-table.js')?>"></script>
     <script>
-        function editfunc(id){
-            $.ajax({
-                url:'/showDataSketsaSejarah/'+id,
-                type:'GET',
-                success:function(data){
-                    var hasil = JSON.parse(data);
-                    $( '#idsketsasejarah' ).val(hasil.id);
-                    $( '#filehidden' ).val(hasil.file);
-                    $( '#juduledit' ).val(hasil.judul);
-                }
-            })
-        }
+        
         $('document').ready(function(){
             $('#UpdateData').click(function(){
                
@@ -135,10 +134,12 @@
             $('#SaveData').click(function(){
                 var data;
                 data = new FormData();
-                data.append( 'file', $( '#file' )[0].files[0] );
-                data.append( 'judul', $( '#judul' ).val());
+                data.append( 'idperaturan', $( '#idperaturan' ).val());
+                data.append( 'peraturan', $( '#peraturan' ).val());
+                data.append( 'tugas', $( '#tugas' ).val());
+                data.append( 'fungsi', $( '#fungsi' ).val());
                 $.ajax({
-                    url:'/savedDataSketsaSejarah',
+                    url:'/SaveDataTugasPokokFungsi',
                     method:'POST',
                     data:data,
                     contentType: false,
@@ -148,8 +149,10 @@
                                 'Sukses!',
                                 'Data Sukses di simpan!',
                                 'success'
-                            )
-                            table.ajax.reload();
+                            ).then(function(){
+                                window.location = "tugas-pokok-fungsi";
+                            })
+                           
                     }
                 })
             })

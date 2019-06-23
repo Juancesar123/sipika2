@@ -179,6 +179,7 @@ $route['deleteHutanadat/(:any)'] ='HutanadatController/destroy/$1';
 //route untuk Hutan Adat dalam KK
 $route['getTugasPokokFungsi'] ='TugasPokokFungsiController/getData';
 $route['tugas-pokok-fungsi'] ='TugasPokokFungsiController';
+$route['SaveDataTugasPokokFungsi']='TugasPokokFungsiController/saveData';
 //endroute
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
