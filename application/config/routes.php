@@ -181,5 +181,10 @@ $route['getTugasPokokFungsi'] ='TugasPokokFungsiController/getData';
 $route['tugas-pokok-fungsi'] ='TugasPokokFungsiController';
 $route['SaveDataTugasPokokFungsi']='TugasPokokFungsiController/saveData';
 //endroute
+//route untuk Struktur Organisasi
+$route['getStrukturOrganisasi'] ='StrukturOrganisasiController/getData';
+$route['struktur-organisasi'] ='StrukturOrganisasiController';
+$route['SaveDataStrukturOrganisasi']='StrukturOrganisasiController/saveData';
+//endroute
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
