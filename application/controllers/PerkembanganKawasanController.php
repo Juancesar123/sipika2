@@ -40,16 +40,79 @@ class PerkembanganKawasanController extends CI_Controller {
             ]);
       return 'sukses';
     }
-    public function get(){
-        $client     = new GuzzleHttp\Client();
-        $result = $client->get(constant('API_URL').'/perkembangan-kawasan');
-        /*
-            Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
-            ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
-        */
-        $data = $result->getBody()->getContents();
-        $hasil =  json_decode($data,true);
-        echo json_encode($hasil);
+    public function get($id){
+        if($id == 1){
+            $client     = new GuzzleHttp\Client();
+            $result = $client->get(constant('API_URL').'/perkembangan-kawasan?fungsi=1');
+            /*
+                Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
+                ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
+            */
+            $data = $result->getBody()->getContents();
+            $hasil =  json_decode($data,true);
+            echo json_encode($hasil);
+        }else if($id == 2){
+            $client     = new GuzzleHttp\Client();
+            $result = $client->get(constant('API_URL').'/perkembangan-kawasan?fungsi=2');
+            /*
+                Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
+                ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
+            */
+            $data = $result->getBody()->getContents();
+            $hasil =  json_decode($data,true);
+            echo json_encode($hasil);
+        }else if($id == 3){
+            $client     = new GuzzleHttp\Client();
+            $result = $client->get(constant('API_URL').'/perkembangan-kawasan?fungsi=3');
+            /*
+                Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
+                ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
+            */
+            $data = $result->getBody()->getContents();
+            $hasil =  json_decode($data,true);
+            echo json_encode($hasil);
+        }else if($id == 4){
+            $client     = new GuzzleHttp\Client();
+            $result = $client->get(constant('API_URL').'/perkembangan-kawasan?fungsi=4');
+            /*
+                Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
+                ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
+            */
+            $data = $result->getBody()->getContents();
+            $hasil =  json_decode($data,true);
+            echo json_encode($hasil);
+        }else if($id == 5){
+            $client     = new GuzzleHttp\Client();
+            $result = $client->get(constant('API_URL').'/perkembangan-kawasan?fungsi=5');
+            /*
+                Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
+                ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
+            */
+            $data = $result->getBody()->getContents();
+            $hasil =  json_decode($data,true);
+            echo json_encode($hasil);
+        }else if($id == 6){
+            $client     = new GuzzleHttp\Client();
+            $result = $client->get(constant('API_URL').'/perkembangan-kawasan?fungsi=6');
+            /*
+                Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
+                ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
+            */
+            $data = $result->getBody()->getContents();
+            $hasil =  json_decode($data,true);
+            echo json_encode($hasil);
+        }else if($id == 7){
+            $client     = new GuzzleHttp\Client();
+            $result = $client->get(constant('API_URL').'/perkembangan-kawasan?fungsi=7');
+            /*
+                Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
+                ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
+            */
+            $data = $result->getBody()->getContents();
+            $hasil =  json_decode($data,true);
+            echo json_encode($hasil);
+        }
+      
     }
     public function destroy($id){
         $client     = new GuzzleHttp\Client();

@@ -303,7 +303,7 @@
                    var table =  $('#myTable').DataTable({
                         deferRender: true,
                         ajax: {
-                            url: "/getDataKonservasi",
+                            url: "/getDataKonservasi/6",
                             type: "GET",
                             dataSrc: function (d) {
                                 return d
@@ -324,7 +324,7 @@
                     var table1 =  $('#myTable1').DataTable({
                         deferRender: true,
                         ajax: {
-                            url: "/getDataKonservasi",
+                            url: "/getDataKonservasi/7",
                             type: "GET",
                             dataSrc: function (d) {
                                 return d
@@ -337,7 +337,7 @@
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button>";
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button> <a href='managekawasan/"+data.id+"' class='btn btn-success'>Manage</a>";
                                 }
                             }
                         ]
@@ -345,7 +345,7 @@
                     var table2 =  $('#myTable2').DataTable({
                         deferRender: true,
                         ajax: {
-                            url: "/getDataKonservasi",
+                            url: "/getDataKonservasi/2",
                             type: "GET",
                             dataSrc: function (d) {
                                 return d
@@ -366,7 +366,7 @@
                     var table3 =  $('#myTable3').DataTable({
                         deferRender: true,
                         ajax: {
-                            url: "/getDataKonservasi",
+                            url: "/getDataKonservasi/1",
                             type: "GET",
                             dataSrc: function (d) {
                                 return d
@@ -387,7 +387,7 @@
                     var table4 =  $('#myTable4').DataTable({
                         deferRender: true,
                         ajax: {
-                            url: "/getDataKonservasi",
+                            url: "/getDataKonservasi/3",
                             type: "GET",
                             dataSrc: function (d) {
                                 return d
@@ -408,7 +408,7 @@
                     var table5 =  $('#myTable5').DataTable({
                         deferRender: true,
                         ajax: {
-                            url: "/getDataKonservasi",
+                            url: "/getDataKonservasi/4",
                             type: "GET",
                             dataSrc: function (d) {
                                 return d

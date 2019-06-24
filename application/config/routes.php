@@ -53,7 +53,7 @@ $route['default_controller'] = 'welcome';
 //Route untuk perkembangan kawasan
 $route['perkembangan-kawasan'] ='perkembanganKawasanController';
 $route['savedDatakawasan'] = 'perkembanganKawasanController/store';
-$route['getDataKonservasi'] = 'perkembanganKawasanController/get';
+$route['getDataKonservasi/(:any)'] = 'perkembanganKawasanController/get/$1';
 $route['DeletedDataKonservasi/(:any)'] = 'perkembanganKawasanController/destroy/$1';
 $route['ubahDataKawasan'] = 'perkembanganKawasanController/update';
 $route['getsingleDataKonservasi/(:any)']='perkembanganKawasanController/show/$1';

@@ -10,7 +10,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php if($this->uri->segment(1)=="perkembangan-kawasan"){echo "active";}?>" href="<?=base_url('perkembangan-kawasan')?>">
+            <a class="nav-link <?php if($this->uri->segment(1)=="dashboard"){echo "active";}?>" href="<?=base_url('dashboard')?>">
               <i class="fa fa-home menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
@@ -97,7 +97,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php if($this->uri->segment(1)=="perkembangan-kawasan"){echo "active";}?>" href="<?=base_url('perkembangan-kawasan')?>">
+            <a class="nav-link <?php if($this->uri->segment(1)=="tata-usaha"){echo "active";}?>" href="<?=base_url('tata-usaha')?>">
               <i class="fa fa-users menu-icon"></i>
               <span class="menu-title">Tata Usaha</span>
             </a>
@@ -115,7 +115,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php if($this->uri->segment(1)=="perkembangan-kawasan"){echo "active";}?>" href="<?=base_url('perkembangan-kawasan')?>">
+            <a class="nav-link <?php if($this->uri->segment(1)=="resources"){echo "active";}?>" href="<?=base_url('resources')?>">
               <i class="fa fa-bullhorn menu-icon"></i>
               <span class="menu-title">Resources</span>
             </a>
