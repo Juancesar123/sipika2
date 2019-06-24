@@ -134,5 +134,11 @@
               </ul>
             </div>
           </li>
+          <li class="nav-item">
+            <a class="nav-link <?php if($this->uri->segment(1)=="unit-pengelolaan-kawasan"){echo "active";}?>" href="<?=base_url('unit-pengelolaan-kawasan')?>">
+              <i class="fa fa-key menu-icon"></i>
+              <span class="menu-title">Unit Pengelolaan Kawasan</span>
+            </a>
+          </li>
         </ul>
       </nav>

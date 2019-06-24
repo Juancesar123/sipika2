@@ -186,13 +186,21 @@ $route['getStrukturOrganisasi'] ='StrukturOrganisasiController/getData';
 $route['struktur-organisasi'] ='StrukturOrganisasiController';
 $route['SaveDataStrukturOrganisasi']='StrukturOrganisasiController/saveData';
 //endroute
-//route untuk Struktur Organisasi
+//route untuk Website Terkait
 $route['getwebsiteterkait'] ='WebsiteTerkaitController/get';
 $route['website-terkait'] ='WebsiteTerkaitController';
 $route['SaveDataWebsiteTerkait']='WebsiteTerkaitController/store';
 $route['updateDataWebsiteTerkait'] ='WebsiteTerkaitController/update';
 $route['showDataWebsiteTerkait/(:any)'] ='WebsiteTerkaitController/show/$1';
 $route['deleteDataWebsiteTerkait/(:any)'] ='WebsiteTerkaitController/destroy/$1';
+//endroute
+//route untuk Unit Pengelolaan Kawasan
+$route['getUnitPengelolaanKawasan'] ='UnitPengelolaanKawasanController/get';
+$route['unit-pengelolaan-kawasan'] ='UnitPengelolaanKawasanController';
+$route['SaveDataUnitPengelolaanKawasan']='UnitPengelolaanKawasanController/store';
+$route['updateDataUnitPengelolaanKawasan'] ='UnitPengelolaanKawasanController/update';
+$route['showDataUnitPengelolaanKawasan/(:any)'] ='UnitPengelolaanKawasanController/show/$1';
+$route['deleteDataUnitPengelolaanKawasan/(:any)'] ='UnitPengelolaanKawasanController/destroy/$1';
 //endroute
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

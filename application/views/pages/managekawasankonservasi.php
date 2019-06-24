@@ -181,7 +181,7 @@
                                                 <td><strong>Nama Kawasan</strong> </td><td> :</td><td> <?php   echo $hasil['nama_kawasan'];?></td>
                                             </tr>
                                             <tr>
-                                                <td><strong>Luas</strong></td><td> :</td><td> <?php   echo $hasil['luas_kawasan'];?></td>
+                                                <td><strong>Luas</strong></td><td> :</td><td> <?php   echo $hasil['luas_kawasan'];?> Ha</td>
                                             </tr>
                                         </table>
                                     </div>

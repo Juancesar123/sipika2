@@ -183,7 +183,7 @@
                             </div>
                         </div>
                         <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" id="SaveAction">Save changes</button>
+                            <button type="button" class="btn btn-primary" id="SaveAction"><img style="width:15px;height:15px;display:none" id="ajaxprocesss" src="images/ajax-loader.gif"> Save changes</button>
                             <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
                         </div>
                         </div>
@@ -448,7 +448,6 @@
                         ]
                     });
                 $('#SaveAction').click(function(){
-                    
                     var namakawasan = $('#namakawasan').val();
                     var fungsi = $('#fungsi').val();
                     var register = $('#register').val();
@@ -468,7 +467,13 @@
                              "&pulau="+pulau+
                              "&provinsi="+provinsi+
                              "&provinsitemp="+provinsitemp,
+                        beforeSend:function(){
+                            $("#ajaxprocesss").css("display", "block");
+                            $("#SaveAction").attr("disabled", true);
+                        },
                         success:function(){
+                            $("#ajaxprocesss").css("display", "none");
+                            $('#SaveAction').prop("disabled", false);
                             Swal.fire(
                                 'Sukses!',
                                 'Data Sukses di simpan!',
@@ -481,6 +486,15 @@
                             table4.ajax.reload();
                             table5.ajax.reload();
                             table6.ajax.reload();
+                        },
+                        error:function(){
+                            $("#ajaxprocesss").css("display", "none");
+                            $('#SaveAction').prop("disabled", false);
+                            Swal.fire({
+                                    type: 'error',
+                                    title: 'Oops...',
+                                    text: 'Something went wrong!'
+                                })
                         }
                     })
                 })
