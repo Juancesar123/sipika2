@@ -53,7 +53,7 @@ $route['default_controller'] = 'welcome';
 //Route untuk perkembangan kawasan
 $route['perkembangan-kawasan'] ='perkembanganKawasanController';
 $route['savedDatakawasan'] = 'perkembanganKawasanController/store';
-$route['getDataKonservasi'] = 'perkembanganKawasanController/get';
+$route['getDataKonservasi/(:any)'] = 'perkembanganKawasanController/get/$1';
 $route['DeletedDataKonservasi/(:any)'] = 'perkembanganKawasanController/destroy/$1';
 $route['ubahDataKawasan'] = 'perkembanganKawasanController/update';
 $route['getsingleDataKonservasi/(:any)']='perkembanganKawasanController/show/$1';
@@ -185,6 +185,14 @@ $route['SaveDataTugasPokokFungsi']='TugasPokokFungsiController/saveData';
 $route['getStrukturOrganisasi'] ='StrukturOrganisasiController/getData';
 $route['struktur-organisasi'] ='StrukturOrganisasiController';
 $route['SaveDataStrukturOrganisasi']='StrukturOrganisasiController/saveData';
+//endroute
+//route untuk Struktur Organisasi
+$route['getwebsiteterkait'] ='WebsiteTerkaitController/get';
+$route['website-terkait'] ='WebsiteTerkaitController';
+$route['SaveDataWebsiteTerkait']='WebsiteTerkaitController/store';
+$route['updateDataWebsiteTerkait'] ='WebsiteTerkaitController/update';
+$route['showDataWebsiteTerkait/(:any)'] ='WebsiteTerkaitController/show/$1';
+$route['deleteDataWebsiteTerkait/(:any)'] ='WebsiteTerkaitController/destroy/$1';
 //endroute
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
