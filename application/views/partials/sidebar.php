@@ -130,6 +130,7 @@
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"><a class="nav-link <?php if($this->uri->segment(1)=="tugas-pokok-fungsi"){echo "active";}?>" href="<?=base_url('tugas-pokok-fungsi')?>">Tugas Pokok Fungsi</a></li>
                 <li class="nav-item"><a class="nav-link <?php if($this->uri->segment(1)=="struktur-organisasi"){echo "active";}?>" href="<?=base_url('struktur-organisasi')?>">Struktur Organisasi</a></li>
+                <li class="nav-item"><a class="nav-link <?php if($this->uri->segment(1)=="website-terkait"){echo "active";}?>" href="<?=base_url('website-terkait')?>">Website Terkait</a></li>
               </ul>
             </div>
           </li>
