@@ -48,7 +48,7 @@
                                 <div class="tab-content" id="v-pills-tabContent">
                                     <div class="tab-pane fade show active" id="v-pills-home"  value="1"role="tabpanel" aria-labelledby="v-pills-home-tab">
                                         <h4>Daftar Taman Wisata Alam</h4>
-                                        <table class="table" id="myTable">
+                                        <table class="table" id="myTable" style="width:100%;">
                                             <thead>
                                                 <th>Register</th>
                                                 <th>Nama Kawasan</th>
@@ -59,7 +59,7 @@
                                     </div>
                                     <div class="tab-pane fade" id="v-pills-profile" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                                     <h4>Daftar Taman Hutan Raya (TAHURA)</h4>
-                                        <table class="table" id="myTable1">
+                                        <table class="table" id="myTable1" style="width:100%;">
                                             <thead>
                                                 <th>Register</th>
                                                 <th>Nama Kawasan</th>
@@ -70,7 +70,7 @@
                                     </div>
                                     <div class="tab-pane fade" id="v-pills-cagar" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                                     <h4>Daftar Cagar Alam</h4>
-                                        <table class="table" id="myTable2">
+                                        <table class="table" id="myTable2" style="width:100%;">
                                             <thead>
                                                 <th>Register</th>
                                                 <th>Nama Kawasan</th>
@@ -81,7 +81,7 @@
                                     </div>
                                     <div class="tab-pane fade" id="v-pills-ks" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                                     <h4>Daftar Kawasan Suaka Alam (KSA) / Kawasan Pelestarian Alam (KPA)</h4>
-                                        <table class="table" id="myTable3">
+                                        <table class="table" id="myTable3" style="width:100%;">
                                             <thead>
                                                 <th>Register</th>
                                                 <th>Nama Kawasan</th>
@@ -92,7 +92,7 @@
                                     </div>
                                     <div class="tab-pane fade" id="v-pills-suaka" role="tabpanel" aria-labelledby="v-pills-profile-tab">
                                     <h4>Daftar Suaka Margasatwa</h4>
-                                        <table class="table" id="myTable4">
+                                        <table class="table" id="myTable4" style="width:100%;">
                                             <thead>
                                                 <th>Register</th>
                                                 <th>Nama Kawasan</th>
@@ -103,7 +103,7 @@
                                     </div>
                                     <div class="tab-pane fade" id="v-pills-messages" role="tabpanel" aria-labelledby="v-pills-messages-tab">
                                        <h4>Daftar Taman Buru</h4>
-                                        <table class="table" id="myTable5">
+                                        <table class="table" id="myTable5" style="width:100%;">
                                             <thead>
                                                 <th>Register</th>
                                                 <th>Nama Kawasan</th>
@@ -114,7 +114,7 @@
                                     </div>
                                     <div class="tab-pane fade" id="v-pills-settings" role="tabpanel" aria-labelledby="v-pills-settings-tab">
                                         <h4>Daftar Taman Nasional</h4>
-                                        <table class="table" id="myTable6">
+                                        <table class="table" id="myTable6" style="width:100%;">
                                             <thead>
                                                 <th>Register</th>
                                                 <th>Nama Kawasan</th>
@@ -358,7 +358,7 @@
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button>";
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button> <a href='managekawasan/"+data.id+"' class='btn btn-success'>Manage</a>";
                                 }
                             }
                         ]
@@ -379,7 +379,7 @@
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button>";
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button> <a href='managekawasan/"+data.id+"' class='btn btn-success'>Manage</a>";
                                 }
                             }
                         ]
@@ -400,7 +400,7 @@
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button>";
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button> <a href='managekawasan/"+data.id+"' class='btn btn-success'>Manage</a>";
                                 }
                             }
                         ]
@@ -421,7 +421,28 @@
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button>";
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button> <a href='managekawasan/"+data.id+"' class='btn btn-success'>Manage</a>";
+                                }
+                            }
+                        ]
+                    });
+                    var table6 =  $('#myTable6').DataTable({
+                        deferRender: true,
+                        ajax: {
+                            url: "/getDataKonservasi/5",
+                            type: "GET",
+                            dataSrc: function (d) {
+                                return d
+                            }
+                        },
+                        columns: [
+                            { data: 'register' },
+                            { data: 'nama_kawasan' },
+                            { data: 'luas_kawasan' },                            	
+                            {
+                                data: null,
+                                render: function ( data, type, row ) {
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button> <a href='managekawasan/"+data.id+"' class='btn btn-success'>Manage</a>";
                                 }
                             }
                         ]
