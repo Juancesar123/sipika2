@@ -111,13 +111,22 @@ class PerkembanganKawasanController extends CI_Controller {
             $data = $result->getBody()->getContents();
             $hasil =  json_decode($data,true);
             echo json_encode($hasil);
+        }else{
+            $client     = new GuzzleHttp\Client();
+            $result = $client->get(constant('API_URL').'/perkembangan-kawasan');
+            /*
+                Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
+                ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
+            */
+            $data = $result->getBody()->getContents();
+            $hasil =  json_decode($data,true);
+            echo json_encode($hasil);
         }
       
     }
     public function destroy($id){
         $client     = new GuzzleHttp\Client();
         $result = $client->delete(constant('API_URL').'/perkembangan-kawasan/'.$id);
-        echo'sukses';
     }
     public function show($id){
         $client     = new GuzzleHttp\Client();

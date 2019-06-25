@@ -1096,7 +1096,7 @@
         var table =  $('#myTable1').DataTable({
                         deferRender: true,
                         ajax: {
-                            url: "/getDataPengukuhanKawasan",
+                            url: "/getDataPengukuhanKawasan/"+"<?php echo $hasil['nama_kawasan'];?>",
                             type: "GET",
                             dataSrc: function (d) {
                                 return d
@@ -1117,7 +1117,7 @@
             var table1 =  $('#myTable2').DataTable({
                         deferRender: true,
                         ajax: {
-                            url: "/getDataEvaluasiFungsiDeskStudy",
+                            url: "/getDataEvaluasiFungsiDeskStudy/"+"<?php echo $hasil['nama_kawasan'];?>",
                             type: "GET",
                             dataSrc: function (d) {
                                 return d
@@ -1138,7 +1138,7 @@
             var table2 =  $('#myTable3').DataTable({
                         deferRender: true,
                         ajax: {
-                            url: "/getDataEvaluasiFungsiEkfLapangan",
+                            url: "/getDataEvaluasiFungsiEkfLapangan/"+"<?php echo $hasil['nama_kawasan'];?>",
                             type: "GET",
                             dataSrc: function (d) {
                                 return d
@@ -1159,7 +1159,7 @@
             var table3 =  $('#myTable4').DataTable({
                         deferRender: true,
                         ajax: {
-                            url: "/getDataIndikasiTora",
+                            url: "/getDataIndikasiTora/"+"<?php echo $hasil['nama_kawasan'];?>",
                             type: "GET",
                             dataSrc: function (d) {
                                 return d
@@ -1180,7 +1180,7 @@
             var table4 =  $('#myTable5').DataTable({
                         deferRender: true,
                         ajax: {
-                            url: "/getDataHutanadat",
+                            url: "/getDataHutanadat/"+"<?php echo $hasil['nama_kawasan'];?>",
                             type: "GET",
                             dataSrc: function (d) {
                                 return d

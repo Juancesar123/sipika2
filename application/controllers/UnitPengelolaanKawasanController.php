@@ -46,7 +46,6 @@ class UnitPengelolaanKawasanController extends CI_Controller {
     public function destroy($id){
         $client     = new GuzzleHttp\Client();
         $result = $client->delete(constant('API_URL').'/unit-pengelolaan-kawasan/'.$id);
-        echo 'sukses';
     }
     public function show($id){
         $client     = new GuzzleHttp\Client();

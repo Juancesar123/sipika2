@@ -259,22 +259,34 @@
     <script src="<?php echo base_url('js/data-table.js')?>"></script>
     <script>
             function myfunc(id){
-                $.ajax({
-                    url:'/DeletedDataKonservasi/'+id,
-                    type:'GET',
-                    success:function(){
-                        Swal.fire(
-                            'Sukses!',
-                            'Data Sukses di simpan!',
-                            'success'
-                        )
-                            table.ajax.reload();
-                            table1.ajax.reload();
-                            table2.ajax.reload();
-                            table3.ajax.reload();
-                            table4.ajax.reload();
-                            table5.ajax.reload();
-                            table6.ajax.reload();
+                Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                    if (result.value) {
+                        $.ajax({
+                            url:'/DeletedDataKonservasi/'+id,
+                            type:'GET',
+                            success:function(){
+                                Swal.fire(
+                                    'Sukses!',
+                                    'Data Sukses di hapus!',
+                                    'success'
+                                )
+                                    table.ajax.reload();
+                                    table1.ajax.reload();
+                                    table2.ajax.reload();
+                                    table3.ajax.reload();
+                                    table4.ajax.reload();
+                                    table5.ajax.reload();
+                                    table6.ajax.reload();
+                            }
+                        })
                     }
                 })
             }
@@ -299,8 +311,7 @@
                     }
                 })
            }
-            $(document).ready(function(){
-                   var table =  $('#myTable').DataTable({
+           var table =  $('#myTable').DataTable({
                         deferRender: true,
                         ajax: {
                             url: "/getDataKonservasi/6",
@@ -447,6 +458,8 @@
                             }
                         ]
                     });
+            $(document).ready(function(){
+                   
                 $('#SaveAction').click(function(){
                     var namakawasan = $('#namakawasan').val();
                     var fungsi = $('#fungsi').val();
