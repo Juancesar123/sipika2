@@ -150,7 +150,8 @@
                                         <thead>
                                             <th>Tahun Pengesahan</th>
                                             <th>Luas KPHK</th>
-                                            <th>Provinsi Atau Kabupaten</th>
+                                            <th>Kabupaten Atau Kota</th>
+                                            <th>Provinsi</th>
                                             <th>Action</th>
                                         </thead>
                                     </table>
@@ -198,15 +199,24 @@
                 type:'GET',
                 success:function(data){
                     var hasil = JSON.parse(data);
-                    console.log(hasil.master_provinsi.kode);
+                    var hasilprovinsi = hasil.provinsi;
+                    var hasilkabupaten = hasil.kabupaten;
                     $( '#tahunpengesahanedit' ).val(hasil.tahun_pengesahaan);
                     $( '#luaskphkedit' ).val(hasil.luas_kphk);
-                    $( '#provinsiedit' ).val(hasil.master_provinsi.kode);
+                    $.each(hasilprovinsi.split(","), function(i,e){
+                        $("#provinsiedit option[value='" + e + "']").prop("selected", true);
+                    });
+                    $.each(hasilkabupaten.split(","), function(i,e){
+                        $("#kabupatenkotaedit option[value='" + e + "']").prop("selected", true);
+                    });
+                    // $('#provinsiedit').val(function(hasilprovinsi, value) {
+                    //     console.log(value);
+                    // });
+                    //$( '#provinsiedit' ).val(['SUMATERA BARAT,SUMATERA BARAT']);
                     $('#provinsiedit').select2().trigger('change');
                     $( '#judulskedit' ).val(hasil.judul_sk);
                     $( '#nomorskedit' ).val(hasil.nomor_sk);
                     $( '#tanggalskedit' ).val(hasil.tanggal_sk);
-                    $( '#kabupatenkotaedit' ).val(hasil.master_provinsi.kode);
                     $('#kabupatenkotaedit').select2().trigger('change');
                     $( '#dokumenskhide' ).val(hasil.dokumen_sk);
                     $( '#idkphkedit' ).val(hasil.id);
@@ -225,7 +235,8 @@
                         columns: [
                             { data: 'tahun_pengesahaan' },
                             { data: 'luas_kphk' },
-                            { data: 'master_provinsi.nama' },                            	
+                            { data: 'kabupaten' },   
+                            { data: 'provinsi' },                            	
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
@@ -242,7 +253,7 @@
                 success:function(data){
                     var html;
                     data.forEach(element => {
-                         html = "<option value="+element.kode+">"+element.nama+"</option>";
+                         html = "<option value='"+element.nama+"'>"+element.nama+"</option>";
                          $("#provinsi").append(html);
                          $("#provinsiedit").append(html);
                     });
@@ -255,7 +266,7 @@
                 success:function(data){
                     var html;
                     data.forEach(element => {
-                         html = "<option value="+element.kode+">"+element.nama+"</option>";
+                         html = "<option value='"+element.nama+"'>"+element.nama+"</option>";
                          $("#kabupatenkota").append(html);
                          $("#kabupatenkotaedit").append(html);
                     });
@@ -278,13 +289,13 @@
                 if(file == undefined){
                     var data;
                     data = new FormData();
-                    data.append( 'tahunpengesahan', $( '#tahunpengesahan' ).val());
-                    data.append( 'luaskphk', $( '#luaskphk' ).val());
+                    data.append( 'tahunpengesahan', $( '#tahunpengesahanedit' ).val());
+                    data.append( 'luaskphk', $( '#luaskphkedit' ).val());
                     data.append( 'provinsi', $( '#provinsiedit' ).val());
-                    data.append( 'kabupaten_kotaedit', $( '#kabupatenkotaedit' ).val());
-                    data.append( 'judulsk', $( '#judulsk' ).val());
-                    data.append( 'nomorsk', $( '#nomorsk' ).val());
-                    data.append( 'tanggalsk', $( '#tanggalsk' ).val());
+                    data.append( 'kabupaten', $( '#kabupatenkotaedit' ).val());
+                    data.append( 'judulsk', $( '#judulskedit' ).val());
+                    data.append( 'nomorsk', $( '#nomorskedit' ).val());
+                    data.append( 'tanggalsk', $( '#tanggalskedit' ).val());
                     data.append( 'idkphk', $( '#idkphkedit' ).val());
                     data.append( 'dokumensk',  $( '#dokumenskhide' ).val());
                     data.append( 'status',  'filenotfound');
@@ -310,7 +321,7 @@
                     data.append( 'tahunpengesahan', $( '#tahunpengesahanedit' ).val());
                     data.append( 'luaskphk', $( '#luaskphkedit' ).val());
                     data.append( 'provinsi', $( '#provinsiedit' ).val());
-                    data.append( 'kabupaten_kota_kphk', $( '#kabupatenkotaedit' ).val());
+                    data.append( 'kabupaten', $( '#kabupatenkotaedit' ).val());
                     data.append( 'judulsk', $( '#judulskedit' ).val());
                     data.append( 'nomorsk', $( '#nomorskedit' ).val());
                     data.append( 'tanggalsk', $( '#tanggalskedit' ).val());

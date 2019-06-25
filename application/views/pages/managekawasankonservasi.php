@@ -58,7 +58,6 @@
                                             <strong>Subdit IIKA</strong>
                                         </div>
                                         <div class="list-group list-group-flush">
-                                            <a data-toggle="tab" href="#pengukuhankawasan" class="list-group-item list-group-item-action bg-light">Inventarisasi Kawasan</a>
                                             <a href="#" class="list-group-item list-group-item-action bg-light">Desa Sekitar KK</a>
                                             <a href="#" class="list-group-item list-group-item-action bg-light">Per Kawasan</a>
                                             <a href="#" class="list-group-item list-group-item-action bg-light">Wilayah Adat</a>
