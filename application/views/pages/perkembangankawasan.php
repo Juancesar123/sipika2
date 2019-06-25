@@ -29,7 +29,7 @@
                     <div class="col-md-12">
                         <div class="card">
                             <div class="card-header">
-                                <h4>Daftar Kawasan Konservasi</h4>
+                                <h4 style="margin-top: 20px;margin-bottom: -25;">Daftar Kawasan Konservasi</h4>
                                 <button class="btn btn-primary float-right" data-toggle="modal" data-target="#modals1"> Tambah</button>
                             </div>
                             <div class="row">
