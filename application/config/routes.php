@@ -202,5 +202,9 @@ $route['updateDataUnitPengelolaanKawasan'] ='UnitPengelolaanKawasanController/up
 $route['showDataUnitPengelolaanKawasan/(:any)'] ='UnitPengelolaanKawasanController/show/$1';
 $route['deleteDataUnitPengelolaanKawasan/(:any)'] ='UnitPengelolaanKawasanController/destroy/$1';
 //endroute
+//route untuk kondisi kawasan
+$route['saveKondisiKawasan'] = "KondisiKawasanController/SaveData";
+$route['updateKondisiKawasan'] = "KondisiKawasanController/UpdateData";
+//endroute
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
