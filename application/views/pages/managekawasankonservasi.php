@@ -689,7 +689,7 @@
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Letak Administrasi</label>
-                                                                <textarea class="form-control" id="letakadministrasikondisikawasan" value="<?php echo $kondisikawasan[0]['letak_administrasi'];?>"></textarea>
+                                                                <textarea class="form-control" id="letakadministrasikondisikawasan"><?php echo $kondisikawasan[0]['letak_administrasi'];?></textarea>
                                                             </div>
                                                             <div class="form-group">
                                                                 <label>Unit Pengelola</label>
