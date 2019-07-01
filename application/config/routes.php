@@ -206,5 +206,12 @@ $route['deleteDataUnitPengelolaanKawasan/(:any)'] ='UnitPengelolaanKawasanContro
 $route['saveKondisiKawasan'] = "KondisiKawasanController/SaveData";
 $route['updateKondisiKawasan'] = "KondisiKawasanController/UpdateData";
 //endroute
+//route potensi kawasan konservarsi
+$route['saveDataPotensiKawasanKonservarsi'] = "PotensiKawasanKonservarsiController/store";
+$route['updateDataPotensiKawasanKonservarsi'] = "PotensiKawasanKonservarsiController/update";
+$route['getDataPotensiKawasanKonservarsi/(:any)'] = "PotensiKawasanKonservarsiController/get/$1";
+$route['showDataPotensiKawasanKonservarsi/(:any)'] = "PotensiKawasanKonservarsiController/show/$1";
+$route['deleteDataPotensiKawasanKonservarsi/(:any)'] = "PotensiKawasanKonservarsiController/destroy/$1";
+//endroute
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
