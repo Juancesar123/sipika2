@@ -58,11 +58,14 @@
                                             <strong>Subdit IIKA</strong>
                                         </div>
                                         <div class="list-group list-group-flush">
-                                            <a data-toggle="tab" href="#pengukuhankawasan" class="list-group-item list-group-item-action bg-light">Inventarisasi Kawasan</a>
-                                            <a href="#" class="list-group-item list-group-item-action bg-light">Desa Sekitar KK</a>
-                                            <a href="#" class="list-group-item list-group-item-action bg-light">Per Kawasan</a>
-                                            <a href="#" class="list-group-item list-group-item-action bg-light">Wilayah Adat</a>
-                                            <a href="#" class="list-group-item list-group-item-action bg-light">Permasalahan Pengelolaan KK</a>
+                                            <a data-toggle="tab" href="#" class="list-group-item list-group-item-action bg-light">Desa Sekitar KK</a>
+                                            <a data-toggle="tab" href="#" class="list-group-item list-group-item-action bg-light">Per Kawasan</a>
+                                            <a data-toggle="tab" href="#" class="list-group-item list-group-item-action bg-light">Wilayah Adat</a>
+                                            <a data-toggle="tab" href="#" class="list-group-item list-group-item-action bg-light">Permasalahan Pengelolaan KK</a>
+                                            <a data-toggle="tab" href="#kondisikawasankonservarsi" class="list-group-item list-group-item-action bg-light">Kondisi Kawasan Konservarsi</a>
+                                            <a data-toggle="tab" href="#" class="list-group-item list-group-item-action bg-light">Permasalahan Pengelolaan KK</a>
+                                            <a data-toggle="tab" href="#" class="list-group-item list-group-item-action bg-light">Permasalahan Pengelolaan KK</a>
+                                            <a data-toggle="tab" href="#" class="list-group-item list-group-item-action bg-light">Permasalahan Pengelolaan KK</a>
                                         </div>
                                         <br>
                                         <div class="sidebar-heading">
@@ -494,6 +497,279 @@
                                                 <th>UPT</th>
                                                 <th>Action</th>
                                             </thead>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div id="evaluasifungsiekflapangan" class="card tab-pane fade">
+                                    <div class="card-header">
+                                        Evaluasi Fungsi EKF Lapangan
+                                    </div>
+                                    <div class="card-body">
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal5">Tambah Data</button>
+                                        <div class="modal fade" id="myModal5">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Input Evaluasi Fungsi Ekf Lapangan</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+
+                                                <!-- Modal body -->
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <div class="form-group">
+                                                                <label>Rekomendasi</label>
+                                                                <textarea class="form-control" type="text" id="rekomendasievaluasifungsiekflapangan"></textarea>
+                                                                
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Tahun Pelaksanaan</label>
+                                                               <select class="form-control" id="tahunpelaksanaanevaluasifungsiekflapangan">
+                                                                    <option value="2019">2019</option>
+                                                                    <option value="2018">2018</option>
+                                                                    <option value="2017">2017</option>
+                                                                    <option value="2016">2016</option>
+                                                               </select>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>UPT</label>
+                                                                <select class="form-control" type="text" id="uptevaluasifungsiekflapangan" >
+                                                                    <option value="1">1</option>
+                                                                    <option value="2">2</option>
+                                                                    <option value="3">3</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Peta</label>
+                                                                <input class="form-control" type="file" id="petaevaluasifungsiekflapangan" >
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Nama Kawasan</label>
+                                                                <input class="form-control" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled >
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="form-group">
+                                                                <h3>SK </h3>
+                                                                <label>Judul SK</label>
+                                                                <input class="form-control" type="text" id="judulskevaluasifungsiekflapangan">
+                                                                <label>Nomor SK</label>
+                                                                <input class="form-control" type="text" id="nomorskevaluasifungsiekflapangan">
+                                                                <label>Tanggal SK</label>
+                                                                <input class="form-control" type="date" id="tanggalskevaluasifungsiekflapangan">
+                                                                <label>Dokumen SK</label>
+                                                                <input class="form-control" type="file" id="dokumenskevaluasifungsiekflapangan">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Modal footer -->
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary" id="SaveDataEvaluasiFungsiEkfLapangan">Simpan</button>
+                                                </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal fade" id="myModal6">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Ubah Evaluasi Fungsi Ekf Lapangan</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+
+                                                <!-- Modal body -->
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-6">
+                                                            <div class="form-group">
+                                                                <label>Rekomendasi</label>
+                                                                <textarea class="form-control" type="text" id="rekomendasievaluasifungsiekflapanganedit"></textarea>
+                                                                <input type="hidden" id="idevaluasifungsiekflapangan">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Tahun Pelaksanaan</label>
+                                                               <select class="form-control" id="tahunpelaksanaanevaluasifungsiekflapanganedit">
+                                                                    <option value="2019">2019</option>
+                                                                    <option value="2018">2018</option>
+                                                                    <option value="2017">2017</option>
+                                                                    <option value="2016">2016</option>
+                                                               </select>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>UPT</label>
+                                                                <select class="form-control" type="text" id="uptevaluasifungsiekflapanganedit" >
+                                                                    <option value="1">1</option>
+                                                                    <option value="2">2</option>
+                                                                    <option value="3">3</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Peta</label>
+                                                                <input class="form-control" type="file" id="petaevaluasifungsiekflapanganedit" >
+                                                                <input type="hidden" id="petaevaluasifungsiekflapanganhidden">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Nama Kawasan</label>
+                                                                <input class="form-control" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled >
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-6">
+                                                            <div class="form-group">
+                                                                <h3>SK </h3>
+                                                                <label>Judul SK</label>
+                                                                <input class="form-control" type="text" id="judulskevaluasifungsiekflapanganedit">
+                                                                <label>Nomor SK</label>
+                                                                <input class="form-control" type="text" id="nomorskevaluasifungsiekflapanganedit">
+                                                                <label>Tanggal SK</label>
+                                                                <input class="form-control" type="date" id="tanggalskevaluasifungsiekflapanganedit">
+                                                                <label>Dokumen SK</label>
+                                                                <input class="form-control" type="file" id="dokumenskevaluasifungsiekflapanganedit">
+                                                                <input type="hidden" id="dokumenskevaluasifungsiekflapanganhidden">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Modal footer -->
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary" id="UpdateDataEvaluasiFungsiEkfLapangan">Simpan</button>
+                                                </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <table class="table" id="myTable3" style="width:100%">
+                                            <thead>
+                                                <th>Rekomendasi</th>
+                                                <th>Tahun Pelaksanaan</th>
+                                                <th>UPT</th>
+                                                <th>Action</th>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div id="kondisikawasankonservarsi" class="card tab-pane fade">
+                                    <div class="card-header" style="height: 55;">
+                                        Kondisi Kawasan Konservarsi
+                                        <button class="btn btn-default btn-sm float-right" style="margin-bottom:10px" data-toggle="modal" data-target="#myModal7"><i class="fa fa-pencil"></i> Edit Data</button>
+                                    </div>
+                                    <div class="card-body">
+                                        <div class="modal fade" id="myModal7">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Input kondisi Kawasan Konservarsi</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+
+                                                <!-- Modal body -->
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Lintang</label>
+                                                                <input type="hidden" id="idkondisikawasan" value="<?php echo $kondisikawasan[0]['id'];?>">
+                                                                <input class="form-control" id="lintangkondisikawasan" value="<?php echo $kondisikawasan[0]['lintang'];?>">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Bujur</label>
+                                                                <input class="form-control" id="bujurkondisikawasan" value="<?php echo $kondisikawasan[0]['bujur'];?>">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Letak Administrasi</label>
+                                                                <textarea class="form-control" id="letakadministrasikondisikawasan" value="<?php echo $kondisikawasan[0]['letak_administrasi'];?>"></textarea>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Unit Pengelola</label>
+                                                                <select class="form-control" id="unitpengelolakondisikawasan">
+                                                                </select>
+                                                                <input class="form-control" type="hidden" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Tipe Ekosistem</label>
+                                                                <select class="form-control" id="tipeekosistemkondisikawasan" value="<?php echo $kondisikawasan[0]['tipe_ekosistem'];?>">
+                                                                    <option value="schmidt"> Ekosistem Test 1 </option>
+                                                                    <option value="ferguson"> Ekosistem Test 1 </option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Tipe Iklim</label>
+                                                                <select class="form-control" id="tipeiklimkondisikawasan" value="<?php echo $kondisikawasan[0]['tipe_iklim'];?>">
+                                                                    <option value="schmidt"> Schmidt </option>
+                                                                    <option value="ferguson"> Ferguson </option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Curah Hujan (MM per tahun)</label>
+                                                                <input class="form-control" id="curahhujankondisikawasan" value="<?php echo $kondisikawasan[0]['curah_hujan'];?>">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Ketinggian (m dpl)</label>
+                                                                <input class="form-control" id="ketinggiankondisikawasan" value="<?php echo $kondisikawasan[0]['ketinggian'];?>">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Sejarah Kawasan</label>
+                                                                <textarea class="form-control" id="sejarahkondisikawasan"><?php echo $kondisikawasan[0]['sejarah_kawasan'];?></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Modal footer -->
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                    <?php if(empty($kondisikawasan)){?>
+                                                        <button type="button" class="btn btn-primary" id="SaveDataKondisiKawasanKosong">Simpan</button>
+                                                    <?php }else{?>
+                                                        <button type="button" class="btn btn-primary" id="SaveDataKondisiKawasan">Simpan</button>
+                                                    <?php } ?>
+                                                </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <table class="table">
+                                            <tr>
+                                                <td><strong>Lintang</strong> </td><td>:</td></td><td><?php   echo $kondisikawasan[0]['lintang'];?></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Bujur</strong></td><td>:</td><td><?php   echo $kondisikawasan[0]['bujur'];?></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Letak Administrasi</strong> </td><td> :</td><td><?php   echo $kondisikawasan[0]['letak_administrasi'];?></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Unit Pengelola</strong> </td><td> :</td><td><?php   echo $kondisikawasan[0]['unit_pengelola'];?></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Tipe Iklim Schmidt & Ferguson</strong></td><td> :</td><td> <?php   echo $kondisikawasan[0]['tipe_iklim'];?></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Curah Hujan(mm per tahun)</strong> </td><td> :</td><td> <?php   echo $kondisikawasan[0]['curah_hujan'];?></td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Ketinggian (mdpl)</strong></td><td> :</td><td> <?php   echo $kondisikawasan[0]['ketinggian'];?> </td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Sejarah Kawasan</strong></td><td> :</td><td> <?php   echo $kondisikawasan[0]['sejarah_kawasan'];?> </td>
+                                            </tr>
+                                            <tr>
+                                                <td><strong>Tipe Eksosistem</strong></td><td> :</td><td> <?php   echo $kondisikawasan[0]['tipe_ekosistem'];?> </td>
+                                            </tr>
                                         </table>
                                     </div>
                                 </div>
@@ -1096,7 +1372,7 @@
         var table =  $('#myTable1').DataTable({
                         deferRender: true,
                         ajax: {
-                            url: "/getDataPengukuhanKawasan",
+                            url: "/getDataPengukuhanKawasan/"+"<?php echo $hasil['nama_kawasan'];?>",
                             type: "GET",
                             dataSrc: function (d) {
                                 return d
@@ -1117,7 +1393,7 @@
             var table1 =  $('#myTable2').DataTable({
                         deferRender: true,
                         ajax: {
-                            url: "/getDataEvaluasiFungsiDeskStudy",
+                            url: "/getDataEvaluasiFungsiDeskStudy/"+"<?php echo $hasil['nama_kawasan'];?>",
                             type: "GET",
                             dataSrc: function (d) {
                                 return d
@@ -1138,7 +1414,7 @@
             var table2 =  $('#myTable3').DataTable({
                         deferRender: true,
                         ajax: {
-                            url: "/getDataEvaluasiFungsiEkfLapangan",
+                            url: "/getDataEvaluasiFungsiEkfLapangan/"+"<?php echo $hasil['nama_kawasan'];?>",
                             type: "GET",
                             dataSrc: function (d) {
                                 return d
@@ -1159,7 +1435,7 @@
             var table3 =  $('#myTable4').DataTable({
                         deferRender: true,
                         ajax: {
-                            url: "/getDataIndikasiTora",
+                            url: "/getDataIndikasiTora/"+"<?php echo $hasil['nama_kawasan'];?>",
                             type: "GET",
                             dataSrc: function (d) {
                                 return d
@@ -1180,7 +1456,7 @@
             var table4 =  $('#myTable5').DataTable({
                         deferRender: true,
                         ajax: {
-                            url: "/getDataHutanadat",
+                            url: "/getDataHutanadat/"+"<?php echo $hasil['nama_kawasan'];?>",
                             type: "GET",
                             dataSrc: function (d) {
                                 return d
@@ -1212,6 +1488,65 @@
                 data.append('id_kawasan', $('#idkawasan').val());
                 $.ajax({
                     url:'/updatedatakawasan',
+                    method:'POST',
+                    data:data,
+                    contentType: false,
+                    processData:false,
+                    success:function(){
+                         Swal.fire(
+                                'Sukses!',
+                                'Data Sukses di simpan!',
+                                'success'
+                            )
+                            document.location.reload()
+                    }
+                })
+            })
+            $('#SaveDataKondisiKawasan').click(function(){
+                var data;
+                data = new FormData();
+                data.append('lintang', $('#lintangkondisikawasan').val());
+                data.append('bujur',$('#bujurkondisikawasan').val());
+                data.append('letak_administrasi', $('#letakadministrasikondisikawasan').val());
+                data.append('unit_pengelola',$('#unitpengelolakondisikawasan').val());
+                data.append('tipe_iklim', $('#tipeiklimkondisikawasan').val());
+                data.append('curah_hujan', $('#curahhujankondisikawasan').val());
+                data.append('ketinggian', $('#ketinggiankondisikawasan').val());
+                data.append('nama_kawasan', $('#namakawasan').val());
+                data.append('id_kondisikawasan', $('#idkondisikawasan').val());
+                data.append('sejarah_kawasan', $('#sejarahkondisikawasan').val());
+                data.append('tipe_ekosistem', $('#tipeekosistemkondisikawasan').val());
+                $.ajax({
+                    url:'/updateKondisiKawasan',
+                    method:'POST',
+                    data:data,
+                    contentType: false,
+                    processData:false,
+                    success:function(){
+                         Swal.fire(
+                                'Sukses!',
+                                'Data Sukses di simpan!',
+                                'success'
+                            )
+                            document.location.reload()
+                    }
+                })
+            })
+            $('#SaveDataKondisiKawasanKosong').click(function(){
+                var data;
+                data = new FormData();
+                data.append('lintang', $('#lintangkondisikawasan').val());
+                data.append('bujur',$('#bujurkondisikawasan').val());
+                data.append('letak_administrasi', $('#letakadministrasikondisikawasan').val());
+                data.append('unit_pengelola',$('#unitpengelolakondisikawasan').val());
+                data.append('tipe_iklim', $('#tipeiklimkondisikawasan').val());
+                data.append('curah_hujan', $('#curahhujankondisikawasan').val());
+                data.append('ketinggian', $('#ketinggiankondisikawasan').val());
+                data.append('sejarah_kawasan', $('#sejarahkondisikawasan').val());
+                data.append('nama_kawasan', $('#namakawasan').val());
+                data.append('tipe_ekosistem', $('#tipeekosistemkondisikawasan').val());
+                $.ajax({
+                    url:'/saveKondisiKawasan',
                     method:'POST',
                     data:data,
                     contentType: false,

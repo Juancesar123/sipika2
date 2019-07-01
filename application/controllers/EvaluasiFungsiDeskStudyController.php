@@ -32,9 +32,9 @@ class EvaluasiFungsiDeskStudyController extends CI_Controller {
             ]
         ]);
     }
-    public function getData(){
+    public function getData($id){
         $client     = new GuzzleHttp\Client();
-        $result = $client->get(constant('API_URL').'/evaluasi-fungsi-desk-study');
+        $result = $client->get(constant('API_URL').'/evaluasi-fungsi-desk-study/?nama_kawasan='.$id);
         /*
             Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
             ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
