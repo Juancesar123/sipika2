@@ -15,6 +15,9 @@ class ManagekawasankonservasiController extends CI_Controller {
         $result = $client->get(constant('API_URL').'/perkembangan-kawasan/'.$id);
         $hasil = $result->getBody()->getContents();
         $data['hasil'] =  json_decode($hasil,true);
+        $resultkondisikawasan = $client->get(constant('API_URL').'/kondisi-kawasan-konservarsi/?nama_kawasan='.$data['hasil']['nama_kawasan']);
+        $hasilkondisikawasan = $resultkondisikawasan->getBody()->getContents();
+        $data['kondisikawasan'] =  json_decode($hasilkondisikawasan,true);
         $data['userdata'] = $this->session->userdata('userdata');
         return $this->load->view('pages/managekawasankonservasi',$data);
     }
