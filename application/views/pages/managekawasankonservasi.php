@@ -64,8 +64,7 @@
                                             <a data-toggle="tab" href="#" class="list-group-item list-group-item-action bg-light">Permasalahan Pengelolaan KK</a>
                                             <a data-toggle="tab" href="#kondisikawasankonservarsi" class="list-group-item list-group-item-action bg-light">Kondisi Kawasan Konservarsi</a>
                                             <a data-toggle="tab" href="#potensikawasankonservarsi" class="list-group-item list-group-item-action bg-light">Potensi Kawasan Konservarsi</a>
-                                            <a data-toggle="tab" href="#" class="list-group-item list-group-item-action bg-light">Permasalahan Pengelolaan KK</a>
-                                            <a data-toggle="tab" href="#" class="list-group-item list-group-item-action bg-light">Permasalahan Pengelolaan KK</a>
+                                            <a data-toggle="tab" href="#keanekaragamanhayati" class="list-group-item list-group-item-action bg-light">Keanekaragaman Hayati</a>
                                         </div>
                                         <br>
                                         <div class="sidebar-heading">
@@ -378,6 +377,126 @@
                                                 <th>Register</th>
                                                 <th>Nama Kawasan</th>
                                                 <th>Luas Kawasan</th>
+                                                <th>Action</th>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div id="keanekaragamanhayati" class="card tab-pane fade">
+                                    <div class="card-header">
+                                        Keanekaragaman Hayati
+                                    </div>
+                                    <div class="card-body">
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal13">Tambah Data</button>
+                                        <div class="modal fade" id="myModal13">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Input Keanekaragaman Hayati</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+
+                                                <!-- Modal body -->
+                                                <div class="modal-body">
+                                                    <div class="form-group">
+                                                        <label>Nama</label>
+                                                        <input class="form-control" type="text" id="namahayati">
+                                                        <input type="hidden" id="namakawasan" value="<?php echo  $hasil['nama_kawasan'];?>">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Jenis</label>
+                                                        <select class="form-control" id="jenishayati">
+                                                            <option value="1"> Tumbuhan </option>
+                                                            <option value="2"> Satwa </option>
+                                                            <option value="3"> Spesies Kunci </option>
+                                                            <option value="4"> 25 Satwa Prioritas </option>
+                                                            <option value="5"> Tumbuhan Endemik </option>
+                                                            <option value="6"> Satwa Endemik </option>
+                                                            <option value="7"> Jenis Tumbuhan Dilindungi </option>
+                                                            <option value="8"> Jenis Satwa Dilindungi </option>
+                                                            <option value="9"> Habitat 25 Satwa </option>
+                                                            <option value="10"> Tumbuhan dan Satwa Liar prioritas pengelolaan </option>
+                                                            <option value="11"> Potensi HBBK </option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Nama Latin</label>
+                                                        <input class="form-control" type="text" id="namalatinhayati" >
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Deskripsi</label>
+                                                        <textarea class="form-control" id="deskripsihayati"></textarea>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Modal footer -->
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary" id="SaveDataKeanekaragamanHayati">Simpan</button>
+                                                </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal fade" id="myModal14">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Ubah Keanekaragaman Hayati</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+
+                                                <!-- Modal body -->
+                                                <div class="modal-body">
+                                                    <div class="form-group">
+                                                        <label>Nama</label>
+                                                        <input class="form-control" type="text" id="namahayatiedit">
+                                                        <input type="hidden" id="namakawasan" value="<?php echo  $hasil['nama_kawasan'];?>">
+                                                        <input type="hidden" id="idkeanekaragamhayati">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Jenis</label>
+                                                        <select class="form-control" id="jenishayatiedit">
+                                                            <option value="1"> Tumbuhan </option>
+                                                            <option value="2"> Satwa </option>
+                                                            <option value="3"> Spesies Kunci </option>
+                                                            <option value="4"> 25 Satwa Prioritas </option>
+                                                            <option value="5"> Tumbuhan Endemik </option>
+                                                            <option value="6"> Satwa Endemik </option>
+                                                            <option value="7"> Jenis Tumbuhan Dilindungi </option>
+                                                            <option value="8"> Jenis Satwa Dilindungi </option>
+                                                            <option value="9"> Habitat 25 Satwa </option>
+                                                            <option value="10"> Tumbuhan dan Satwa Liar prioritas pengelolaan </option>
+                                                            <option value="11"> Potensi HBBK </option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Nama Latin</label>
+                                                        <input class="form-control" type="text" id="namalatinhayatiedit" >
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Deskripsi</label>
+                                                        <textarea class="form-control" id="deskripsihayatiedit"></textarea>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Modal footer -->
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary" id="UpdateDataKeanekaragamanHayati">Simpan</button>
+                                                </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <table class="table" id="myTable8" style="width:100%">
+                                            <thead>
+                                                <th>Nama</th>
+                                                <th>Nama Latin</th>
                                                 <th>Action</th>
                                             </thead>
                                         </table>
@@ -1360,19 +1479,33 @@
                 }
             })
         }
-            function myfunc5(id){
-                $.ajax({
-                    url:'/deleteDataPotensiKawasanKonservarsi/'+id,
-                    type:'GET',
-                    success:function(){
-                        Swal.fire(
-                                    'Sukses!',
-                                    'Data Sukses di hapus!',
-                                    'success'
-                                )
-                                table5.ajax.reload();
-                    }
-                })
+        function myfunc5(id){
+            $.ajax({
+                url:'/deleteDataPotensiKawasanKonservarsi/'+id,
+                type:'GET',
+                success:function(){
+                    Swal.fire(
+                                'Sukses!',
+                                'Data Sukses di hapus!',
+                                'success'
+                            )
+                            table5.ajax.reload();
+                }
+            })
+        }
+        function myfunc6(id){
+            $.ajax({
+                url:'/deleteDataKeanekaragamHayati/'+id,
+                type:'GET',
+                success:function(){
+                    Swal.fire(
+                                'Sukses!',
+                                'Data Sukses di hapus!',
+                                'success'
+                            )
+                            table6.ajax.reload();
+                }
+            })
         }
         function editfunc(id){
             $.ajax({
@@ -1471,6 +1604,20 @@
                     $( '#idpotensi' ).val(hasil.id);
                     $( '#jenispotensikonservarsiedit' ).val(hasil.jenis_potensi);
                     $( '#deskripsipotensikonservarsiedit' ).val(hasil.deskripsi_potensi);
+                }
+            })
+        }
+        function editfunc6(id){
+            $.ajax({
+                url:'/showDataKeanekaragamHayati/'+id,
+                type:'GET',
+                success:function(data){
+                    var hasil = JSON.parse(data);
+                    $( '#idkeanekaragamhayati' ).val(hasil.id);
+                    $( '#namahayatiedit' ).val(hasil.nama);
+                    $( '#namalatinhayatiedit' ).val(hasil.nama_latin);
+                    $( '#jenishayatiedit' ).val(hasil.jenis);
+                    $( '#deskripsihayatiedit' ).val(hasil.deskripsi);
                 }
             })
         }
@@ -1599,6 +1746,26 @@
                             }
                         ]
                     });
+            var table6 =  $('#myTable8').DataTable({
+                        deferRender: true,
+                        ajax: {
+                            url: "/getDataKeanekaragamHayati/"+"<?php echo $hasil['nama_kawasan'];?>",
+                            type: "GET",
+                            dataSrc: function (d) {
+                                return d
+                            }
+                        },
+                        columns: [
+                            { data: 'nama' },
+                            { data: 'nama_latin' },
+                            {
+                                data: null,
+                                render: function ( data, type, row ) {
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal14' onclick='editfunc6("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc6("+data.id+")'>Delete</button>";
+                                }
+                            }
+                        ]
+                    });
         $('document').ready(function(){
             $('#SaveData').click(function(){
                 var data;
@@ -1624,6 +1791,55 @@
                                 'success'
                             )
                             document.location.reload()
+                    }
+                })
+            })
+            $('#SaveDataKeanekaragamanHayati').click(function(){
+                var data;
+                data = new FormData();
+                data.append('nama', $('#namahayati').val());
+                data.append('nama_latin',$('#namalatinhayati').val());
+                data.append('deskripsi', $('#deskripsihayati').val());
+                data.append('jenis', $('#jenishayati').val());
+                data.append('nama_kawasan', $('#namakawasan').val());
+                $.ajax({
+                    url:'/saveDataKeanekaragamHayati',
+                    method:'POST',
+                    data:data,
+                    contentType: false,
+                    processData:false,
+                    success:function(){
+                         Swal.fire(
+                                'Sukses!',
+                                'Data Sukses di simpan!',
+                                'success'
+                            )
+                            table6.ajax.reload();
+                    }
+                })
+            })
+            $('#UpdateDataKeanekaragamanHayati').click(function(){
+                var data;
+                data = new FormData();
+                data.append('nama', $('#namahayatiedit').val());
+                data.append('nama_latin',$('#namalatinhayatiedit').val());
+                data.append('deskripsi', $('#deskripsihayatiedit').val());
+                data.append('jenis', $('#jenishayatiedit').val());
+                data.append('nama_kawasan', $('#namakawasan').val());
+                data.append('id_keanekaragamhayati', $('#idkeanekaragamhayati').val());
+                $.ajax({
+                    url:'/updateDataKeanekaragamHayati',
+                    method:'POST',
+                    data:data,
+                    contentType: false,
+                    processData:false,
+                    success:function(){
+                         Swal.fire(
+                                'Sukses!',
+                                'Data Sukses di simpan!',
+                                'success'
+                            )
+                            table6.ajax.reload();
                     }
                 })
             })

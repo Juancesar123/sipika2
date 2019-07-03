@@ -213,5 +213,12 @@ $route['getDataPotensiKawasanKonservarsi/(:any)'] = "PotensiKawasanKonservarsiCo
 $route['showDataPotensiKawasanKonservarsi/(:any)'] = "PotensiKawasanKonservarsiController/show/$1";
 $route['deleteDataPotensiKawasanKonservarsi/(:any)'] = "PotensiKawasanKonservarsiController/destroy/$1";
 //endroute
+//route potensi kawasan konservarsi
+$route['saveDataKeanekaragamHayati'] = "KeanekaragamHayatiController/store";
+$route['updateDataKeanekaragamHayati'] = "KeanekaragamHayatiController/update";
+$route['getDataKeanekaragamHayati/(:any)'] = "KeanekaragamHayatiController/get/$1";
+$route['showDataKeanekaragamHayati/(:any)'] = "KeanekaragamHayatiController/show/$1";
+$route['deleteDataKeanekaragamHayati/(:any)'] = "KeanekaragamHayatiController/destroy/$1";
+//endroute
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
