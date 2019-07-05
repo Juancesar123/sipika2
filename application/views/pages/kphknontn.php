@@ -42,57 +42,59 @@
                                             <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
-                                        <div class="modal-body">
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <div class="form-group">
-                                                        <label>Tahun Pengesahan</label>
-                                                        <input class="form-control" type="text" id="tahunpengesahan">
+                                        <form id="formkphknontn" method="post" action="">
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <div class="form-group">
+                                                            <label>Tahun Pengesahan</label>
+                                                            <input class="form-control" type="text" id="tahunpengesahan" name="tahunpengesahan">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Tanggal Pengesahan</label>
+                                                            <input class="form-control" type="date" id="tanggalpengesahan"name="tanggalpengesahan">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Nama KPHK</label>
+                                                            <input class="form-control" type="text" id="namakphk" name="namakphk">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Luas KPHK</label>
+                                                            <input class="form-control" type="text" id="luaskphk" name="luaskphk">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Provinsi</label>
+                                                            <input class="form-control" type="text" id="provinsi" name="provinsi">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Kabupaten/Kota KPHK</label>
+                                                            <input class="form-control" type="text" id="kabupatenkota" name="kabupatenkota">
+                                                        </div>
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label>Tanggal Pengesahan</label>
-                                                        <input class="form-control" type="date" id="tanggalpengesahan">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Nama KPHK</label>
-                                                        <input class="form-control" type="text" id="namakphk">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Luas KPHK</label>
-                                                        <input class="form-control" type="text" id="luaskphk">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Provinsi</label>
-                                                        <input class="form-control" type="text" id="provinsi">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Kabupaten/Kota KPHK</label>
-                                                        <input class="form-control" type="text" id="kabupatenkota">
-                                                    </div>
-                                                </div>
-                                                <div class="col-6">
-                                                    <div class="form-group">
-                                                        <h3>SK KPHK</h3>
-                                                        <label>Nama Kawasan</label>
-                                                        <input class="form-control" type="text" id="namakawasan">
-                                                        <label>Judul SK</label>
-                                                        <input class="form-control" type="text" id="judulsk">
-                                                        <label>Nomor SK</label>
-                                                        <input class="form-control" type="text" id="nomorsk">
-                                                        <label>Tanggal SK</label>
-                                                        <input class="form-control" type="date" id="tanggalsk">
-                                                        <label>Dokumen SK</label>
-                                                        <input class="form-control" type="file" id="dokumensk">
+                                                    <div class="col-6">
+                                                        <div class="form-group">
+                                                            <h3>SK KPHK</h3>
+                                                            <label>Nama Kawasan</label>
+                                                            <input class="form-control" type="text" id="namakawasan" name="namakawasan">
+                                                            <label>Judul SK</label>
+                                                            <input class="form-control" type="text" id="judulsk" name="judulsk">
+                                                            <label>Nomor SK</label>
+                                                            <input class="form-control" type="text" id="nomorsk" name="nomorsk">
+                                                            <label>Tanggal SK</label>
+                                                            <input class="form-control" type="date" id="tanggalsk" name="tanggalsk">
+                                                            <label>Dokumen SK</label>
+                                                            <input class="form-control" type="file" id="dokumensk" name="dokumensk">
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                            </div>
                                         </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary" id="SaveData">Save changes</button>
-                                        </div>
-                                        </div>
-                                    </div>
+                                    </form>
                                     </div>
                                     <div class="modal fade bd-example-modal-lg" id="modals2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-lg" role="document">
@@ -103,59 +105,61 @@
                                             <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
-                                        <div class="modal-body">
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <div class="form-group">
-                                                        <label>Tahun Pengesahan</label>
-                                                        <input class="form-control" type="text" id="tahunpengesahanedit">
-                                                        <input class="form-control" type="hidden" id="idkphkedit">
-                                                        <input class="form-control" type="hidden" id="dokumenskhide">
+                                        <form id="formkphknontnedit" method="post" action="">
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <div class="form-group">
+                                                            <label>Tahun Pengesahan</label>
+                                                            <input class="form-control" type="text" id="tahunpengesahanedit" name="tahunpengesahanedit">
+                                                            <input class="form-control" type="hidden" id="idkphkedit" name="idkphkedit">
+                                                            <input class="form-control" type="hidden" id="dokumenskhide" name="tangglpengesahanedit">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Tanggal Pengesahan</label>
+                                                            <input class="form-control" type="date" id="tangglpengesahanedit" name="tangglpengesahanedit">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Nama KPHK</label>
+                                                            <input class="form-control" type="text" id="namakphkedit" name="namakphkedit">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Luas KPHK</label>
+                                                            <input class="form-control" type="text" id="luaskphkedit" name="luaskphkedit">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Provinsi</label>
+                                                            <input class="form-control" type="text" id="provinsiedit" name="provinsiedit">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Kabupaten/Kota KPHK</label>
+                                                            <input class="form-control" type="text" id="kabupatenkotaedit" name="kabupatenkotaedit">
+                                                        </div>
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label>Tanggal Pengesahan</label>
-                                                        <input class="form-control" type="date" id="tangglpengesahanedit">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Nama KPHK</label>
-                                                        <input class="form-control" type="text" id="namakphkedit">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Luas KPHK</label>
-                                                        <input class="form-control" type="text" id="luaskphkedit">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Provinsi</label>
-                                                        <input class="form-control" type="text" id="provinsiedit">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Kabupaten/Kota KPHK</label>
-                                                        <input class="form-control" type="text" id="kabupatenkotaedit">
-                                                    </div>
-                                                </div>
-                                                <div class="col-6">
-                                                    <div class="form-group">
-                                                        <h3>SK KPHK</h3>
-                                                        <label>Nama Kawasan</label>
-                                                        <input class="form-control" type="text" id="namakawasanedit">
-                                                        <label>Judul SK</label>
-                                                        <input class="form-control" type="text" id="judulskedit">
-                                                        <label>Nomor SK</label>
-                                                        <input class="form-control" type="text" id="nomorskedit">
-                                                        <label>Tanggal SK</label>
-                                                        <input class="form-control" type="date" id="tanggalskedit">
-                                                        <label>Dokumen SK</label>
-                                                        <input class="form-control" type="file" id="dokumenskedit">
+                                                    <div class="col-6">
+                                                        <div class="form-group">
+                                                            <h3>SK KPHK</h3>
+                                                            <label>Nama Kawasan</label>
+                                                            <input class="form-control" type="text" id="namakawasanedit" name="namakawasanedit">
+                                                            <label>Judul SK</label>
+                                                            <input class="form-control" type="text" id="judulskedit" name="judulskedit">
+                                                            <label>Nomor SK</label>
+                                                            <input class="form-control" type="text" id="nomorskedit" name="nomorskedit">
+                                                            <label>Tanggal SK</label>
+                                                            <input class="form-control" type="date" id="tanggalskedit" name="tanggalskedit">
+                                                            <label>Dokumen SK</label>
+                                                            <input class="form-control" type="file" id="dokumenskedit" name="dokumenskedit">
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                            </div>
                                         </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary" id="UpdateData">Save changes</button>
-                                        </div>
-                                        </div>
-                                    </div>
+                                    </form>
                                     </div>
                                     <table class="table" id="myTable">
                                         <thead>
@@ -247,100 +251,186 @@
                         ]
                     });
         $('document').ready(function(){
-            $('#UpdateData').click(function(){
-                var file = $('#dokumenskedit')[0].files[0];
-                if(file == undefined){
+            $('form[id="formkphknontnedit"]').validate({
+                rules: {
+                    tahunpengesahanedit:{
+                        required:true,
+                        number:true
+                    },
+                    provinsiedit: 'required',
+                    kabupatenkotaedit: 'required',
+                    tanggalpengesahanedit:'required',
+                    namakphkedit:'required',
+                    namakawasanedit:'required',
+                    judulskedit: 'required',
+                    nomorskedit: 'required',
+                    tanggalskedit: 'required',
+                    luaskphkedit: {
+                        required: true,
+                        number: true
+                    }
+                },
+                messages: {
+                    judul: 'This field is required',
+
+                },
+                submitHandler: function(form) {
+                    var file = $('#dokumenskedit')[0].files[0];
+                    if(file == undefined){
+                        var data;
+                        data = new FormData();
+                        data.append( 'tahunpengesahan', $( '#tahunpengesahanedit' ).val());
+                        data.append( 'luaskphk', $( '#luaskphkedit' ).val());
+                        data.append( 'provinsi', $( '#provinsiedit' ).val());
+                        data.append( 'kabupaten_kota_kphk', $( '#kabupatenkotaedit' ).val());
+                        data.append( 'judulsk', $( '#judulskedit' ).val());
+                        data.append( 'nomorsk', $( '#nomorskedit' ).val());
+                        data.append( 'tanggalsk', $( '#tanggalskedit' ).val());
+                        data.append( 'namakphk', $( '#namakphkedit' ).val());
+                        data.append( 'tanggalpengesahan', $( '#tangglpengesahanedit' ).val());
+                        data.append( 'namakawasan', $( '#namakawasanedit' ).val());
+                        data.append( 'idkphk', $( '#idkphkedit' ).val());
+                        data.append( 'dokumensk',  $( '#dokumenskhide' ).val());
+                        data.append( 'status',  'filenotfound');
+                        $.ajax({
+                            url:'/updateDataKphkNonTn',
+                            method:'POST',
+                            data:data,
+                            contentType: false,
+                            processData:false,
+                            success:function(){
+                                Swal.fire(
+                                        'Sukses!',
+                                        'Data Sukses di simpan!',
+                                        'success'
+                                    ).then(function(){
+                                        $( '#tahunpengesahanedit' ).val('')
+                                        $( '#luaskphkedit' ).val('')
+                                        $( '#provinsiedit' ).val('')
+                                        $( '#kabupatenkotaedit' ).val('')
+                                        $( '#judulskedit' ).val('')
+                                        $( '#nomorskedit' ).val('')
+                                        $( '#tanggalskedit' ).val('')
+                                        $( '#namakphkedit' ).val('')
+                                        $( '#tangglpengesahanedit' ).val('')
+                                        $( '#namakawasanedit' ).val('')
+                                        $('#modals2').modal('toggle')
+                                    })
+                                    table.ajax.reload();
+                            }
+                        })
+                    }else{
+                        var data;
+                        data = new FormData();
+                        data.append( 'dokumensk', $( '#dokumenskedit' )[0].files[0] );
+                        data.append( 'tahunpengesahan', $( '#tahunpengesahanedit' ).val());
+                        data.append( 'luaskphk', $( '#luaskphkedit' ).val());
+                        data.append( 'provinsi', $( '#provinsiedit' ).val());
+                        data.append( 'namakphk', $( '#namakphkedit' ).val());
+                        data.append( 'tanggalpengesahan', $( '#tangglpengesahanedit' ).val());
+                        data.append( 'namakawasan', $( '#namakawasanedit' ).val());
+                        data.append( 'kabupaten_kota_kphk', $( '#kabupatenkotaedit' ).val());
+                        data.append( 'judulsk', $( '#judulskedit' ).val());
+                        data.append( 'nomorsk', $( '#nomorskedit' ).val());
+                        data.append( 'tanggalsk', $( '#tanggalskedit' ).val());
+                        data.append( 'idkphk', $( '#idkphkedit' ).val());
+                        $.ajax({
+                            url:'/updateDataKphkNonTn',
+                            method:'POST',
+                            data:data,
+                            contentType: false,
+                            processData:false,
+                            success:function(){
+                                Swal.fire(
+                                        'Sukses!',
+                                        'Data Sukses di simpan!',
+                                        'success'
+                                    ).then(function(){
+                                        $( '#tahunpengesahanedit' ).val('')
+                                        $( '#luaskphkedit' ).val('')
+                                        $( '#provinsiedit' ).val('')
+                                        $( '#kabupatenkotaedit' ).val('')
+                                        $( '#judulskedit' ).val('')
+                                        $( '#nomorskedit' ).val('')
+                                        $( '#tanggalskedit' ).val('')
+                                        $( '#namakphkedit' ).val('')
+                                        $( '#tangglpengesahanedit' ).val('')
+                                        $( '#namakawasanedit' ).val('')
+                                        $('#modals2').modal('toggle')
+                                    })
+                                    table.ajax.reload();
+                            }
+                        })
+                    }
+                }
+            })
+            $('form[id="formkphknontn"]').validate({
+                rules: {
+                    tahunpengesahan:{
+                        required:true,
+                        number:true
+                    },
+                    provinsi: 'required',
+                    kabupatenkota: 'required',
+                    tanggalpengesahan:'required',
+                    namakphk:'required',
+                    namakawasan:'required',
+                    judulsk: 'required',
+                    nomorsk: 'required',
+                    tanggalsk: 'required',
+                    luaskphk: {
+                        required: true,
+                        number: true
+                    },
+                    dokumensk:'required'
+                },
+                messages: {
+                    judul: 'This field is required',
+
+                },
+                submitHandler: function(form) {
                     var data;
                     data = new FormData();
-                    data.append( 'tahunpengesahan', $( '#tahunpengesahanedit' ).val());
-                    data.append( 'luaskphk', $( '#luaskphkedit' ).val());
-                    data.append( 'provinsi', $( '#provinsiedit' ).val());
-                    data.append( 'kabupaten_kota_kphk', $( '#kabupatenkotaedit' ).val());
-                    data.append( 'judulsk', $( '#judulskedit' ).val());
-                    data.append( 'nomorsk', $( '#nomorskedit' ).val());
-                    data.append( 'tanggalsk', $( '#tanggalskedit' ).val());
-                    data.append( 'namakphk', $( '#namakphkedit' ).val());
-                    data.append( 'tanggalpengesahan', $( '#tangglpengesahanedit' ).val());
-                    data.append( 'namakawasan', $( '#namakawasanedit' ).val());
-                    data.append( 'idkphk', $( '#idkphkedit' ).val());
-                    data.append( 'dokumensk',  $( '#dokumenskhide' ).val());
-                    data.append( 'status',  'filenotfound');
+                    data.append( 'dokumensk', $( '#dokumensk' )[0].files[0] );
+                    data.append( 'tahunpengesahan', $( '#tahunpengesahan' ).val());
+                    data.append( 'tanggalpengesahan', $( '#tanggalpengesahan' ).val());
+                    data.append( 'namakphk', $( '#namakphk' ).val());
+                    data.append( 'namakawasan', $( '#namakawasan' ).val());
+                    data.append( 'luaskphk', $( '#luaskphk' ).val());
+                    data.append( 'provinsi', $( '#provinsi' ).val());
+                    data.append( 'kabupaten_kota_kphk', $( '#kabupatenkota' ).val());
+                    data.append( 'judulsk', $( '#judulsk' ).val());
+                    data.append( 'nomorsk', $( '#nomorsk' ).val());
+                    data.append( 'tanggalsk', $( '#tanggalsk' ).val());
                     $.ajax({
-                        url:'/updateDataKphkNonTn',
+                        url:'/savedDatakphkNonTn',
                         method:'POST',
                         data:data,
                         contentType: false,
                         processData:false,
                         success:function(){
-                            Swal.fire(
+                                Swal.fire(
                                     'Sukses!',
                                     'Data Sukses di simpan!',
                                     'success'
-                                )
-                                table.ajax.reload();
-                        }
-                    })
-                }else{
-                    var data;
-                    data = new FormData();
-                    data.append( 'dokumensk', $( '#dokumenskedit' )[0].files[0] );
-                    data.append( 'tahunpengesahan', $( '#tahunpengesahanedit' ).val());
-                    data.append( 'luaskphk', $( '#luaskphkedit' ).val());
-                    data.append( 'provinsi', $( '#provinsiedit' ).val());
-                    data.append( 'namakphk', $( '#namakphkedit' ).val());
-                    data.append( 'tanggalpengesahan', $( '#tangglpengesahanedit' ).val());
-                    data.append( 'namakawasan', $( '#namakawasanedit' ).val());
-                    data.append( 'kabupaten_kota_kphk', $( '#kabupatenkotaedit' ).val());
-                    data.append( 'judulsk', $( '#judulskedit' ).val());
-                    data.append( 'nomorsk', $( '#nomorskedit' ).val());
-                    data.append( 'tanggalsk', $( '#tanggalskedit' ).val());
-                    data.append( 'idkphk', $( '#idkphkedit' ).val());
-                    $.ajax({
-                        url:'/updateDataKphkNonTn',
-                        method:'POST',
-                        data:data,
-                        contentType: false,
-                        processData:false,
-                        success:function(){
-                            Swal.fire(
-                                    'Sukses!',
-                                    'Data Sukses di simpan!',
-                                    'success'
-                                )
+                                ).then(function(){
+                                    $( '#dokumensk' ).val('')
+                                    $( '#tahunpengesahan' ).val('')
+                                    $( '#tanggalpengesahan' ).val('')
+                                    $( '#namakphk' ).val('')
+                                    $( '#namakawasan' ).val('')
+                                    $( '#luaskphk' ).val('')
+                                    $( '#provinsi' ).val('')
+                                    $( '#kabupatenkota' ).val('')
+                                    $( '#judulsk' ).val('')
+                                    $( '#nomorsk' ).val('')
+                                    $( '#tanggalsk' ).val('')
+                                    $('#exampleModal').modal('toggle');
+                                })
                                 table.ajax.reload();
                         }
                     })
                 }
-            })
-            $('#SaveData').click(function(){
-                var data;
-                data = new FormData();
-                data.append( 'dokumensk', $( '#dokumensk' )[0].files[0] );
-                data.append( 'tahunpengesahan', $( '#tahunpengesahan' ).val());
-                data.append( 'tanggalpengesahan', $( '#tanggalpengesahan' ).val());
-                data.append( 'namakphk', $( '#namakphk' ).val());
-                data.append( 'namakawasan', $( '#namakawasan' ).val());
-                data.append( 'luaskphk', $( '#luaskphk' ).val());
-                data.append( 'provinsi', $( '#provinsi' ).val());
-                data.append( 'kabupaten_kota_kphk', $( '#kabupatenkota' ).val());
-                data.append( 'judulsk', $( '#judulsk' ).val());
-                data.append( 'nomorsk', $( '#nomorsk' ).val());
-                data.append( 'tanggalsk', $( '#tanggalsk' ).val());
-                $.ajax({
-                    url:'/savedDatakphkNonTn',
-                    method:'POST',
-                    data:data,
-                    contentType: false,
-                    processData:false,
-                    success:function(){
-                         Swal.fire(
-                                'Sukses!',
-                                'Data Sukses di simpan!',
-                                'success'
-                            )
-                            table.ajax.reload();
-                    }
-                })
             })
         })
     </script>
