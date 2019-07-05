@@ -17,4 +17,10 @@
   <link rel="stylesheet" href="<?php echo base_url('css/vertical-layout-light/style.css')?>">
   <!-- endinject -->
   <link rel="shortcut icon" href="<?php echo base_url('images/favicon.png')?>" />
+  <style>
+        .error {
+                color: red;
+                margin-left: 5px;
+            }
+    </style>
 </head>

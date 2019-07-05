@@ -1,5 +1,6 @@
 <html>
     <?php $this->load->view("partials/head")?>
+   
 <body>
     <div class="container-scroller">
     <?php $this->load->view("partials/navbar")?>
@@ -33,50 +34,54 @@
                                     <button class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">Tambah Roles</button>
                                 </div>
                                 <div class="card-body">
-                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Form Input Roles</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="form-group">
-                                                <label>Roles</label>
-                                                <input class="form-control" type="text" id="roles">
+                                    <div class="modal fade" id="exampleModal"  tabindex='-1' data-keyboard='false' data-backdrop='static' role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Form Input Roles</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <form id="rolesform" method="POST" action="">
+                                                    <div class="modal-body">
+                                                        <div class="form-group">
+                                                            <label>Roles</label>
+                                                            <input class="form-control" type="text" id="roles" name="roles">
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                                    </div>
+                                                </form>
                                             </div>
                                         </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary" id="SaveData">Save changes</button>
-                                        </div>
-                                        </div>
-                                    </div>
                                     </div>
                                     <div class="modal fade bd-example-modal-lg" id="modals2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog" role="document">
-                                        <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Form Ubah Roles</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="form-group">
-                                                <label>Roles</label>
-                                                <input class="form-control" type="text" id="rolesedit">
-                                                <input type="hidden" id="idroles">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Form Ubah Roles</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <form id="rolesformedit" method="POST" action="">
+                                                    <div class="modal-body">
+                                                        <div class="form-group">
+                                                            <label>Roles</label>
+                                                            <input class="form-control" type="text" id="rolesedit" name="rolesedit">
+                                                            <input type="hidden" id="idroles">
+                                                        </div>
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                                    </div>
+                                                </form>
                                             </div>
                                         </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary" id="UpdateData">Save changes</button>
-                                        </div>
-                                        </div>
-                                    </div>
                                     </div>
                                     <table class="table" id="myTable">
                                         <thead>
@@ -154,39 +159,64 @@
                         ]
                     });
         $('document').ready(function(){
-            $('#UpdateData').click(function(){
-                var roles = $('#rolesedit').val();
-                var idroles = $('#idroles').val();
-                $.ajax({
-                    url:'/updateDataRoles',
-                    method:'POST',
-                    data:'roles='+roles+'&id='+idroles,
-                    success:function(){
-                         Swal.fire(
-                                'Sukses!',
-                                'Data Sukses di simpan!',
-                                'success'
-                            )
-                            table.ajax.reload();
-                    }
-                })
-            })
-            $('#SaveData').click(function(){
-                var roles = $('#roles').val();
-                $.ajax({
-                    url:'/savedDataRoles',
-                    method:'POST',
-                    data:'roles='+roles,
-                    success:function(){
-                         Swal.fire(
-                                'Sukses!',
-                                'Data Sukses di simpan!',
-                                'success'
-                            )
-                            table.ajax.reload();
-                    }
-                })
-            })
+            $('form[id="rolesformedit"]').validate({
+                rules: {
+                    rolesedit: 'required',
+                },
+                messages: {
+                    rolesedit: 'This field is required',
+                },
+                submitHandler: function(form) {
+                    var roles = $('#rolesedit').val();
+                    var idroles = $('#idroles').val();
+                    $.ajax({
+                        url:'/updateDataRoles',
+                        method:'POST',
+                        data:'roles='+roles+'&id='+idroles,
+                        success:function(){
+                            Swal.fire(
+                                    'Sukses!',
+                                    'Data Sukses di simpan!',
+                                    'success'
+                                ).then(function(){
+                                    $('#roles').val('');
+                                    $('#modals2').modal('toggle');
+                                })
+                                table.ajax.reload();
+                        }
+                    })
+                }
+            });
+            $('form[id="rolesform"]').validate({
+                rules: {
+                    roles: 'required',
+                },
+                messages: {
+                    roles: 'This field is required',
+                },
+                submitHandler: function(form) {
+                    var roles = $('#roles').val();
+                    $.ajax({
+                        url:'/savedDataRoles',
+                        method:'POST',
+                        data:'roles='+roles,
+                        success:function(){
+                            Swal.fire(
+                                    'Sukses!',
+                                    'Data Sukses di simpan!',
+                                    'success'
+                                ).then(function(){
+                                    $('#roles').val('');
+                                    $('#exampleModal').modal('toggle');
+                                })
+                                table.ajax.reload();
+                        },
+                        error:function(){
+
+                        }
+                    })
+                }
+            });
         })
     </script>
 </body>
