@@ -42,6 +42,10 @@ class PerkembanganZonasiTnController extends CI_Controller {
                     'contents' => 'skkphktn/'.$name
                 ],
                 [
+                    'name' => 'luas',
+                    'contents' => $this->input->post('luas')
+                ],
+                [
                     'name' => 'datasurat',
                     'contents' => $this->input->post('datasurat')
                 ],
@@ -88,10 +92,6 @@ class PerkembanganZonasiTnController extends CI_Controller {
                 [
                     'name' => 'data_luas_zona',
                     'contents' => $this->input->post('dataluaszona')
-                ],
-                [
-                    'name' => 'zona_inti',
-                    'contents' => '2'
                 ],
                 [
                     'name' => 'zona_pemanfaatan',

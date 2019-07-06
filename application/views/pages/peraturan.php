@@ -34,70 +34,74 @@
                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Form Input Peraturan</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="form-group">
-                                                <label>Jenis Peraturan</label>
-                                                <select class="form-control" name="jenisperaturan" id="jenisperaturan">
-                                                    <option value="UU">UU</option>
-                                                    <option value="PP">PP</option>
-                                                    <option value="Perpres">Perpres</option>
-                                                    <option value="permen">Permen</option>
-                                                    <option value="perdirjen">Perdirjen</option>
-                                                    <option value="SE">SE</option>
-                                                </select>
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Form Input Peraturan</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                                </button>
                                             </div>
-                                            <div class="form-group">
-                                                <label>File</label>
-                                                <input class="form-control" type="file" id="file">
-                                            </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary" id="SaveData">Save changes</button>
-                                        </div>
+                                            <form id="peraturanform">
+                                                <div class="modal-body">
+                                                    <div class="form-group">
+                                                        <label>Jenis Peraturan</label>
+                                                        <select class="form-control" name="jenisperaturan" id="jenisperaturan" name="jenisperaturan">
+                                                            <option value="UU">UU</option>
+                                                            <option value="PP">PP</option>
+                                                            <option value="Perpres">Perpres</option>
+                                                            <option value="permen">Permen</option>
+                                                            <option value="perdirjen">Perdirjen</option>
+                                                            <option value="SE">SE</option>
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>File</label>
+                                                        <input class="form-control" type="file" id="file" name="file">
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-primary">Save changes</button>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
                                     </div>
                                     <div class="modal fade bd-example-modal-lg" id="modals2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                                    <div class="modal-dialog modal-lg" role="document">
-                                        <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Form Ubah Peraturan</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                            <div class="form-group">
-                                                <label>Judul Sketsa Sejarah</label>
-                                                <select class="form-control" name="jenisperaturanedit" id="jenisperaturanedit">
-                                                    <option value="UU">UU</option>
-                                                    <option value="PP">PP</option>
-                                                    <option value="Perpres">Perpres</option>
-                                                    <option value="permen">Permen</option>
-                                                    <option value="perdirjen">Perdirjen</option>
-                                                    <option value="SE">SE</option>
-                                                </select>
-                                                <input type="hidden" id="idperaturan">
-                                                <input type="hidden" id="filehidden">
+                                        <div class="modal-dialog modal-lg" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="exampleModalLabel">Form Ubah Peraturan</h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                    <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <form id="peraturanformedit">
+                                                    <div class="modal-body">
+                                                        <div class="form-group">
+                                                            <label>Judul Sketsa Sejarah</label>
+                                                            <select class="form-control" name="jenisperaturanedit" id="jenisperaturanedit" name="jenisperaturanedit">
+                                                                <option value="UU">UU</option>
+                                                                <option value="PP">PP</option>
+                                                                <option value="Perpres">Perpres</option>
+                                                                <option value="permen">Permen</option>
+                                                                <option value="perdirjen">Perdirjen</option>
+                                                                <option value="SE">SE</option>
+                                                            </select>
+                                                            <input type="hidden" id="idperaturan">
+                                                            <input type="hidden" id="filehidden">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>File</label>
+                                                            <input class="form-control" type="file" id="fileedit" name="fileedit">
+                                                        </div>  
+                                                    </div>
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Save changes</button>
+                                                    </div>
+                                                </form>
                                             </div>
-                                            <div class="form-group">
-                                                <label>File</label>
-                                                <input class="form-control" type="file" id="fileedit">
-                                            </div>  
                                         </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary" id="UpdateData">Save changes</button>
-                                        </div>
-                                        </div>
-                                    </div>
                                     </div>
                                     <table class="table" id="myTable">
                                         <thead>
@@ -175,17 +179,84 @@
                         ]
                     });
         $('document').ready(function(){
-            $('#UpdateData').click(function(){
-                var file = $('#fileedit')[0].files[0];
-                if(file == undefined){
+            $('form[id="peraturanformedit"]').validate({
+                rules: {
+                    jenisperaturanedit: 'required'
+                },
+                messages: {
+                    roles: 'This field is required',
+                },
+                submitHandler: function(form) {
+                    var file = $('#fileedit')[0].files[0];
+                    if(file == undefined){
+                        var data;
+                        data = new FormData();
+                        data.append( 'idperaturan', $( '#idperaturan' ).val());
+                        data.append( 'file', $( '#filehidden' ).val());
+                        data.append( 'jenis_peraturan', $( '#jenisperaturanedit' ).val());
+                        data.append( 'status',  'filenotfound');
+                        $.ajax({
+                            url:'/updateDataPeraturan',
+                            method:'POST',
+                            data:data,
+                            contentType: false,
+                            processData:false,
+                            success:function(){
+                                Swal.fire(
+                                        'Sukses!',
+                                        'Data Sukses di simpan!',
+                                        'success'
+                                    ).then(function(){
+                                        $( '#jenisperaturanedit' ).val('');
+                                        $( '#fileedit' ).val('');
+                                        $('#modals2').modal('toggle');
+                                    })
+                                    table.ajax.reload();
+                            }
+                        })
+                    }else{
+                        var data;
+                        data = new FormData();
+                        data.append( 'file', $( '#fileedit' )[0].files[0] );
+                        data.append( 'jenis_peraturan', $( '#jenisperaturanedit' ).val());
+                        data.append( 'idperaturan', $( '#idperaturan' ).val());
+                        $.ajax({
+                            url:'/updateDataSketsaSejarah',
+                            method:'POST',
+                            data:data,
+                            contentType: false,
+                            processData:false,
+                            success:function(){
+                                Swal.fire(
+                                        'Sukses!',
+                                        'Data Sukses di simpan!',
+                                        'success'
+                                    ).then(function(){
+                                        $( '#jenisperaturanedit' ).val('');
+                                        $( '#fileedit' ).val('');
+                                        $('#modals2').modal('toggle');
+                                    })
+                                    table.ajax.reload();
+                            }
+                        })
+                }
+                }
+            })
+            $('form[id="peraturanform"]').validate({
+                rules: {
+                    jenisperaturan: 'required',
+                    file:'required',
+                },
+                messages: {
+                    roles: 'This field is required',
+                },
+                submitHandler: function(form) {
                     var data;
                     data = new FormData();
-                    data.append( 'idperaturan', $( '#idperaturan' ).val());
-                    data.append( 'file', $( '#filehidden' ).val());
-                    data.append( 'jenis_peraturan', $( '#jenisperaturanedit' ).val());
-                    data.append( 'status',  'filenotfound');
+                    data.append( 'file', $( '#file' )[0].files[0] );
+                    data.append( 'jenis_peraturan', $( '#jenisperaturan' ).val());
                     $.ajax({
-                        url:'/updateDataPeraturan',
+                        url:'/savedDataPeraturan',
                         method:'POST',
                         data:data,
                         contentType: false,
@@ -195,54 +266,16 @@
                                     'Sukses!',
                                     'Data Sukses di simpan!',
                                     'success'
-                                )
-                                table.ajax.reload();
-                        }
-                    })
-                }else{
-                    var data;
-                    data = new FormData();
-                    data.append( 'file', $( '#fileedit' )[0].files[0] );
-                    data.append( 'jenis_peraturan', $( '#jenisperaturanedit' ).val());
-                    data.append( 'idperaturan', $( '#idperaturan' ).val());
-                    $.ajax({
-                        url:'/updateDataSketsaSejarah',
-                        method:'POST',
-                        data:data,
-                        contentType: false,
-                        processData:false,
-                        success:function(){
-                            Swal.fire(
-                                    'Sukses!',
-                                    'Data Sukses di simpan!',
-                                    'success'
-                                )
+                                ).then(function(){
+                                    $( '#jenisperaturan' ).val('');
+                                    $( '#file' ).val('');
+                                    $('#exampleModal').modal('toggle');
+                                })
                                 table.ajax.reload();
                         }
                     })
                 }
-            })
-            $('#SaveData').click(function(){
-                var data;
-                data = new FormData();
-                data.append( 'file', $( '#file' )[0].files[0] );
-                data.append( 'jenis_peraturan', $( '#jenisperaturan' ).val());
-                $.ajax({
-                    url:'/savedDataPeraturan',
-                    method:'POST',
-                    data:data,
-                    contentType: false,
-                    processData:false,
-                    success:function(){
-                         Swal.fire(
-                                'Sukses!',
-                                'Data Sukses di simpan!',
-                                'success'
-                            )
-                            table.ajax.reload();
-                    }
-                })
-            })
+            });
         })
     </script>
 </body>

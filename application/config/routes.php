@@ -111,8 +111,8 @@ $route['deleteDataPeraturan/(:any)'] ='PeraturanController/destroy/$1';
 $route['perkembangan-zonasi-tn'] ='PerkembanganZonasiTnController';
 $route['getDataPerkembanganzonasiTn'] ='PerkembanganZonasiTnController/get';
 $route['savedDataperkembanganzonasitn'] ='PerkembanganZonasiTnController/store';
-$route['updateDataPeraturan'] ='PeraturanController/update';
-$route['showDataPeraturan/(:any)'] ='PeraturanController/show/$1';
+$route['updateDataPerkembanganzonasitn'] ='PerkembanganZonasiTnController/update';
+$route['showDataPerkembanganzonasiTn/(:any)'] ='PerkembanganZonasiTnController/show/$1';
 $route['deletePerkembanganZonasiTn/(:any)'] ='PerkembanganZonasiTnController/destroy/$1';
 //endroute
 //Route untuk Roles
