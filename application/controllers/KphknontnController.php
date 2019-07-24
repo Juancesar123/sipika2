@@ -47,7 +47,7 @@ class KphknontnController extends CI_Controller {
                 ],
                 [
                     'name' => 'nama_kphk',
-                    'contents' => $this->input->post('namakhpk')
+                    'contents' => $this->input->post('namakphk')
                 ],
                 [
                     'name' => 'nama_kawasan',

@@ -33,7 +33,7 @@
                                     <button class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">Tambah Sketsa Sejarah</button>
                                 </div>
                                 <div class="card-body">
-                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                                <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-keyboard='false' data-backdrop='static'>
                                     <div class="modal-dialog" role="document">
                                         <div class="modal-content">
                                         <div class="modal-header">
@@ -42,20 +42,22 @@
                                             <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
-                                        <div class="modal-body">
-                                            <div class="form-group">
-                                                <label>Judul Sketsa Sejarah</label>
-                                                <input class="form-control" type="text" id="judul">
+                                        <form id="sketsasejarahform" method="POST" action="">
+                                            <div class="modal-body">
+                                                <div class="form-group">
+                                                    <label>Judul Sketsa Sejarah</label>
+                                                    <input class="form-control" type="text" id="judul" name="judul" name="judul">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>File Sketsa Sejarah</label>
+                                                    <input class="form-control" type="file" id="file" name="file" name="file">
+                                                </div>
                                             </div>
-                                            <div class="form-group">
-                                                <label>File Sketsa Sejarah</label>
-                                                <input class="form-control" type="file" id="file">
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary" >Save changes</button>
                                             </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary" id="SaveData">Save changes</button>
-                                        </div>
+                                        </form>
                                         </div>
                                     </div>
                                     </div>
@@ -68,22 +70,24 @@
                                             <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
-                                        <div class="modal-body">
-                                            <div class="form-group">
-                                                <label>Judul Sketsa Sejarah</label>
-                                                <input class="form-control" type="text" id="juduledit">
-                                                <input type="hidden" id="idsketsasejarah">
-                                                <input type="hidden" id="filehidden">
+                                        <form id="sketsasejarahformedit" method="POST" action="">
+                                            <div class="modal-body">
+                                                <div class="form-group">
+                                                    <label>Judul Sketsa Sejarah</label>
+                                                    <input class="form-control" type="text" id="juduledit" name="juduledit">
+                                                    <input type="hidden" id="idsketsasejarah">
+                                                    <input type="hidden" id="filehidden">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>File Sketsa Sejarah</label>
+                                                    <input class="form-control" type="file" id="fileedit" name="fileedit">
+                                                </div>  
                                             </div>
-                                            <div class="form-group">
-                                                <label>File Sketsa Sejarah</label>
-                                                <input class="form-control" type="file" id="fileedit">
-                                            </div>  
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary" id="UpdateData">Save changes</button>
-                                        </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </form>
                                         </div>
                                     </div>
                                     </div>
@@ -166,16 +170,28 @@
                     });
         $('document').ready(function(){
             $('#UpdateData').click(function(){
-                var file = $('#fileedit')[0].files[0];
-                if(file == undefined){
+                
+            })
+            $('form[id="sketsasejarahform"]').validate({
+                rules: {
+                    judul: 'required',
+                },
+                file: {
+                    required: true,
+                    accept: "image/*"
+                },
+                messages: {
+                    judul: 'This field is required',
+                    file:'This field mustbe images'
+
+                },
+                submitHandler: function(form) {
                     var data;
                     data = new FormData();
-                    data.append( 'idsketsasejarah', $( '#idsketsasejarah' ).val());
-                    data.append( 'file', $( '#filehidden' ).val());
-                    data.append( 'judul', $( '#juduledit' ).val());
-                    data.append( 'status',  'filenotfound');
+                    data.append( 'file', $( '#file' )[0].files[0] );
+                    data.append( 'judul', $( '#judul' ).val());
                     $.ajax({
-                        url:'/updateDataSketsaSejarah',
+                        url:'/savedDataSketsaSejarah',
                         method:'POST',
                         data:data,
                         contentType: false,
@@ -185,54 +201,83 @@
                                     'Sukses!',
                                     'Data Sukses di simpan!',
                                     'success'
-                                )
-                                table.ajax.reload();
-                        }
-                    })
-                }else{
-                    var data;
-                    data = new FormData();
-                    data.append( 'file', $( '#fileedit' )[0].files[0] );
-                    data.append( 'judul', $( '#juduledit' ).val());
-                    data.append( 'idsketsasejarah', $( '#idsketsasejarah' ).val());
-                    $.ajax({
-                        url:'/updateDataSketsaSejarah',
-                        method:'POST',
-                        data:data,
-                        contentType: false,
-                        processData:false,
-                        success:function(){
-                            Swal.fire(
-                                    'Sukses!',
-                                    'Data Sukses di simpan!',
-                                    'success'
-                                )
+                                ).then(function(){
+                                    $('#judul').val('')
+                                    $('#exampleModal').modal('toggle');
+                                })
                                 table.ajax.reload();
                         }
                     })
                 }
-            })
-            $('#SaveData').click(function(){
-                var data;
-                data = new FormData();
-                data.append( 'file', $( '#file' )[0].files[0] );
-                data.append( 'judul', $( '#judul' ).val());
-                $.ajax({
-                    url:'/savedDataSketsaSejarah',
-                    method:'POST',
-                    data:data,
-                    contentType: false,
-                    processData:false,
-                    success:function(){
-                         Swal.fire(
-                                'Sukses!',
-                                'Data Sukses di simpan!',
-                                'success'
-                            )
-                            table.ajax.reload();
+            });
+            $('form[id="sketsasejarahformedit"]').validate({
+                rules: {
+                    juduledit: 'required',
+                    fileedit: {
+                        required: true,
+                        accept: "image/*"
+                    },
+                },
+               
+                messages: {
+                    judul: 'This field is required',
+                    file:'This field mustbe images'
+
+                },
+                submitHandler: function(form) {
+                    var file = $('#fileedit')[0].files[0];
+                    if(file == undefined){
+                        var data;
+                        data = new FormData();
+                        data.append( 'idsketsasejarah', $( '#idsketsasejarah' ).val());
+                        data.append( 'file', $( '#filehidden' ).val());
+                        data.append( 'judul', $( '#juduledit' ).val());
+                        data.append( 'status',  'filenotfound');
+                        $.ajax({
+                            url:'/updateDataSketsaSejarah',
+                            method:'POST',
+                            data:data,
+                            contentType: false,
+                            processData:false,
+                            success:function(){
+                                Swal.fire(
+                                        'Sukses!',
+                                        'Data Sukses di simpan!',
+                                        'success'
+                                    ).then(function(){
+                                        $('#juduledit').val('');
+                                        $('#modals2').modal('toggle');
+                                    })
+                                    table.ajax.reload();
+                            }
+                        })
+                    }else{
+                        var data;
+                        data = new FormData();
+                        data.append( 'file', $( '#fileedit' )[0].files[0] );
+                        data.append( 'judul', $( '#juduledit' ).val());
+                        data.append( 'idsketsasejarah', $( '#idsketsasejarah' ).val());
+                        $.ajax({
+                            url:'/updateDataSketsaSejarah',
+                            method:'POST',
+                            data:data,
+                            contentType: false,
+                            processData:false,
+                            success:function(){
+                                Swal.fire(
+                                        'Sukses!',
+                                        'Data Sukses di simpan!',
+                                        'success'
+                                    ).then(function(){
+                                        ('#juduledit').val('');
+                                        $('#modals2').modal('toggle');
+                                    })
+                                    table.ajax.reload();
+                            }
+                        })
                     }
-                })
-            })
+                }
+            });
         })
     </script>
 </body>

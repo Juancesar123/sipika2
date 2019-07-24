@@ -15,4 +15,7 @@
   <!-- Custom js for this page-->
   <script src="https://cdn.jsdelivr.net/npm/sweetalert2@8"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-validate/1.19.0/jquery.validate.min.js"></script>
+  
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
   <script src="<?php echo base_url('js/dashboard.js')?>"></script>
+  <script src="https://cdn.datatables.net/responsive/2.2.3/js/dataTables.responsive.min.js"></script>

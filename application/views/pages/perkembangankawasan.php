@@ -130,7 +130,7 @@
                     </div>
                 </div>
                 <div class="modal fade" id="modals1" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
+                    <div class="modal-dialog modal-lg" role="document">
                         <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title">Input Perkembangan kawasan</h5>
@@ -138,59 +138,61 @@
                             <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body">
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <label>Register</label>
-                                        <input class="form-control" type="text" id="register">
+                        <form id="formkawasankonservasi" method="post" action="">
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Register</label>
+                                            <input class="form-control" type="text" id="register" name="register">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Fungsi</label>
+                                            <select class="form-control" id="fungsi" name="fungsi">
+                                                <option value="1">KSA/KPA</option>
+                                                <option value="2">Cagar Alam</option>
+                                                <option value="3">Suaka Margasatwa</option>
+                                                <option value="4">Taman Buru</option>
+                                                <option value="5">Taman Nasional</option>
+                                                <option value="6">Taman Wisata Alam</option>
+                                                <option value="7">Taman Hutan Raya</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Pulau</label>
+                                            <input class="form-control" type="text" id="pulau" name="pulau">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Provinsi Temp</label>
+                                            <input class="form-control" type="text" id="provinsitemp" name="provinsitemp">
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label>Fungsi</label>
-                                        <select class="form-control" id="fungsi">
-                                            <option value="1">KSA/KPA</option>
-                                            <option value="2">Cagar Alam</option>
-                                            <option value="3">Suaka Margasatwa</option>
-                                            <option value="4">Taman Buru</option>
-                                            <option value="5">Taman Nasional</option>
-                                            <option value="6">Taman Wisata Alam</option>
-                                            <option value="7">Taman Hutan Raya</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Pulau</label>
-                                        <input class="form-control" type="text" id="pulau">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Provinsi Temp</label>
-                                        <input class="form-control" type="text" id="provinsitemp">
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <label>Provinsi</label>
-                                        <input class="form-control" type="text" id="provinsi">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Nama Kawasan</label>
-                                        <input class="form-control" type="text" id="namakawasan">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Luas Kawasan (Hektare)</label>
-                                        <input class="form-control" type="text" id="luaskawasan">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Provinsi</label>
+                                            <input class="form-control" type="text" id="provinsi" name="provinsi">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Nama Kawasan</label>
+                                            <input class="form-control" type="text" id="namakawasan" name="namakawasan">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Luas Kawasan (Hektare)</label>
+                                            <input class="form-control" type="text" id="luaskawasan" name="luaskawasan">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" id="SaveAction"><img style="width:15px;height:15px;display:none" id="ajaxprocesss" src="images/ajax-loader.gif"> Save changes</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary"><img style="width:15px;height:15px;display:none" id="ajaxprocesss" src="images/ajax-loader.gif"> Save changes</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </form>
                         </div>
                     </div>
                 </div>
                 <div class="modal fade" id="modals2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
-                    <div class="modal-dialog" role="document">
+                    <div class="modal-dialog modal-lg" role="document">
                         <div class="modal-content">
                         <div class="modal-header">
                             <h5 class="modal-title">Ubah Perkembangan kawasan</h5>
@@ -198,55 +200,57 @@
                             <span aria-hidden="true">&times;</span>
                             </button>
                         </div>
-                        <div class="modal-body">
-                            <div class="row">
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <label>Register</label>
-                                        <input class="form-control" type="text" id="registeredit">
-                                        <input class="form-control" type="hidden" id="idedit">
+                        <form id="formkawasankonservasiedit" method="post" action="">
+                            <div class="modal-body">
+                                <div class="row">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Register</label>
+                                            <input class="form-control" type="text" id="registeredit" name="registeredit">
+                                            <input class="form-control" type="hidden" id="idedit">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Fungsi</label>
+                                            <select class="form-control" id="fungsiedit">
+                                                <option value="1">KSA/KPA</option>
+                                                <option value="2">Cagar Alam</option>
+                                                <option value="3">Suaka Margasatwa</option>
+                                                <option value="4">Taman Buru</option>
+                                                <option value="5">Taman Nasional</option>
+                                                <option value="6">Taman Wisata Alam</option>
+                                                <option value="7">Taman Hutan Raya</option>
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Pulau</label>
+                                            <input class="form-control" type="text" id="pulauedit" name="pulauedit">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Provinsi Temp</label>
+                                            <input class="form-control" type="text" id="provinsitempedit" name="provinsitempedit">
+                                        </div>
                                     </div>
-                                    <div class="form-group">
-                                        <label>Fungsi</label>
-                                        <select class="form-control" id="fungsiedit">
-                                            <option value="1">KSA/KPA</option>
-                                            <option value="2">Cagar Alam</option>
-                                            <option value="3">Suaka Margasatwa</option>
-                                            <option value="4">Taman Buru</option>
-                                            <option value="5">Taman Nasional</option>
-                                            <option value="6">Taman Wisata Alam</option>
-                                            <option value="7">Taman Hutan Raya</option>
-                                        </select>
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Pulau</label>
-                                        <input class="form-control" type="text" id="pulauedit">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Provinsi Temp</label>
-                                        <input class="form-control" type="text" id="provinsitempedit">
-                                    </div>
-                                </div>
-                                <div class="col-6">
-                                    <div class="form-group">
-                                        <label>Provinsi</label>
-                                        <input class="form-control" type="text" id="provinsiedit">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Nama Kawasan</label>
-                                        <input class="form-control" type="text" id="namakawasanedit">
-                                    </div>
-                                    <div class="form-group">
-                                        <label>Luas Kawasan (Hektare)</label>
-                                        <input class="form-control" type="text" id="luaskawasanedit">
+                                    <div class="col-6">
+                                        <div class="form-group">
+                                            <label>Provinsi</label>
+                                            <input class="form-control" type="text" id="provinsiedit" name="provinsiedit">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Nama Kawasan</label>
+                                            <input class="form-control" type="text" id="namakawasanedit" name="namakawasanedit">
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Luas Kawasan (Hektare)</label>
+                                            <input class="form-control" type="text" id="luaskawasanedit" name="luaskawasanedit">
+                                        </div>
                                     </div>
                                 </div>
                             </div>
-                        </div>
-                        <div class="modal-footer">
-                            <button type="button" class="btn btn-primary" id="UpdateAction">Save changes</button>
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        </div>
+                            <div class="modal-footer">
+                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            </div>
+                        </form>
                         </div>
                     </div>
                 </div>
@@ -459,94 +463,156 @@
                         ]
                     });
             $(document).ready(function(){
-                   
-                $('#SaveAction').click(function(){
-                    var namakawasan = $('#namakawasan').val();
-                    var fungsi = $('#fungsi').val();
-                    var register = $('#register').val();
-                    var pulau = $('#pulau').val();
-                    var provinsi = $('#provinsi').val();
-                    var provinsitemp = $('#provinsitemp').val();
-                    var luaskawasan = $('#luaskawasan').val();
-                    table.on('xhr',function(){
-                        console.log(table.ajax.json());
-                    })
-                    $.ajax({
-                        url:'/savedDatakawasan',
-                        method:'POST',
-                        data:"namakawasan="+namakawasan+"&luaskawasan="+luaskawasan+
-                             "&fungsi="+fungsi+
-                             "&register="+register+
-                             "&pulau="+pulau+
-                             "&provinsi="+provinsi+
-                             "&provinsitemp="+provinsitemp,
-                        beforeSend:function(){
-                            $("#ajaxprocesss").css("display", "block");
-                            $("#SaveAction").attr("disabled", true);
+                $('form[id="formkawasankonservasiedit"]').validate({
+                    rules: {
+                        luaskawasanedit:{
+                            required:true,
+                            number:true
                         },
-                        success:function(){
-                            $("#ajaxprocesss").css("display", "none");
-                            $('#SaveAction').prop("disabled", false);
-                            Swal.fire(
-                                'Sukses!',
-                                'Data Sukses di simpan!',
-                                'success'
-                            )
-                            table.ajax.reload();
-                            table1.ajax.reload();
-                            table2.ajax.reload();
-                            table3.ajax.reload();
-                            table4.ajax.reload();
-                            table5.ajax.reload();
-                            table6.ajax.reload();
+                        registeredit:{
+                            required:true,
+                            number:true
                         },
-                        error:function(){
-                            $("#ajaxprocesss").css("display", "none");
-                            $('#SaveAction').prop("disabled", false);
-                            Swal.fire({
-                                    type: 'error',
-                                    title: 'Oops...',
-                                    text: 'Something went wrong!'
+                        namakawasanedit: 'required',
+                        fungsiedit: 'required',
+                        pulauedit:'required',
+                        provinsiedit:'required',
+                        fungsi_hutanedit: 'required'
+                    },
+                    messages: {
+                        judul: 'This field is required',
+
+                    },
+                    submitHandler: function(form) {
+                        var namakawasan = $('#namakawasanedit').val();
+                        var fungsi = $('#fungsiedit').val();
+                        var register = $('#registeredit').val();
+                        var pulau = $('#pulauedit').val();
+                        var provinsi = $('#provinsiedit').val();
+                        var provinsitemp = $('#provinsitempedit').val();
+                        var luaskawasan = $('#luaskawasanedit').val();
+                        var id = $('#idedit').val();
+                        $.ajax({
+                            url:'/ubahDataKawasan',
+                            method:'POST',
+                            data:"namakawasan="+namakawasan+"&luaskawasan="+luaskawasan+
+                                "&fungsi="+fungsi+
+                                "&register="+register+
+                                "&pulau="+pulau+
+                                "&provinsi="+provinsi+
+                                "&provinsitemp="+provinsitemp+
+                                "&id="+id,
+                            success:function(){
+                                Swal.fire(
+                                    'Sukses!',
+                                    'Data Sukses di simpan!',
+                                    'success'
+                                ).then(function(){
+                                    $('#namakawasanedit').val('');
+                                    $('#fungsiedit').val('');
+                                    $('#registeredit').val('');
+                                    $('#pulauedit').val('');
+                                    $('#provinsiedit').val('');
+                                    $('#provinsitempedit').val('');
+                                    $('#luaskawasanedit').val('');
+                                    $('#modals2').modal('toggle');
+
                                 })
-                        }
-                    })
+                                //reload table ajax
+                                table.ajax.reload();
+                                table1.ajax.reload();
+                                table2.ajax.reload();
+                                table3.ajax.reload();
+                                table4.ajax.reload();
+                                table5.ajax.reload();
+                                table6.ajax.reload();
+                            }
+                        })
+                    }
+                })
+                $('form[id="formkawasankonservasi"]').validate({
+                    rules: {
+                        luaskawasan:{
+                            required:true,
+                            number:true
+                        },
+                        register:{
+                            required:true,
+                            number:true
+                        },
+                        namakawasan: 'required',
+                        fungsi: 'required',
+                        pulau:'required',
+                        provinsi:'required',
+                        fungsi_hutan: 'required',
+                        peta:'required',
+                    },
+                    messages: {
+                        judul: 'This field is required',
+
+                    },
+                    submitHandler: function(form) {
+                        var namakawasan = $('#namakawasan').val();
+                        var fungsi = $('#fungsi').val();
+                        var register = $('#register').val();
+                        var pulau = $('#pulau').val();
+                        var provinsi = $('#provinsi').val();
+                        var provinsitemp = $('#provinsitemp').val();
+                        var luaskawasan = $('#luaskawasan').val();
+                        $.ajax({
+                            url:'/savedDatakawasan',
+                            method:'POST',
+                            data:"namakawasan="+namakawasan+"&luaskawasan="+luaskawasan+
+                                "&fungsi="+fungsi+
+                                "&register="+register+
+                                "&pulau="+pulau+
+                                "&provinsi="+provinsi+
+                                "&provinsitemp="+provinsitemp,
+                            beforeSend:function(){
+                                $("#ajaxprocesss").css("display", "block");
+                                $("#SaveAction").attr("disabled", true);
+                            },
+                            success:function(){
+                                $("#ajaxprocesss").css("display", "none");
+                                $('#SaveAction').prop("disabled", false);
+                                Swal.fire(
+                                    'Sukses!',
+                                    'Data Sukses di simpan!',
+                                    'success'
+                                ).then(function(){
+                                    $('#namakawasan').val('');
+                                    $('#fungsi').val('');
+                                    $('#register').val('');
+                                    $('#pulau').val('');
+                                    $('#provinsi').val('');
+                                    $('#provinsitemp').val('');
+                                    $('#luaskawasan').val('');
+                                    $('#modals1').modal('toggle');
+                                })
+                                table.ajax.reload();
+                                table1.ajax.reload();
+                                table2.ajax.reload();
+                                table3.ajax.reload();
+                                table4.ajax.reload();
+                                table5.ajax.reload();
+                                table6.ajax.reload();
+                            },
+                            error:function(){
+                                $("#ajaxprocesss").css("display", "none");
+                                $('#SaveAction').prop("disabled", false);
+                                Swal.fire({
+                                        type: 'error',
+                                        title: 'Oops...',
+                                        text: 'Something went wrong!'
+                                    }).then(function(){
+                                        $('#modals1').modal('toggle');
+                                    })
+                            }
+                        })
+                    }
                 })
                 $('#UpdateAction').click(function(){
-                    var namakawasan = $('#namakawasanedit').val();
-                    var fungsi = $('#fungsiedit').val();
-                    var register = $('#registeredit').val();
-                    var pulau = $('#pulauedit').val();
-                    var provinsi = $('#provinsiedit').val();
-                    var provinsitemp = $('#provinsitempedit').val();
-                    var luaskawasan = $('#luaskawasanedit').val();
-                    var id = $('#idedit').val();
-                    console.log(id);
-                    $.ajax({
-                        url:'/ubahDataKawasan',
-                        method:'POST',
-                        data:"namakawasan="+namakawasan+"&luaskawasan="+luaskawasan+
-                             "&fungsi="+fungsi+
-                             "&register="+register+
-                             "&pulau="+pulau+
-                             "&provinsi="+provinsi+
-                             "&provinsitemp="+provinsitemp+
-                             "&id="+id,
-                        success:function(){
-                            Swal.fire(
-                                'Sukses!',
-                                'Data Sukses di simpan!',
-                                'success'
-                            )
-                            //reload table ajax
-                            table.ajax.reload();
-                            table1.ajax.reload();
-                            table2.ajax.reload();
-                            table3.ajax.reload();
-                            table4.ajax.reload();
-                            table5.ajax.reload();
-                            table6.ajax.reload();
-                        }
-                    })
+                    
                 })
             })
     </script>

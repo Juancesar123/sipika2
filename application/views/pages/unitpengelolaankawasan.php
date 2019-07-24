@@ -40,58 +40,60 @@
                                             <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
-                                        <div class="modal-body">
-                                            <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label>Nama Pengelola</label>
-                                                        <input class="form-control" type="text" id="namapengelola">
+                                        <form id="unitpengelolaankawasanform">
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>Nama Pengelola</label>
+                                                            <input class="form-control" type="text" id="namapengelola" name="namapengelola">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Provinsi</label>
+                                                            <input class="form-control" type="text" id="provinsi" name="provinsi">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Kabupaten</label>
+                                                            <input class="form-control" type="text" id="kabupaten" name="kabupaten">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Kecamatan</label>
+                                                            <input class="form-control" type="text" id="kecamatan" name="kecamatan">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Alamat Detail</label>
+                                                            <textarea class="form-control" type="text" id="alamatdetail" name="alamatdetail"></textarea>
+                                                        </div>
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label>Provinsi</label>
-                                                        <input class="form-control" type="text" id="provinsi">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Kabupaten</label>
-                                                        <input class="form-control" type="text" id="kabupaten">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Kecamatan</label>
-                                                        <input class="form-control" type="text" id="kecamatan">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Alamat Detail</label>
-                                                        <textarea class="form-control" type="text" id="alamatdetail"></textarea>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label>Nomor Telepon</label>
-                                                        <input class="form-control" type="text" id="nomortelepon">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Nomor Fax</label>
-                                                        <input class="form-control" type="text" id="nomorfax">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Email</label>
-                                                        <input class="form-control" type="text" id="email">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Website</label>
-                                                        <input class="form-control" type="text" id="website">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Call Center</label>
-                                                        <input class="form-control" type="text" id="callcenter">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>Nomor Telepon</label>
+                                                            <input class="form-control" type="text" id="nomortelepon" name="nomortelepon">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Nomor Fax</label>
+                                                            <input class="form-control" type="text" id="nomorfax" name="nomorfax">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Email</label>
+                                                            <input class="form-control" type="text" id="email" name="email">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Website</label>
+                                                            <input class="form-control" type="text" id="website" name="website">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Call Center</label>
+                                                            <input class="form-control" type="text" id="callcenter" name="callcenter">
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary" id="SaveData">Save changes</button>
-                                        </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </form>
                                         </div>
                                     </div>
                                     </div>
@@ -104,59 +106,61 @@
                                             <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
-                                        <div class="modal-body">
-                                        <div class="row">
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label>Nama Pengelola</label>
-                                                        <input class="form-control" type="text" id="namapengelolaedit">
-                                                        <input type="hidden" id="idunitpengelolaan">
+                                        <form id="unitpengelolaankawasanformedit">
+                                            <div class="modal-body">
+                                            <div class="row">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>Nama Pengelola</label>
+                                                            <input class="form-control" type="text" id="namapengelolaedit" name="namapengelolaedit">
+                                                            <input type="hidden" id="idunitpengelolaan">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Provinsi</label>
+                                                            <input class="form-control" type="text" id="provinsiedit" name="provinsiedit">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Kabupaten</label>
+                                                            <input class="form-control" type="text" id="kabupatenedit" name="kabupatenedit">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Kecamatan</label>
+                                                            <input class="form-control" type="text" id="kecamatanedit" name="kecamatanedit">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Alamat Detail</label>
+                                                            <textarea class="form-control" type="text" id="alamatdetailedit" name="alamatdetailedit"></textarea>
+                                                        </div>
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label>Provinsi</label>
-                                                        <input class="form-control" type="text" id="provinsiedit">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Kabupaten</label>
-                                                        <input class="form-control" type="text" id="kabupatenedit">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Kecamatan</label>
-                                                        <input class="form-control" type="text" id="kecamatanedit">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Alamat Detail</label>
-                                                        <textarea class="form-control" type="text" id="alamatdetailedit"></textarea>
-                                                    </div>
-                                                </div>
-                                                <div class="col-md-6">
-                                                    <div class="form-group">
-                                                        <label>Nomor Telepon</label>
-                                                        <input class="form-control" type="text" id="nomorteleponedit">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Nomor Fax</label>
-                                                        <input class="form-control" type="text" id="nomorfaxedit">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Email</label>
-                                                        <input class="form-control" type="text" id="emailedit">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Website</label>
-                                                        <input class="form-control" type="text" id="websiteedit">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Call Center</label>
-                                                        <input class="form-control" type="text" id="callcenteredit">
+                                                    <div class="col-md-6">
+                                                        <div class="form-group">
+                                                            <label>Nomor Telepon</label>
+                                                            <input class="form-control" type="text" id="nomorteleponedit" name="nomorteleponedit">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Nomor Fax</label>
+                                                            <input class="form-control" type="text" id="nomorfaxedit" name="nomorfaxedit">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Email</label>
+                                                            <input class="form-control" type="text" id="emailedit" name="emailedit">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Website</label>
+                                                            <input class="form-control" type="text" id="websiteedit" name="websiteedit">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Call Center</label>
+                                                            <input class="form-control" type="text" id="callcenteredit" name="callcenteredit">
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary" id="UpdateData">Save changes</button>
-                                        </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </form>
                                         </div>
                                     </div>
                                     </div>
@@ -249,56 +253,114 @@
                         ]
                     });
         $('document').ready(function(){
-            $('#UpdateData').click(function(){
-                var namapengelola = $('#namapengelolaedit').val();
-                var provinsi = $('#provinsiedit').val();
-                var kecamatan = $('#kecamatanedit').val();
-                var kabupaten = $('#kabupatenedit').val();
-                var alamat = $('#alamatdetailedit').val();
-                var nomortelepon = $('#nomorteleponedit').val();
-                var nomorfax = $('#nomorfaxedit').val();
-                var email = $('#emailedit').val();
-                var website = $('#websiteedit').val();
-                var callcenter = $('#callcenteredit').val();
-                var idpengelolaan = $('#idunitpengelolaan').val();
-                $.ajax({
-                    url:'/updateDataUnitPengelolaanKawasan',
-                    method:'POST',
-                    data:"id="+idpengelolaan+"&namapengelola="+namapengelola+"&provinsi="+provinsi+"&kecamatan="+kecamatan+"&kabupaten="+kabupaten+"&alamat="+alamat+"&nomortelepon="+nomortelepon+"&nomorfax="+nomorfax+"&email="+email+"&website="+website+"&callcenter="+callcenter,
-                    success:function(){
-                         Swal.fire(
-                                'Sukses!',
-                                'Data Sukses di simpan!',
-                                'success'
-                            )
-                            table.ajax.reload();
-                    }
-                })
+            $('form[id="unitpengelolaankawasanformedit"]').validate({
+                rules: {
+                    namapengelolaedit: 'required',
+                    provinsiedit: 'required',
+                    kecamatanedit: 'required',
+                    kabupatenedit: 'required',
+                    alamatdetailedit: 'required',
+                    nomorteleponedit: 'required',
+                    nomorfaxedit: 'required',
+                    emailedit: 'required',
+                    websiteedit:'required',
+                    calcenteredit:'required'
+                },
+                messages: {
+                    roles: 'This field is required',
+                },
+                submitHandler: function(form) {
+                    var namapengelola = $('#namapengelolaedit').val();
+                    var provinsi = $('#provinsiedit').val();
+                    var kecamatan = $('#kecamatanedit').val();
+                    var kabupaten = $('#kabupatenedit').val();
+                    var alamat = $('#alamatdetailedit').val();
+                    var nomortelepon = $('#nomorteleponedit').val();
+                    var nomorfax = $('#nomorfaxedit').val();
+                    var email = $('#emailedit').val();
+                    var website = $('#websiteedit').val();
+                    var callcenter = $('#callcenteredit').val();
+                    var idpengelolaan = $('#idunitpengelolaan').val();
+                    $.ajax({
+                        url:'/updateDataUnitPengelolaanKawasan',
+                        method:'POST',
+                        data:"id="+idpengelolaan+"&namapengelola="+namapengelola+"&provinsi="+provinsi+"&kecamatan="+kecamatan+"&kabupaten="+kabupaten+"&alamat="+alamat+"&nomortelepon="+nomortelepon+"&nomorfax="+nomorfax+"&email="+email+"&website="+website+"&callcenter="+callcenter,
+                        success:function(){
+                            Swal.fire(
+                                    'Sukses!',
+                                    'Data Sukses di simpan!',
+                                    'success'
+                                ).then(function(){
+                                    $('#namapengelolaedit').val('');
+                                    $('#provinsiedit').val('');
+                                    $('#kecamatanedit').val('');
+                                    $('#kabupatenedit').val('');
+                                    $('#alamatdetailedit').val('');
+                                    $('#nomorteleponedit').val('');
+                                    $('#nomorfaxedit').val('');
+                                    $('#emailedit').val('');
+                                    $('#websiteedit').val('');
+                                    $('#callcenteredit').val('');
+                                    $('#modals2').modal('toggle');
+                                })
+                                table.ajax.reload();
+                        }
+                    })
+                }
             })
-            $('#SaveData').click(function(){
-                var namapengelola = $('#namapengelola').val();
-                var provinsi = $('#provinsi').val();
-                var kecamatan = $('#kecamatan').val();
-                var kabupaten = $('#kabupaten').val();
-                var alamat = $('#alamatdetail').val();
-                var nomortelepon = $('#nomortelepon').val();
-                var nomorfax = $('#nomorfax').val();
-                var email = $('#email').val();
-                var website = $('#website').val();
-                var callcenter = $('#callcenter').val();
-                $.ajax({
-                    url:'/SaveDataUnitPengelolaanKawasan',
-                    method:'POST',
-                    data:"namapengelola="+namapengelola+"&provinsi="+provinsi+"&kecamatan="+kecamatan+"&kabupaten="+kabupaten+"&alamat="+alamat+"&nomortelepon="+nomortelepon+"&nomorfax="+nomorfax+"&email="+email+"&website="+website+"&callcenter="+callcenter,
-                    success:function(){
-                         Swal.fire(
-                                'Sukses!',
-                                'Data Sukses di simpan!',
-                                'success'
-                            )
-                            table.ajax.reload();
-                    }
-                })
+            $('form[id="unitpengelolaankawasanform"]').validate({
+                rules: {
+                    namapengelola: 'required',
+                    provinsi: 'required',
+                    kecamatan: 'required',
+                    kabupaten: 'required',
+                    alamatdetail: 'required',
+                    nomortelepon: 'required',
+                    nomorfax: 'required',
+                    email: 'required',
+                    website:'required',
+                    calcenter:'required'
+                },
+                messages: {
+                    roles: 'This field is required',
+                },
+                submitHandler: function(form) {
+                    var namapengelola = $('#namapengelola').val();
+                    var provinsi = $('#provinsi').val();
+                    var kecamatan = $('#kecamatan').val();
+                    var kabupaten = $('#kabupaten').val();
+                    var alamat = $('#alamatdetail').val();
+                    var nomortelepon = $('#nomortelepon').val();
+                    var nomorfax = $('#nomorfax').val();
+                    var email = $('#email').val();
+                    var website = $('#website').val();
+                    var callcenter = $('#callcenter').val();
+                    $.ajax({
+                        url:'/SaveDataUnitPengelolaanKawasan',
+                        method:'POST',
+                        data:"namapengelola="+namapengelola+"&provinsi="+provinsi+"&kecamatan="+kecamatan+"&kabupaten="+kabupaten+"&alamat="+alamat+"&nomortelepon="+nomortelepon+"&nomorfax="+nomorfax+"&email="+email+"&website="+website+"&callcenter="+callcenter,
+                        success:function(){
+                            Swal.fire(
+                                    'Sukses!',
+                                    'Data Sukses di simpan!',
+                                    'success'
+                                ).then(function(){
+                                    $('#namapengelola').val('');
+                                    $('#provinsi').val('');
+                                    $('#kecamatan').val('');
+                                    $('#kabupaten').val('');
+                                    $('#alamatdetail').val('');
+                                    $('#nomortelepon').val('');
+                                    $('#nomorfax').val('');
+                                    $('#email').val('');
+                                    $('#website').val('');
+                                    $('#callcenter').val('');
+                                    $('#exampleModal').modal('toggle');
+                                })
+                                table.ajax.reload();
+                        }
+                    })
+                }
             })
         })
     </script>

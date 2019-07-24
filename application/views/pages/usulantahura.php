@@ -42,46 +42,50 @@
                                             <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
-                                        <div class="modal-body">
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <div class="form-group">
-                                                        <label>Provinsi</label>
-                                                        <input class="form-control" type="text" id="provinsi">
+                                        <form id="formusulantahura" method="post" action="">
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <div class="form-group">
+                                                            <label>Provinsi</label>
+                                                            <select class="form-control" type="text" id="provinsi" name="provinsi">
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Kabupaten / Kota</label>
+                                                            <select class="form-control" type="text" id="kabupaten_kota" name="kabupaten_kota">
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Pengusul</label>
+                                                            <input class="form-control" type="text" id="pengusul" name="pengusul">
+                                                        </div>
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label>Kabupaten / Kota</label>
-                                                        <input class="form-control" type="text" id="kabupaten_kota">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Pengusul</label>
-                                                        <input class="form-control" type="text" id="pengusul">
-                                                    </div>
-                                                </div>
-                                                <div class="col-6">
-                                                    <div class="form-group">
-                                                        <label>Lokasi</label>
-                                                        <input class="form-control" type="text" id="lokasi">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Luas</label>
-                                                        <input class="form-control" type="text" id="luas">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Fungsi Hutan / Kawasan</label>
-                                                        <input class="form-control" type="text" id="fungsi_hutan">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Peta (.jpg)</label>
-                                                        <input class="form-control" type="file" id="peta">
+                                                    <div class="col-6">
+                                                        <div class="form-group">
+                                                            <label>Lokasi</label>
+                                                            <input class="form-control" type="text" id="lokasi" name="lokasi">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Luas</label>
+                                                            <input class="form-control" type="text" id="luas" name="luas">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Fungsi Hutan / Kawasan</label>
+                                                            <input class="form-control" type="text" id="fungsi_hutan" name="fungsi_hutan">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Peta (.jpg)</label>
+                                                            <input class="form-control" type="file" id="peta" name="peta">
+                                                        </div>
                                                     </div>
                                                 </div>
                                             </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary" id="SaveData">Save changes</button>
-                                        </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </form>
                                         </div>
                                     </div>
                                     </div>
@@ -94,48 +98,52 @@
                                             <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
-                                        <div class="modal-body">
-                                            <div class="row">
-                                                <div class="col-6">
-                                                    <div class="form-group">
-                                                        <label>Provinsi</label>
-                                                        <input class="form-control" type="text" id="provinsiedit">
-                                                        <input class="form-control" type="hidden" id="petahide">
-                                                        <input class="form-control" type="hidden" id="idtahuraedit">
+                                        <form id="formusulantahuraedit" method="post" action="">
+                                            <div class="modal-body">
+                                                <div class="row">
+                                                    <div class="col-6">
+                                                        <div class="form-group">
+                                                            <label>Provinsi</label>
+                                                            <select class="form-control" type="text" id="provinsiedit" name="provinsiedit">
+                                                            </select>
+                                                            <input class="form-control" type="hidden" id="petahide">
+                                                            <input class="form-control" type="hidden" id="idtahuraedit">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Kabupaten / Kota</label>
+                                                            <select class="form-control" type="text" id="kabupaten_kotaedit" name="kabupaten_kotaedit">
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Pengusul</label>
+                                                            <input class="form-control" type="text" id="pengusuledit" name="pengusuledit">
+                                                        </div>
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label>Kabupaten / Kota</label>
-                                                        <input class="form-control" type="text" id="kabupaten_kotaedit">
+                                                    <div class="col-6">
+                                                        <div class="form-group">
+                                                            <label>Lokasi</label>
+                                                            <input class="form-control" type="text" id="lokasiedit" name="lokasiedit">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Luas</label>
+                                                            <input class="form-control" type="text" id="luasedit" name="luasedit">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Fungsi Hutan / Kawasan</label>
+                                                            <input class="form-control" type="text" id="fungsi_hutanedit" name="fungsi_hutanedit">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Peta (.jpg)</label>
+                                                            <input class="form-control" type="file" id="petaedit" name="petaedit">
+                                                        </div>
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label>Pengusul</label>
-                                                        <input class="form-control" type="text" id="pengusuledit">
-                                                    </div>
-                                                </div>
-                                                <div class="col-6">
-                                                    <div class="form-group">
-                                                        <label>Lokasi</label>
-                                                        <input class="form-control" type="text" id="lokasiedit">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Luas</label>
-                                                        <input class="form-control" type="text" id="luasedit">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Fungsi Hutan / Kawasan</label>
-                                                        <input class="form-control" type="text" id="fungsi_hutanedit">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Peta (.jpg)</label>
-                                                        <input class="form-control" type="file" id="petaedit">
-                                                    </div>
-                                                </div>
-                                            </div>  
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary" id="UpdateData">Save changes</button>
-                                        </div>
+                                                </div>  
+                                            </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </form>
                                         </div>
                                     </div>
                                     </div>
@@ -231,22 +239,154 @@
                         ]
                     });
         $('document').ready(function(){
-            $('#UpdateData').click(function(){
-                var file = $('#petaedit')[0].files[0];
-                if(file == undefined){
+            $.ajax({
+                type:'GET',
+                url:'/getDataMasterProvinsi',
+                dataType:'json',
+                success:function(data){
+                    var html;
+                    data.forEach(element => {
+                         html = "<option value='"+element.kode+"'>"+element.nama+"</option>";
+                         $("#provinsi").append(html);
+                         $("#provinsiedit").append(html);
+                    });
+                }
+            })
+            $('#provinsi').change(function(){
+                var idprovinsi = $('#provinsi').val();
+                $.ajax({
+                    type:'GET',
+                    url:'/getDataMasterProvinsiKota/'+idprovinsi,
+                    dataType:'json',
+                    success:function(data){
+                        var html;
+                        data.forEach(element => {
+                            html = "<option value='"+element.nama+"'>"+element.nama+"</option>";
+                            $("#kabupaten_kota").append(html);
+                        });
+                    }
+                })
+            })
+            $('form[id="formusulantahuraedit"]').validate({
+                rules: {
+                    luasedit:{
+                        required:true,
+                        number:true
+                    },
+                    provinsiedit: 'required',
+                    kabupaten_kotaedit: 'required',
+                    pengusuledit:'required',
+                    lokasiedit:'required',
+                    fungsi_hutanedit: 'required'
+                },
+                messages: {
+                    judul: 'This field is required',
+
+                },
+                submitHandler: function(form) {
+                    var file = $('#petaedit')[0].files[0];
+                    if(file == undefined){
+                        var data;
+                        data = new FormData();
+                        data.append( 'idtahura', $( '#idtahuraedit' ).val());
+                        data.append( 'provinsi', $( '#provinsiedit' ).val());
+                        data.append( 'peta', $( '#petahide' ).val());
+                        data.append( 'kabupaten_kota', $( '#kabupaten_kotaedit' ).val());
+                        data.append( 'pengusul', $( '#pengusuledit' ).val());
+                        data.append( 'lokasi', $( '#lokasiedit' ).val());
+                        data.append( 'luas', $( '#luasedit' ).val());
+                        data.append( 'fungsi_hutan', $( '#fungsi_hutanedit' ).val());
+                        data.append( 'status',  'filenotfound');
+                        $.ajax({
+                            url:'/updateDataUsulanTahura',
+                            method:'POST',
+                            data:data,
+                            contentType: false,
+                            processData:false,
+                            success:function(){
+                                Swal.fire(
+                                        'Sukses!',
+                                        'Data Sukses di simpan!',
+                                        'success'
+                                    ).then(function(){
+                                        $( '#provinsiedit' ).val('');
+                                        $( '#kabupaten_kotaedit' ).val('');
+                                        $( '#pengusuledit' ).val('');
+                                        $( '#lokasiedit' ).val('');
+                                        $( '#luasedit' ).val('');
+                                        $( '#fungsi_hutanedit' ).val('');
+                                        $('#modals2').modal('toggle');
+                                    })
+                                    table.ajax.reload();
+                            }
+                        })
+                    }else{
+                        var data;
+                        data = new FormData();
+                        data.append( 'peta', $( '#petaedit' )[0].files[0] );
+                        data.append( 'provinsi', $( '#provinsiedit' ).val());
+                        data.append( 'kabupaten_kota', $( '#kabupaten_kotaedit' ).val());
+                        data.append( 'pengusul', $( '#pengusuledit' ).val());
+                        data.append( 'lokasi', $( '#lokasiedit' ).val());
+                        data.append( 'luas', $( '#luasedit' ).val());
+                        data.append( 'fungsi_hutan', $( '#fungsi_hutanedit' ).val());
+                        data.append( 'idtahura', $( '#idtahuraedit' ).val());
+                        $.ajax({
+                            url:'/updateDataUsulanTahura',
+                            method:'POST',
+                            data:data,
+                            contentType: false,
+                            processData:false,
+                            success:function(){
+                                Swal.fire(
+                                        'Sukses!',
+                                        'Data Sukses di simpan!',
+                                        'success'
+                                    ).then(function(){
+                                        $( '#provinsiedit' ).val('');
+                                        $( '#kabupaten_kotaedit' ).val('');
+                                        $( '#pengusuledit' ).val('');
+                                        $( '#lokasiedit' ).val('');
+                                        $( '#luasedit' ).val('');
+                                        $( '#fungsi_hutanedit' ).val('');
+                                        $('#modals2').modal('toggle');
+                                    })
+                                    table.ajax.reload();
+                            }
+                        })
+                    }
+
+                }
+            })
+            $('form[id="formusulantahura"]').validate({
+                rules: {
+                    luas:{
+                        required:true,
+                        number:true
+                    },
+                    provinsi: 'required',
+                    kabupaten_kota: 'required',
+                    pengusul:'required',
+                    lokasi:'required',
+                    fungsi_hutan: 'required',
+                    peta:'required',
+                },
+                messages: {
+                    judul: 'This field is required',
+
+                },
+                submitHandler: function(form) {
                     var data;
                     data = new FormData();
-                    data.append( 'idtahura', $( '#idtahuraedit' ).val());
-                    data.append( 'provinsi', $( '#provinsiedit' ).val());
-                    data.append( 'peta', $( '#petahide' ).val());
-                    data.append( 'kabupaten_kota', $( '#kabupaten_kotaedit' ).val());
-                    data.append( 'pengusul', $( '#pengusuledit' ).val());
-                    data.append( 'lokasi', $( '#lokasiedit' ).val());
-                    data.append( 'luas', $( '#luasedit' ).val());
-                    data.append( 'fungsi_hutan', $( '#fungsi_hutanedit' ).val());
-                    data.append( 'status',  'filenotfound');
+                    data.append( 'peta', $( '#peta' )[0].files[0] );
+                    data.append( 'provinsi', $( '#provinsi' ).val());
+                    data.append( 'kabupaten_kota', $( '#kabupaten_kota' ).val());
+                    data.append( 'pengusul', $( '#pengusul' ).val());
+                    data.append( 'lokasi', $( '#lokasi' ).val());
+                    data.append( 'luas', $( '#luas' ).val());
+                    data.append( 'fungsi_hutan', $( '#fungsi_hutan' ).val());
                     $.ajax({
-                        url:'/updateDataUsulanTahura',
+                        url:'/savedDataUsulanTahura',
                         method:'POST',
                         data:data,
                         contentType: false,
@@ -256,63 +396,20 @@
                                     'Sukses!',
                                     'Data Sukses di simpan!',
                                     'success'
-                                )
-                                table.ajax.reload();
-                        }
-                    })
-                }else{
-                    var data;
-                    data = new FormData();
-                    data.append( 'peta', $( '#petaedit' )[0].files[0] );
-                    data.append( 'provinsi', $( '#provinsiedit' ).val());
-                    data.append( 'kabupaten_kota', $( '#kabupaten_kotaedit' ).val());
-                    data.append( 'pengusul', $( '#pengusuledit' ).val());
-                    data.append( 'lokasi', $( '#lokasiedit' ).val());
-                    data.append( 'luas', $( '#luasedit' ).val());
-                    data.append( 'fungsi_hutan', $( '#fungsi_hutanedit' ).val());
-                    data.append( 'idtahura', $( '#idtahuraedit' ).val());
-                    $.ajax({
-                        url:'/updateDataUsulanTahura',
-                        method:'POST',
-                        data:data,
-                        contentType: false,
-                        processData:false,
-                        success:function(){
-                            Swal.fire(
-                                    'Sukses!',
-                                    'Data Sukses di simpan!',
-                                    'success'
-                                )
+                                ).then(function(){
+                                    $( '#provinsi' ).val('');
+                                    $( '#peta' ).val('');
+                                    $( '#kabupaten_kota' ).val('');
+                                    $( '#pengusul' ).val('');
+                                    $( '#lokasi' ).val('');
+                                    $( '#luas' ).val('');
+                                    $( '#fungsi_hutan' ).val('');
+                                    $('#exampleModal').modal('toggle');
+                                })
                                 table.ajax.reload();
                         }
                     })
                 }
-            })
-            $('#SaveData').click(function(){
-                var data;
-                data = new FormData();
-                data.append( 'peta', $( '#peta' )[0].files[0] );
-                data.append( 'provinsi', $( '#provinsi' ).val());
-                data.append( 'kabupaten_kota', $( '#kabupaten_kota' ).val());
-                data.append( 'pengusul', $( '#pengusul' ).val());
-                data.append( 'lokasi', $( '#lokasi' ).val());
-                data.append( 'luas', $( '#luas' ).val());
-                data.append( 'fungsi_hutan', $( '#fungsi_hutan' ).val());
-                $.ajax({
-                    url:'/savedDataUsulanTahura',
-                    method:'POST',
-                    data:data,
-                    contentType: false,
-                    processData:false,
-                    success:function(){
-                         Swal.fire(
-                                'Sukses!',
-                                'Data Sukses di simpan!',
-                                'success'
-                            )
-                            table.ajax.reload();
-                    }
-                })
             })
         })
     </script>
