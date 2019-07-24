@@ -387,7 +387,24 @@
                                         Keanekaragaman Hayati
                                     </div>
                                     <div class="card-body">
+                                        <nav class="nav nav-pills nav-fill">
+                                            <a data-toggle="tab" class="nav-item nav-link active" href="#keankaragamanhayati1">Tumbuhan</a>
+                                            <a data-toggle="tab" class="nav-item nav-link" href="#keankaragamanhayati2">Satwa</a>
+                                            <a data-toggle="tab" class="nav-item nav-link" href="#keankaragamanhayati3">25 Satwa Prioritas</a>
+                                            <a data-toggle="tab" class="nav-item nav-link" href="#keankaragamanhayati4">Tumbuhan Endemik</a>
+                                            <a data-toggle="tab" class="nav-item nav-link" href="#keankaragamanhayati5">Spesies Kunci</a>
+                                            <a data-toggle="tab" class="nav-item nav-link" href="#keankaragamanhayati6">Satwa Endemik</a>
+                                            <a data-toggle="tab" class="nav-item nav-link" href="#keankaragamanhayati7">Potensi HHBK</a>
+                                            <a data-toggle="tab" class="nav-item nav-link" href="#keankaragamanhayati8">Jenis Tumbuhan Di lindungi</a>
+                                            <a data-toggle="tab" class="nav-item nav-link" href="#keankaragamanhayati9">Jenis Satwa Di lindungi</a>
+                                            <a data-toggle="tab" class="nav-item nav-link" href="#keankaragamanhayati10">Habitat 25 satwa prioritas</a>
+                                            <a data-toggle="tab" class="nav-item nav-link" href="#keankaragamanhayati11">Tumbuhan dan Satwa liar prioritas pengelolaan</a>
+                                        </nav>
+                                        <br>
+                                        <br>
                                         <button class="btn btn-primary" data-toggle="modal" data-target="#myModal13">Tambah Data</button>
+                                        <br>
+                                        <br>
                                         <div class="modal fade" id="myModal13">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
@@ -493,13 +510,26 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <table class="table" id="myTable8" style="width:100%">
-                                            <thead>
-                                                <th>Nama</th>
-                                                <th>Nama Latin</th>
-                                                <th>Action</th>
-                                            </thead>
-                                        </table>
+                                        <div class="container" style="overflow:auto;width:100%;">
+                                            <div id="keankaragamanhayati1" style="margin-top:-100x;" class="tab-pane fade in active">
+                                                <table class="table" id="myTable8" style="width:100%">
+                                                    <thead>
+                                                        <th>Nama</th>
+                                                        <th>Nama Latin</th>
+                                                        <th>Action</th>
+                                                    </thead>
+                                                </table>
+                                            </div>
+                                            <div id="keankaragamanhayati2" class="tab-pane fade" style="display:block;">
+                                                <table class="table" id="myTable81" style="width:100%">
+                                                    <thead>
+                                                        <th>Nama</th>
+                                                        <th>Nama Latina</th>
+                                                        <th>Action</th>
+                                                    </thead>
+                                                </table>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
                                 <div id="evaluasifungsideskstudy" class="card tab-pane fade">
@@ -1746,6 +1776,7 @@
                             }
                         ]
                     });
+             // Kenakaragaman hayati table       
             var table6 =  $('#myTable8').DataTable({
                         deferRender: true,
                         ajax: {
@@ -1766,7 +1797,230 @@
                             }
                         ]
                     });
+                    var table61 =  $('#myTable81').DataTable({
+                        deferRender: true,
+                        ajax: {
+                            url: "/getDataKeanekaragamHayati1/"+"<?php echo $hasil['nama_kawasan'];?>",
+                            type: "GET",
+                            dataSrc: function (d) {
+                                return d
+                            }
+                        },
+                        columns: [
+                            { data: 'nama' },
+                            { data: 'nama_latin' },
+                            {
+                                data: null,
+                                render: function ( data, type, row ) {
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal14' onclick='editfunc6("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc6("+data.id+")'>Delete</button>";
+                                }
+                            }
+                        ]
+                    });
+                    
+                    var table62 =  $('#myTable82').DataTable({
+                        deferRender: true,
+                        ajax: {
+                            url: "/getDataKeanekaragamHayati2/"+"<?php echo $hasil['nama_kawasan'];?>",
+                            type: "GET",
+                            dataSrc: function (d) {
+                                return d
+                            }
+                        },
+                        columns: [
+                            { data: 'nama' },
+                            { data: 'nama_latin' },
+                            {
+                                data: null,
+                                render: function ( data, type, row ) {
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal14' onclick='editfunc6("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc6("+data.id+")'>Delete</button>";
+                                }
+                            }
+                        ]
+                    });
+                    var table63 =  $('#myTable83').DataTable({
+                        deferRender: true,
+                        ajax: {
+                            url: "/getDataKeanekaragamHayati3/"+"<?php echo $hasil['nama_kawasan'];?>",
+                            type: "GET",
+                            dataSrc: function (d) {
+                                return d
+                            }
+                        },
+                        columns: [
+                            { data: 'nama' },
+                            { data: 'nama_latin' },
+                            {
+                                data: null,
+                                render: function ( data, type, row ) {
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal14' onclick='editfunc6("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc6("+data.id+")'>Delete</button>";
+                                }
+                            }
+                        ]
+                    });
+                    var table64 =  $('#myTable84').DataTable({
+                        deferRender: true,
+                        ajax: {
+                            url: "/getDataKeanekaragamHayati4/"+"<?php echo $hasil['nama_kawasan'];?>",
+                            type: "GET",
+                            dataSrc: function (d) {
+                                return d
+                            }
+                        },
+                        columns: [
+                            { data: 'nama' },
+                            { data: 'nama_latin' },
+                            {
+                                data: null,
+                                render: function ( data, type, row ) {
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal14' onclick='editfunc6("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc6("+data.id+")'>Delete</button>";
+                                }
+                            }
+                        ]
+                    });
+                    var table65 =  $('#myTable85').DataTable({
+                        deferRender: true,
+                        ajax: {
+                            url: "/getDataKeanekaragamHayati5/"+"<?php echo $hasil['nama_kawasan'];?>",
+                            type: "GET",
+                            dataSrc: function (d) {
+                                return d
+                            }
+                        },
+                        columns: [
+                            { data: 'nama' },
+                            { data: 'nama_latin' },
+                            {
+                                data: null,
+                                render: function ( data, type, row ) {
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal14' onclick='editfunc6("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc6("+data.id+")'>Delete</button>";
+                                }
+                            }
+                        ]
+                    });
+                    var table66 =  $('#myTable86').DataTable({
+                        deferRender: true,
+                        ajax: {
+                            url: "/getDataKeanekaragamHayati6/"+"<?php echo $hasil['nama_kawasan'];?>",
+                            type: "GET",
+                            dataSrc: function (d) {
+                                return d
+                            }
+                        },
+                        columns: [
+                            { data: 'nama' },
+                            { data: 'nama_latin' },
+                            {
+                                data: null,
+                                render: function ( data, type, row ) {
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal14' onclick='editfunc6("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc6("+data.id+")'>Delete</button>";
+                                }
+                            }
+                        ]
+                    });
+                    var table67 =  $('#myTable87').DataTable({
+                        deferRender: true,
+                        ajax: {
+                            url: "/getDataKeanekaragamHayati7/"+"<?php echo $hasil['nama_kawasan'];?>",
+                            type: "GET",
+                            dataSrc: function (d) {
+                                return d
+                            }
+                        },
+                        columns: [
+                            { data: 'nama' },
+                            { data: 'nama_latin' },
+                            {
+                                data: null,
+                                render: function ( data, type, row ) {
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal14' onclick='editfunc6("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc6("+data.id+")'>Delete</button>";
+                                }
+                            }
+                        ]
+                    });
+                    var table68 =  $('#myTable88').DataTable({
+                        deferRender: true,
+                        ajax: {
+                            url: "/getDataKeanekaragamHayati8/"+"<?php echo $hasil['nama_kawasan'];?>",
+                            type: "GET",
+                            dataSrc: function (d) {
+                                return d
+                            }
+                        },
+                        columns: [
+                            { data: 'nama' },
+                            { data: 'nama_latin' },
+                            {
+                                data: null,
+                                render: function ( data, type, row ) {
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal14' onclick='editfunc6("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc6("+data.id+")'>Delete</button>";
+                                }
+                            }
+                        ]
+                    });
+                     var table69 =  $('#myTable89').DataTable({
+                        deferRender: true,
+                        ajax: {
+                            url: "/getDataKeanekaragamHayati9/"+"<?php echo $hasil['nama_kawasan'];?>",
+                            type: "GET",
+                            dataSrc: function (d) {
+                                return d
+                            }
+                        },
+                        columns: [
+                            { data: 'nama' },
+                            { data: 'nama_latin' },
+                            {
+                                data: null,
+                                render: function ( data, type, row ) {
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal14' onclick='editfunc6("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc6("+data.id+")'>Delete</button>";
+                                }
+                            }
+                        ]
+                    }); var table610 =  $('#myTable810').DataTable({
+                        deferRender: true,
+                        ajax: {
+                            url: "/getDataKeanekaragamHayati10/"+"<?php echo $hasil['nama_kawasan'];?>",
+                            type: "GET",
+                            dataSrc: function (d) {
+                                return d
+                            }
+                        },
+                        columns: [
+                            { data: 'nama' },
+                            { data: 'nama_latin' },
+                            {
+                                data: null,
+                                render: function ( data, type, row ) {
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal14' onclick='editfunc6("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc6("+data.id+")'>Delete</button>";
+                                }
+                            }
+                        ]
+                    });
+                    var table611 =  $('#myTable811').DataTable({
+                        deferRender: true,
+                        ajax: {
+                            url: "/getDataKeanekaragamHayati11/"+"<?php echo $hasil['nama_kawasan'];?>",
+                            type: "GET",
+                            dataSrc: function (d) {
+                                return d
+                            }
+                        },
+                        columns: [
+                            { data: 'nama' },
+                            { data: 'nama_latin' },
+                            {
+                                data: null,
+                                render: function ( data, type, row ) {
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal14' onclick='editfunc6("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc6("+data.id+")'>Delete</button>";
+                                }
+                            }
+                        ]
+                    });
+
+                    //------Keaneka ragaman hayati END --//
         $('document').ready(function(){
+            table61.columns.adjust().draw();
             $('#SaveData').click(function(){
                 var data;
                 data = new FormData();

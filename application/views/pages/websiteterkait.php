@@ -42,20 +42,22 @@
                                             <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
-                                        <div class="modal-body">
-                                            <div class="form-group">
-                                                <label>Nama Website</label>
-                                                <input class="form-control" type="text" id="namawebsite">
+                                        <form id="websiteterkaitform">
+                                            <div class="modal-body">
+                                                <div class="form-group">
+                                                    <label>Nama Website</label>
+                                                    <input class="form-control" type="text" id="namawebsite" name="namawebsite">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Alamat Website</label>
+                                                    <input class="form-control" type="text" id="alamatwebsite" name="alamatwebsite">
+                                                </div>
                                             </div>
-                                            <div class="form-group">
-                                                <label>Alamat Website</label>
-                                                <input class="form-control" type="text" id="alamatwebsite">
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">Save changes</button>
                                             </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary" id="SaveData">Save changes</button>
-                                        </div>
+                                        </form>
                                         </div>
                                     </div>
                                     </div>
@@ -68,21 +70,23 @@
                                                 <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
-                                        <div class="modal-body">
-                                        <div class="form-group">
-                                                <label>Nama Website</label>
-                                                <input class="form-control" type="text" id="namawebsiteedit">
-                                                <input type="hidden" id="idwebsiteterkait">
-                                            </div>
+                                        <form id="websiteterkaitformedit">
+                                            <div class="modal-body">
                                             <div class="form-group">
-                                                <label>Alamat Website</label>
-                                                <input class="form-control" type="text" id="alamatwebsiteedit">
+                                                    <label>Nama Website</label>
+                                                    <input class="form-control" type="text" id="namawebsiteedit" name="namawebsiteedit">
+                                                    <input type="hidden" id="idwebsiteterkait">
+                                                </div>
+                                                <div class="form-group">
+                                                    <label>Alamat Website</label>
+                                                    <input class="form-control" type="text" id="alamatwebsiteedit" name="alamatwebsiteedit">
+                                                </div>
                                             </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary" id="UpdateData">Save changes</button>
-                                        </div>
+                                            <div class="modal-footer">
+                                                <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                <button type="submit" class="btn btn-primary">Save changes</button>
+                                            </div>
+                                        </form>
                                         </div>
                                     </div>
                                     </div>
@@ -165,40 +169,66 @@
                         ]
                     });
         $('document').ready(function(){
-            $('#UpdateData').click(function(){
-                var namawebsite = $('#namawebsiteedit').val();
-                var alamatwebsite = $('#alamatwebsiteedit').val();
-                var idwebsiteterkait = $('#idwebsiteterkait').val();
-                $.ajax({
-                    url:'/updateDataWebsiteTerkait',
-                    method:'POST',
-                    data:'namawebsite='+namawebsite+'&id='+idwebsiteterkait+"&alamatwebsite="+alamatwebsite,
-                    success:function(){
-                         Swal.fire(
-                                'Sukses!',
-                                'Data Sukses di simpan!',
-                                'success'
-                            )
-                            table.ajax.reload();
-                    }
-                })
+            $('form[id="websiteterkaitformedit"]').validate({
+                rules: {
+                    namawebsiteedit: 'required',
+                    alamatwebsiteedit: 'required',
+                },
+                messages: {
+                    roles: 'This field is required',
+                },
+                submitHandler: function(form) {
+                    var namawebsite = $('#namawebsiteedit').val();
+                    var alamatwebsite = $('#alamatwebsiteedit').val();
+                    var idwebsiteterkait = $('#idwebsiteterkait').val();
+                    $.ajax({
+                        url:'/updateDataWebsiteTerkait',
+                        method:'POST',
+                        data:'namawebsite='+namawebsite+'&id='+idwebsiteterkait+"&alamatwebsite="+alamatwebsite,
+                        success:function(){
+                            Swal.fire(
+                                    'Sukses!',
+                                    'Data Sukses di simpan!',
+                                    'success'
+                                ).then(function(){
+                                    $('#namawebsiteedit').val('');
+                                    $('#alamatwebsiteedit').val('');
+                                    $('#modals2').modal('toggle');
+                                })
+                                table.ajax.reload();
+                        }
+                    })
+                }
             })
-            $('#SaveData').click(function(){
-                var namawebsite = $('#namawebsite').val();
-                var alamatwebsite = $('#alamatwebsite').val();
-                $.ajax({
-                    url:'/SaveDataWebsiteTerkait',
-                    method:'POST',
-                    data:'namawebsite='+namawebsite+"&alamatwebsite="+alamatwebsite,
-                    success:function(){
-                         Swal.fire(
-                                'Sukses!',
-                                'Data Sukses di simpan!',
-                                'success'
-                            )
-                            table.ajax.reload();
-                    }
-                })
+            $('form[id="websiteterkaitform"]').validate({
+                rules: {
+                    namawebsite: 'required',
+                    alamatwebsite: 'required',
+                },
+                messages: {
+                    roles: 'This field is required',
+                },
+                submitHandler: function(form) {
+                    var namawebsite = $('#namawebsite').val();
+                    var alamatwebsite = $('#alamatwebsite').val();
+                    $.ajax({
+                        url:'/SaveDataWebsiteTerkait',
+                        method:'POST',
+                        data:'namawebsite='+namawebsite+"&alamatwebsite="+alamatwebsite,
+                        success:function(){
+                            Swal.fire(
+                                    'Sukses!',
+                                    'Data Sukses di simpan!',
+                                    'success'
+                                ).then(function(){
+                                    $('#namawebsite').val('');
+                                    $('#alamatwebsite').val('');
+                                    $('#exampleModal').modal('toggle');
+                                })
+                                table.ajax.reload();
+                        }
+                    })
+                }
             })
         })
     </script>
