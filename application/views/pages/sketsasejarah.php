@@ -243,6 +243,7 @@
                                         'Data Sukses di simpan!',
                                         'success'
                                     ).then(function(){
+                                        $('#fileedit').val('');
                                         $('#juduledit').val('');
                                         $('#modals2').modal('toggle');
                                     })
@@ -267,6 +268,7 @@
                                         'Data Sukses di simpan!',
                                         'success'
                                     ).then(function(){
+                                        $('#fileedit').val('');
                                         ('#juduledit').val('');
                                         $('#modals2').modal('toggle');
                                     })

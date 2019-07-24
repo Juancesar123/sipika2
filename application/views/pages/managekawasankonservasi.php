@@ -892,6 +892,81 @@
                                         <button class="btn btn-default btn-sm float-right" style="margin-bottom:10px" data-toggle="modal" data-target="#myModal7"><i class="fa fa-pencil"></i> Edit Data</button>
                                     </div>
                                     <div class="card-body">
+                                        <?php if(empty($kondisikawasan)){ ?>
+                                            <div class="modal fade" id="myModal7">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Input kondisi Kawasan Konservarsi</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+
+                                                <!-- Modal body -->
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Lintang</label>
+                                                                <input class="form-control" id="lintangkondisikawasan" >
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Bujur</label>
+                                                                <input class="form-control" id="bujurkondisikawasan">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Letak Administrasi</label>
+                                                                <textarea class="form-control" id="letakadministrasikondisikawasan"></textarea>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Unit Pengelola</label>
+                                                                <select class="form-control" id="unitpengelolakondisikawasan">
+                                                                </select>
+                                                                <input class="form-control" type="hidden" id="namakawasan"  value="<?php echo $hasil['nama_kawasan'];?>"  disabled>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Tipe Ekosistem</label>
+                                                                <select class="form-control" id="tipeekosistemkondisikawasan" >
+                                                                    <option value="schmidt"> Ekosistem Test 1 </option>
+                                                                    <option value="ferguson"> Ekosistem Test 1 </option>
+                                                                </select>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-md-6">
+                                                            <div class="form-group">
+                                                                <label>Tipe Iklim</label>
+                                                                <select class="form-control" id="tipeiklimkondisikawasan">
+                                                                    <option value="schmidt"> Schmidt </option>
+                                                                    <option value="ferguson"> Ferguson </option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Curah Hujan (MM per tahun)</label>
+                                                                <input class="form-control" id="curahhujankondisikawasan" >
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Ketinggian (m dpl)</label>
+                                                                <input class="form-control" id="ketinggiankondisikawasan">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Sejarah Kawasan</label>
+                                                                <textarea class="form-control" id="sejarahkondisikawasan"></textarea>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                                <!-- Modal footer -->
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                    <button type="button" class="btn btn-primary" id="SaveDataKondisiKawasanKosong">Simpan</button>
+                                                </div>
+
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <?php }else{ ?>
                                         <div class="modal fade" id="myModal7">
                                             <div class="modal-dialog modal-lg">
                                                 <div class="modal-content">
@@ -960,16 +1035,15 @@
                                                 <!-- Modal footer -->
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                                    <?php if(empty($kondisikawasan)){?>
-                                                        <button type="button" class="btn btn-primary" id="SaveDataKondisiKawasanKosong">Simpan</button>
-                                                    <?php }else{?>
-                                                        <button type="button" class="btn btn-primary" id="SaveDataKondisiKawasan">Simpan</button>
-                                                    <?php } ?>
+                                                    <button type="button" class="btn btn-primary" id="SaveDataKondisiKawasan">Simpan</button>
                                                 </div>
 
                                                 </div>
                                             </div>
                                         </div>
+                                        <?php };?>
+                                        <?php if(empty($kondisikawasan)){?>
+                                        <?php }else{?>
                                         <table class="table">
                                             <tr>
                                                 <td><strong>Lintang</strong> </td><td>:</td></td><td><?php   echo $kondisikawasan[0]['lintang'];?></td>
@@ -999,6 +1073,7 @@
                                                 <td><strong>Tipe Eksosistem</strong></td><td> :</td><td> <?php   echo $kondisikawasan[0]['tipe_ekosistem'];?> </td>
                                             </tr>
                                         </table>
+                                        <?php }; ?>
                                     </div>
                                 </div>
                                 <div id="evaluasifungsiekflapangan" class="card tab-pane fade">
