@@ -93,6 +93,7 @@ $route['showDataSketsaSejarah/(:any)']='SketsasejarahController/show/$1';
 //Route untuk master provinsi
 $route['master-provinsi'] ='MasterProvinsiController';
 $route['getDataMasterProvinsi'] ='MasterProvinsiController/get';
+$route['getDataMasterProvinsiKota/(:any)'] ='MasterProvinsiController/getKabupatenKota/$1';
 $route['getDataKabupaten'] ='MasterProvinsiController/getKabupaten';
 $route['savedDataMasterProvinsi'] ='MasterProvinsiController/store';
 $route['updateDataMasterProvinsi'] ='MasterProvinsiController/update';
@@ -213,11 +214,21 @@ $route['getDataPotensiKawasanKonservarsi/(:any)'] = "PotensiKawasanKonservarsiCo
 $route['showDataPotensiKawasanKonservarsi/(:any)'] = "PotensiKawasanKonservarsiController/show/$1";
 $route['deleteDataPotensiKawasanKonservarsi/(:any)'] = "PotensiKawasanKonservarsiController/destroy/$1";
 //endroute
-//route potensi kawasan konservarsi
+//route potensi keaneka ragaman hayati
 $route['saveDataKeanekaragamHayati'] = "KeanekaragamHayatiController/store";
 $route['updateDataKeanekaragamHayati'] = "KeanekaragamHayatiController/update";
 $route['getDataKeanekaragamHayati/(:any)'] = "KeanekaragamHayatiController/get/$1";
-$route['showDataKeanekaragamHayati/(:any)'] = "KeanekaragamHayatiController/show/$1";
+$route['getDataKeanekaragamHayati1/(:any)'] = "KeanekaragamHayatiController/get1/$1";
+$route['getDataKeanekaragamHayati2/(:any)'] = "KeanekaragamHayatiController/get2/$1";
+$route['getDataKeanekaragamHayati3/(:any)'] = "KeanekaragamHayatiController/get3/$1";
+$route['getDataKeanekaragamHayati4/(:any)'] = "KeanekaragamHayatiController/get4/$1";
+$route['getDataKeanekaragamHayati5/(:any)'] = "KeanekaragamHayatiController/get5/$1";
+$route['getDataKeanekaragamHayati6/(:any)'] = "KeanekaragamHayatiController/get6/$1";
+$route['getDataKeanekaragamHayati7/(:any)'] = "KeanekaragamHayatiController/get7/$1";
+$route['getDataKeanekaragamHayati8/(:any)'] = "KeanekaragamHayatiController/get8/$1";
+$route['getDataKeanekaragamHayati9/(:any)'] = "KeanekaragamHayatiController/get9/$1";
+$route['getDataKeanekaragamHayati10/(:any)'] = "KeanekaragamHayatiController/get10/$1";
+$route['getDataKeanekaragamHayati11/(:any)'] = "KeanekaragamHayatiController/get11/$1";
 $route['deleteDataKeanekaragamHayati/(:any)'] = "KeanekaragamHayatiController/destroy/$1";
 //endroute
 $route['404_override'] = '';

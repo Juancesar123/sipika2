@@ -15,6 +15,7 @@
   <!-- End plugin css for this page -->
   <!-- inject:css -->
   <link rel="stylesheet" href="<?php echo base_url('css/vertical-layout-light/style.css')?>">
+  <link rel="stylesheet" href="https://cdn.datatables.net/responsive/2.2.3/css/responsive.dataTables.min.css">
   <!-- endinject -->
   <link rel="shortcut icon" href="<?php echo base_url('images/favicon.png')?>" />
   <style>
