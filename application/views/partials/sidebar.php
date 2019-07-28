@@ -10,7 +10,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php if($this->uri->segment(1)=="dashboard"){echo "active";}?>" href="<?=base_url('dashboard')?>">
+            <a class="nav-link <?php if($this->uri->uri_string() == '') { echo 'active'; } ?>" href="<?=base_url()?>">
               <i class="fa fa-home menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
@@ -54,7 +54,7 @@
               </ul>
             </div>
           </li>
-          <li class="nav-item">
+          <li class="nav-item <?php if($this->uri->segment(1)=="perkembangan-kawasan"){echo "active";}?>">
             <a class="nav-link <?php if($this->uri->segment(1)=="perkembangan-kawasan"){echo "active";}?>" href="<?=base_url('perkembangan-kawasan')?>">
               <i class="fa fa-globe menu-icon"></i>
               <span class="menu-title">Kawasan Konservasi</span>

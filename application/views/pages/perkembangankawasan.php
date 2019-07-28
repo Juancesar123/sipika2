@@ -331,7 +331,7 @@
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button> <a href='managekawasan/"+data.id+"' class='btn btn-success'>Manage</a>";
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button> <a href='perkembangan-kawasan/managekawasan/"+data.id+"' class='btn btn-success'>Manage</a>";
                                 }
                             }
                         ]
@@ -352,7 +352,7 @@
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button> <a href='managekawasan/"+data.id+"' class='btn btn-success'>Manage</a>";
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button> <a href='perkembangan-kawasan/managekawasan/"+data.id+"' class='btn btn-success'>Manage</a>";
                                 }
                             }
                         ]
@@ -373,7 +373,7 @@
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button> <a href='managekawasan/"+data.id+"' class='btn btn-success'>Manage</a>";
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button> <a href='perkembangan-kawasan/managekawasan/"+data.id+"' class='btn btn-success'>Manage</a>";
                                 }
                             }
                         ]
@@ -394,7 +394,7 @@
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button> <a href='managekawasan/"+data.id+"' class='btn btn-success'>Manage</a>";
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button> <a href='perkembangan-kawasan/managekawasan/"+data.id+"' class='btn btn-success'>Manage</a>";
                                 }
                             }
                         ]
@@ -415,7 +415,7 @@
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button> <a href='managekawasan/"+data.id+"' class='btn btn-success'>Manage</a>";
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button> <a href='perkembangan-kawasan/managekawasan/"+data.id+"' class='btn btn-success'>Manage</a>";
                                 }
                             }
                         ]
@@ -436,7 +436,7 @@
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button> <a href='managekawasan/"+data.id+"' class='btn btn-success'>Manage</a>";
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button> <a href='perkembangan-kawasan/managekawasan/"+data.id+"' class='btn btn-success'>Manage</a>";
                                 }
                             }
                         ]
@@ -457,7 +457,7 @@
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button> <a href='managekawasan/"+data.id+"' class='btn btn-success'>Manage</a>";
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#modals2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button> <a href='perkembangan-kawasan/managekawasan/"+data.id+"' class='btn btn-success'>Manage</a>";
                                 }
                             }
                         ]

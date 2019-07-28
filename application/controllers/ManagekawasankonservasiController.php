@@ -20,6 +20,13 @@ class ManagekawasankonservasiController extends CI_Controller {
         $data['kondisikawasan'] =  json_decode($hasilkondisikawasan,true);
         $data['userdata'] = $this->session->userdata('userdata');
         return $this->load->view('pages/managekawasankonservasi',$data);
+        // $segment = $this->uri->segment_array(); 
+        // if($this->uri->segment(1)=="perkembangan-kawasan")
+        // {
+        //     echo "active";
+        // }else{
+        //     echo "tai";
+        // }
     }
     public function update(){
         $id = $this->input->post('id_kawasan');

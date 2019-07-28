@@ -36,20 +36,18 @@
                                 <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-lg" role="document">
                                         <div class="modal-content">
-                                        <div class="modal-header d-block">
-                                            <div class="d-flex">
-                                                <h3 class="modal-title" id="exampleModalLabel">Form Input KPHK</h3>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <h5 class="modal-title">Input Form KPHK</h5>
+                                        <div class="modal-header">
+                                            <h3 class="modal-title" id="exampleModalLabel">Form Input KPHK</h3>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
                                         </div>
                                         <form id="formkphktn" method="post" action="">
                                             <div class="modal-body">
                                                 <div class="row">
                                                     <div class="col-6">
                                                         <div class="form-group">
+                                                            <h5 class="modal-title" id="exampleModalLabel">Data Utama</h5>
                                                             <label>Tahun Pengesahan</label>
                                                             <select class="form-control" type="text" id="tahunpengesahan" name="tahunpengesahan">
                                                                 <option value="1980">1980</option>
@@ -117,10 +115,13 @@
                                                             <h5 class="modal-title" id="exampleModalLabel">SK KPHK</h5>
                                                             <label>Judul SK</label>
                                                             <input class="form-control" type="text" id="judulsk" name="judulsk">
+                                                            <br>
                                                             <label>Nomor SK</label>
                                                             <input class="form-control" type="text" id="nomorsk" name="nomorsk">
+                                                            <br>
                                                             <label>Tanggal SK</label>
                                                             <input class="form-control" type="date" id="tanggalsk" name="tanggalsk">
+                                                            <br>
                                                             <label>Dokumen SK</label>
                                                             <input class="form-control" type="file" id="dokumensk" name="dokumensk">
                                                         </div>
@@ -138,20 +139,18 @@
                                     <div class="modal fade bd-example-modal-lg" id="modals2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-lg" role="document">
                                         <div class="modal-content">
-                                        <div class="modal-header d-block">
-                                            <div class="d-flex">
-                                                <h3 class="modal-title" id="exampleModalLabel">Form Ubah KPHK TN</h3>
-                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                                    <span aria-hidden="true">&times;</span>
-                                                </button>
-                                            </div>
-                                            <h5 class="modal-title">Ubah Form KPHK TN</h5>
+                                        <div class="modal-header">
+                                            <h3 class="modal-title" id="exampleModalLabel">Form Ubah KPHK TN</h3>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
                                         </div>
                                         <form id="formkphktnedit" method="post" action="">
                                             <div class="modal-body">
                                                 <div class="row">
                                                     <div class="col-6">
                                                         <div class="form-group">
+                                                        <h5 class="modal-title" id="exampleModalLabel">Data Utama</h5>
                                                             <label>Tahun Pengesahan</label>
                                                             <select class="form-control" type="text" id="tahunpengesahanedit" name="tahunpengesahanedit">
                                                                 <option value="1980">1980</option>
@@ -220,10 +219,13 @@
                                                             <h5 class="modal-title" id="exampleModalLabel">SK KPHK</h5>
                                                             <label>Judul SK</label>
                                                             <input class="form-control" type="text" id="judulskedit"  name="judulskedit">
+                                                            <br>
                                                             <label>Nomor SK</label>
                                                             <input class="form-control" type="text" id="nomorskedit" name="nomorskedit">
+                                                            <br>
                                                             <label>Tanggal SK</label>
                                                             <input class="form-control" type="date" id="tanggalskedit" name="tanggalskedit">
+                                                            <br>
                                                             <label>Dokumen SK</label>
                                                             <input class="form-control" type="file" id="dokumenskedit" name="dokumenskedit">
                                                         </div>

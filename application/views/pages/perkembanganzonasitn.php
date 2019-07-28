@@ -48,7 +48,10 @@
                                                     <div class="col-4">
                                                         <div class="form-group">
                                                             <label>Data Surat Keputusan Zonasi Taman Nasional</label>
-                                                            <input class="form-control" type="text" id="datasurat" name="datasurat">
+                                                            <select class="form-control" type="text" id="datasurat" name="datasurat">
+                                                                <option value="tes1">Tes 1</option>
+                                                                <option value="tes12">Tes 2</option>
+                                                            </select>
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Nama Kawasan</label>
@@ -67,6 +70,22 @@
                                                             <label>Luas</label>
                                                             <input class="form-control" type="text" id="luas" name="luas">
                                                         </div>
+                                                        <div class="form-group">
+                                                            <label>Penataan Kawasan</label>
+                                                            <input class="form-control" type="file" id="penataankawasan" name="penataankawasan">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Peta</label>
+                                                            <input class="form-control" type="file" id="peta" name="peta">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Peta SHP</label>
+                                                            <input class="form-control" type="file" id="petashp"name="petashp">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Deskripsi</label>
+                                                            <textarea class="form-control" type="text" id="deskripsi" name="deskripsi"></textarea>
+                                                        </div>
                                                     </div>
                                                     <div class="col-4">
                                                         <div class="form-group">
@@ -82,23 +101,6 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-4">
-                                                        <div class="form-group">
-                                                            <label>Penataan Kawasan</label>
-                                                            <input class="form-control" type="file" id="penataankawasan" name="penataankawasan">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label>Peta</label>
-                                                            <input class="form-control" type="file" id="peta" name="peta">
-                                                        </div>
-                                                    
-                                                        <div class="form-group">
-                                                            <label>Peta SHP</label>
-                                                            <input class="form-control" type="file" id="petashp"name="petashp">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label>Deskripsi</label>
-                                                            <textarea class="form-control" type="text" id="deskripsi" name="deskripsi"></textarea>
-                                                        </div>
                                                         <div class="form-group">
                                                             <label>Data Luas Zona</label>
                                                             <input class="form-control" type="text" id="dataluaszona" name="dataluaszona">
@@ -165,7 +167,10 @@
                                                 <div class="col-4">
                                                     <div class="form-group">
                                                         <label>Data Surat Keputusan Zonasi Taman Nasional</label>
-                                                        <input class="form-control" type="text" id="datasurat">
+                                                        <select class="form-control" type="text" id="datasurat">
+                                                                <option value="tes1">Tes 1</option>
+                                                                <option value="tes12">Tes 2</option>
+                                                        </select>
                                                     </div>
                                                     <div class="form-group">
                                                         <label>Nama Kawasan</label>
@@ -184,21 +189,6 @@
                                                         <label>Luas</label>
                                                         <input class="form-control" type="text" id="luas">
                                                     </div>
-                                                </div>
-                                                <div class="col-4">
-                                                    <div class="form-group">
-                                                        <h3>SK Zonasi KPHK TN</h3>
-                                                        <label>Judul SK</label>
-                                                        <input class="form-control" type="text" id="judulsk">
-                                                        <label>Nomor SK</label>
-                                                        <input class="form-control" type="text" id="nomorsk">
-                                                        <label>Tanggal SK</label>
-                                                        <input class="form-control" type="date" id="tanggalsk">
-                                                        <label>Dokumen SK</label>
-                                                        <input class="form-control" type="file" id="dokumensk">
-                                                    </div>
-                                                </div>
-                                                <div class="col-4">
                                                     <div class="form-group">
                                                         <label>Penataan Kawasan</label>
                                                         <input class="form-control" type="file" id="penataankawasan">
@@ -216,6 +206,22 @@
                                                         <label>Deskripsi</label>
                                                         <textarea class="form-control" type="text" id="deskripsi"></textarea>
                                                     </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    <div class="form-group">
+                                                        <h3>SK Zonasi KPHK TN</h3>
+                                                        <label>Judul SK</label>
+                                                        <input class="form-control" type="text" id="judulsk">
+                                                        <label>Nomor SK</label>
+                                                        <input class="form-control" type="text" id="nomorsk">
+                                                        <label>Tanggal SK</label>
+                                                        <input class="form-control" type="date" id="tanggalsk">
+                                                        <label>Dokumen SK</label>
+                                                        <input class="form-control" type="file" id="dokumensk">
+                                                    </div>
+                                                </div>
+                                                <div class="col-4">
+                                                    
                                                     <div class="form-group">
                                                         <label>Data Luas Zona</label>
                                                         <input class="form-control" type="text" id="dataluaszona">

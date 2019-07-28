@@ -40,40 +40,40 @@
                                             <strong>Profile Kawasan</strong>
                                         </div>
                                         <div class="list-group list-group-flush">
-                                            <a data-toggle="tab" href="#home" class="list-group-item list-group-item-action bg-light">Profile</a>
+                                            <a data-toggle="tab" href="#profile" class="list-group-item list-group-item-action bg-light <?php if($this->uri->segment(1)=="perkembangan-kawasan"){echo "active";}?>" style="color:blue">Profile</a>
                                         </div>
                                         <br>
                                         <div class="sidebar-heading">
                                             <strong>Subdit Pemolaan</strong>
                                         </div>
                                         <div class="list-group list-group-flush">
-                                            <a data-toggle="tab" href="#pengukuhankawasan" class="list-group-item list-group-item-action bg-light">Perkembangan Pengukuhan kawasan</a>
-                                            <a data-toggle="tab" href="#evaluasifungsideskstudy" class="list-group-item list-group-item-action bg-light">Evaluasi Fungsi Desk Study</a>
-                                            <a  data-toggle="tab" href="#evaluasifungsiekflapangan" class="list-group-item list-group-item-action bg-light">Evaluasi Fungsi EKF Lapangan</a>
-                                            <a data-toggle="tab" href="#indikasitoradalamkk" class="list-group-item list-group-item-action bg-light">Indikasi Tora Dalam KK</a>
-                                            <a data-toggle="tab" href="#hutanadatdalamkk" class="list-group-item list-group-item-action bg-light">Hutan Adat Dalam KK</a>
+                                            <a data-toggle="tab" href="#pengukuhankawasan" class="list-group-item list-group-item-action bg-light" style="color:blue">Perkembangan Pengukuhan kawasan</a>
+                                            <a data-toggle="tab" href="#evaluasifungsideskstudy" class="list-group-item list-group-item-action bg-light" style="color:blue">Evaluasi Fungsi Desk Study</a>
+                                            <a  data-toggle="tab" href="#evaluasifungsiekflapangan" class="list-group-item list-group-item-action bg-light" style="color:blue">Evaluasi Fungsi EKF Lapangan</a>
+                                            <a data-toggle="tab" href="#indikasitoradalamkk" class="list-group-item list-group-item-action bg-light" style="color:blue">Indikasi Tora Dalam KK</a>
+                                            <a data-toggle="tab" href="#hutanadatdalamkk" class="list-group-item list-group-item-action bg-light" style="color:blue">Hutan Adat Dalam KK</a>
                                         </div>
                                         <br>
                                         <div class="sidebar-heading">
                                             <strong>Subdit IIKA</strong>
                                         </div>
                                         <div class="list-group list-group-flush">
-                                            <a data-toggle="tab" href="#" class="list-group-item list-group-item-action bg-light">Desa Sekitar KK</a>
-                                            <a data-toggle="tab" href="#" class="list-group-item list-group-item-action bg-light">Per Kawasan</a>
-                                            <a data-toggle="tab" href="#" class="list-group-item list-group-item-action bg-light">Wilayah Adat</a>
-                                            <a data-toggle="tab" href="#" class="list-group-item list-group-item-action bg-light">Permasalahan Pengelolaan KK</a>
-                                            <a data-toggle="tab" href="#kondisikawasankonservarsi" class="list-group-item list-group-item-action bg-light">Kondisi Kawasan Konservarsi</a>
-                                            <a data-toggle="tab" href="#potensikawasankonservarsi" class="list-group-item list-group-item-action bg-light">Potensi Kawasan Konservarsi</a>
-                                            <a data-toggle="tab" href="#keanekaragamanhayati" class="list-group-item list-group-item-action bg-light">Keanekaragaman Hayati</a>
+                                            <a data-toggle="tab" href="#" class="list-group-item list-group-item-action bg-light" style="color:blue">Desa Sekitar KK</a>
+                                            <a data-toggle="tab" href="#" class="list-group-item list-group-item-action bg-light" style="color:blue">Per Kawasan</a>
+                                            <a data-toggle="tab" href="#" class="list-group-item list-group-item-action bg-light" style="color:blue">Wilayah Adat</a>
+                                            <a data-toggle="tab" href="#" class="list-group-item list-group-item-action bg-light" style="color:blue" >Permasalahan Pengelolaan KK</a>
+                                            <a data-toggle="tab" href="#kondisikawasankonservarsi" class="list-group-item list-group-item-action bg-light" style="color:blue">Kondisi Kawasan Konservarsi</a>
+                                            <a data-toggle="tab" href="#potensikawasankonservarsi" class="list-group-item list-group-item-action bg-light" style="color:blue">Potensi Kawasan Konservarsi</a>
+                                            <a data-toggle="tab" href="#keanekaragamanhayati" class="list-group-item list-group-item-action bg-light" style="color:blue">Keanekaragaman Hayati</a>
                                         </div>
                                         <br>
                                         <div class="sidebar-heading">
                                             <strong>Subdit PKS</strong>
                                         </div>
                                         <div class="list-group list-group-flush">
-                                            <a data-toggle="tab" href="#pengukuhankawasan" class="list-group-item list-group-item-action bg-light">Penguatan Fungsi KK</a>
-                                            <a href="#" class="list-group-item list-group-item-action bg-light">Pembangunan Strategis</a>
-                                            <a href="#" class="list-group-item list-group-item-action bg-light">Kemitrataan Konservarsi</a>
+                                            <a data-toggle="tab" href="#pengukuhankawasan" class="list-group-item list-group-item-action bg-light" style="color:blue">Penguatan Fungsi KK</a>
+                                            <a href="#" class="list-group-item list-group-item-action bg-light" style="color:blue">Pembangunan Strategis</a>
+                                            <a href="#" class="list-group-item list-group-item-action bg-light"style="color:blue">Kemitrataan Konservarsi</a>
                                         </div>
                                     </div>
 
@@ -82,7 +82,7 @@
                         </div>
                         <div class="col-md-9">
                             <div class="tab-content">
-                                <div id="home" class="card tab-pane fade in active">
+                                <div id="profile" class="card tab-pane fade in <?php if($this->uri->segment(1)=="perkembangan-kawasan"){echo "active";}?>">
                                     <div class="card-header">
                                         Profile Kawasan
                                         <div class="float-right">

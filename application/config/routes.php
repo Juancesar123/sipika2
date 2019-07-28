@@ -139,7 +139,7 @@ $route['register'] = 'AuthtenticationController/register';
 $route['logout'] = 'AuthtenticationController/logout';
 //endroute
 //route untuk login
-$route['managekawasan/(:any)'] = 'ManagekawasankonservasiController/show/$1';
+$route['perkembangan-kawasan/managekawasan/(:any)'] = 'ManagekawasankonservasiController/show/$1';
 $route['updatedatakawasan'] = 'ManagekawasankonservasiController/update';
 //endroute
 //routeuntukpengukuhankawasan

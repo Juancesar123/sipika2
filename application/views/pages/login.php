@@ -34,6 +34,11 @@
               </div>
               <h4>Welcome back!</h4>
               <h6 class="font-weight-light">Happy to see you again!</h6>
+              <?php if ($this->session->flashdata('SUCCESS')) { ?>
+                <div role="alert" class="alert alert-danger">
+                  <?= $this->session->flashdata('SUCCESS') ?>
+                </div>
+                <?php } ?>
               <form class="pt-3" action="process_login" method="POST">
                 <div class="form-group">
                   <label for="exampleInputEmail">Username</label>
@@ -58,7 +63,7 @@
                   </div>
                 </div>
                 <div class="my-2 d-flex justify-content-between align-items-center">
-                  <a href="#" class="auth-link text-black">Forgot password?</a>
+                  <a href="mailto:testing@email.com" class="auth-link text-black">Forgot password?</a>
                 </div>
                 <div class="my-3">
                   <button class="btn btn-block btn-primary btn-lg font-weight-medium auth-form-btn" type="submit">LOGIN</button>

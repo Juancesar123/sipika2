@@ -178,7 +178,6 @@
                     
                     file: {
                         required: true,
-                        accept: "image/*"
                     }
                 },
                 messages: {

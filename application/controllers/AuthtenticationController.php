@@ -44,7 +44,8 @@ class AuthtenticationController extends CI_Controller {
             redirect('/');
         } catch (GuzzleHttp\Exception\ClientException $exception) {
             // $responseBody = $exception->getResponse()->getBody(true);
-            echo "<script>alert('This card was not approved, Thanks.');</script>";
+            //echo "<script>alert('This card was not approved, Thanks.');</script>";
+            $this->session->set_flashdata('SUCCESS', "password atau email salah");
             redirect('/login');
         }
     }
