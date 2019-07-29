@@ -216,12 +216,19 @@ $route['getDataPotensiKawasanKonservarsi/(:any)'] = "PotensiKawasanKonservarsiCo
 $route['showDataPotensiKawasanKonservarsi/(:any)'] = "PotensiKawasanKonservarsiController/show/$1";
 $route['deleteDataPotensiKawasanKonservarsi/(:any)'] = "PotensiKawasanKonservarsiController/destroy/$1";
 //endroute
-//route potensi kawasan konservarsi
+//route Desa Sekitar KK
 $route['saveDataDesaKK'] = "DesaSekitarKKController/store";
 $route['updateDataDesaKK'] = "DesaSekitarKKController/update";
 $route['getDataDesaKK/(:any)'] = "DesaSekitarKKController/getData/$1";
 $route['showDataDesaKK/(:any)'] = "DesaSekitarKKController/show/$1";
 $route['deleteDataDesaKK/(:any)'] = "DesaSekitarKKController/destroy/$1";
+//endroute
+//route Wilayah Adat
+$route['saveDataWilayahAdat'] = "WilayahAdatController/store";
+$route['updateDataWilayahAdat'] = "WilayahAdatController/update";
+$route['getDataWilayahAdat/(:any)'] = "WilayahAdatController/getData/$1";
+$route['showDataWilayahAdat/(:any)'] = "WilayahAdatController/show/$1";
+$route['deleteDataWilayahAdat/(:any)'] = "WilayahAdatController/destroy/$1";
 //endroute
 //route potensi keaneka ragaman hayati
 $route['saveDataKeanekaragamHayati'] = "KeanekaragamHayatiController/store";

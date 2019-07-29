@@ -60,7 +60,7 @@
                                         <div class="list-group list-group-flush">
                                             <a data-toggle="tab" href="#desasekitarkk" class="list-group-item list-group-item-action bg-light" style="color:blue">Desa Sekitar KK</a>
                                             <a data-toggle="tab" href="#" class="list-group-item list-group-item-action bg-light" style="color:blue">Per Kawasan</a>
-                                            <a data-toggle="tab" href="#" class="list-group-item list-group-item-action bg-light" style="color:blue">Wilayah Adat</a>
+                                            <a data-toggle="tab" href="#wilayahadat" class="list-group-item list-group-item-action bg-light" style="color:blue">Wilayah Adat</a>
                                             <a data-toggle="tab" href="#" class="list-group-item list-group-item-action bg-light" style="color:blue" >Permasalahan Pengelolaan KK</a>
                                             <a data-toggle="tab" href="#kondisikawasankonservarsi" class="list-group-item list-group-item-action bg-light" style="color:blue">Kondisi Kawasan Konservarsi</a>
                                             <a data-toggle="tab" href="#potensikawasankonservarsi" class="list-group-item list-group-item-action bg-light" style="color:blue">Potensi Kawasan Konservarsi</a>
@@ -1471,6 +1471,139 @@
                                         </table>
                                     </div>
                                 </div>
+                                <div id="wilayahadat" class="card tab-pane fade">
+                                    <div class="card-header">
+                                        Wilayah Adat
+                                    </div>
+                                    <div class="card-body">
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal20">Tambah Data</button>
+                                        <div class="modal fade" id="myModal20">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Input wilayah Adat</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+                                                <form id="formwilayahadat">
+                                                    <!-- Modal body -->
+                                                    <div class="modal-body">
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                    <h5>Basic Info</h5>
+                                                                <div class="form-group">
+                                                                    <label>Nama Wilayah Adat</label>
+                                                                    <input type="text" class="form-control" id="namawilayahadat" name="namawilayahadat">
+                                                                    <input class="form-control" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" type="hidden" disabled>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Luas</label>
+                                                                    <input type="text" class="form-control" id="luaswilayahadat" name="luaswilayahadat">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Jumlah Kepala Keluarga</label>
+                                                                    <input type="text" class="form-control" id="kepalakeluargaadat" name="kepalakeluargaadat">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="form-group">
+                                                                    <h5>SK</h5>
+                                                                    <label>Judul SK</label>
+                                                                    <input class="form-control" type="text" id="judulskwilayahadat" name="judulskwilayahadat">
+                                                                    <br>
+                                                                    <label>Nomor SK</label>
+                                                                    <input class="form-control" type="text" id="nomorskwilayahadat" name="nomorskwilayahadat">
+                                                                    <br>
+                                                                    <label>Tanggal SK</label>
+                                                                    <input class="form-control" type="date" id="tanggalskwilayahadat" name="tanggalskwilayahadat">
+                                                                    <br>
+                                                                    <label>Dokumen SK</label>
+                                                                    <input class="form-control" type="file" id="dokumenskwilayahadat" name="dokumenskwilayahadat">
+                                                                    <br>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Modal footer -->
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Simpan</button>
+                                                    </div>
+
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="modal fade" id="myModal21">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Ubah Wilayah Adat</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+                                                <form id="formwilayahadatedit">
+                                                    <!-- Modal body -->
+                                                    <div class="modal-body">
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                    <h5>Basic Info</h5>
+                                                                <div class="form-group">
+                                                                    <label>Nama Wilayah Adat</label>
+                                                                    <input type="text" class="form-control" id="namawilayahadatedit">
+                                                                    <input class="form-control" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" type="hidden" disabled>
+                                                                    <input type="hidden" id="idwilayahadat">
+                                                  
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Luas</label>
+                                                                    <input type="text" class="form-control" id="luaswilayahadatedit">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Jumlah Kepala Keluarga</label>
+                                                                    <input type="text" class="form-control" id="kepalakeluargaadatedit">
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="form-group">
+                                                                    <h5>SK</h5>
+                                                                    <label>Judul SK</label>
+                                                                    <input class="form-control" type="text" id="judulskwilayahadatedit">
+                                                                    <label>Nomor SK</label>
+                                                                    <input class="form-control" type="text" id="nomorskwilayahadatedit">
+                                                                    <label>Tanggal SK</label>
+                                                                    <input class="form-control" type="date" id="tanggalskwilayahadatedit">
+                                                                    <label>Dokumen SK</label>
+                                                                    <input class="form-control" type="file" id="dokumenskwilayahadatedit">
+                                                                    <input type="hidden" id="dokumenskhidden">
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Modal footer -->
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Simpan</button>
+                                                    </div>
+
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <table class="table" id="tablewilayahadat" style="width:100%">
+                                            <thead>
+                                                <th>Nama Wilayah Adat</th>
+                                                <th>Luas</th>
+                                                <th>Jumlah Kepala Keluarga</th>
+                                                <th>Action</th>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
                                 <div id="hutanadatdalamkk" class="card tab-pane fade">
                                     <div class="card-header">
                                         Hutan adat dalam KK
@@ -1732,6 +1865,20 @@
                 }
             })
         }
+        function myfunc11(id){
+            $.ajax({
+                url:'/deleteDataWilayahAdat/'+id,
+                type:'GET',
+                success:function(){
+                    Swal.fire(
+                                'Sukses!',
+                                'Data Sukses di hapus!',
+                                'success'
+                            )
+                            tablewilayahadat.ajax.reload();
+                }
+            })
+        }
         function editfunc(id){
             $.ajax({
                 url:'/showDataPengukuhanKawasan/'+id,
@@ -1856,6 +2003,23 @@
                     $( '#kabupatenkotadesakkedit' ).val(hasil.kabupaten_kota);
                     $( '#kecamatandesakkedit' ).val(hasil.kecamatan);
                     $( '#desakkedit' ).val(hasil.desa);
+                }
+            })
+        }
+        function editfunc11(id){
+            $.ajax({
+                url:'/showDataWilayahAdat/'+id,
+                type:'GET',
+                success:function(data){
+                    var hasil = JSON.parse(data);
+                    $( '#idwilayahadat' ).val(hasil.id);
+                    $( '#namawilayahadatedit' ).val(hasil.nama_wilayah_adat);
+                    $( '#luaswilayahadatedit' ).val(hasil.luas);
+                    $( '#kepalakeluargaadatedit' ).val(hasil.jumlah_kepala_keluarga);
+                    $( '#nomorskwilayahadatedit' ).val(hasil.nomor_sk);
+                    $( '#judulskwilayahadatedit' ).val(hasil.judul_sk);
+                    $( '#tanggalskedit' ).val(hasil.tanggal_sk);
+                    $( '#dokumenskhidden' ).val(hasil.dokumen_sk);
                 }
             })
         }
@@ -2225,6 +2389,8 @@
                             }
                         ]
                     });
+              
+                    //------Keaneka ragaman hayati END --//
                     var tablekk =  $('#tablekk').DataTable({
                         deferRender: true,
                         ajax: {
@@ -2246,7 +2412,27 @@
                             }
                         ]
                     });
-                    //------Keaneka ragaman hayati END --//
+                    var tablewilayahadat =  $('#tablewilayahadat').DataTable({
+                        deferRender: true,
+                        ajax: {
+                            url: "/getDataWilayahAdat/"+"<?php echo $hasil['nama_kawasan'];?>",
+                            type: "GET",
+                            dataSrc: function (d) {
+                                return d
+                            }
+                        },
+                        columns: [
+                            { data: 'nama_wilayah_adat' },
+                            { data: 'luas' },
+                            { data: 'jumlah_kepala_keluarga' },
+                            {
+                                data: null,
+                                render: function ( data, type, row ) {
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal21'onclick='editfunc11("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc11("+data.id+")'>Delete</button>";
+                                }
+                            }
+                        ]
+                    });
         $('document').ready(function(){
             table61.columns.adjust().draw();
                 $.ajax({
@@ -2273,6 +2459,150 @@
                             $("#kecamatandesakk").append(html);
                             $("#kecamatandesakkedit").append(html);
                         });
+                    }
+                })
+                $('form[id="formwilayahadat"]').validate({
+                    rules: {
+                        kepalakeluargaadat: 'required',
+                        namawilayahadat: 'required',
+                        luaswilayahadat:{
+                            required:true,
+                            number: true
+                        },
+                        nomorskwilayahadat:{
+                            required:true,
+                            number: true
+                        },
+                        judulskwilayahadat:{
+                            required:true,
+                        },
+                        dokumenskwilayahadat:{
+                            required:true,
+                        }
+                    },
+                    messages: {
+                        judul: 'This field is required',
+                        file:'This field mustbe images'
+
+                    },
+                    submitHandler: function(form) {
+                        var data;
+                        data = new FormData();
+                        data.append('luas', $('#luaswilayahadat').val());
+                        data.append('jumlahkepalakeluarga',$('#kepalakeluargaadat').val());
+                        data.append('namawilayahadat', $('#namawilayahadat').val());
+                        data.append('nomorsk', $('#nomorskwilayahadat').val());
+                        data.append('judulsk', $('#judulskwilayahadat').val());
+                        data.append('namakawasan',$('#namakawasan').val());
+                        data.append('tanggalsk',$('#tanggalskwilayahadat').val());
+                        data.append('dokumensk', $('#dokumenskwilayahadat')[0].files[0]);
+                        $.ajax({
+                            url:'/saveDataWilayahAdat',
+                            method:'POST',
+                            data:data,
+                            contentType: false,
+                            processData:false,
+                            success:function(){
+                                Swal.fire(
+                                            'Sukses!',
+                                            'Data Sukses di simpan!',
+                                            'success'
+                                        ).then(function(){
+                                            $( '#luaswilayahadat' ).val('')
+                                            $( '#namawilayahadat' ).val('')
+                                            $( '#kepalakeluargaadat' ).val('')
+                                            $( '#nomorskwilayahadat' ).val('')
+                                            $( '#judulskwilayahadat' ).val('')
+                                            $( '#dokumenskwilayahadat' ).val('')
+                                            $('#myModal20').modal('toggle')
+                                        })
+                                    tablewilayahadat.ajax.reload();
+                            }
+                        })
+                    }
+                })
+                $('form[id="formwilayahadatedit"]').validate({
+                    rules: {
+                        kepalakeluargaadatedit: 'required',
+                        namawilayahadatedit: 'required',
+                        luaswilayahadatedit:{
+                            required:true,
+                            number: true
+                        },
+                        nomorskwilayahadatedit:{
+                            required:true,
+                            number: true
+                        },
+                        judulskwilayahadatedit:{
+                            required:true,
+                        },
+                        dokumenskwilayahadatedit:{
+                            required:true,
+                        }
+                    },
+                    messages: {
+                        judul: 'This field is required',
+                        file:'This field mustbe images'
+
+                    },
+                    submitHandler: function(form) {
+                        var file = $('#dokumenskwilayahadatedit')[0].files[0];
+                        if(file == undefined){
+                            var data;
+                            data = new FormData();
+                            data.append('namakawasan', $('#namakawasan').val());
+                            data.append('idwilayahadat', $('#idwilayahadat').val());
+                            data.append('kepalakeluarga',$('#kepalakeluargaadatedit').val());
+                            data.append('namawilayah', $('#namawilayahadatedit').val());
+                            data.append('luas',$('#luaswilayahadatedit').val());
+                            data.append('nomorsk', $('#nomorskwilayahadatedit').val());
+                            data.append('tanggalsk', $('#tanggalskwilayahadatedit').val());
+                            data.append('judulsk', $('#judulskwilayahadatedit').val());
+                            data.append('dokumensk', $('#dokumenskhidden').val());
+                            data.append( 'status',  'filenotfound');
+                            $.ajax({
+                                url:'/updateDataWilayahAdat',
+                                method:'POST',
+                                data:data,
+                                contentType: false,
+                                processData:false,
+                                success:function(){
+                                    Swal.fire(
+                                            'Sukses!',
+                                            'Data Sukses di simpan!',
+                                            'success'
+                                        )
+                                        table.ajax.reload();
+                                }
+                            })
+                        }else{
+                            var data;
+                            data = new FormData();
+                            data.append('dokumensk', $('#dokumensk')[0].files[0]);
+                            data.append('tanggalsk', $('#tanggalskwilayahadatedit').val());
+                            data.append('namakawasan', $('#namakawasan').val());
+                            data.append('idwilayahadat', $('#idwilayahadat').val());
+                            data.append('kepalakeluarga',$('#kepalakeluargaadatedit').val());
+                            data.append('namawilayah', $('#namawilayahadatedit').val());
+                            data.append('luas',$('#luaswilayahadatedit').val());
+                            data.append('nomorsk', $('#nomorskwilayahadatedit').val());
+                            data.append('judulsk', $('#judulskwilayahadatedit').val());
+                            $.ajax({
+                                url:'/updateDataWilayahAdat',
+                                method:'POST',
+                                data:data,
+                                contentType: false,
+                                processData:false,
+                                success:function(){
+                                    Swal.fire(
+                                            'Sukses!',
+                                            'Data Sukses di simpan!',
+                                            'success'
+                                        )
+                                        table.ajax.reload();
+                                }
+                            })
+                        }
                     }
                 })
             $('form[id="formdesasekitarkk"]').validate({
