@@ -35,7 +35,7 @@ class PerkembanganKawasanController extends CI_Controller {
                 'fungsi' => $this->input->post('fungsi'),
                 'pulau' => $this->input->post('pulau'),
                 'provinsi' => $this->input->post('provinsi'),
-                'kabupaten' => $this->input->post('provinsitemp')
+                'kabupaten' => $this->input->post('kabupatenkota')
             ]
             ]);
       return 'sukses';

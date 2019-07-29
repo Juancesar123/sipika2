@@ -58,7 +58,7 @@
                                             <strong>Subdit IIKA</strong>
                                         </div>
                                         <div class="list-group list-group-flush">
-                                            <a data-toggle="tab" href="#" class="list-group-item list-group-item-action bg-light" style="color:blue">Desa Sekitar KK</a>
+                                            <a data-toggle="tab" href="#desasekitarkk" class="list-group-item list-group-item-action bg-light" style="color:blue">Desa Sekitar KK</a>
                                             <a data-toggle="tab" href="#" class="list-group-item list-group-item-action bg-light" style="color:blue">Per Kawasan</a>
                                             <a data-toggle="tab" href="#" class="list-group-item list-group-item-action bg-light" style="color:blue">Wilayah Adat</a>
                                             <a data-toggle="tab" href="#" class="list-group-item list-group-item-action bg-light" style="color:blue" >Permasalahan Pengelolaan KK</a>
@@ -1234,6 +1234,112 @@
                                         </table>
                                     </div>
                                 </div>
+                                <div id="desasekitarkk" class="card tab-pane fade">
+                                    <div class="card-header">
+                                        Desa Sekitar KK
+                                    </div>
+                                    <div class="card-body">
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal18">Tambah Data</button>
+                                        <div class="modal fade" id="myModal18">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Input Desa Sekitar KK</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+
+                                                <!-- Modal body -->
+                                                <form id="formdesasekitarkk">
+                                                    <div class="modal-body">
+                                                        <div class="form-group">
+                                                            <label>Nama Kawasan</label>
+                                                            <input class="form-control" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled >
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Kota / Kabupaten</label>
+                                                        <select class="form-control" id="kotakabupatendesakk" name="kotakabupatendesakk">
+                                                            
+                                                        </select>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Kecamatan</label>
+                                                            <select class="form-control" type="text" id="kecamatandesakk" name="kecamatandesakk">
+                                                                
+                                                            </select>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Desa</label>
+                                                            <input class="form-control" type="text" id="desakk" name="desakk" >
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Modal footer -->
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Simpan</button>
+                                                    </div>
+
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="modal fade" id="myModal19">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Ubah Desa Sekitar KK</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+                                                <form id="formdesasekitarkkedit">
+                                                <!-- Modal body -->
+                                                <div class="modal-body">
+                                                    <div class="form-group">
+                                                        <label>Nama Kawasan</label>
+                                                        <input class="form-control" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled >
+                                                        <input type="hidden" id="iddesakk">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Kota / Kabupaten</label>
+                                                        <select class="form-control" id="kotakabupatendesakkedit">
+                                                            
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Kecamatan</label>
+                                                        <select class="form-control" type="text" id="kecamatandesakkedit" >
+                                                            
+                                                        </select>
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Desa</label>
+                                                        <input class="form-control" type="text" id="desakkedit" >
+                                                    </div>
+                                                        
+                                                </div>
+
+                                                <!-- Modal footer -->
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                    <button type="submit" class="btn btn-primary">Simpan</button>
+                                                </div>
+                                                </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <table class="table" id="tablekk" style="width:100%">
+                                            <thead>
+                                                <th>Kota Atau Kabupaten</th>
+                                                <th>Kecamatan</th>
+                                                <th>Desa</th>
+                                                <th>Action</th>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
                                 <div id="indikasitoradalamkk" class="card tab-pane fade">
                                     <div class="card-header">
                                         Indikasi Tora Dalam KK
@@ -1612,6 +1718,20 @@
                 }
             })
         }
+        function myfunc10(id){
+            $.ajax({
+                url:'/deleteDataDesaKK/'+id,
+                type:'GET',
+                success:function(){
+                    Swal.fire(
+                                'Sukses!',
+                                'Data Sukses di hapus!',
+                                'success'
+                            )
+                            tablekk.ajax.reload();
+                }
+            })
+        }
         function editfunc(id){
             $.ajax({
                 url:'/showDataPengukuhanKawasan/'+id,
@@ -1723,6 +1843,19 @@
                     $( '#namalatinhayatiedit' ).val(hasil.nama_latin);
                     $( '#jenishayatiedit' ).val(hasil.jenis);
                     $( '#deskripsihayatiedit' ).val(hasil.deskripsi);
+                }
+            })
+        }
+        function editfunc10(id){
+            $.ajax({
+                url:'/showDataDesaKK/'+id,
+                type:'GET',
+                success:function(data){
+                    var hasil = JSON.parse(data);
+                    $( '#iddesakk' ).val(hasil.id);
+                    $( '#kabupatenkotadesakkedit' ).val(hasil.kabupaten_kota);
+                    $( '#kecamatandesakkedit' ).val(hasil.kecamatan);
+                    $( '#desakkedit' ).val(hasil.desa);
                 }
             })
         }
@@ -2092,10 +2225,137 @@
                             }
                         ]
                     });
-
+                    var tablekk =  $('#tablekk').DataTable({
+                        deferRender: true,
+                        ajax: {
+                            url: "/getDataDesaKK/"+"<?php echo $hasil['nama_kawasan'];?>",
+                            type: "GET",
+                            dataSrc: function (d) {
+                                return d
+                            }
+                        },
+                        columns: [
+                            { data: 'kota_kabupaten' },
+                            { data: 'kecamatan' },
+                            { data: 'desa' },
+                            {
+                                data: null,
+                                render: function ( data, type, row ) {
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal19'onclick='editfunc10("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc10("+data.id+")'>Delete</button>";
+                                }
+                            }
+                        ]
+                    });
                     //------Keaneka ragaman hayati END --//
         $('document').ready(function(){
             table61.columns.adjust().draw();
+                $.ajax({
+                    type:'GET',
+                    url:'/getDataMasterProvinsikabupaten',
+                    dataType:'json',
+                    success:function(data){
+                        var html;
+                        data.forEach(element => {
+                            html = "<option value='"+element.nama+"'>"+element.nama+"</option>";
+                            $("#kotakabupatendesakk").append(html);
+                            $("#kotakabupatendesakkedit").append(html);
+                        });
+                    }
+                })
+                $.ajax({
+                    type:'GET',
+                    url:'/getDataMasterProvinsikecamatan',
+                    dataType:'json',
+                    success:function(data){
+                        var html;
+                        data.forEach(element => {
+                            html = "<option value='"+element.nama+"'>"+element.nama+"</option>";
+                            $("#kecamatandesakk").append(html);
+                            $("#kecamatandesakkedit").append(html);
+                        });
+                    }
+                })
+            $('form[id="formdesasekitarkk"]').validate({
+                rules: {
+                    kotakabupatendesakk: 'required',
+                    desakk: 'required',
+                    kecamatandesakk: 'required',
+                },
+                messages: {
+                    judul: 'This field is required',
+                    file:'This field mustbe images'
+
+                },
+                submitHandler: function(form) {
+                    var data;
+                    data = new FormData();
+                    data.append('kotakbupaten', $('#kotakabupatendesakk').val());
+                    data.append('desa',$('#desakk').val());
+                    data.append('kecamatan', $('#kecamatandesakk').val());
+                    data.append('namakawasan', $('#nama_kawasan').val());
+                    $.ajax({
+                        url:'/saveDataDesaKK',
+                        method:'POST',
+                        data:data,
+                        contentType: false,
+                        processData:false,
+                        success:function(){
+                            Swal.fire(
+                                        'Sukses!',
+                                        'Data Sukses di simpan!',
+                                        'success'
+                                    ).then(function(){
+                                        $( '#kotakabupatendesakk' ).val('')
+                                        $( '#desakk' ).val('')
+                                        $( '#kecamatandesakk' ).val('')
+                                        $('#myModal18').modal('toggle')
+                                    })
+                                tablekk.ajax.reload();
+                        }
+                    })
+                }
+            })
+            $('form[id="formdesasekitarkkedit"]').validate({
+                rules: {
+                    kotakabupatendesakkedi: 'required',
+                    desakkedit: 'required',
+                    kecamatandesakkedit: 'required',
+                },
+                messages: {
+                    judul: 'This field is required',
+                    file:'This field mustbe images'
+
+                },
+                submitHandler: function(form) {
+                    var data;
+                    data = new FormData();
+                    data.append('kotakbupaten', $('#kotakabupatendesakkedit').val());
+                    data.append('desa',$('#desakkedit').val());
+                    data.append('kecamatan', $('#kecamatandesakkedit').val());
+                    data.append('namakawasan', $('#nama_kawasan').val());
+                    data.append('iddesakk', $('#iddesakk').val());
+                    $.ajax({
+                        url:'/updateDataDesaKK',
+                        method:'POST',
+                        data:data,
+                        contentType: false,
+                        processData:false,
+                        success:function(){
+                                Swal.fire(
+                                    'Sukses!',
+                                    'Data Sukses di ubah!',
+                                    'success'
+                                ).then(function(){
+                                    $( '#kotakabupatendesakkedit' ).val('')
+                                    $( '#desakkedit' ).val('')
+                                    $( '#kecamatandesakkedit' ).val('')
+                                    $('#myModal19').modal('toggle')
+                                })
+                            tablekk.ajax.reload();
+                        }
+                    })
+                }
+            })
             $('#SaveData').click(function(){
                 var data;
                 data = new FormData();

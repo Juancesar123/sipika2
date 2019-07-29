@@ -160,17 +160,28 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Pulau</label>
-                                            <input class="form-control" type="text" id="pulau" name="pulau">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Provinsi Temp</label>
-                                            <input class="form-control" type="text" id="provinsitemp" name="provinsitemp">
+                                            <select class="form-control" type="text" id="pulau" name="pulau">
+                                                <option value="sumatra">Sumatera</option>
+                                                <option value="jawa">Jawa</option>
+                                                <option value="bali">Bali</option>
+                                                <option value="nusa tenggara">Nusa Tenggara</option>
+                                                <option value="kalimantan">Kalimantan</option>
+                                                <option value="sulawesi">Sulawesi</option>
+                                                <option value="maluku">Maluku</option>
+                                                <option value="papua">Papua</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label>Provinsi</label>
-                                            <input class="form-control" type="text" id="provinsi" name="provinsi">
+                                            <select class="form-control"  id="provinsi" name="provinsi" style="width:100%" multiple="multiple">
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Kabupaten</label>
+                                            <select class="form-control"  id="kabupatenkota" name="kabupatenkota" style="width:100%" multiple="multiple">
+                                            </select>
                                         </div>
                                         <div class="form-group">
                                             <label>Nama Kawasan</label>
@@ -223,17 +234,28 @@
                                         </div>
                                         <div class="form-group">
                                             <label>Pulau</label>
-                                            <input class="form-control" type="text" id="pulauedit" name="pulauedit">
-                                        </div>
-                                        <div class="form-group">
-                                            <label>Provinsi Temp</label>
-                                            <input class="form-control" type="text" id="provinsitempedit" name="provinsitempedit">
+                                            <select class="form-control" id="pulauedit" name="pulauedit">
+                                                <option value="sumatra">Sumatera</option>
+                                                <option value="jawa">Jawa</option>
+                                                <option value="bali">Bali</option>
+                                                <option value="nusa tenggara">Nusa Tenggara</option>
+                                                <option value="kalimantan">Kalimantan</option>
+                                                <option value="sulawesi">Sulawesi</option>
+                                                <option value="maluku">Maluku</option>
+                                                <option value="papua">Papua</option>
+                                            </select>
                                         </div>
                                     </div>
                                     <div class="col-6">
                                         <div class="form-group">
                                             <label>Provinsi</label>
-                                            <input class="form-control" type="text" id="provinsiedit" name="provinsiedit">
+                                            <select class="form-control" type="text" id="provinsiedit" name="provinsiedit">
+                                            </select>
+                                        </div>
+                                        <div class="form-group">
+                                            <label>Kabupaten Kota</label>
+                                            <select class="form-control" type="text" id="kabupatenkotaedit" name="kabupatenkotaedit">
+                                            </select>
                                         </div>
                                         <div class="form-group">
                                             <label>Nama Kawasan</label>
@@ -310,7 +332,7 @@
                         $('#provinsiedit').val(hasil.provinsi);
                         $('#registeredit').val(hasil.register);
                         $('#luaskawasanedit').val(hasil.luas_kawasan);
-                        $('#provinsitempedit').val(hasil.kabupaten);
+                        $('#kabupatenkotaedit').val(hasil.kabupaten);
                         $('#idedit').val(hasil.id);
                     }
                 })
@@ -463,6 +485,44 @@
                         ]
                     });
             $(document).ready(function(){
+                $.ajax({
+                type:'GET',
+                url:'/getDataMasterProvinsi',
+                dataType:'json',
+                success:function(data){
+                    var html;
+                    data.forEach(element => {
+                         html = "<option value='"+element.nama+"'>"+element.nama+"</option>";
+                         $("#provinsi").append(html);
+                         $("#provinsiedit").append(html);
+                    });
+                }
+            })
+            $.ajax({
+                type:'GET',
+                url:'/getDataKabupaten',
+                dataType:'json',
+                success:function(data){
+                    var html;
+                    data.forEach(element => {
+                         html = "<option value='"+element.nama+"'>"+element.nama+"</option>";
+                         $("#kabupatenkota").append(html);
+                         $("#kabupatenkotaedit").append(html);
+                    });
+                }
+            })
+            $('#provinsi').select2({  
+                theme: "bootstrap"
+            });
+            $('#kabupatenkota').select2({  
+                theme: "bootstrap"
+            });
+            $('#provinsiedit').select2({  
+                theme: "bootstrap"
+            });
+            $('#kabupatenkotaedit').select2({  
+                theme: "bootstrap"
+            });
                 $('form[id="formkawasankonservasiedit"]').validate({
                     rules: {
                         luaskawasanedit:{
@@ -544,6 +604,7 @@
                         fungsi: 'required',
                         pulau:'required',
                         provinsi:'required',
+                        kabupatenkota:'required',
                         fungsi_hutan: 'required',
                         peta:'required',
                     },
@@ -557,7 +618,7 @@
                         var register = $('#register').val();
                         var pulau = $('#pulau').val();
                         var provinsi = $('#provinsi').val();
-                        var provinsitemp = $('#provinsitemp').val();
+                        var kabupatenkota = $('#kabupatenkota').val();
                         var luaskawasan = $('#luaskawasan').val();
                         $.ajax({
                             url:'/savedDatakawasan',
@@ -567,7 +628,7 @@
                                 "&register="+register+
                                 "&pulau="+pulau+
                                 "&provinsi="+provinsi+
-                                "&provinsitemp="+provinsitemp,
+                                "&kabupatenkota="+kabupatenkota,
                             beforeSend:function(){
                                 $("#ajaxprocesss").css("display", "block");
                                 $("#SaveAction").attr("disabled", true);
@@ -585,7 +646,7 @@
                                     $('#register').val('');
                                     $('#pulau').val('');
                                     $('#provinsi').val('');
-                                    $('#provinsitemp').val('');
+                                    $('#kabupatenkota').val('');
                                     $('#luaskawasan').val('');
                                     $('#modals1').modal('toggle');
                                 })

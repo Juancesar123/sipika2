@@ -34,6 +34,25 @@ class MasterProvinsiController extends CI_Controller {
             echo json_encode($hasilarray);
         }
     }
+    public function getkecamatan(){
+        $hasilarray = [];
+        $client     = new GuzzleHttp\Client();
+        $result = $client->get(constant('API_URL').'/master_provinsi');
+        /*
+            Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
+            ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
+        */
+        $data = $result->getBody()->getContents();
+        $hasil =  json_decode($data);
+        if(is_array($hasil)){
+            foreach($hasil as $key=>$item){
+                if(strlen($item->kode) == '8'){
+                    $hasilarray[] = $item;
+                }
+            }
+            echo json_encode($hasilarray);
+        }
+    }
     public function getKabupaten(){
         $hasilarray = [];
         $client     = new GuzzleHttp\Client();

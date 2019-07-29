@@ -93,6 +93,8 @@ $route['showDataSketsaSejarah/(:any)']='SketsasejarahController/show/$1';
 //Route untuk master provinsi
 $route['master-provinsi'] ='MasterProvinsiController';
 $route['getDataMasterProvinsi'] ='MasterProvinsiController/get';
+$route['getDataMasterProvinsikecamatan'] ='MasterProvinsiController/getkecamatan';
+$route['getDataMasterProvinsikabupaten'] ='MasterProvinsiController/getkabupaten';
 $route['getDataMasterProvinsiKota/(:any)'] ='MasterProvinsiController/getKabupatenKota/$1';
 $route['getDataKabupaten'] ='MasterProvinsiController/getKabupaten';
 $route['savedDataMasterProvinsi'] ='MasterProvinsiController/store';
@@ -213,6 +215,13 @@ $route['updateDataPotensiKawasanKonservarsi'] = "PotensiKawasanKonservarsiContro
 $route['getDataPotensiKawasanKonservarsi/(:any)'] = "PotensiKawasanKonservarsiController/get/$1";
 $route['showDataPotensiKawasanKonservarsi/(:any)'] = "PotensiKawasanKonservarsiController/show/$1";
 $route['deleteDataPotensiKawasanKonservarsi/(:any)'] = "PotensiKawasanKonservarsiController/destroy/$1";
+//endroute
+//route potensi kawasan konservarsi
+$route['saveDataDesaKK'] = "DesaSekitarKKController/store";
+$route['updateDataDesaKK'] = "DesaSekitarKKController/update";
+$route['getDataDesaKK/(:any)'] = "DesaSekitarKKController/getData/$1";
+$route['showDataDesaKK/(:any)'] = "DesaSekitarKKController/show/$1";
+$route['deleteDataDesaKK/(:any)'] = "DesaSekitarKKController/destroy/$1";
 //endroute
 //route potensi keaneka ragaman hayati
 $route['saveDataKeanekaragamHayati'] = "KeanekaragamHayatiController/store";
