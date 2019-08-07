@@ -247,5 +247,9 @@ $route['getDataKeanekaragamHayati10/(:any)'] = "KeanekaragamHayatiController/get
 $route['getDataKeanekaragamHayati11/(:any)'] = "KeanekaragamHayatiController/get11/$1";
 $route['deleteDataKeanekaragamHayati/(:any)'] = "KeanekaragamHayatiController/destroy/$1";
 //endroute
+//route Dashboard
+$route['getDataDashboard/(:any)'] = "DashboardController/getCountData/$1";
+$route['getDataAllDashboard'] = "DashboardController/getAllData/$1";
+//endroute
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

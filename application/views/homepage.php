@@ -70,7 +70,7 @@
                     </div>
                     <div>
                       <p> Suaka Margasatwa</p>
-                      <h3 class="mb-0">96 M</h3>
+                      <h3 class="mb-0" id="suakacount"></h3>
                     </div>
                   </div>
                 </div>
@@ -85,7 +85,7 @@
                     </div>
                     <div>
                       <p>Cagar Alam</p>
-                      <h3 class="mb-0">455 K</h3>
+                      <h3 class="mb-0" id="cagaralamcount">455 K</h3>
                     </div>
                   </div>
                 </div>
@@ -100,7 +100,7 @@
                     </div>
                     <div>
                       <p>Taman Nasional</p>
-                      <h3 class="mb-0">248 K</h3>
+                      <h3 class="mb-0" id="tamannasionalcount"></h3>
                     </div>
                   </div>
                 </div>
@@ -115,7 +115,7 @@
                     </div>
                     <div>
                       <p>Taman Buru</p>
-                      <h3 class="mb-0">29392</h3>
+                      <h3 class="mb-0" id="tamanburucount"></h3>
                     </div>
                   </div>
                 </div>
@@ -132,7 +132,7 @@
                     </div>
                     <div>
                       <p> Taman Wisata Alam</p>
-                      <h3 class="mb-0">96 M</h3>
+                      <h3 class="mb-0" id="tamanwisatacount"></h3>
                     </div>
                   </div>
                 </div>
@@ -147,7 +147,7 @@
                     </div>
                     <div>
                       <p> Tahura</p>
-                      <h3 class="mb-0">96 M</h3>
+                      <h3 class="mb-0" id="tamanhutanrayacount"></h3>
                     </div>
                   </div>
                 </div>
@@ -162,7 +162,7 @@
                     </div>
                     <div>
                       <p> KSA/KPA</p>
-                      <h3 class="mb-0">96 M</h3>
+                      <h3 class="mb-0" id="kskpacount"></h3>
                     </div>
                   </div>
                 </div>
@@ -173,9 +173,8 @@
             <div class="col-sm-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
-                  <p class="card-title">Weekly sales</p>
-                  <canvas id='weekly-sales-chart' ></canvas>
-                  <div id="weekly-sales-legend"></div>
+                  <p class="card-title">Persentase Total Luas</p>
+                  <canvas id='myChart' ></canvas>
                 </div>
               </div>
             </div>
@@ -195,8 +194,112 @@
 
   <?php $this->load->view('partials/script') ?>
   <!-- End custom js for this page-->
+  <script>
+    var arr = [];
+    $('document').ready(function(){
+      $.ajax({
+        method:'GET',
+        url:'getDataDashboard/1',
+        success:function(data){
+          $('#kskpacount').text(data.length);
+          arr.push(data.length);
+        }
+      })
+      $.ajax({
+        method:'GET',
+        url:'getDataDashboard/2',
+        success:function(data){
+          $('#cagaralamcount').text(data.length);
+          arr.push(data.length);
+        }
+      })
+      $.ajax({
+        method:'GET',
+        url:'getDataDashboard/3',
+        success:function(data){
+          $('#suakacount').text(data.length);
+          arr.push(data.length);
+        }
+      })
+      $.ajax({
+        method:'GET',
+        url:'getDataDashboard/4',
+        success:function(data){
+          $('#tamanburucount').text(data.length);
+          arr.push(data.length);
+        }
+      })
+      $.ajax({
+        method:'GET',
+        url:'getDataDashboard/5',
+        success:function(data){
+          $('#tamannasionalcount').text(data.length);
+          arr.push(data.length);
+        }
+      })
+      $.ajax({
+        method:'GET',
+        url:'getDataDashboard/6',
+        success:function(data){
+          $('#tamanwisatacount').text(data.length);
+          arr.push(data.length);
+        }
+      })
+      $.ajax({
+        method:'GET',
+        url:'getDataDashboard/7',
+        success:function(data){
+          $('#tamanhutanrayacount').text(data.length);
+          arr.push(data.length);
+        }
+      })
+      console.log(arr);
+      var ctx = document.getElementById('myChart').getContext('2d');
+      var myChart = new Chart(ctx, {
+          type: 'pie',
+          data: {
+              labels: ['KS/KPA', 'Cagar Alam', 'Suaka Margasatwa', 'Taman Buru', 'Taman Nasional', 'Taman Wisata','Taman Hutan Raya'],
+              datasets: [{
+                  label: 'Total Wilayah',
+                  data: arr,
+                  backgroundColor: [
+                      'rgba(255, 99, 132, 0.2)',
+                      'rgba(54, 162, 235, 0.2)',
+                      'rgba(255, 206, 86, 0.2)',
+                      'rgba(75, 192, 192, 0.2)',
+                      'rgba(153, 102, 255, 0.2)',
+                      'rgba(255, 159, 64, 0.2)',
+                      'rgba(255, 151, 63, 0.2)'
+                  ],
+                  borderColor: [
+                      'rgba(255, 99, 132, 1)',
+                      'rgba(54, 162, 235, 1)',
+                      'rgba(255, 206, 86, 1)',
+                      'rgba(75, 192, 192, 1)',
+                      'rgba(153, 102, 255, 1)',
+                      'rgba(255, 159, 64, 1)',
+                      'rgba(255, 151, 63, 1)'
+                  ],
+                  borderWidth: 1
+              }]
+          },
+          options: {
+            scales: {
+                yAxes: [{
+                    ticks: {
+                        beginAtZero: true
+                    }
+                }]
+            },
+            title: {
+              display: true,
+              text: 'Persentase Total Luas Kawasan Konservarsi Di indonesia'
+            },
+          }
+      });
+    })
+  </script>
 </body>
-
 
 <!-- Mirrored from www.urbanui.com/appular/template/demo/vertical-default-light/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 04 Feb 2019 16:32:17 GMT -->
 </html>
