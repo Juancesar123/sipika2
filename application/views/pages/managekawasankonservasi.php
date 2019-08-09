@@ -52,6 +52,7 @@
                                             <a  data-toggle="tab" href="#evaluasifungsiekflapangan" class="list-group-item list-group-item-action bg-light" style="color:blue">Evaluasi Fungsi EKF Lapangan</a>
                                             <a data-toggle="tab" href="#indikasitoradalamkk" class="list-group-item list-group-item-action bg-light" style="color:blue">Indikasi Tora Dalam KK</a>
                                             <a data-toggle="tab" href="#hutanadatdalamkk" class="list-group-item list-group-item-action bg-light" style="color:blue">Hutan Adat Dalam KK</a>
+                                            <a data-toggle="tab" href="#penutupanlahanperkawasan" class="list-group-item list-group-item-action bg-light" style="color:blue">Penutupan Lahan Per Kawasan</a>
                                         </div>
                                         <br>
                                         <div class="sidebar-heading">
@@ -61,10 +62,11 @@
                                             <a data-toggle="tab" href="#desasekitarkk" class="list-group-item list-group-item-action bg-light" style="color:blue">Desa Sekitar KK</a>
                                             <a data-toggle="tab" href="#" class="list-group-item list-group-item-action bg-light" style="color:blue">Per Kawasan</a>
                                             <a data-toggle="tab" href="#wilayahadat" class="list-group-item list-group-item-action bg-light" style="color:blue">Wilayah Adat</a>
-                                            <a data-toggle="tab" href="#" class="list-group-item list-group-item-action bg-light" style="color:blue" >Permasalahan Pengelolaan KK</a>
+                                            <a data-toggle="tab" href="#permasalahankk" class="list-group-item list-group-item-action bg-light" style="color:blue" >Permasalahan Pengelolaan KK</a>
                                             <a data-toggle="tab" href="#kondisikawasankonservarsi" class="list-group-item list-group-item-action bg-light" style="color:blue">Kondisi Kawasan Konservarsi</a>
                                             <a data-toggle="tab" href="#potensikawasankonservarsi" class="list-group-item list-group-item-action bg-light" style="color:blue">Potensi Kawasan Konservarsi</a>
                                             <a data-toggle="tab" href="#keanekaragamanhayati" class="list-group-item list-group-item-action bg-light" style="color:blue">Keanekaragaman Hayati</a>
+                                            <a data-toggle="tab" href="#sosekbud" class="list-group-item list-group-item-action bg-light" style="color:blue">Sosekbud</a>
                                         </div>
                                         <br>
                                         <div class="sidebar-heading">
@@ -1471,6 +1473,166 @@
                                         </table>
                                     </div>
                                 </div>
+                                <div id="permasalahankk" class="card tab-pane fade">
+                                    <div class="card-header">
+                                        Permasalahan Pengelolaan KK
+                                    </div>
+                                    <div class="card-body">
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal20">Tambah Data</button>
+                                        <div class="modal fade" id="myModal20">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Input Permasalahan Pengelolaan KK</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+
+                                                <!-- Modal body -->
+                                                <form id='formpermasalahanpengelolaan'>
+                                                    <div class="modal-body">
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <h5>Data Kawasan Konservasi</h5>
+                                                                <div class="form-group">
+                                                                    <label>Unit Pengelola</label>
+                                                                    <select class="form-control" id="unitpengelolapermasalahan" name="unitpengelolapermasalahan">
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Kategori Permasalahan</label>
+                                                                    <select class="form-control" id="kategoripermasalahan" name="kategoripermasalahan">
+                                                                        <option value="1">1</option>
+                                                                        <option value="2">2</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Nama Kawasan</label>
+                                                                    <input type="text" class="form-control" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Lainnya</label>
+                                                                    <input type="text" class="form-control" id="lainnyapermasalahan" name="lainnyapermasalahan">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Keterangan</label>
+                                                                    <textarea type="text" class="form-control" id="Keteranganpermasalahan" name="Keteranganpermasalahan"></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <h5>Permasalahan Kawasan Konservasi</h5>
+                                                                <div class="form-group">
+                                                                    <label>No Surat</label>
+                                                                    <input class="form-control" id="nomorsurat" name="nomorsurat">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Luas Permasalahan (Ha)</label>
+                                                                    <input type="text" class="form-control" id="luaspermasalahan" name="luaspermasalahan">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Tanggal</label>
+                                                                    <input type="date" class="form-control" id="tanggalpermasalahan" name="tanggalpermasalahan">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Upaya Permasalahan</label>
+                                                                    <textarea type="text" class="form-control" id="upayapermasalahan" name="luaspermasalahan"></textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Modal footer -->
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Simpan</button>
+                                                    </div>
+                                                </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal fade" id="myModal23">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Ubah Data Permasalahan KK</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+
+                                                 <form id='formpermasalahanpengelolaanedit'>
+                                                    <div class="modal-body">
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <h5>Data Kawasan Konservasi</h5>
+                                                                <div class="form-group">
+                                                                    <label>Unit Pengelola</label>
+                                                                    <select class="form-control" id="unitpengelolapermasalahanedit" name="unitpengelolapermasalahanedit">
+                                                                    </select>
+                                                                    <input type="hidden" id="idpermasalahankk">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Kategori Permasalahan</label>
+                                                                    <select class="form-control" id="kategoripermasalahanedit" name="kategoripermasalahanedit">
+                                                                        <option value="1">1</option>
+                                                                        <option value="2">2</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Nama Kawasan</label>
+                                                                    <input type="text" class="form-control" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Lainnya</label>
+                                                                    <input type="text" class="form-control" id="lainnyapermasalahanedit" name="lainnyapermasalahanedit">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Keterangan</label>
+                                                                    <textarea type="text" class="form-control" id="Keteranganpermasalahanedit" name="Keteranganpermasalahanedit"></textarea>
+                                                                </div>
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <h5>Permasalahan Kawasan Konservasi</h5>
+                                                                <div class="form-group">
+                                                                    <label>No Surat</label>
+                                                                    <input class="form-control" id="nomorsuratedit" name="nomorsuratedit">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Luas Permasalahan (Ha)</label>
+                                                                    <input type="text" class="form-control" id="luaspermasalahanedit" name="luaspermasalahanedit">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Tanggal</label>
+                                                                    <input type="date" class="form-control" id="tanggalpermasalahanedit" name="tanggalpermasalahanedit">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Upaya Permasalahan</label>
+                                                                    <textarea type="text" class="form-control" id="upayapermasalahanedit" name="upayapermasalahanedit"></textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Modal footer -->
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Simpan</button>
+                                                    </div>
+                                                </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <table class="table" id="myTable10" style="width:100%">
+                                            <thead>
+                                                <th>Nama Pengelola</th>
+                                                <th>Kategori Permasalahan</th>
+                                                <th>Lainnya</th>
+                                                <th>Action</th>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
                                 <div id="wilayahadat" class="card tab-pane fade">
                                     <div class="card-header">
                                         Wilayah Adat
@@ -1599,6 +1761,206 @@
                                                 <th>Nama Wilayah Adat</th>
                                                 <th>Luas</th>
                                                 <th>Jumlah Kepala Keluarga</th>
+                                                <th>Action</th>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
+                                <div id="sosekbud" class="card tab-pane fade">
+                                    <div class="card-header">
+                                        Sosekbud
+                                    </div>
+                                    <div class="card-body">
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal24">Tambah Data</button>
+                                        <div class="modal fade" id="myModal24">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Input Sosekbud</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+                                                <form id="formsosekbud">
+                                                    <!-- Modal body -->
+                                                    <div class="modal-body">
+                                                        <div class="form-group">
+                                                            <label>Sosial Budaya Ekonomi</label>
+                                                            <textarea type="text" class="form-control" id="sosialbudaya" name="sosialbudaya"></textarea>
+                                                            <input class="form-control" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" type="hidden" disabled>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Demografi Desa</label>
+                                                            <textarea type="text" class="form-control" id="demografidesa" name="demografidesa"></textarea>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Sejarah Pemukiman Dalam Kawasan</label>
+                                                            <textarea type="text" class="form-control" id="sejarahpemukiman" name="sejarahpemukiman"></textarea>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Ketergantungan Sumber Daya Alam</label>
+                                                            <textarea type="text" class="form-control" id="sumberdayaalam" name="sumberdayaalam"></textarea>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Modal footer -->
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Simpan</button>
+                                                    </div>
+
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="modal fade" id="myModal25">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Ubah Data Sosekbud</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+                                                <form id="formsosekbudedit">
+                                                    <!-- Modal body -->
+                                                    <div class="modal-body">
+                                                        <div class="form-group">
+                                                            <label>Sosial Budaya Ekonomi</label>
+                                                            <textarea type="text" class="form-control" id="sosialbudayaedit" name="sosialbudayaedit"></textarea>
+                                                            <input class="form-control" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" type="hidden" disabled>
+                                                            <input type="hidden" name="idsosekbud" id="idsosekbud">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Demografi Desa</label>
+                                                            <textarea type="text" class="form-control" id="demografidesaedit" name="demografidesaedit"></textarea>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Sejarah Pemukiman Dalam Kawasan</label>
+                                                            <textarea type="text" class="form-control" id="sejarahpemukimanedit" name="sejarahpemukimanedit"></textarea>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Ketergantungan Sumber Daya Alam</label>
+                                                            <textarea type="text" class="form-control" id="sumberdayaalamedit" name="sumberdayaalamedit"></textarea>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Modal footer -->
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Simpan</button>
+                                                    </div>
+
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <table class="table" id="myTable11" style="width:100%">
+                                            <thead>
+                                                <th>Sosial Budaya Ekonomi</th>
+                                                <th>Demografi Desa</th>
+                                                <th>Sejarah Pemukiman dalam Kawasan</th>
+                                                <th>Ketergantungan Sumber daya alam</th>
+                                                <th>Action</th>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
+                                 <div id="penutupanlahanperkawasan" class="card tab-pane fade">
+                                    <div class="card-header">
+                                        Penutupan Lahan Per Kawasan
+                                    </div>
+                                    <div class="card-body">
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal24">Tambah Data</button>
+                                        <div class="modal fade" id="myModal24">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Input Sosekbud</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+                                                <form id="formsosekbud">
+                                                    <!-- Modal body -->
+                                                    <div class="modal-body">
+                                                        <div class="form-group">
+                                                            <label>Sosial Budaya Ekonomi</label>
+                                                            <textarea type="text" class="form-control" id="sosialbudaya" name="sosialbudaya"></textarea>
+                                                            <input class="form-control" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" type="hidden" disabled>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Demografi Desa</label>
+                                                            <textarea type="text" class="form-control" id="demografidesa" name="demografidesa"></textarea>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Sejarah Pemukiman Dalam Kawasan</label>
+                                                            <textarea type="text" class="form-control" id="sejarahpemukiman" name="sejarahpemukiman"></textarea>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Ketergantungan Sumber Daya Alam</label>
+                                                            <textarea type="text" class="form-control" id="sumberdayaalam" name="sumberdayaalam"></textarea>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Modal footer -->
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Simpan</button>
+                                                    </div>
+
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="modal fade" id="myModal25">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Ubah Data Sosekbud</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+                                                <form id="formsosekbudedit">
+                                                    <!-- Modal body -->
+                                                    <div class="modal-body">
+                                                        <div class="form-group">
+                                                            <label>Sosial Budaya Ekonomi</label>
+                                                            <textarea type="text" class="form-control" id="sosialbudayaedit" name="sosialbudayaedit"></textarea>
+                                                            <input class="form-control" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" type="hidden" disabled>
+                                                            <input type="hidden" name="idsosekbud" id="idsosekbud">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Demografi Desa</label>
+                                                            <textarea type="text" class="form-control" id="demografidesaedit" name="demografidesaedit"></textarea>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Sejarah Pemukiman Dalam Kawasan</label>
+                                                            <textarea type="text" class="form-control" id="sejarahpemukimanedit" name="sejarahpemukimanedit"></textarea>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Ketergantungan Sumber Daya Alam</label>
+                                                            <textarea type="text" class="form-control" id="sumberdayaalamedit" name="sumberdayaalamedit"></textarea>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Modal footer -->
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Simpan</button>
+                                                    </div>
+
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <table class="table" id="myTable11" style="width:100%">
+                                            <thead>
+                                                <th>Sosial Budaya Ekonomi</th>
+                                                <th>Demografi Desa</th>
+                                                <th>Sejarah Pemukiman dalam Kawasan</th>
+                                                <th>Ketergantungan Sumber daya alam</th>
                                                 <th>Action</th>
                                             </thead>
                                         </table>
@@ -1879,6 +2241,60 @@
                 }
             })
         }
+        function myfunc12(id){
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                        if (result.value) {
+                            $.ajax({
+                                url:'/deleteDataPermasalahanKK/'+id,
+                                type:'GET',
+                                success:function(){
+                                    Swal.fire(
+                                                'Sukses!',
+                                                'Data Sukses di hapus!',
+                                                'success'
+                                            )
+                                            table10.ajax.reload();
+                                }
+                            })
+
+                        }
+                    })
+        }
+        function myfunc13(id){
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                        if (result.value) {
+                            $.ajax({
+                                url:'/deleteDataSosekbud/'+id,
+                                type:'GET',
+                                success:function(){
+                                    Swal.fire(
+                                                'Sukses!',
+                                                'Data Sukses di hapus!',
+                                                'success'
+                                            )
+                                            table11.ajax.reload();
+                                }
+                            })
+
+                        }
+                    })
+        }
         function editfunc(id){
             $.ajax({
                 url:'/showDataPengukuhanKawasan/'+id,
@@ -2020,6 +2436,38 @@
                     $( '#judulskwilayahadatedit' ).val(hasil.judul_sk);
                     $( '#tanggalskedit' ).val(hasil.tanggal_sk);
                     $( '#dokumenskhidden' ).val(hasil.dokumen_sk);
+                }
+            })
+        }
+        function editfunc12(id){
+             $.ajax({
+                url:'/showDataPermasalahanKK/'+id,
+                type:'GET',
+                success:function(data){
+                    var hasil = JSON.parse(data);
+                    $( '#idpermasalahankk' ).val(hasil.id);
+                    $( '#upayapermasalahanedit' ).val(hasil.upaya);
+                    $( '#kategoripermasalahanedit' ).val(hasil.kategori_permasalahan);
+                    $( '#lainnyapermasalahanedit' ).val(hasil.lainnya);
+                    $( '#Keteranganpermasalahanedit' ).val(hasil.keterangan);
+                    $( '#nomorsuratedit' ).val(hasil.no_surat);
+                    $( '#luaspermasalahanedit' ).val(hasil.luas_permasalahan);
+                    $( '#tanggalpermasalahanedit' ).val(hasil.tanggal);
+                    $( '#upayapermasalahanedit' ).val(hasil.upaya);
+                }
+            })
+        }
+        function editfunc13(id){
+            $.ajax({
+                url:'/showDataSosekbud/'+id,
+                type:'GET',
+                success:function(data){
+                    var hasil = JSON.parse(data);
+                    $( '#idsosekbud' ).val(hasil.id);
+                    $( '#sosialbudayaedit' ).val(hasil.sosial_budaya);
+                    $( '#demografidesaedit' ).val(hasil.demografi_desa);
+                    $( '#sejarahpemukimanedit' ).val(hasil.sejarah_pemukiman);
+                    $( '#sumberdayaalamedit' ).val(hasil.sumber_daya_alam);
                 }
             })
         }
@@ -2412,6 +2860,7 @@
                             }
                         ]
                     });
+                    //-------------------------------Wilayah Adat ---------------------//
                     var tablewilayahadat =  $('#tablewilayahadat').DataTable({
                         deferRender: true,
                         ajax: {
@@ -2429,6 +2878,63 @@
                                 data: null,
                                 render: function ( data, type, row ) {
                                     return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal21'onclick='editfunc11("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc11("+data.id+")'>Delete</button>";
+                                }
+                            }
+                        ]
+                    });
+                    //-------------------------------END---------------------------------//
+                    //-------------------------------PERMASALAHAN KK--------------------//
+                    var table10 = $('#myTable10').DataTable({
+                        deferRender: true,
+                        ajax: {
+                            url: "/getDataPermasalahanKK/"+"<?php echo $hasil['nama_kawasan'];?>",
+                            type: "GET",
+                            dataSrc: function (d) {
+                                return d
+                            }
+                        },
+                        columns: [
+                            { data: 'unit_pengelolaan_kawasan.nama_pengelola' },
+                            { data: 'kategori_permasalahan' },
+                            { data: 'lainnya' },
+                            {
+                                data: null,
+                                render: function ( data, type, row ) {
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal23'onclick='editfunc12("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc12("+data.id+")'>Delete</button>";
+                                }
+                            }
+                        ]
+                    });
+                    //-------------------------------END------------------------------//
+                      var table11 = $('#myTable11').DataTable({
+                         responsive: {
+                            details: {
+                                display: $.fn.dataTable.Responsive.display.modal( {
+                                    header: function ( row ) {
+                                        var data = row.data();
+                                        return 'Details for sosekbud';
+                                    }
+                                } ),
+                                renderer: $.fn.dataTable.Responsive.renderer.tableAll()
+                            }
+                        },
+                        deferRender: true,
+                        ajax: {
+                            url: "/getDataSosekbud/"+"<?php echo $hasil['nama_kawasan'];?>",
+                            type: "GET",
+                            dataSrc: function (d) {
+                                return d
+                            }
+                        },
+                        columns: [
+                            { data: 'sosial_budaya' },
+                            { data: 'demografi_desa' },
+                            { data: 'sejarah_pemukiman' },
+                            { data: 'sumber_daya_alam' },
+                            {
+                                data: null,
+                                render: function ( data, type, row ) {
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal25'onclick='editfunc13("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc13("+data.id+")'>Delete</button>";
                                 }
                             }
                         ]
@@ -2459,6 +2965,262 @@
                             $("#kecamatandesakk").append(html);
                             $("#kecamatandesakkedit").append(html);
                         });
+                    }
+                })
+                $.ajax({
+                    type:'GET',
+                    url:'/getUnitPengelolaanKawasan',
+                    dataType:'json',
+                    success:function(data){
+                        var html;
+                        data.forEach(element => {
+                            html = "<option value='"+element.id+"'>"+element.nama_pengelola+"</option>";
+                            $("#unitpengelolapermasalahan").append(html);
+                            $("#unitpengelolapermasalahanedit").append(html);
+                        });
+                    }
+                })
+                $('form[id="formsosekbud"]').validate({
+                    rules: {
+                        sosialbudaya: 'required',
+                        demografidesa: 'required',
+                        namakawasan:{
+                            required:true,
+                        },
+                        sejarahpemukiman:{
+                            required:true,
+                        },
+                        sumberdayaalam:{
+                            required:true,
+                        },
+                    },
+                    messages: {
+                        judul: 'This field is required',
+                        file:'This field mustbe images'
+
+                    },
+                    submitHandler: function(form) {
+                        var data;
+                        data = new FormData();
+                        data.append('sosialbudaya', $('#sosialbudaya').val());
+                        data.append('demografidesa',$('#demografidesa').val());
+                        data.append('sejarahpemukiman', $('#sejarahpemukiman').val());
+                        data.append('sumberdayaalam', $('#sumberdayaalam').val());
+                        data.append('namakawasan',$('#namakawasan').val());
+                        $.ajax({
+                            url:'/saveDataSosekbud',
+                            method:'POST',
+                            data:data,
+                            contentType: false,
+                            processData:false,
+                            success:function(){
+                                Swal.fire(
+                                            'Sukses!',
+                                            'Data Sukses di simpan!',
+                                            'success'
+                                        ).then(function(){
+                                            $( '#sosialbudaya' ).val('')
+                                            $( '#demografidesa' ).val('')
+                                            $( '#sejarahpemukiman' ).val('')
+                                            $( '#sumberdayaalam' ).val('')
+                                            $('#myModal24').modal('toggle')
+                                        })
+                                    table11.ajax.reload();
+                            }
+                        })
+                    }
+                })
+                 $('form[id="formsosekbudedit"]').validate({
+                    rules: {
+                        sosialbudayaedit: 'required',
+                        demografidesaedit: 'required',
+                        namakawasan:{
+                            required:true,
+                        },
+                        sejarahpemukimanedit:{
+                            required:true,
+                        },
+                        sumberdayaalamedit:{
+                            required:true,
+                        },
+                    },
+                    messages: {
+                        judul: 'This field is required',
+                        file:'This field mustbe images'
+
+                    },
+                    submitHandler: function(form) {
+                        var data;
+                        data = new FormData();
+                        data.append('sosialbudaya', $('#sosialbudayaedit').val());
+                        data.append('demografidesa',$('#demografidesaedit').val());
+                        data.append('sejarahpemukiman', $('#sejarahpemukimanedit').val());
+                        data.append('sumberdayaalam', $('#sumberdayaalamedit').val());
+                        data.append('namakawasan',$('#namakawasan').val());
+                        data.append('idsosekbud',$('#idsosekbud').val());
+                        $.ajax({
+                            url:'/updateDataSosekbud',
+                            method:'POST',
+                            data:data,
+                            contentType: false,
+                            processData:false,
+                            success:function(){
+                                Swal.fire(
+                                            'Sukses!',
+                                            'Data Sukses di simpan!',
+                                            'success'
+                                        ).then(function(){
+                                            $( '#sosialbudayaedit' ).val('')
+                                            $( '#demografidesaedit' ).val('')
+                                            $( '#sejarahpemukimanedit' ).val('')
+                                            $( '#sumberdayaalamedit' ).val('')
+                                            $('#myModal25').modal('toggle')
+                                        })
+                                    table11.ajax.reload();
+                            }
+                        })
+                    }
+                })
+                $('form[id="formpermasalahanpengelolaan"]').validate({
+                    rules: {
+                        unitpengelolapermasalahan: 'required',
+                        kategoripermasalahan: 'required',
+                        namakawasan:{
+                            required:true,
+                        },
+                        lainnyapermasalahan:{
+                            required:true,
+                        },
+                        Keteranganpermasalahan:{
+                            required:true,
+                        },
+                        nomorsurat:{
+                            required:true,
+                        },
+                        luaspermasalahan:{
+                            required:true,
+                            number:true
+                        },
+                        tanggalpermasalahan:{
+                            required:true,
+                        },
+                        upayapermasalahan:{
+                            required:true,
+                        }
+                    },
+                    messages: {
+                        judul: 'This field is required',
+                        file:'This field mustbe images'
+
+                    },
+                    submitHandler: function(form) {
+                        var data;
+                        data = new FormData();
+                        data.append('unitpengelolapermasalahan', $('#unitpengelolapermasalahan').val());
+                        data.append('kategoripermasalahan',$('#kategoripermasalahan').val());
+                        data.append('lainnyapermasalahan', $('#lainnyapermasalahan').val());
+                        data.append('Keteranganpermasalahan', $('#Keteranganpermasalahan').val());
+                        data.append('nomorsurat', $('#nomorsurat').val());
+                        data.append('namakawasan',$('#namakawasan').val());
+                        data.append('luaspermasalahan',$('#luaspermasalahan').val());
+                        data.append('upayapermasalahan',$('#upayapermasalahan').val());
+                        data.append('tanggalpermasalahan', $('#tanggalpermasalahan').val());
+                        $.ajax({
+                            url:'/saveDataPermasalahanKK',
+                            method:'POST',
+                            data:data,
+                            contentType: false,
+                            processData:false,
+                            success:function(){
+                                Swal.fire(
+                                            'Sukses!',
+                                            'Data Sukses di simpan!',
+                                            'success'
+                                        ).then(function(){
+                                            $( '#unitpengelolapermasalahan' ).val('')
+                                            $( '#kategoripermasalahan' ).val('')
+                                            $( '#lainnyapermasalahan' ).val('')
+                                            $( '#Keteranganpermasalahan' ).val('')
+                                            $( '#nomorsurat' ).val('')
+                                            $( '#namakawasan' ).val('')
+                                            $( '#luaspermasalahan' ).val('')
+                                            $( '#tanggalpermasalahan' ).val('')
+                                            $('#myModal20').modal('toggle')
+                                        })
+                                    table10.ajax.reload();
+                            }
+                        })
+                    }
+                })
+                 $('form[id="formpermasalahanpengelolaanedit"]').validate({
+                    rules: {
+                        unitpengelolapermasalahanedit: 'required',
+                        kategoripermasalahanedit: 'required',
+                        namakawasan:{
+                            required:true,
+                        },
+                        lainnyapermasalahanedit:{
+                            required:true,
+                        },
+                        Keteranganpermasalahanedit:{
+                            required:true,
+                        },
+                        nomorsuratedit:{
+                            required:true,
+                        },
+                        luaspermasalahanedit:{
+                            required:true,
+                        },
+                        tanggalpermasalahanedit:{
+                            required:true,
+                        },
+                        upayapermasalahanedit:{
+                            required:true,
+                        }
+                    },
+                    messages: {
+                        judul: 'This field is required',
+                        file:'This field mustbe images'
+
+                    },
+                    submitHandler: function(form) {
+                        var data;
+                        data = new FormData();
+                        data.append('unitpengelolapermasalahan', $('#unitpengelolapermasalahanedit').val());
+                        data.append('kategoripermasalahan',$('#kategoripermasalahanedit').val());
+                        data.append('lainnyapermasalahan', $('#lainnyapermasalahanedit').val());
+                        data.append('Keteranganpermasalahan', $('#Keteranganpermasalahanedit').val());
+                        data.append('nomorsurat', $('#nomorsuratedit').val());
+                        data.append('namakawasan',$('#namakawasan').val());
+                        data.append('luaspermasalahan',$('#luaspermasalahanedit').val());
+                        data.append('upayapermasalahan',$('#upayapermasalahanedit').val());
+                        data.append('tanggalpermasalahan', $('#tanggalpermasalahanedit').val());
+                        data.append('idpermasalahankk',$('#idpermasalahankk').val());
+                        $.ajax({
+                            url:'/updateDataPermasalahanKK',
+                            method:'POST',
+                            data:data,
+                            contentType: false,
+                            processData:false,
+                            success:function(){
+                                Swal.fire(
+                                            'Sukses!',
+                                            'Data Sukses di simpan!',
+                                            'success'
+                                        ).then(function(){
+                                            $( '#unitpengelolapermasalahanedit' ).val('')
+                                            $( '#kategoripermasalahanedit' ).val('')
+                                            $( '#lainnyapermasalahanedit' ).val('')
+                                            $( '#Keteranganpermasalahanedit' ).val('')
+                                            $( '#nomorsuratedit' ).val('')
+                                            $( '#namakawasan' ).val('')
+                                            $( '#luaspermasalahanedit' ).val('')
+                                            $( '#tanggalpermasalahanedit' ).val('')
+                                            $('#myModal23').modal('toggle')
+                                        })
+                                    table10.ajax.reload();
+                            }
+                        })
                     }
                 })
                 $('form[id="formwilayahadat"]').validate({

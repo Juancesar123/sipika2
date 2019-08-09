@@ -170,7 +170,7 @@
             </div>
           </div>
           <div class="row">
-            <div class="col-sm-12 grid-margin stretch-card">
+            <div class="col-md-12 grid-margin stretch-card">
               <div class="card">
                 <div class="card-body">
                   <p class="card-title">Persentase Total Luas</p>

@@ -35,13 +35,13 @@
                             <div class="row">
                                 <div class="col-3">
                                     <div class="nav flex-column nav-pills" id="v-pills-tab" role="tablist" aria-orientation="vertical">
-                                        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" value="1" role="tab" aria-controls="v-pills-home" aria-selected="true">Taman Wisata Alam</a>
-                                        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Taman Hutan Raya</a>
-                                        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Taman Buru</a>
-                                        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Taman Nasional</a>
-                                        <a class="nav-link" id="v-pills-suaka-tab" data-toggle="pill" href="#v-pills-suaka" role="tab" aria-controls="v-pills-suaka" aria-selected="false">Suaka Margasatwa</a>
-                                        <a class="nav-link" id="v-pills-cagar-tab" data-toggle="pill" href="#v-pills-cagar" role="tab" aria-controls="v-pills-cagar" aria-selected="false">Cagar Alam</a>
-                                        <a class="nav-link" id="v-pills-ks-tab" data-toggle="pill" href="#v-pills-ks" role="tab" aria-controls="v-pills-ks" aria-selected="false">KS/PA</a>
+                                        <a class="nav-link active" id="v-pills-home-tab" data-toggle="pill" href="#v-pills-home" value="1" role="tab" aria-controls="v-pills-home" aria-selected="true">Taman Wisata Alam <p style="font-size: 13px;font-style: italic;" id="luastamanwisata"></p></a>
+                                        <a class="nav-link" id="v-pills-profile-tab" data-toggle="pill" href="#v-pills-profile" role="tab" aria-controls="v-pills-profile" aria-selected="false">Taman Hutan Raya <p style="font-size: 13px;font-style: italic;" id="luastamanhutanraya"></p></a>
+                                        <a class="nav-link" id="v-pills-messages-tab" data-toggle="pill" href="#v-pills-messages" role="tab" aria-controls="v-pills-messages" aria-selected="false">Taman Buru <p style="font-size: 13px;font-style: italic;" id="luastamanburu"></p></a>
+                                        <a class="nav-link" id="v-pills-settings-tab" data-toggle="pill" href="#v-pills-settings" role="tab" aria-controls="v-pills-settings" aria-selected="false">Taman Nasional <p style="font-size: 13px;font-style: italic;" id="luastamannasional"></p></a>
+                                        <a class="nav-link" id="v-pills-suaka-tab" data-toggle="pill" href="#v-pills-suaka" role="tab" aria-controls="v-pills-suaka" aria-selected="false">Suaka Margasatwa <p style="font-size: 13px;font-style: italic;" id="luassuakaalam"></p></a>
+                                        <a class="nav-link" id="v-pills-cagar-tab" data-toggle="pill" href="#v-pills-cagar" role="tab" aria-controls="v-pills-cagar" aria-selected="false">Cagar Alam <p style="font-size: 13px;font-style: italic;" id="luascagaralam"></p></a>
+                                        <a class="nav-link" id="v-pills-ks-tab" data-toggle="pill" href="#v-pills-ks" role="tab" aria-controls="v-pills-ks" aria-selected="false">KS/PA <p style="font-size: 13px;font-style: italic;" id="luaskskpa"></p></a>
                                     </div>
                                 </div>
                                 <div class="col-9">
@@ -485,6 +485,91 @@
                         ]
                     });
             $(document).ready(function(){
+                
+                $.ajax({
+                    method:'GET',
+                    url:'getDataDashboard/1',
+                    success:function(data){
+                        var luas = 0;
+                        var result = JSON.parse(data);
+                        result.forEach(function(element) {
+                            luas = luas + parseInt(element.luas_kawasan);
+                        });
+                        $('#luaskskpa').text(luas +' ha');
+                    }
+                  })
+                  $.ajax({
+                    method:'GET',
+                    url:'getDataDashboard/2',
+                    success:function(data){
+                        var luas = 0;
+                        var result = JSON.parse(data);
+                        result.forEach(function(element) {
+                            luas = luas + parseInt(element.luas_kawasan);
+                        });
+                        $('#luascagaralam').text(luas +' ha');
+                    }
+                  })
+                  $.ajax({
+                    method:'GET',
+                    url:'getDataDashboard/3',
+                    success:function(data){
+                        var luas = 0;
+                        var result = JSON.parse(data);
+                        result.forEach(function(element) {
+                            luas = luas + parseInt(element.luas_kawasan);
+                        });
+                        $('#luassuakaalam').text(luas +' ha');
+                    }
+                  })
+                  $.ajax({
+                    method:'GET',
+                    url:'getDataDashboard/4',
+                    success:function(data){
+                        var luas = 0;
+                        var result = JSON.parse(data);
+                        result.forEach(function(element) {
+                            luas = luas + parseInt(element.luas_kawasan);
+                        });
+                        $('#luastamanburu').text(luas + ' ha');
+                    }
+                  })
+                  $.ajax({
+                    method:'GET',
+                    url:'getDataDashboard/5',
+                    success:function(data){
+                        var luas = 0;
+                        var result = JSON.parse(data);
+                        result.forEach(function(element) {
+                            luas = luas + parseInt(element.luas_kawasan);
+                        });
+                      $('#luastamannasional').text(luas + ' ha');
+                    }
+                  })
+                  $.ajax({
+                    method:'GET',
+                    url:'getDataDashboard/6',
+                    success:function(data){
+                        var luas = 0;
+                        var result = JSON.parse(data);
+                        result.forEach(function(element) {
+                            luas = luas + parseInt(element.luas_kawasan);
+                        });
+                        $('#luastamanwisata').text(luas + ' ha');
+                    }
+                  })
+                  $.ajax({
+                    method:'GET',
+                    url:'getDataDashboard/7',
+                    success:function(data){
+                        var luas = 0;
+                        var result = JSON.parse(data);
+                        result.forEach(function(element) {
+                            luas = luas + parseInt(element.luas_kawasan);
+                        });
+                        $('#luastamanhutanraya').text(luas + ' ha');
+                    }
+                  })
                 $.ajax({
                 type:'GET',
                 url:'/getDataMasterProvinsi',

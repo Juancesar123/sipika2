@@ -230,6 +230,20 @@ $route['getDataWilayahAdat/(:any)'] = "WilayahAdatController/getData/$1";
 $route['showDataWilayahAdat/(:any)'] = "WilayahAdatController/show/$1";
 $route['deleteDataWilayahAdat/(:any)'] = "WilayahAdatController/destroy/$1";
 //endroute
+//route Permasalahan KK
+$route['saveDataPermasalahanKK'] = "PermasalahanKKController/store";
+$route['updateDataPermasalahanKK'] = "PermasalahanKKController/update";
+$route['getDataPermasalahanKK/(:any)'] = "PermasalahanKKController/getData/$1";
+$route['showDataPermasalahanKK/(:any)'] = "PermasalahanKKController/show/$1";
+$route['deleteDataPermasalahanKK/(:any)'] = "PermasalahanKKController/destroy/$1";
+//endroute
+//route Permasalahan KK
+$route['saveDataSosekbud'] = "SosekbudController/store";
+$route['updateDataSosekbud'] = "SosekbudController/update";
+$route['getDataSosekbud/(:any)'] = "SosekbudController/getData/$1";
+$route['showDataSosekbud/(:any)'] = "SosekbudController/show/$1";
+$route['deleteDataSosekbud/(:any)'] = "SosekbudController/destroy/$1";
+//endroute
 //route potensi keaneka ragaman hayati
 $route['saveDataKeanekaragamHayati'] = "KeanekaragamHayatiController/store";
 $route['updateDataKeanekaragamHayati'] = "KeanekaragamHayatiController/update";
