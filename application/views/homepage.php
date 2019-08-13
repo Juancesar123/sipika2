@@ -85,7 +85,7 @@
                     </div>
                     <div>
                       <p>Cagar Alam</p>
-                      <h3 class="mb-0" id="cagaralamcount">455 K</h3>
+                      <h3 class="mb-0" id="cagaralamcount"></h3>
                     </div>
                   </div>
                 </div>
@@ -201,56 +201,72 @@
         method:'GET',
         url:'getDataDashboard/1',
         success:function(data){
-          $('#kskpacount').text(data.length);
-          arr.push(data.length);
+          var result = JSON.parse(data);
+          $('#kskpacount').text(result.length);
+          arr.splice(0,0,result.length);
+          //array.splice(2, 0, "three");
+
         }
       })
       $.ajax({
         method:'GET',
         url:'getDataDashboard/2',
         success:function(data){
-          $('#cagaralamcount').text(data.length);
-          arr.push(data.length);
+          var result = JSON.parse(data);
+          $('#cagaralamcount').text(result.length);
+          //arr.push(result.length);
+          arr.splice(1,0,result.length);
         }
       })
       $.ajax({
         method:'GET',
         url:'getDataDashboard/3',
         success:function(data){
-          $('#suakacount').text(data.length);
-          arr.push(data.length);
+         var result = JSON.parse(data);
+          $('#suakacount').text(result.length);
+          //arr.push(result.length);
+          arr.splice(2,0,result.length);
         }
       })
       $.ajax({
         method:'GET',
         url:'getDataDashboard/4',
         success:function(data){
-          $('#tamanburucount').text(data.length);
-          arr.push(data.length);
+          var result = JSON.parse(data);
+          $('#tamanburucount').text(result.length);
+          //arr.push(result.length);
+          arr.splice(3,0,result.length);
         }
       })
       $.ajax({
         method:'GET',
         url:'getDataDashboard/5',
         success:function(data){
-          $('#tamannasionalcount').text(data.length);
-          arr.push(data.length);
+          
+          var result = JSON.parse(data);
+          $('#tamannasionalcount').text(result.length);
+          //arr.push(result.length);
+          arr.splice(4,0,result.length);
         }
       })
       $.ajax({
         method:'GET',
         url:'getDataDashboard/6',
         success:function(data){
-          $('#tamanwisatacount').text(data.length);
-          arr.push(data.length);
+          var result = JSON.parse(data);
+          $('#tamanwisatacount').text(result.length);
+         // arr.push(result.length);
+         arr.splice(5,0,result.length);
         }
       })
       $.ajax({
         method:'GET',
         url:'getDataDashboard/7',
         success:function(data){
-          $('#tamanhutanrayacount').text(data.length);
-          arr.push(data.length);
+           var result = JSON.parse(data);
+          $('#tamanhutanrayacount').text(result.length);
+         // arr.push(data.length);
+         arr.splice(6,0,result.length);
         }
       })
       console.log(arr);
@@ -258,7 +274,7 @@
       var myChart = new Chart(ctx, {
           type: 'pie',
           data: {
-              labels: ['KS/KPA', 'Cagar Alam', 'Suaka Margasatwa', 'Taman Buru', 'Taman Nasional', 'Taman Wisata','Taman Hutan Raya'],
+              labels: ['KS/KPA', 'Cagar Alam', 'Suaka Margasatwa', 'Taman Buru', 'Taman Nasional', 'Taman Wisata Alam','Taman Hutan Raya'],
               datasets: [{
                   label: 'Total Wilayah',
                   data: arr,

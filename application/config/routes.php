@@ -244,6 +244,27 @@ $route['getDataSosekbud/(:any)'] = "SosekbudController/getData/$1";
 $route['showDataSosekbud/(:any)'] = "SosekbudController/show/$1";
 $route['deleteDataSosekbud/(:any)'] = "SosekbudController/destroy/$1";
 //endroute
+//route Penutupan Lahan
+$route['saveDataKawasan'] = "PenutupanLahanController/store";
+$route['updateDataKawasan'] = "PenutupanLahanController/update";
+$route['getDataKawasan/(:any)'] = "PenutupanLahanController/getData/$1";
+$route['showDataKawasan/(:any)'] = "PenutupanLahanController/show/$1";
+$route['deleteDataKawasan/(:any)'] = "PenutupanLahanController/destroy/$1";
+//endroute
+//route Open Area Kawasan
+$route['saveDataOpenKawasan'] = "OpenAreaKawasanController/store";
+$route['updateDataOpenKawasan'] = "OpenAreaKawasanController/update";
+$route['getDataOpenKawasan/(:any)'] = "OpenAreaKawasanController/getData/$1";
+$route['showDataOpenKawasan/(:any)'] = "OpenAreaKawasanController/show/$1";
+$route['deleteDataOpenKawasan/(:any)'] = "OpenAreaKawasanController/destroy/$1";
+//endroute
+//route Open Area Kawasan
+$route['saveDataKemitraanKonservasi'] = "KemitraanKonservasiController/store";
+$route['updateDataKemitraanKonservasi'] = "KemitraanKonservasiController/update";
+$route['getDataKemitraanKonservasi/(:any)'] = "KemitraanKonservasiController/getData/$1";
+$route['showDataKemitraanKonservasi/(:any)'] = "KemitraanKonservasiController/show/$1";
+$route['deleteDataKemitraanKonservasi/(:any)'] = "KemitraanKonservasiController/destroy/$1";
+//endroute
 //route potensi keaneka ragaman hayati
 $route['saveDataKeanekaragamHayati'] = "KeanekaragamHayatiController/store";
 $route['updateDataKeanekaragamHayati'] = "KeanekaragamHayatiController/update";
