@@ -208,7 +208,7 @@
                                                     <div class="modal-body">
                                                         <div class="row">
                                                             <div class="col-6">
-                                                                 <h5>General Info </h5>
+                                                                 <h5>Basic Info </h5>
                                                                
                                 
                                                                     <input class="form-control" type="hidden" id="nama_kawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
@@ -517,7 +517,7 @@
                                                     <div class="modal-body">
                                                         <div class="row">
                                                             <div class="col-6">
-                                                                <h5>General Info</h5>
+                                                                <h5>Basic Info</h5>
                                                                 <div class="form-group">
                                                                     <label>Rekomendasi</label>
                                                                     <textarea class="form-control" type="text" id="rekomendasievaluasifungsiekflapangan" name="rekomendasievaluasifungsiekflapangan"></textarea>
