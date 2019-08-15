@@ -74,7 +74,7 @@
                                             <strong>Subdit PKS</strong>
                                         </div>
                                         <div class="list-group list-group-flush">
-                                            <a  data-toggle="tab" data-toggle="tab" href="#pengukuhankawasan" class="list-group-item list-group-item-action bg-light" style="color:blue">Penguatan Fungsi KK</a>
+                                            <a  data-toggle="tab" data-toggle="tab" href="#penguatanfungsikk" class="list-group-item list-group-item-action bg-light" style="color:blue">Penguatan Fungsi KK</a>
                                             <a   data-toggle="tab" href="#" class="list-group-item list-group-item-action bg-light" style="color:blue">Pembangunan Strategis</a>
                                             <a  data-toggle="tab" href="#kemitraankonservasi" class="list-group-item list-group-item-action bg-light"style="color:blue">Kemitrataan Konservarsi</a>
                                         </div>
@@ -651,6 +651,272 @@
                                             <thead>
                                                 <th>Rekomendasi</th>
                                                 <th>Tahun Pelaksanaan</th>
+                                                <th>UPT</th>
+                                                <th>Action</th>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
+                                 <div id="penguatanfungsikk" class="card tab-pane fade">
+                                    <div class="card-header">
+                                        Penguatan Fungsi KK
+                                    </div>
+                                    <div class="card-body">
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal34">Tambah Data</button>
+                                        <div class="modal fade" id="myModal34">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Input Penguatan Fungsi KK</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+                                                <form id="formpenguatankk">
+                                                    <!-- Modal body -->
+                                                    <div class="modal-body">
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                               
+                                                                <div class="form-group">
+                                                                    <label>Judul Kerjasama</label>
+                                                                    <input class="form-control" type="text" id="judulkerjasama" name="judulkerjasama">
+                                                                    
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Mitra Kerja</label>
+                                                                    <input type="text" class="form-control" id="mitrakerja" name="mitrakerja">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Kategori Mitra</label>
+                                                                    <select class="form-control"  id="kategorimitra" name="kategorimitra">
+                                                                       <option value="Lintas Kementrian">Lintas Kementrian</option>
+                                                                       <option value="Pemda/Pemprov<">Pemda/Pemprov</option>
+                                                                       <option value="Lintas Eselon 1">Lintas Eselon 1</option>
+                                                                       <option value="Kelompok Masyarakat">Kelompok Masyarakat</option>
+                                                                       <option value="Perusahaan">Perusahaan</option>
+                                                                       <option value="Badan Usaha">Badan Usaha</option>
+                                                                       <option value="NGO Lokal">NGO Lokal</option>
+                                                                       <option value="NGO Internasional">NGO Internasional</option>
+                                                                       <option value="Akademisi">Akademisi</option>
+                                                                       <option value="Perorangan">Perorangan</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Persetujuan</label>
+                                                                    <input class="form-control" type="text" id="persetujuan" name="persetujuan">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Nota Kesepahaman</label>
+                                                                    <input class="form-control" type="text" id="notakesepahaman" name="notakesepahaman">
+                                                                </div>
+                                                                 <div class="form-group">
+                                                                    <label>Perjanjian Kerjasama</label>
+                                                                    <input class="form-control" type="text" id="perjanjiankerjasama" name="perjanjiankerjasama">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <h5>Jangka Waktu</h5>
+                                                                    <br>
+                                                                    <label>Dari</label>
+                                                                    <input class="form-control" type="date" id="daripenguatan" name="daripenguatan">
+                                                                    <br>
+                                                                    <label>Ke</label>
+                                                                    <input class="form-control" type="date" id="kepenguatan" name="kepenguatan">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>File PKS</label>
+                                                                    <input class="form-control" type="file" id="filepks" name="filepks">
+                                                                </div>
+                                                                    <input type="hidden" class="form-control" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled >
+                                                            </div>
+                                                            <div class="col-6">
+                                                                
+                                                                 <div class="form-group">
+                                                                    <label>Peta Lokasi Kerjasama</label>
+                                                                    <input class="form-control" type="file" id="petalokasikerjasama" name="petalokasikerjasama">
+                                                                </div>
+                                                                 <div class="form-group">
+                                                                    <label>Keterangan</label>
+                                                                    <textarea class="form-control" id="keteranganpenguatan" name="keteranganpenguatan"></textarea>
+                                                                </div>
+                                                                 <div class="form-group">
+                                                                    <label>Rencana Pelaksanaan Program</label>
+                                                                    <input class="form-control" type="file" id="rencanapelaksanaanprogram" name="rencanapelaksanaanprogram">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Rencana Kerja Tahunan</label>
+                                                                    <input class="form-control" type="file" id="rencanakerjatahunan" name="rencanakerjatahunan">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Monitoring</label>
+                                                                    <input class="form-control" type="file" id="monitoring" name="monitoring">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Evaluasi</label>
+                                                                    <input class="form-control" type="file" id="evaluasi" name="evaluasi">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Laporan Akhir</label>
+                                                                    <input class="form-control" type="file" id="laporanakhir" name="laporanakhir">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Hibah</label>
+                                                                    <div class="radio">
+                                                                      <label><input type="radio" name="hibah" value="ada"checked>Ada</label>
+                                                                    </div>
+                                                                    <div class="radio">
+                                                                      <label><input type="radio" name="hibah" value="tidak">Tidak</label>
+                                                                    </div>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Jumlah Hibah</label>
+                                                                    <input class="form-control" type="text" id="jumlahhibah" name="jumlahhibah">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>UPT</label>
+                                                                    <select class="form-control" id="uptpenguatanfungsi" name="uptpenguatanfungsi">
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Modal footer -->
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Simpan</button>
+                                                    </div>
+                                                </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal fade" id="myModal6">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Ubah Evaluasi Fungsi Ekf Lapangan</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+
+                                                <!-- Modal body -->
+                                                <form id="formpenguatankkedit">
+                                                    <div class="modal-body">
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                                <h5>Basic Info</h5>
+                                                                <div class="form-group">
+                                                                    <label>Judul Kerjasama</label>
+                                                                    <input class="form-control" type="text" id="judulkerjasamaedit" name="judulkerjasamaedit">
+                                                                    
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Mitra Kerja</label>
+                                                                    <input type="text" class="form-control" id="mitrakerjaedit" name="mitrakerjaedit">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Kategori Mitra</label>
+                                                                    <select class="form-control"  id="kategorimitraedit" name="kategorimitraedit">
+                                                                       <option value="Lintas Kementrian">Lintas Kementrian</option>
+                                                                       <option value="Pemda/Pemprov<">Pemda/Pemprov</option>
+                                                                       <option value="Lintas Eselon 1">Lintas Eselon 1</option>
+                                                                       <option value="Kelompok Masyarakat">Kelompok Masyarakat</option>
+                                                                       <option value="Perusahaan">Perusahaan</option>
+                                                                       <option value="Badan Usaha">Badan Usaha</option>
+                                                                       <option value="NGO Lokal">NGO Lokal</option>
+                                                                       <option value="NGO Internasional">NGO Internasional</option>
+                                                                       <option value="Akademisi">Akademisi</option>
+                                                                       <option value="Perorangan">Perorangan</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Persetujuan</label>
+                                                                    <input class="form-control" type="text" id="persetujuanedit" name="persetujuanedit">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Nota Kesepahaman</label>
+                                                                    <input class="form-control" type="text" id="notakesepahamanedit" name="notakesepahamanedit">
+                                                                </div>
+                                                                 <div class="form-group">
+                                                                    <label>Perjanjian Kerjasama</label>
+                                                                    <input class="form-control" type="text" id="perjanjiankerjasamaedit" name="perjanjiankerjasamaedit">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <h5>Jangka Waktu</h5>
+                                                                    <br>
+                                                                    <label>Dari</label>
+                                                                    <input class="form-control" type="date" id="daripenguatanedit" name="daripenguatanedit">
+                                                                    <br>
+                                                                    <label>Ke</label>
+                                                                    <input class="form-control" type="date" id="kepenguatanedit" name="kepenguatanedit">
+                                                                </div>
+                                                                    <input type="hidden" class="form-control" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled >
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="form-group">
+                                                                    <label>File PKS</label>
+                                                                    <input class="form-control" type="file" id="filepksedit" name="filepksedit">
+                                                                </div>
+                                                                 <div class="form-group">
+                                                                    <label>Peta Lokasi Kerjasama</label>
+                                                                    <input class="form-control" type="file" id="petalokasikerjasamaedit" name="petalokasikerjasamaedit">
+                                                                </div>
+                                                                 <div class="form-group">
+                                                                    <label>Keterangan</label>
+                                                                    <textarea class="form-control" id="keteranganpenguatanedit" name="keteranganpenguatanedit"></textarea>
+                                                                </div>
+                                                                 <div class="form-group">
+                                                                    <label>Rencana Pelaksanaan Program</label>
+                                                                    <input class="form-control" type="file" id="rencanapelaksanaanprogramedit" name="rencanapelaksanaanprogramedit">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Rencana Kerja Tahunan</label>
+                                                                    <input class="form-control" type="file" id="rencanakerjatahunanedit" name="rencanakerjatahunanedit">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Monitoring</label>
+                                                                    <input class="form-control" type="file" id="monitoringedit" name="monitoringedit">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Evaluasi</label>
+                                                                    <input class="form-control" type="file" id="evaluasiedit" name="evaluasiedit">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Laporan Akhir</label>
+                                                                    <input class="form-control" type="file" id="laporanakhiredit" name="laporanakhiredit">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Hibah</label>
+                                                                    <input class="form-control" type="file" id="laporanakhiredit" name="laporanakhiredit">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Jumlah Hibah</label>
+                                                                    <input class="form-control" type="text" id="jumlahhibahedit" name="jumlahhibahedit">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>UPT</label>
+                                                                    <select class="form-control" id="uptpenguatanfungsiedit" name="uptpenguatanfungsiedit">
+                                                                    </select>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Modal footer -->
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Simpan</button>
+                                                    </div>
+                                                </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <table class="table" id="myTable16" style="width:100%">
+                                            <thead>
+                                                <th>Judul Kerjasama</th>
+                                                <th>Mitra Kerja</th>
+                                                <th>Kategori Mitra</th>
                                                 <th>UPT</th>
                                                 <th>Action</th>
                                             </thead>
@@ -2534,6 +2800,33 @@
                         }
                     })
         }
+        function myfunc17(id){
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                        if (result.value) {
+                            $.ajax({
+                                url:'/deleteDataPenguatanKK/'+id,
+                                type:'GET',
+                                success:function(){
+                                    Swal.fire(
+                                                'Sukses!',
+                                                'Data Sukses di hapus!',
+                                                'success'
+                                            )
+                                            table16.ajax.reload();
+                                }
+                            })
+
+                        }
+                    })
+        }
         function editfunc(id){
             $.ajax({
                 url:'/showDataPengukuhanKawasan/'+id,
@@ -2739,6 +3032,20 @@
         function editfunc16(id){
             $.ajax({
                 url:'/showDataKemitraanKonservasi/'+id,
+                type:'GET',
+                success:function(data){
+                    var hasil = JSON.parse(data);
+                    $( '#idkemitraankonservasi' ).val(hasil.id);
+                    $( '#nomorpksedit' ).val(hasil.no_pks);
+                    $( '#namakelompokedit' ).val(hasil.nama_kelompok);
+                    $( '#petapkshidden' ).val(hasil.peta_pks);
+                    $( '#luaspksedit' ).val(hasil.luas_pks);
+                }
+            })
+        }
+        function editfunc17(id){
+            $.ajax({
+                url:'/showDataPenguatanKK/'+id,
                 type:'GET',
                 success:function(data){
                     var hasil = JSON.parse(data);
@@ -3271,7 +3578,7 @@
                                 display: $.fn.dataTable.Responsive.display.modal( {
                                     header: function ( row ) {
                                         var data = row.data();
-                                        return 'Details for sosekbud';
+                                        return 'Details for Data Open Kawasan';
                                     }
                                 } ),
                                 renderer: $.fn.dataTable.Responsive.renderer.tableAll()
@@ -3318,7 +3625,7 @@
                                 display: $.fn.dataTable.Responsive.display.modal( {
                                     header: function ( row ) {
                                         var data = row.data();
-                                        return 'Details for sosekbud';
+                                        return 'Details for Kemitraan konservarsi';
                                     }
                                 } ),
                                 renderer: $.fn.dataTable.Responsive.renderer.tableAll()
@@ -3345,6 +3652,39 @@
                                 data: null,
                                 render: function ( data, type, row ) {
                                     return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal31'onclick='editfunc16("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc16("+data.id+")'>Delete</button>";
+                                }
+                            }
+                        ]
+                    });
+                     var table16 = $('#myTable16').DataTable({
+                         responsive: {
+                            details: {
+                                display: $.fn.dataTable.Responsive.display.modal( {
+                                    header: function ( row ) {
+                                        var data = row.data();
+                                        return 'Details for sosekbud';
+                                    }
+                                } ),
+                                renderer: $.fn.dataTable.Responsive.renderer.tableAll()
+                            }
+                        },
+                        deferRender: true,
+                        ajax: {
+                            url: "/getDataPenguatanKK/"+"<?php echo $hasil['nama_kawasan'];?>",
+                            type: "GET",
+                            dataSrc: function (d) {
+                                return d
+                            }
+                        },
+                        columns: [
+                            { data: 'judul_kerjasama' },
+                            { data: 'mitra_kerja' },
+                            { data: 'kategori_mitra' },
+                            { data: 'upt' },
+                            {
+                                data: null,
+                                render: function ( data, type, row ) {
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal35'onclick='editfunc17("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc17("+data.id+")'>Delete</button>";
                                 }
                             }
                         ]
@@ -3391,6 +3731,8 @@
                             $("#uptevaluasifungsiekflapangan").append(html);
                             $("#uptevaluasifungsiekflapanganedit").append(html);
                             $("#uptevaluasifungsideskstudy").append(html);
+                            $("#uptpenguatanfungsiedit").append(html);
+                            $("#uptpenguatanfungsi").append(html);
                         });
                     }
                 })
@@ -3405,6 +3747,100 @@
                             $("#unitpengelolapermasalahan").append(html);
                             $("#unitpengelolapermasalahanedit").append(html);
                         });
+                    }
+                })
+
+                $('form[id="formpenguatankk"]').validate({
+                    rules: {
+                        judulkerjasama: 'required',
+                        mitrakerja: 'required',
+                        kategorimitra: 'required',
+                        persetujuan: 'required',
+                        perjanjiankerjasama: 'required',
+                        notakesepahaman: 'required',
+                        daripenguatan: 'required',
+                        kepenguatan: 'required',
+                        filepks: 'required',
+                        petalokasikerjasama: 'required',
+                        keteranganpenguatan: 'required',
+                        rencanapelaksanaanprogram: 'required',
+                        rencanakerjatahunan: 'required',
+                        monitoring: 'required',
+                        evaluasi: 'required',
+                        laporanakhir: 'required',
+                        hibah: 'required',
+                        jumlahhibah: 'required',
+                        uptpenguatanfungsi: 'required',
+                        namakawasan:{
+                            required:true,
+                        }
+                        // filejpegopenkawasanedit:{
+                        //     required:true,
+                        //     accept: "image/*"
+                        // },
+                    },
+                    messages: {
+                        judul: 'This field is required',
+                        file:'This field mustbe images'
+
+                    },
+                    submitHandler: function(form) {
+                        var data;
+                        data = new FormData();
+                        data.append('judulkerjasama', $('#judulkerjasama').val());
+                        data.append('mitrakerja',$('#mitrakerja').val());
+                        data.append('kategorimitra', $('#kategorimitra').val());
+                        data.append('persetujuan', $('#persetujuan').val());
+                        data.append('perjanjiankerjasama', $('#perjanjiankerjasama').val());
+                        data.append('notakesepahaman', $('#notakesepahaman').val());
+                        data.append('daripenguatan', $('#daripenguatan').val());
+                        data.append('kepenguatan', $('#kepenguatan').val());
+                        data.append('filepks', $('#filepks')[0].files[0]);
+                        data.append('petalokasikerjasama', $('#petalokasikerjasama')[0].files[0]);
+                        data.append('keteranganpenguatan', $('#keteranganpenguatan').val());
+                        data.append('rencanapelaksanaanprogram', $('#rencanapelaksanaanprogram')[0].files[0]);
+                        data.append('rencanakerjatahunan', $('#rencanakerjatahunan')[0].files[0]);
+                        data.append('monitoring', $('#monitoring')[0].files[0]);
+                        data.append('evaluasi', $('#evaluasi')[0].files[0]);
+                        data.append('laporanakhir', $('#laporanakhir')[0].files[0]);
+                        data.append('hibah', $('#hibah').val());
+                        data.append('jumlahhibah', $('#jumlahhibah').val());
+                        data.append('uptpenguatanfungsi', $('#uptpenguatanfungsi').val());
+                        data.append('namakawasan',$('#namakawasan').val());
+                        $.ajax({
+                            url:'/saveDataPenguatanKK',
+                            method:'POST',
+                            data:data,
+                            contentType: false,
+                            processData:false,
+                            success:function(){
+                                Swal.fire(
+                                            'Sukses!',
+                                            'Data Sukses di simpan!',
+                                            'success'
+                                        ).then(function(){
+                                            $( '#judulkerjasama' ).val('')
+                                            $( '#mitrakerja' ).val('')
+                                            $( '#persetujuan' ).val('')
+                                            $( '#perjanjiankerjasama' ).val('')
+                                            $( '#notakesepahaman' ).val('')
+                                            $( '#daripenguatan' ).val('')
+                                            $( '#kepenguatan' ).val('')
+                                            $( '#filepks' ).val('')
+                                            $( '#petalokasikerjasama' ).val('')
+                                            $( '#keteranganpenguatan' ).val('')
+                                            $( '#rencanapelaksanaanprogram' ).val('')
+                                            $( '#rencanakerjatahunan' ).val('')
+                                            $( '#monitoring' ).val('')
+                                            $( '#evaluasi' ).val('')
+                                            $( '#laporanakhir' ).val('')
+                                            $( '#hibah' ).val('')
+                                            $( '#jumlahhibah' ).val('')
+                                            $('#myModal34').modal('toggle')
+                                        })
+                                        table16.ajax.reload();
+                            }
+                        })
                     }
                 })
                   $('form[id="formkemitraankonservasiedit"]').validate({
