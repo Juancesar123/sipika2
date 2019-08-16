@@ -691,7 +691,7 @@
                                                                     <label>Kategori Mitra</label>
                                                                     <select class="form-control"  id="kategorimitra" name="kategorimitra">
                                                                        <option value="Lintas Kementrian">Lintas Kementrian</option>
-                                                                       <option value="Pemda/Pemprov<">Pemda/Pemprov</option>
+                                                                       <option value="Pemda/Pemprov">Pemda/Pemprov</option>
                                                                        <option value="Lintas Eselon 1">Lintas Eselon 1</option>
                                                                        <option value="Kelompok Masyarakat">Kelompok Masyarakat</option>
                                                                        <option value="Perusahaan">Perusahaan</option>
@@ -790,13 +790,13 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <div class="modal fade" id="myModal6">
+                                        <div class="modal fade" id="myModal35">
                                             <div class="modal-dialog modal-lg">
                                                 <div class="modal-content">
 
                                                 <!-- Modal Header -->
                                                 <div class="modal-header">
-                                                    <h4 class="modal-title">Ubah Evaluasi Fungsi Ekf Lapangan</h4>
+                                                    <h4 class="modal-title">Ubah Penguatan Fungsi KK</h4>
                                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                 </div>
 
@@ -805,10 +805,10 @@
                                                     <div class="modal-body">
                                                         <div class="row">
                                                             <div class="col-6">
-                                                                <h5>Basic Info</h5>
                                                                 <div class="form-group">
                                                                     <label>Judul Kerjasama</label>
                                                                     <input class="form-control" type="text" id="judulkerjasamaedit" name="judulkerjasamaedit">
+                                                                    <input type="hidden" id="idpenguatanfungsikk">
                                                                     
                                                                 </div>
                                                                 <div class="form-group">
@@ -857,10 +857,12 @@
                                                                 <div class="form-group">
                                                                     <label>File PKS</label>
                                                                     <input class="form-control" type="file" id="filepksedit" name="filepksedit">
+                                                                    <input type="hidden" id="filepkshidden">
                                                                 </div>
                                                                  <div class="form-group">
                                                                     <label>Peta Lokasi Kerjasama</label>
                                                                     <input class="form-control" type="file" id="petalokasikerjasamaedit" name="petalokasikerjasamaedit">
+                                                                    <input type="hidden" id="petalokasikerjasamahidden">
                                                                 </div>
                                                                  <div class="form-group">
                                                                     <label>Keterangan</label>
@@ -869,26 +871,36 @@
                                                                  <div class="form-group">
                                                                     <label>Rencana Pelaksanaan Program</label>
                                                                     <input class="form-control" type="file" id="rencanapelaksanaanprogramedit" name="rencanapelaksanaanprogramedit">
+                                                                    <input type="hidden" id="rencanapelaksanaanprogramhidden">
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label>Rencana Kerja Tahunan</label>
                                                                     <input class="form-control" type="file" id="rencanakerjatahunanedit" name="rencanakerjatahunanedit">
+                                                                    <input type="hidden" id="rencanakerjatahunanhidden">
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label>Monitoring</label>
                                                                     <input class="form-control" type="file" id="monitoringedit" name="monitoringedit">
+                                                                    <input type="hidden" id="monitoringhidden">
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label>Evaluasi</label>
                                                                     <input class="form-control" type="file" id="evaluasiedit" name="evaluasiedit">
+                                                                    <input type="hidden" id="evaluasihidden">
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label>Laporan Akhir</label>
                                                                     <input class="form-control" type="file" id="laporanakhiredit" name="laporanakhiredit">
+                                                                    <input type="hidden" id="laporanakhirhidden">
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label>Hibah</label>
-                                                                    <input class="form-control" type="file" id="laporanakhiredit" name="laporanakhiredit">
+                                                                    <div class="radio">
+                                                                      <label><input type="radio" name="hibahedit" value="ada"checked>Ada</label>
+                                                                    </div>
+                                                                    <div class="radio">
+                                                                      <label><input type="radio" name="hibahedit" value="tidak">Tidak</label>
+                                                                    </div>
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label>Jumlah Hibah</label>
@@ -3049,11 +3061,25 @@
                 type:'GET',
                 success:function(data){
                     var hasil = JSON.parse(data);
-                    $( '#idkemitraankonservasi' ).val(hasil.id);
-                    $( '#nomorpksedit' ).val(hasil.no_pks);
-                    $( '#namakelompokedit' ).val(hasil.nama_kelompok);
-                    $( '#petapkshidden' ).val(hasil.peta_pks);
-                    $( '#luaspksedit' ).val(hasil.luas_pks);
+                    $( '#idpenguatanfungsikk' ).val(hasil.id);
+                    $( '#judulkerjasamaedit' ).val(hasil.judul_kerjasama);
+                    $( '#mitrakerjaedit' ).val(hasil.mitra_kerja);
+                    $( '#kategorimitraedit' ).val(hasil.kategori_mitra);
+                    $( '#persetujuanedit' ).val(hasil.persetujuan);
+                    $( '#notakesepahamanedit' ).val(hasil.nota_kesepahaman);
+                    $( '#perjanjiankerjasamaedit' ).val(hasil.perjanjian_kerjasama);
+                    $( '#daripenguatanedit' ).val(hasil.dari);
+                    $( '#kepenguatanedit' ).val(hasil.ke);
+                    $( '#filepkshidden' ).val(hasil.file_pks);
+                    $( '#petalokasikerjasamahidden' ).val(hasil.peta_lokasi_kerjasama);
+                    $('#keteranganpenguatanedit').val(hasil.keterangan);
+                    $( '#rencanapelaksanaanprogramhidden' ).val(hasil.rencana_pelaksanaan_program);
+                    $( '#monitoringhidden' ).val(hasil.monitoring);
+                    $( '#evaluasihidden' ).val(hasil.evaluasi);
+                    $( '#laporanakhirhidden' ).val(hasil.laporan_akhir);
+                    $( '#hibahedit' ).val(hasil.hibah);
+                    $( '#jumlahhibahedit' ).val(hasil.jumlah_hibah);
+                    $( '#uptpenguatanfungsiedit' ).val(hasil.upt);
                 }
             })
         }
@@ -3841,6 +3867,156 @@
                                         table16.ajax.reload();
                             }
                         })
+                    }
+                })
+                $('form[id="formpenguatankkedit"]').validate({
+                    rules: {
+                        judulkerjasamaedit: 'required',
+                        mitrakerjaedit: 'required',
+                        kategorimitraedit: 'required',
+                        persetujuanedit: 'required',
+                        perjanjiankerjasamaedit: 'required',
+                        notakesepahamanedit: 'required',
+                        daripenguatanedit: 'required',
+                        kepenguatanedit: 'required',
+                      
+                        keteranganpenguatanedit: 'required',
+                       
+                        hibahedit: 'required',
+                        jumlahhibahedit: 'required',
+                        uptpenguatanfungsiedit: 'required',
+                        namakawasan:{
+                            required:true,
+                        }
+                        // filejpegopenkawasanedit:{
+                        //     required:true,
+                        //     accept: "image/*"
+                        // },
+                    },
+                    messages: {
+                        judul: 'This field is required',
+                        file:'This field mustbe images'
+
+                    },
+                    submitHandler: function(form) {
+                        var file = $('#filepksedit')[0].files[0];
+                        if(file == undefined){
+                            var data;
+                            data = new FormData();
+                            data.append('judulkerjasama', $('#judulkerjasamaedit').val());
+                            data.append('mitrakerja',$('#mitrakerjaedit').val());
+                            data.append('kategorimitra', $('#kategorimitraedit').val());
+                            data.append('persetujuan', $('#persetujuanedit').val());
+                            data.append('perjanjiankerjasama', $('#perjanjiankerjasamaedit').val());
+                            data.append('notakesepahaman', $('#notakesepahamanedit').val());
+                            data.append('daripenguatan', $('#daripenguatanedit').val());
+                            data.append('kepenguatan', $('#kepenguatanedit').val());
+                            data.append('filepks', $('#filepkshidden').val());
+                            data.append('petalokasikerjasama', $('#petalokasikerjasamahidden').val());
+                            data.append('keteranganpenguatan', $('#keteranganpenguatanedit').val());
+                            data.append('rencanapelaksanaanprogram', $('#rencanapelaksanaanprogramhidden').val());
+                            data.append('rencanakerjatahunan', $('#rencanakerjatahunanhidden').val());
+                            data.append('monitoring', $('#monitoringhidden').val());
+                            data.append('evaluasi', $('#evaluasihidden').val());
+                            data.append('laporanakhir', $('#laporanakhirhidden').val());
+                            data.append('hibah', $('#hibahedit').val());
+                            data.append('jumlahhibah', $('#jumlahhibahedit').val());
+                            data.append('uptpenguatanfungsi', $('#uptpenguatanfungsiedit').val());
+                            data.append('namakawasan',$('#namakawasan').val());
+                            data.append('status','filenotfound');
+                            data.append('idpenguatanfungsikk',$('#idpenguatanfungsikk').val());
+                            $.ajax({
+                                url:'/updateDataPenguatanKK',
+                                method:'POST',
+                                data:data,
+                                contentType: false,
+                                processData:false,
+                                success:function(){
+                                    Swal.fire(
+                                                'Sukses!',
+                                                'Data Sukses di simpan!',
+                                                'success'
+                                            ).then(function(){
+                                                $( '#judulkerjasamaedit' ).val('')
+                                                $( '#mitrakerjaedit' ).val('')
+                                                $( '#persetujuanedit' ).val('')
+                                                $( '#perjanjiankerjasamaedit' ).val('')
+                                                $( '#notakesepahamanedit' ).val('')
+                                                $( '#daripenguatanedit' ).val('')
+                                                $( '#kepenguatanedit' ).val('')
+                                                $( '#filepksedit' ).val('')
+                                                $( '#petalokasikerjasamaedit' ).val('')
+                                                $( '#keteranganpenguatanedit' ).val('')
+                                                $( '#rencanapelaksanaanprogramedit' ).val('')
+                                                $( '#rencanakerjatahunanedit' ).val('')
+                                                $( '#monitoringedit' ).val('')
+                                                $( '#evaluasiedit' ).val('')
+                                                $( '#laporanakhiredit' ).val('')
+                                                $( '#hibahedit' ).val('')
+                                                $( '#jumlahhibahedit' ).val('')
+                                                $('#myModal35').modal('toggle')
+                                            })
+                                            table16.ajax.reload();
+                                }
+                            })
+                        }else{
+                            var data;
+                            data = new FormData();
+                            data.append('judulkerjasama', $('#judulkerjasamaedit').val());
+                            data.append('mitrakerja',$('#mitrakerjaedit').val());
+                            data.append('kategorimitra', $('#kategorimitraedit').val());
+                            data.append('persetujuan', $('#persetujuanedit').val());
+                            data.append('perjanjiankerjasama', $('#perjanjiankerjasamaedit').val());
+                            data.append('notakesepahaman', $('#notakesepahamanedit').val());
+                            data.append('daripenguatan', $('#daripenguatanedit').val());
+                            data.append('kepenguatan', $('#kepenguatanedit').val());
+                            data.append('filepks', $('#filepksedit')[0].files[0]);
+                            data.append('petalokasikerjasama', $('#petalokasikerjasamaedit')[0].files[0]);
+                            data.append('keteranganpenguatan', $('#keteranganpenguatanedit').val());
+                            data.append('rencanapelaksanaanprogram', $('#rencanapelaksanaanprogramedit')[0].files[0]);
+                            data.append('rencanakerjatahunan', $('#rencanakerjatahunanedit')[0].files[0]);
+                            data.append('monitoring', $('#monitoringedit')[0].files[0]);
+                            data.append('evaluasi', $('#evaluasiedit')[0].files[0]);
+                            data.append('laporanakhir', $('#laporanakhiredit')[0].files[0]);
+                            data.append('hibah', $('#hibahedit').val());
+                            data.append('jumlahhibah', $('#jumlahhibahedit').val());
+                            data.append('uptpenguatanfungsi', $('#uptpenguatanfungsiedit').val());
+                            data.append('namakawasan',$('#namakawasan').val());
+                            $.ajax({
+                                url:'/updateDataPenguatanKK',
+                                method:'POST',
+                                data:data,
+                                contentType: false,
+                                processData:false,
+                                success:function(){
+                                    Swal.fire(
+                                                'Sukses!',
+                                                'Data Sukses di simpan!',
+                                                'success'
+                                            ).then(function(){
+                                                $( '#judulkerjasamaedit' ).val('')
+                                                $( '#mitrakerjaedit' ).val('')
+                                                $( '#persetujuanedit' ).val('')
+                                                $( '#perjanjiankerjasamaedit' ).val('')
+                                                $( '#notakesepahamanedit' ).val('')
+                                                $( '#daripenguatanedit' ).val('')
+                                                $( '#kepenguatanedit' ).val('')
+                                                $( '#filepksedit' ).val('')
+                                                $( '#petalokasikerjasamaedit' ).val('')
+                                                $( '#keteranganpenguatanedit' ).val('')
+                                                $( '#rencanapelaksanaanprogramedit' ).val('')
+                                                $( '#rencanakerjatahunanedit' ).val('')
+                                                $( '#monitoringedit' ).val('')
+                                                $( '#evaluasiedit' ).val('')
+                                                $( '#laporanakhiredit' ).val('')
+                                                $( '#hibahedit' ).val('')
+                                                $( '#jumlahhibahedit' ).val('')
+                                                $('#myModal35').modal('toggle')
+                                            })
+                                            table16.ajax.reload();
+                                }
+                            })
+                        }
                     }
                 })
                   $('form[id="formkemitraankonservasiedit"]').validate({

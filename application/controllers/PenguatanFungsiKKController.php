@@ -38,137 +38,217 @@ class PenguatanFungsiKKController extends CI_Controller {
         $status = $this->input->post('status');
         if($status == 'filenotfound'){
             $id = $this->input->post('idpenguatanfungsikk');
-            $result = $client->put(constant('API_URL').'/pengukuhan-kawasan/'.$id,[
+            $result = $client->put(constant('API_URL').'/penguatan-fungsi-kk/'.$id,[
                 'multipart'=>[
                     [
-                        'name' => 'dokumen_sk',
-                        'contents' => $this->input->post('dokumensk'),
+                        'name' => 'judul_kerjasama',
+                        'contents' => $this->input->post('judulkerjasama')
+                    ],
+                     [
+                        'name' => 'file_pks',
+                        'contents' => $this->input->post('filepks')
+                    ],
+                     [
+                        'name' => 'peta_lokasi_kerjasama',
+                        'contents' => $this->input->post('petalokasikerjasama')
+                    ],
+                     [
+                        'name' => 'rencana_pelaksanaan_program',
+                        'contents' => $this->input->post('rencanapelaksanaanprogram')
+                    ],
+                     [
+                        'name' => 'rencana_kerja_tahunan',
+                        'contents' => $this->input->post('rencanakerjatahunan')
+                    ],
+                     [
+                        'name' => 'monitoring',
+                        'contents' => $this->input->post('monitoring')
+                    ],
+                     [
+                        'name' => 'evaluasi',
+                        'contents' => $this->input->post('evaluasi')
+                    ],
+                     [
+                        'name' => 'laporan_akhir',
+                        'contents' => $this->input->post('laporanakhir')
                     ],
                     [
-                        'name' => 'file_shp',
-                        'contents' => $this->input->post('file_shp'),
+                        'name' => 'mitra_kerja',
+                        'contents' => $this->input->post('mitrakerja')
                     ],
                     [
-                        'name' => 'perkembangan_tata_batas',
-                        'contents' => $this->input->post('perkembangan_tata_batas'),
+                        'name' => 'kategori_mitra',
+                        'contents' => $this->input->post('kategorimitra')
                     ],
                     [
-                        'name' => 'nama_kawasan',
-                        'contents' => $this->input->post('nama_kawasan')
+                        'name' => 'persetujuan',
+                        'contents' => $this->input->post('persetujuan')
                     ],
                     [
-                        'name' => 'usulan_penyelesaian',
-                        'contents' => $this->input->post('usulan_penyelesaian')
+                        'name' => 'perjanjian_kerjasama',
+                        'contents' => $this->input->post('perjanjiankerjasama')
                     ],
                     [
-                        'name' => 'permasalahan',
-                        'contents' => $this->input->post('permasalahan')
+                        'name' => 'nota_kesepahaman',
+                        'contents' => $this->input->post('notakesepahaman')
                     ],
                     [
-                        'name' => 'judul_sk',
-                        'contents' => $this->input->post('judulsk')
+                        'name' => 'dari',
+                        'contents' => $this->input->post('daripenguatan')
                     ],
                     [
-                        'name' => 'nomor_sk',
-                        'contents' => $this->input->post('nomorsk')
-                    ],
-                    [
-                        'name' => 'tanggal_sk',
-                        'contents' => $this->input->post('tanggalsk')
-                    ],
-                    [
-                        'name' => 'luas',
-                        'contents' => $this->input->post('luas')
-                    ],
-                    [
-                        'name' => 'jenis_sk',
-                        'contents' => $this->input->post('jenissk')
+                        'name' => 'ke',
+                        'contents' => $this->input->post('kepenguatan')
                     ],
                     [
                         'name' => 'upt',
-                        'contents' => $this->input->post('upt')
+                        'contents' => $this->input->post('uptpenguatanfungsi')
                     ],
                     [
-                        'name' => 'register',
-                        'contents' => $this->input->post('register')
+                        'name' => 'hibah',
+                        'contents' => $this->input->post('hibah')
+                    ],
+                     [
+                        'name' => 'jumlah_hibah',
+                        'contents' => $this->input->post('jumlahhibah')
+                    ],
+                    [
+                        'name' => 'keterangan',
+                        'contents' => $this->input->post('keteranganpenguatan')
+                    ],
+                     [
+                        'name' => 'nama_kawasan',
+                        'contents' => $this->input->post('namakawasan')
                     ],
                 ]
             ]);
         }else{
-            $id = $this->input->post('idpengukuhankawasan');
-            $name = $_FILES['dokumensk']['name'];
-            $nameshp = $_FILES['file_shp']['name'];
-            $nameperkembangantatabatas = $_FILES['perkembangan_tata_batas']['name'];
+            $id = $this->input->post('idpenguatanfungsikk');
+            $filepks = $_FILES['filepks']['name'];
+            $petalokasikerjasama = $_FILES['petalokasikerjasama']['name'];
+            $rencanapelaksanaanprogram = $_FILES['rencanapelaksanaanprogram']['name'];
+            $rencanakerjatahunan = $_FILES['rencanakerjatahunan']['name'];
+            $monitoring = $_FILES['monitoring']['name'];
+            $evaluasi = $_FILES['evaluasi']['name'];
+            $laporanakhir = $_FILES['laporanakhir']['name'];
             $result = $client->put(constant('API_URL').'/pengukuhan-kawasan/'.$id,[
                 'multipart'=>[
-                    [
-                        'name' => 'dokumen_sk',
-                        'contents' => fopen($_FILES['dokumensk']['tmp_name'], 'r'),
-                        'filename' => $name
-                    ],
-                    [
-                        'name' => 'dokumen_sk',
-                        'contents' => 'fileshp/'.$name
-                    ],
-                    [
-                        'name' => 'file_shp',
-                        'contents' => fopen($_FILES['file_shp']['tmp_name'], 'r'),
-                        'filename' => $name
-                    ],
-                    [
-                        'name' => 'file_shp',
-                        'contents' => 'fileshp/'.$nameshp
-                    ],
-                    [
-                        'name' => 'perkembangan_tata_batas',
-                        'contents' => fopen($_FILES['perkembangan_tata_batas']['tmp_name'], 'r'),
-                        'filename' => $name
-                    ],
-                    [
-                        'name' => 'perkembangan_tata_batas',
-                        'contents' => 'fileshp/'.$nameperkembangantatabatas
-                    ],
-                    [
-                        'name' => 'nama_kawasan',
-                        'contents' => $this->input->post('nama_kawasan')
-                    ],
-                    [
-                        'name' => 'usulan_penyelesaian',
-                        'contents' => $this->input->post('usulan_penyelesaian')
-                    ],
-                    [
-                        'name' => 'permasalahan',
-                        'contents' => $this->input->post('permasalahan')
-                    ],
-                    [
-                        'name' => 'judul_sk',
-                        'contents' => $this->input->post('judulsk')
-                    ],
-                    [
-                        'name' => 'nomor_sk',
-                        'contents' => $this->input->post('nomorsk')
-                    ],
-                    [
-                        'name' => 'tanggal_sk',
-                        'contents' => $this->input->post('tanggalsk')
-                    ],
-                    [
-                        'name' => 'luas',
-                        'contents' => $this->input->post('luas')
-                    ],
-                    [
-                        'name' => 'jenis_sk',
-                        'contents' => $this->input->post('jenissk')
-                    ],
-                    [
-                        'name' => 'upt',
-                        'contents' => $this->input->post('upt')
-                    ],
-                    [
-                        'name' => 'register',
-                        'contents' => $this->input->post('register')
-                    ],
-                ]
+                     [
+                    'name' => 'file_pks',
+                    'contents' => fopen($_FILES['filepks']['tmp_name'], 'r'),
+                    'filename' => $filepks
+                ],
+                [
+                    'name' => 'file_pks',
+                    'contents' => 'dokumenpenguatanfungsikk/'.$filepks
+                ],
+                [
+                    'name' => 'peta_lokasi_kerjasama',
+                    'contents' => fopen($_FILES['petalokasikerjasama']['tmp_name'], 'r'),
+                    'filename' => $petalokasikerjasama
+                ],
+                [
+                    'name' => 'peta_lokasi_kerjasama',
+                    'contents' => 'dokumenpenguatanfungsikk/'.$petalokasikerjasama
+                ],
+                [
+                    'name' => 'rencana_pelaksanaan_program',
+                    'contents' => fopen($_FILES['rencanapelaksanaanprogram']['tmp_name'], 'r'),
+                    'filename' => $rencanapelaksanaanprogram
+                ],
+                [
+                    'name' => 'rencana_pelaksanaan_program',
+                    'contents' => 'dokumenpenguatanfungsikk/'.$rencanapelaksanaanprogram
+                ],
+                [
+                    'name' => 'rencana_kerja_tahunan',
+                    'contents' => fopen($_FILES['rencanakerjatahunan']['tmp_name'], 'r'),
+                    'filename' => $rencanakerjatahunan
+                ],
+                [
+                    'name' => 'rencana_kerja_tahunan',
+                    'contents' => 'dokumenpenguatanfungsikk/'.$rencanakerjatahunan
+                ],
+                [
+                    'name' => 'monitoring',
+                    'contents' => fopen($_FILES['monitoring']['tmp_name'], 'r'),
+                    'filename' => $monitoring
+                ],
+                [
+                    'name' => 'monitoring',
+                    'contents' => 'dokumenpenguatanfungsikk/'.$monitoring
+                ],
+                [
+                    'name' => 'evaluasi',
+                    'contents' => fopen($_FILES['evaluasi']['tmp_name'], 'r'),
+                    'filename' => $evaluasi
+                ],
+                [
+                    'name' => 'evaluasi',
+                    'contents' => 'dokumenpenguatanfungsikk/'.$evaluasi
+                ],
+                [
+                    'name' => 'laporan_akhir',
+                    'contents' => fopen($_FILES['laporanakhir']['tmp_name'], 'r'),
+                    'filename' => $laporanakhir
+                ],
+                [
+                    'name' => 'laporan_akhir',
+                    'contents' => 'dokumenpenguatanfungsikk/'.$laporanakhir
+                ],
+                [
+                    'name' => 'judul_kerjasama',
+                    'contents' => $this->input->post('judulkerjasama')
+                ],
+                [
+                    'name' => 'mitra_kerja',
+                    'contents' => $this->input->post('mitrakerja')
+                ],
+                [
+                    'name' => 'kategori_mitra',
+                    'contents' => $this->input->post('kategorimitra')
+                ],
+                [
+                    'name' => 'persetujuan',
+                    'contents' => $this->input->post('persetujuan')
+                ],
+                [
+                    'name' => 'perjanjian_kerjasama',
+                    'contents' => $this->input->post('perjanjiankerjasama')
+                ],
+                [
+                    'name' => 'nota_kesepahaman',
+                    'contents' => $this->input->post('notakesepahaman')
+                ],
+                [
+                    'name' => 'dari',
+                    'contents' => $this->input->post('daripenguatan')
+                ],
+                [
+                    'name' => 'ke',
+                    'contents' => $this->input->post('kepenguatan')
+                ],
+                [
+                    'name' => 'upt',
+                    'contents' => $this->input->post('uptpenguatanfungsi')
+                ],
+                [
+                    'name' => 'hibah',
+                    'contents' => $this->input->post('hibah')
+                ],
+                 [
+                    'name' => 'jumlah_hibah',
+                    'contents' => $this->input->post('jumlahhibah')
+                ],
+                [
+                    'name' => 'keterangan',
+                    'contents' => $this->input->post('keteranganpenguatan')
+                ],
+                 [
+                    'name' => 'nama_kawasan',
+                    'contents' => $this->input->post('namakawasan')
+                ],
+            ]
             ]);
         }
     }

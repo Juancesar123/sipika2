@@ -267,7 +267,7 @@ $route['deleteDataKemitraanKonservasi/(:any)'] = "KemitraanKonservasiController/
 //endroute
 //route Open Area Kawasan
 $route['saveDataPenguatanKK'] = "PenguatanFungsiKKController/store";
-$route['updateDataKemitraanKonservasi'] = "PenguatanFungsiKKController/update";
+$route['updateDataPenguatanKK'] = "PenguatanFungsiKKController/update";
 $route['getDataPenguatanKK/(:any)'] = "PenguatanFungsiKKController/getData/$1";
 $route['showDataPenguatanKK/(:any)'] = "PenguatanFungsiKKController/show/$1";
 $route['deleteDataPenguatanKK/(:any)'] = "PenguatanFungsiKKController/destroy/$1";
