@@ -75,7 +75,7 @@
                                         </div>
                                         <div class="list-group list-group-flush">
                                             <a  data-toggle="tab" data-toggle="tab" href="#penguatanfungsikk" class="list-group-item list-group-item-action bg-light" style="color:blue">Penguatan Fungsi KK</a>
-                                            <a   data-toggle="tab" href="#" class="list-group-item list-group-item-action bg-light" style="color:blue">Pembangunan Strategis</a>
+                                            <a   data-toggle="tab" href="#pembangunanstrategis" class="list-group-item list-group-item-action bg-light" style="color:blue">Pembangunan Strategis</a>
                                             <a  data-toggle="tab" href="#kemitraankonservasi" class="list-group-item list-group-item-action bg-light"style="color:blue">Kemitrataan Konservarsi</a>
                                         </div>
                                     </div>
@@ -925,6 +925,334 @@
                                             </div>
                                         </div>
                                         <table class="table" id="myTable16" style="width:100%">
+                                            <thead>
+                                                <th>Judul Kerjasama</th>
+                                                <th>Mitra Kerja</th>
+                                                <th>Kategori Mitra</th>
+                                                <th>UPT</th>
+                                                <th>Action</th>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
+                                  <div id="pembangunanstrategis" class="card tab-pane fade">
+                                    <div class="card-header">
+                                        Pembangunan Strategis
+                                    </div>
+                                    <div class="card-body">
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal36">Tambah Data</button>
+                                        <div class="modal fade" id="myModal36">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Input Pembangunan Strategis</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+                                                <form id="formpembangunanstrategis">
+                                                    <!-- Modal body -->
+                                                    <div class="modal-body">
+                                                        <div class="row">
+                                                            <div class="col-6">
+                                                               
+                                                                <div class="form-group">
+                                                                    <label>Judul Kerjasama</label>
+                                                                    <input class="form-control" type="text" id="judulkerjasamapembangunan" name="judulkerjasamapembangunan">
+                                                                    
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Mitra Kerja</label>
+                                                                    <input type="text" class="form-control" id="mitrakerjapembangunan" name="mitrakerjapembangunan">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Kategori Mitra</label>
+                                                                    <select class="form-control"  id="kategorimitrapembangunan" name="kategorimitrapembangunan">
+                                                                       <option value="Lintas Kementrian">Lintas Kementrian</option>
+                                                                       <option value="Pemda/Pemprov">Pemda/Pemprov</option>
+                                                                       <option value="Lintas Eselon 1">Lintas Eselon 1</option>
+                                                                       <option value="Kelompok Masyarakat">Kelompok Masyarakat</option>
+                                                                       <option value="Perusahaan">Perusahaan</option>
+                                                                       <option value="Badan Usaha">Badan Usaha</option>
+                                                                       <option value="NGO Lokal">NGO Lokal</option>
+                                                                       <option value="NGO Internasional">NGO Internasional</option>
+                                                                       <option value="Akademisi">Akademisi</option>
+                                                                       <option value="Perorangan">Perorangan</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Kategori Kerjasama Strategis</label>
+                                                                    <select class="form-control" type="text" id="kategorikerjasamastrategis" name="kategorikerjasamastrategis">
+                                                                        <option value="komunikasi">Komunikasi</option>
+                                                                        <option value="listrik">Listrik</option>
+                                                                        <option value="transportasi terbatas pelabuhan">Transportasi Terbatas Pelabuhan</option>
+                                                                        <option value="transportasi terbatas jalan">Transportasi Tebatas Jalan</option>
+                                                                        <option value="mitigasi bencana">Mitigasi Bencana</option>
+                                                                        <option value="hankam">Hankam</option>
+                                                                        <option value="migas">Migas</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Jumlah Tower (Komunikasi)</label>
+                                                                    <input class="form-control" type="text" id="jumlahtowerkomunikasi" name="jumlahtowerkomunikasi">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Jumlah Tower (Listrik)</label>
+                                                                    <input class="form-control" type="text" id="jumlahtowerlistrik" name="jumlahtowerlistrik">
+                                                                </div>
+                                                                 <div class="form-group">
+                                                                    <label>Luar Area</label>
+                                                                    <input class="form-control" type="text" id="luararea" name="luararea">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Panjang Jalan</label>
+                                                                    <input class="form-control" type="text" id="panjangjalan" name="panjangjalan">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Keterangan (jika mitigasi bencana)</label>
+                                                                    <input class="form-control" type="text" id="keteranganmitigasibencana" name="keteranganmitigasibencana">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Luas Area Militer</label>
+                                                                    <input class="form-control" type="text" id="luasareamiliter" name="luasareamiliter">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Luas Area (Jika Migas)</label>
+                                                                    <input class="form-control" type="text" id="luasareamigas" name="luasareamigas">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Persetujuan </label>
+                                                                    <input class="form-control" type="text" id="persetujuanpembangunan" name="persetujuanpembangunan">
+                                                                </div>
+                                                               
+                                                                    <input type="hidden" class="form-control" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled >
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="form-group">
+                                                                    <label>Pertimbangan Teknis </label>
+                                                                    <input class="form-control" type="text" id="pertimbanganteknis" name="pertimbanganteknis">
+                                                                </div>
+                                                                 <div class="form-group">
+                                                                    <h5>Jangka Waktu</h5>
+                                                                    <br>
+                                                                    <label>Dari</label>
+                                                                    <input class="form-control" type="date" id="daripembangunan" name="daripembangunan">
+                                                                    <br>
+                                                                    <label>Ke</label>
+                                                                    <input class="form-control" type="date" id="kepembangunan" name="kepembangunan">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>File PKS</label>
+                                                                    <input class="form-control" type="file" id="filepkspembangunan" name="filepkspembangunan">
+                                                                </div>
+                                                                 <div class="form-group">
+                                                                    <label>Peta Lokasi Kerjasama</label>
+                                                                    <input class="form-control" type="file" id="petalokasikerjasamapembangunan" name="petalokasikerjasamapembangunan">
+                                                                </div>
+                                                                
+                                                                 <div class="form-group">
+                                                                    <label>Rencana Pelaksanaan Program</label>
+                                                                    <input class="form-control" type="file" id="rencanapelaksanaanprogrampembangunan" name="rencanapelaksanaanprogrampembangunan">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Rencana Kerja Tahunan</label>
+                                                                    <input class="form-control" type="file" id="rencanakerjatahunanpembangunan" name="rencanakerjatahunanpembangunan">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Monitoring</label>
+                                                                    <input class="form-control" type="file" id="monitoringpembangunan" name="monitoringpembangunan">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Evaluasi</label>
+                                                                    <input class="form-control" type="file" id="evaluasipembangunan" name="evaluasipembangunan">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Laporan Akhir</label>
+                                                                    <input class="form-control" type="file" id="laporanakhirpembangunan" name="laporanakhirpembangunan">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>UPT</label>
+                                                                    <select class="form-control" id="uptpembangunan" name="uptpembangunan">
+                                                                    </select>
+                                                                </div>
+                                                                 <div class="form-group">
+                                                                    <label>Keterangan</label>
+                                                                    <textarea class="form-control" id="keteranganpembangunan" name="keteranganpembangunan"></textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Modal footer -->
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Simpan</button>
+                                                    </div>
+                                                </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="modal fade" id="myModal37">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Ubah Data Pembangunan Strategis</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+
+                                                <!-- Modal body -->
+                                                <form id="formpembangunanstrategisedit">
+                                                    <div class="modal-body">
+                                                         <div class="row">
+                                                            <div class="col-6">
+                                                               
+                                                                <div class="form-group">
+                                                                    <label>Judul Kerjasama</label>
+                                                                    <input class="form-control" type="text" id="judulkerjasamapembangunanedit" name="judulkerjasamapembangunanedit">
+                                                                    <input type="hidden"id="idpembangunanstrategis" name="">
+                                                                    
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Mitra Kerja</label>
+                                                                    <input type="text" class="form-control" id="mitrakerjapembangunanedit" name="mitrakerjapembangunanedit">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Kategori Mitra</label>
+                                                                    <select class="form-control"  id="kategorimitrapembangunanedit" name="kategorimitrapembangunanedit">
+                                                                       <option value="Lintas Kementrian">Lintas Kementrian</option>
+                                                                       <option value="Pemda/Pemprov">Pemda/Pemprov</option>
+                                                                       <option value="Lintas Eselon 1">Lintas Eselon 1</option>
+                                                                       <option value="Kelompok Masyarakat">Kelompok Masyarakat</option>
+                                                                       <option value="Perusahaan">Perusahaan</option>
+                                                                       <option value="Badan Usaha">Badan Usaha</option>
+                                                                       <option value="NGO Lokal">NGO Lokal</option>
+                                                                       <option value="NGO Internasional">NGO Internasional</option>
+                                                                       <option value="Akademisi">Akademisi</option>
+                                                                       <option value="Perorangan">Perorangan</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Kategori Kerjasama Strategis</label>
+                                                                    <select class="form-control" type="text" id="kategorikerjasamastrategisedit" name="kategorikerjasamastrategisedit">
+                                                                        <option value="komunikasi">Komunikasi</option>
+                                                                        <option value="listrik">Listrik</option>
+                                                                        <option value="transportasi terbatas pelabuhan">Transportasi Terbatas Pelabuhan</option>
+                                                                        <option value="transportasi terbatas jalan">Transportasi Tebatas Jalan</option>
+                                                                        <option value="mitigasi bencana">Mitigasi Bencana</option>
+                                                                        <option value="hankam">Hankam</option>
+                                                                        <option value="migas">Migas</option>
+                                                                    </select>
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Jumlah Tower (Komunikasi)</label>
+                                                                    <input class="form-control" type="text" id="jumlahtowerkomunikasiedit" name="jumlahtowerkomunikasiedit">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Jumlah Tower (Listrik)</label>
+                                                                    <input class="form-control" type="text" id="jumlahtowerlistrikedit" name="jumlahtowerlistrikedit">
+                                                                </div>
+                                                                 <div class="form-group">
+                                                                    <label>Luar Area</label>
+                                                                    <input class="form-control" type="text" id="luarareaedit" name="luarareaedit">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Panjang Jalan</label>
+                                                                    <input class="form-control" type="text" id="panjangjalanedit" name="panjangjalanedit">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Keterangan (jika mitigasi bencana)</label>
+                                                                    <input class="form-control" type="text" id="keteranganmitigasibencanaedit" name="keteranganmitigasibencanaedit">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Luas Area Militer</label>
+                                                                    <input class="form-control" type="text" id="luasareamiliteredit" name="luasareamiliteredit">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Luas Area (Jika Migas)</label>
+                                                                    <input class="form-control" type="text" id="luasareamigasedit" name="luasareamigasedit">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Persetujuan </label>
+                                                                    <input class="form-control" type="text" id="persetujuanpembangunanedit" name="persetujuanpembangunanedit">
+                                                                </div>
+                                                               
+                                                                    <input type="hidden" class="form-control" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled >
+                                                            </div>
+                                                            <div class="col-6">
+                                                                <div class="form-group">
+                                                                    <label>Pertimbangan Teknis </label>
+                                                                    <input class="form-control" type="text" id="pertimbanganteknisedit" name="pertimbanganteknisedit">
+                                                                </div>
+                                                                 <div class="form-group">
+                                                                    <h5>Jangka Waktu</h5>
+                                                                    <br>
+                                                                    <label>Dari</label>
+                                                                    <input class="form-control" type="date" id="daripembangunanedit" name="daripembangunanedit">
+                                                                    <br>
+                                                                    <label>Ke</label>
+                                                                    <input class="form-control" type="date" id="kepembangunanedit" name="kepembangunanedit">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>File PKS</label>
+                                                                    <input class="form-control" type="file" id="filepkspembangunanedit" name="filepkspembangunanedit">
+                                                                    <input type="hidden" id="filepkspembangunanhidden">
+                                                                </div>
+                                                                 <div class="form-group">
+                                                                    <label>Peta Lokasi Kerjasama</label>
+                                                                    <input class="form-control" type="file" id="petalokasikerjasamapembangunanedit" name="petalokasikerjasamapembangunanedit">
+                                                                    <input type="hidden" id="petalokasikerjasamapembangunanhidden">
+                                                                </div>
+                                                                
+                                                                 <div class="form-group">
+                                                                    <label>Rencana Pelaksanaan Program</label>
+                                                                    <input class="form-control" type="file" id="rencanapelaksanaanprogrampembangunanedit" name="rencanapelaksanaanprogrampembangunanedit">
+                                                                    <input type="hidden" id="rencanapelaksanaanprogrampembangunanhidden">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Rencana Kerja Tahunan</label>
+                                                                    <input class="form-control" type="file" id="rencanakerjatahunanpembangunanedit" name="rencanakerjatahunanpembangunanedit">
+                                                                    <input type="hidden" id="rencanakerjatahunanpembangunanhidden">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Monitoring</label>
+                                                                    <input class="form-control" type="file" id="monitoringpembangunanedit" name="monitoringpembangunanedit">
+                                                                    <input type="hidden" id="monitoringpembangunanhidden">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Evaluasi</label>
+                                                                    <input class="form-control" type="file" id="evaluasipembangunanedit" name="evaluasipembangunanedit">
+                                                                    <input type="hidden" id="evaluasipembangunanhidden">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Laporan Akhir</label>
+                                                                    <input class="form-control" type="file" id="laporanakhirpembangunanedit" name="laporanakhirpembangunanedit">
+                                                                    <input type="hidden" id="laporanakhirpembangunanhidden">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>UPT</label>
+                                                                    <select class="form-control" id="uptpembangunanedit" name="uptpembangunanedit">
+                                                                    </select>
+                                                                </div>
+                                                                 <div class="form-group">
+                                                                    <label>Keterangan</label>
+                                                                    <textarea class="form-control" id="keteranganpembangunanedit" name="keteranganpembangunanedit"></textarea>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Modal footer -->
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Simpan</button>
+                                                    </div>
+                                                </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <table class="table" id="myTable17" style="width:100%">
                                             <thead>
                                                 <th>Judul Kerjasama</th>
                                                 <th>Mitra Kerja</th>
@@ -2839,6 +3167,33 @@
                         }
                     })
         }
+         function myfunc18(id){
+            Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                        if (result.value) {
+                            $.ajax({
+                                url:'/deleteDataPembangunanStrategis/'+id,
+                                type:'GET',
+                                success:function(){
+                                    Swal.fire(
+                                                'Sukses!',
+                                                'Data Sukses di hapus!',
+                                                'success'
+                                            )
+                                            table17.ajax.reload();
+                                }
+                            })
+
+                        }
+                    })
+        }
         function editfunc(id){
             $.ajax({
                 url:'/showDataPengukuhanKawasan/'+id,
@@ -3080,6 +3435,40 @@
                     $( '#hibahedit' ).val(hasil.hibah);
                     $( '#jumlahhibahedit' ).val(hasil.jumlah_hibah);
                     $( '#uptpenguatanfungsiedit' ).val(hasil.upt);
+                }
+            })
+        }
+         function editfunc18(id){
+            $.ajax({
+                url:'/showDataPembangunanStrategis/'+id,
+                type:'GET',
+                success:function(data){
+                    var hasil = JSON.parse(data);
+                    $( '#idpembangunanstrategis' ).val(hasil.id);
+                    $( '#judulkerjasamapembangunanedit' ).val(hasil.judul_kerjasama);
+                    $( '#mitrakerjapembangunanedit' ).val(hasil.mitra_kerja);
+                    $( '#kategorimitrapembangunanedit' ).val(hasil.kategori_mitra);
+                    $( '#persetujuanpembangunanedit' ).val(hasil.persetujuan);
+                    $( '#kategorikerjasamastrategisedit' ).val(hasil.kategori_kerjasama_strategis);
+                    $( '#jumlahtowerkomunikasiedit' ).val(hasil.jumlah_tower_komunikasi);
+                    $( '#jumlahtowerlistrikedit' ).val(hasil.jumlah_tower_listrik);
+                    $( '#luasareamiliteredit' ).val(hasil.luas_area_militer);
+                    $( '#luasareamigasedit' ).val(hasil.luas_area_migas);
+                    $( '#panjangjalanedit' ).val(hasil.panjang_jalan);
+                    $( '#keteranganmitigasibencanaedit' ).val(hasil.keterangan_mitigasi_bencana);
+                    $( '#pertimbanganteknisedit' ).val(hasil.pertimbangan_teknis);
+                    $( '#luarareaedit' ).val(hasil.luar_area);
+
+                    $( '#daripembangunanedit' ).val(hasil.dari);
+                    $( '#kepembangunanedit' ).val(hasil.ke);
+                    $( '#filepkspembangunanhidden' ).val(hasil.file_pks);
+                    $( '#petalokasikerjasamapembangunanhidden' ).val(hasil.peta_lokasi_kerjasama);
+                    $( '#keteranganpembangunanedit').val(hasil.keterangan);
+                    $( '#rencanapelaksanaanprogrampembangunanhidden' ).val(hasil.rencana_pelaksanaan_program);
+                    $( '#monitoringpembangunanhidden' ).val(hasil.monitoring);
+                    $( '#evaluasipembangunanhidden' ).val(hasil.evaluasi);
+                    $( '#laporanakhirpembangunanhidden' ).val(hasil.laporan_akhir);
+                    $( '#uptpembangunanedit' ).val(hasil.upt);
                 }
             })
         }
@@ -3688,7 +4077,7 @@
                                 display: $.fn.dataTable.Responsive.display.modal( {
                                     header: function ( row ) {
                                         var data = row.data();
-                                        return 'Details for sosekbud';
+                                        return 'Details for Penguatan Fungsi KK';
                                     }
                                 } ),
                                 renderer: $.fn.dataTable.Responsive.renderer.tableAll()
@@ -3711,6 +4100,39 @@
                                 data: null,
                                 render: function ( data, type, row ) {
                                     return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal35'onclick='editfunc17("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc17("+data.id+")'>Delete</button>";
+                                }
+                            }
+                        ]
+                    });
+                     var table17 = $('#myTable17').DataTable({
+                         responsive: {
+                            details: {
+                                display: $.fn.dataTable.Responsive.display.modal( {
+                                    header: function ( row ) {
+                                        var data = row.data();
+                                        return 'Details for Pembangunan Strategis';
+                                    }
+                                } ),
+                                renderer: $.fn.dataTable.Responsive.renderer.tableAll()
+                            }
+                        },
+                        deferRender: true,
+                        ajax: {
+                            url: "/getDataPembangunanStrategis/"+"<?php echo $hasil['nama_kawasan'];?>",
+                            type: "GET",
+                            dataSrc: function (d) {
+                                return d
+                            }
+                        },
+                        columns: [
+                            { data: 'judul_kerjasama' },
+                            { data: 'mitra_kerja' },
+                            { data: 'kategori_mitra' },
+                            { data: 'upt' },
+                            {
+                                data: null,
+                                render: function ( data, type, row ) {
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal37'onclick='editfunc18("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc18("+data.id+")'>Delete</button>";
                                 }
                             }
                         ]
@@ -3758,6 +4180,8 @@
                             $("#uptevaluasifungsiekflapanganedit").append(html);
                             $("#uptevaluasifungsideskstudy").append(html);
                             $("#uptpenguatanfungsiedit").append(html);
+                            $("#uptpembangunan").append(html);
+                            $("#uptpembangunanedit").append(html);
                             $("#uptpenguatanfungsi").append(html);
                         });
                     }
@@ -3775,7 +4199,313 @@
                         });
                     }
                 })
+                $('form[id="formpembangunanstrategisedit"]').validate({
+                    rules: {
+                        judulkerjasamapembangunanedit: 'required',
+                        mitrakerjapembangunanedit: 'required',
+                        kategorimitrapembangunanedit: 'required',
+                        kategorikerjasamastrategisedit: 'required',
+                        jumlahtowerkomunikasiedit:{
+                            number:true
+                        },
+                        jumlahtowerlistrikedit:{
+                            number:true
+                        },
+                        luarareaedit:{
+                            number:true
+                        },
+                        panjangjalanedit:{
+                            number:true
+                        },
+                        keteranganmitigasibencanaedit: 'required',
+                        luasareamiliteredit:{
+                            number:true
+                        },
+                        luasareamigasedit:{
+                            number:true
+                        },
+                        persetujuanpembangunanedit: 'required',
+                        pertimbanganteknisedit: 'required',
+                        daripembangunanedit: 'required',
+                        kepembangunanedit: 'required',
+                        keteranganpembangunanedit: 'required',
+                        uptpembangunanedit: 'required',
+                        namakawasan:{
+                            required:true,
+                        }
+                        // filejpegopenkawasanedit:{
+                        //     required:true,
+                        //     accept: "image/*"
+                        // },
+                    },
+                    messages: {
+                        judul: 'This field is required',
+                        file:'This field mustbe images'
 
+                    },
+                    submitHandler: function(form) {
+                        var file = $('#filepkspembangunanedit')[0].files[0];
+                        if(file == undefined){
+                            var data;
+                            data = new FormData();
+                            data.append('judulkerjasama', $('#judulkerjasamapembangunanedit').val());
+                            data.append('mitrakerja',$('#mitrakerjapembangunanedit').val());
+                            data.append('kategorimitra', $('#kategorimitrapembangunanedit').val());
+                            data.append('persetujuan', $('#persetujuanpembangunanedit').val());
+                            data.append('kategorikerjasamastrategis', $('#kategorikerjasamastrategisedit').val());
+                            data.append('jumlahtowerkomunikasi', $('#jumlahtowerkomunikasiedit').val());
+                            data.append('jumlahtowerlistrik', $('#jumlahtowerlistrikedit').val());
+                            data.append('luararea', $('#luarareaedit').val());
+                            data.append('panjangjalan', $('#panjangjalanedit').val());
+                            data.append('keteranganmitigasibencana', $('#keteranganmitigasibencanaedit').val());
+                            data.append('luasareamiliter', $('#luasareamiliteredit').val());
+                            data.append('luasareamigas', $('#luasareamigasedit').val());
+                            data.append('pertimbanganteknis', $('#pertimbanganteknisedit').val());
+                            data.append('daripembangunan', $('#daripembangunanedit').val());
+                            data.append('kepembangunan', $('#kepembangunanedit').val());
+                            data.append('filepks', $('#filepkspembangunanhidden').val());
+                            data.append('petalokasikerjasama', $('#petalokasikerjasamapembangunanhidden').val());
+                            data.append('keteranganpenguatan', $('#keteranganpembangunanedit').val());
+                            data.append('rencanapelaksanaanprogram', $('#rencanapelaksanaanprogrampembangunanhidden').val());
+                            data.append('rencanakerjatahunan', $('#rencanakerjatahunanpembangunanhidden').val());
+                            data.append('monitoring', $('#monitoringpembangunanhidden').val());
+                            data.append('evaluasi', $('#evaluasipembangunanhidden').val());
+                            data.append('laporanakhir', $('#laporanakhirpembangunanhidden').val());
+                            data.append('uptpembangunan', $('#uptpembangunanedit').val());
+                            data.append('namakawasan',$('#namakawasan').val());
+                            data.append('status','filenotfound');
+                            data.append('idpembangunanstrategis',$('#idpembangunanstrategis').val());
+                            $.ajax({
+                                url:'/ubahDataPembangunanStrategis',
+                                method:'POST',
+                                data:data,
+                                contentType: false,
+                                processData:false,
+                                success:function(){
+                                    Swal.fire(
+                                                'Sukses!',
+                                                'Data Sukses di simpan!',
+                                                'success'
+                                            ).then(function(){
+                                                $( '#judulkerjasamapembangunanedit' ).val('')
+                                                $( '#mitrakerjapembangunanedit' ).val('')
+                                                $( '#kategorikerjasamastrategisedit' ).val('')
+                                                $( '#jumlahtowerkomunikasiedit' ).val('')
+                                                $( '#persetujuanpembangunanedit' ).val('')
+                                                $( '#jumlahtowerlistrikedit' ).val('')
+                                                $( '#luarareaedit' ).val('')
+                                                $( '#panjangjalanedit' ).val('')
+                                                $( '#keteranganmitigasibencanaedit' ).val('')
+                                                $( '#luasareamiliteredit' ).val('')
+                                                $( '#luasareamigasedit' ).val('')
+                                                $( '#pertimbanganteknisedit' ).val('')
+                                                $( '#daripembangunanedit' ).val('')
+                                                $( '#kepembangunanedit' ).val('')
+                                                $( '#filepkspembangunanedit' ).val('')
+                                                $( '#petalokasikerjasamapembangunanedit' ).val('')
+                                                $( '#keteranganpembangunanedit' ).val('')
+                                                $( '#rencanapelaksanaanprogrampembangunanedit' ).val('')
+                                                $( '#rencanakerjatahunanpembangunanedit' ).val('')
+                                                $( '#monitoringpembangunanedit' ).val('')
+                                                $( '#evaluasipembangunanedit' ).val('')
+                                                $( '#laporanakhirpembangunanedit' ).val('')
+                                                $('#myModal37').modal('toggle')
+                                            })
+                                            table17.ajax.reload();
+                                }
+                            })
+                        }else{
+                            var data;
+                            data = new FormData();
+                            data.append('judulkerjasama', $('#judulkerjasamapembangunanedit').val());
+                            data.append('mitrakerja',$('#mitrakerjapembangunanedit').val());
+                            data.append('kategorimitra', $('#kategorimitrapembangunanedit').val());
+                            data.append('persetujuan', $('#persetujuanpembangunanedit').val());
+                            data.append('kategorikerjasamastrategis', $('#kategorikerjasamastrategisedit').val());
+                            data.append('jumlahtowerkomunikasi', $('#jumlahtowerkomunikasiedit').val());
+                            data.append('jumlahtowerlistrik', $('#jumlahtowerlistrikedit').val());
+                            data.append('luararea', $('#luarareaedit').val());
+                            data.append('panjangjalan', $('#panjangjalanedit').val());
+                            data.append('keteranganmitigasibencana', $('#keteranganmitigasibencanaedit').val());
+                            data.append('luasareamiliter', $('#luasareamiliteredit').val());
+                            data.append('luasareamigas', $('#luasareamigasedit').val());
+                            data.append('pertimbanganteknis', $('#pertimbanganteknisedit').val());
+                            data.append('daripembangunan', $('#daripembangunanedit').val());
+                            data.append('kepembangunan', $('#kepembangunanedit').val());
+                            data.append('filepks', $('#filepkspembangunanedit')[0].files[0]);
+                            data.append('petalokasikerjasama', $('#petalokasikerjasamapembangunanedit')[0].files[0]);
+                            data.append('keteranganpenguatan', $('#keteranganpembangunanedit').val());
+                            data.append('rencanapelaksanaanprogram', $('#rencanapelaksanaanprogrampembangunanedit')[0].files[0]);
+                            data.append('rencanakerjatahunan', $('#rencanakerjatahunanpembangunanedit')[0].files[0]);
+                            data.append('monitoring', $('#monitoringpembangunanedit')[0].files[0]);
+                            data.append('evaluasi', $('#evaluasipembangunanedit')[0].files[0]);
+                            data.append('laporanakhir', $('#laporanakhirpembangunanedit')[0].files[0]);
+                            data.append('uptpembangunan', $('#uptpembangunanedit').val());
+                            data.append('namakawasan',$('#namakawasan').val());
+                            data.append('idpembangunanstrategis',$('#idpembangunanstrategis').val());
+                            $.ajax({
+                                url:'/ubahDataPembangunanStrategis',
+                                method:'POST',
+                                data:data,
+                                contentType: false,
+                                processData:false,
+                                success:function(){
+                                    Swal.fire(
+                                                'Sukses!',
+                                                'Data Sukses di simpan!',
+                                                'success'
+                                            ).then(function(){
+                                                $( '#judulkerjasamapembangunanedit' ).val('')
+                                                $( '#mitrakerjapembangunanedit' ).val('')
+                                                $( '#kategorikerjasamastrategisedit' ).val('')
+                                                $( '#jumlahtowerkomunikasiedit' ).val('')
+                                                $( '#persetujuanpembangunanedit' ).val('')
+                                                $( '#jumlahtowerlistrikedit' ).val('')
+                                                $( '#luarareaedit' ).val('')
+                                                $( '#panjangjalanedit' ).val('')
+                                                $( '#keteranganmitigasibencanaedit' ).val('')
+                                                $( '#luasareamiliteredit' ).val('')
+                                                $( '#luasareamigasedit' ).val('')
+                                                $( '#pertimbanganteknisedit' ).val('')
+                                                $( '#daripembangunanedit' ).val('')
+                                                $( '#kepembangunanedit' ).val('')
+                                                $( '#filepkspembangunanedit' ).val('')
+                                                $( '#petalokasikerjasamapembangunanedit' ).val('')
+                                                $( '#keteranganpembangunanedit' ).val('')
+                                                $( '#rencanapelaksanaanprogrampembangunanedit' ).val('')
+                                                $( '#rencanakerjatahunanpembangunanedit' ).val('')
+                                                $( '#monitoringpembangunanedit' ).val('')
+                                                $( '#evaluasipembangunanedit' ).val('')
+                                                $( '#laporanakhirpembangunanedit' ).val('')
+                                                $('#myModal37').modal('toggle')
+                                            })
+                                            table17.ajax.reload();
+                                }
+                            })
+                        }
+                       
+                    }
+                })
+                 $('form[id="formpembangunanstrategis"]').validate({
+                    rules: {
+                        judulkerjasamapembangunan: 'required',
+                        mitrakerjapembangunan: 'required',
+                        kategorimitrapembangunan: 'required',
+                        kategorikerjasamastrategis: 'required',
+                        jumlahtowerkomunikasi:{
+                            number:true
+                        },
+                        jumlahtowerlistrik:{
+                            number:true
+                        },
+                        luararea:{
+                            number:true
+                        },
+                        panjangjalan:{
+                            number:true
+                        },
+                        keteranganmitigasibencana: 'required',
+                        luasareamiliter:{
+                            number:true
+                        },
+                        luasareamigas:{
+                            number:true
+                        },
+                        persetujuanpembangunan: 'required',
+                        pertimbanganteknis: 'required',
+                        daripembangunan: 'required',
+                        kepembangunan: 'required',
+                        filepkspembangunan: 'required',
+                        petalokasikerjasamapembangunan: 'required',
+                        rencanapelaksanaanprogrampembangunan: 'required',
+                        rencanakerjatahunanpembangunan: 'required',
+                        monitoringpembangunan: 'required',
+                        evaluasipembangunan: 'required',
+                        laporanakhirpembangunan: 'required',
+                        keteranganpembangunan: 'required',
+                        uptpembangunan: 'required',
+                        namakawasan:{
+                            required:true,
+                        }
+                        // filejpegopenkawasanedit:{
+                        //     required:true,
+                        //     accept: "image/*"
+                        // },
+                    },
+                    messages: {
+                        judul: 'This field is required',
+                        file:'This field mustbe images'
+
+                    },
+                    submitHandler: function(form) {
+                        var data;
+                        data = new FormData();
+                        data.append('judulkerjasama', $('#judulkerjasamapembangunan').val());
+                        data.append('mitrakerja',$('#mitrakerjapembangunan').val());
+                        data.append('kategorimitra', $('#kategorimitrapembangunan').val());
+                        data.append('persetujuan', $('#persetujuanpembangunan').val());
+                        data.append('kategorikerjasamastrategis', $('#kategorikerjasamastrategis').val());
+                        data.append('jumlahtowerkomunikasi', $('#jumlahtowerkomunikasi').val());
+                        data.append('jumlahtowerlistrik', $('#jumlahtowerlistrik').val());
+                        data.append('luararea', $('#luararea').val());
+                        data.append('panjangjalan', $('#panjangjalan').val());
+                        data.append('keteranganmitigasibencana', $('#keteranganmitigasibencana').val());
+                        data.append('luasareamiliter', $('#luasareamiliter').val());
+                        data.append('luasareamigas', $('#luasareamigas').val());
+                        data.append('pertimbanganteknis', $('#pertimbanganteknis').val());
+                        data.append('daripembangunan', $('#daripembangunan').val());
+                        data.append('kepembangunan', $('#kepembangunan').val());
+                        data.append('filepks', $('#filepkspembangunan')[0].files[0]);
+                        data.append('petalokasikerjasama', $('#petalokasikerjasamapembangunan')[0].files[0]);
+                        data.append('keteranganpenguatan', $('#keteranganpembangunan').val());
+                        data.append('rencanapelaksanaanprogram', $('#rencanapelaksanaanprogrampembangunan')[0].files[0]);
+                        data.append('rencanakerjatahunan', $('#rencanakerjatahunanpembangunan')[0].files[0]);
+                        data.append('monitoring', $('#monitoringpembangunan')[0].files[0]);
+                        data.append('evaluasi', $('#evaluasipembangunan')[0].files[0]);
+                        data.append('laporanakhir', $('#laporanakhirpembangunan')[0].files[0]);
+                        data.append('uptpembangunan', $('#uptpembangunan').val());
+                        data.append('namakawasan',$('#namakawasan').val());
+                        $.ajax({
+                            url:'/saveDataPembangunanStrategis',
+                            method:'POST',
+                            data:data,
+                            contentType: false,
+                            processData:false,
+                            success:function(){
+                                Swal.fire(
+                                            'Sukses!',
+                                            'Data Sukses di simpan!',
+                                            'success'
+                                        ).then(function(){
+                                            $( '#judulkerjasamapembangunan' ).val('')
+                                            $( '#mitrakerjapembangunan' ).val('')
+                                            $( '#kategorikerjasamastrategis' ).val('')
+                                            $( '#jumlahtowerkomunikasi' ).val('')
+                                            $( '#persetujuanpembangunan' ).val('')
+                                            $( '#jumlahtowerlistrik' ).val('')
+                                            $( '#luararea' ).val('')
+                                            $( '#panjangjalan' ).val('')
+                                            $( '#keteranganmitigasibencana' ).val('')
+                                            $( '#luasareamiliter' ).val('')
+                                            $( '#luasareamigas' ).val('')
+                                            $( '#pertimbanganteknis' ).val('')
+                                            $( '#daripembangunan' ).val('')
+                                            $( '#kepembangunan' ).val('')
+                                            $( '#filepkspembangunan' ).val('')
+                                            $( '#petalokasikerjasamapembangunan' ).val('')
+                                            $( '#keteranganpembangunan' ).val('')
+                                            $( '#rencanapelaksanaanprogrampembangunan' ).val('')
+                                            $( '#rencanakerjatahunanpembangunan' ).val('')
+                                            $( '#monitoringpembangunan' ).val('')
+                                            $( '#evaluasipembangunan' ).val('')
+                                            $( '#laporanakhirpembangunan' ).val('')
+                                            $('#myModal36').modal('toggle')
+                                        })
+                                        table17.ajax.reload();
+                            }
+                        })
+                    }
+                })
                 $('form[id="formpenguatankk"]').validate({
                     rules: {
                         judulkerjasama: 'required',

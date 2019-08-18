@@ -272,6 +272,13 @@ $route['getDataPenguatanKK/(:any)'] = "PenguatanFungsiKKController/getData/$1";
 $route['showDataPenguatanKK/(:any)'] = "PenguatanFungsiKKController/show/$1";
 $route['deleteDataPenguatanKK/(:any)'] = "PenguatanFungsiKKController/destroy/$1";
 //endroute
+//route Open Area Kawasan
+$route['saveDataPembangunanStrategis'] = "PembangunanStrategisController/store";
+$route['ubahDataPembangunanStrategis'] = "PembangunanStrategisController/update";
+$route['getDataPembangunanStrategis/(:any)'] = "PembangunanStrategisController/getData/$1";
+$route['showDataPembangunanStrategis/(:any)'] = "PembangunanStrategisController/show/$1";
+$route['deleteDataPembangunanStrategis/(:any)'] = "PembangunanStrategisController/destroy/$1";
+//endroute
 //route potensi keaneka ragaman hayati
 $route['saveDataKeanekaragamHayati'] = "KeanekaragamHayatiController/store";
 $route['updateDataKeanekaragamHayati'] = "KeanekaragamHayatiController/update";
