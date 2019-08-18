@@ -258,21 +258,21 @@ $route['getDataOpenKawasan/(:any)'] = "OpenAreaKawasanController/getData/$1";
 $route['showDataOpenKawasan/(:any)'] = "OpenAreaKawasanController/show/$1";
 $route['deleteDataOpenKawasan/(:any)'] = "OpenAreaKawasanController/destroy/$1";
 //endroute
-//route Open Area Kawasan
+//route Kemitraan Konservasi
 $route['saveDataKemitraanKonservasi'] = "KemitraanKonservasiController/store";
 $route['updateDataKemitraanKonservasi'] = "KemitraanKonservasiController/update";
 $route['getDataKemitraanKonservasi/(:any)'] = "KemitraanKonservasiController/getData/$1";
 $route['showDataKemitraanKonservasi/(:any)'] = "KemitraanKonservasiController/show/$1";
 $route['deleteDataKemitraanKonservasi/(:any)'] = "KemitraanKonservasiController/destroy/$1";
 //endroute
-//route Open Area Kawasan
+//route Penguatan KK
 $route['saveDataPenguatanKK'] = "PenguatanFungsiKKController/store";
 $route['updateDataPenguatanKK'] = "PenguatanFungsiKKController/update";
 $route['getDataPenguatanKK/(:any)'] = "PenguatanFungsiKKController/getData/$1";
 $route['showDataPenguatanKK/(:any)'] = "PenguatanFungsiKKController/show/$1";
 $route['deleteDataPenguatanKK/(:any)'] = "PenguatanFungsiKKController/destroy/$1";
 //endroute
-//route Open Area Kawasan
+//route Pembangunan Strategis
 $route['saveDataPembangunanStrategis'] = "PembangunanStrategisController/store";
 $route['ubahDataPembangunanStrategis'] = "PembangunanStrategisController/update";
 $route['getDataPembangunanStrategis/(:any)'] = "PembangunanStrategisController/getData/$1";
@@ -296,6 +296,10 @@ $route['getDataKeanekaragamHayati10/(:any)'] = "KeanekaragamHayatiController/get
 $route['getDataKeanekaragamHayati11/(:any)'] = "KeanekaragamHayatiController/get11/$1";
 $route['deleteDataKeanekaragamHayati/(:any)'] = "KeanekaragamHayatiController/destroy/$1";
 //endroute
+//Route Pencarian
+$route['pencarian'] = "PencarianController";
+$route['pencarian/cari/(:any)'] = "PencarianController/cari/$1";
+//end Route
 //route Dashboard
 $route['getDataDashboard/(:any)'] = "DashboardController/getCountData/$1";
 $route['getDataAllDashboard'] = "DashboardController/getAllData/$1";

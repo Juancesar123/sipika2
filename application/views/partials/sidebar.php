@@ -140,5 +140,11 @@
               <span class="menu-title">Unit Pengelolaan Kawasan</span>
             </a>
           </li>
+          <li class="nav-item">
+            <a class="nav-link <?php if($this->uri->segment(1)=="pencarian"){echo "active";}?>" href="<?=base_url('pencarian')?>">
+              <i class="fa fa-search menu-icon"></i>
+              <span class="menu-title">Pencarian</span>
+            </a>
+          </li>
         </ul>
       </nav>
