@@ -194,6 +194,8 @@
                                     </div>
                                     <div class="card-body">
                                         <button class="btn btn-primary" data-toggle="modal" data-target="#myModal1">Tambah Data</button>
+                                        <br>
+                                        <br>
                                         <div class="modal fade" id="myModal1">
                                             <div class="modal-dialog modal-lg">
                                                 <div class="modal-content">
@@ -393,6 +395,8 @@
                                     </div>
                                     <div class="card-body">
                                         <button class="btn btn-primary" data-toggle="modal" data-target="#myModal3">Tambah Data</button>
+                                        <br>
+                                        <br>
                                         <div class="modal fade" id="myModal3">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
@@ -647,6 +651,8 @@
                                                 </div>
                                             </div>
                                         </div>
+                                        <br>
+                                        <br>
                                         <table class="table" id="myTable3" style="width:100%">
                                             <thead>
                                                 <th>Rekomendasi</th>
@@ -663,6 +669,8 @@
                                     </div>
                                     <div class="card-body">
                                         <button class="btn btn-primary" data-toggle="modal" data-target="#myModal34">Tambah Data</button>
+                                        <br>
+                                        <br>
                                         <div class="modal fade" id="myModal34">
                                             <div class="modal-dialog modal-lg">
                                                 <div class="modal-content">
@@ -941,6 +949,8 @@
                                     </div>
                                     <div class="card-body">
                                         <button class="btn btn-primary" data-toggle="modal" data-target="#myModal36">Tambah Data</button>
+                                        <br>
+                                        <br>
                                         <div class="modal fade" id="myModal36">
                                             <div class="modal-dialog modal-lg">
                                                 <div class="modal-content">
@@ -1270,6 +1280,8 @@
                                     </div>
                                     <div class="card-body">
                                         <button class="btn btn-primary" data-toggle="modal" data-target="#myModal11"><i class="fa fa-plus"></i> Tambah Data</button>
+                                        <br>
+                                        <br>
                                         <div class="modal fade" id="myModal11">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
@@ -1696,6 +1708,8 @@
                                     </div>
                                     <div class="card-body">
                                         <button class="btn btn-primary" data-toggle="modal" data-target="#myModal18">Tambah Data</button>
+                                        <br>
+                                        <br>
                                         <div class="modal fade" id="myModal18">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
@@ -1802,6 +1816,8 @@
                                     </div>
                                     <div class="card-body">
                                         <button class="btn btn-primary" data-toggle="modal" data-target="#myModal15">Tambah Data</button>
+                                        <br>
+                                        <br>
                                         <div class="modal fade" id="myModal15">
                                             <div class="modal-dialog modal-lg">
                                                 <div class="modal-content">
@@ -1937,6 +1953,8 @@
                                     </div>
                                     <div class="card-body">
                                         <button class="btn btn-primary" data-toggle="modal" data-target="#myModal20">Tambah Data</button>
+                                        <br>
+                                        <br>
                                         <div class="modal fade" id="myModal20">
                                             <div class="modal-dialog modal-lg">
                                                 <div class="modal-content">
@@ -2097,6 +2115,8 @@
                                     </div>
                                     <div class="card-body">
                                         <button class="btn btn-primary" data-toggle="modal" data-target="#myModal32">Tambah Data</button>
+                                        <br>
+                                        <br>
                                         <div class="modal fade" id="myModal32">
                                             <div class="modal-dialog modal-lg">
                                                 <div class="modal-content">
@@ -2230,6 +2250,8 @@
                                     </div>
                                     <div class="card-body">
                                         <button class="btn btn-primary" data-toggle="modal" data-target="#myModal24">Tambah Data</button>
+                                        <br>
+                                        <br>
                                         <div class="modal fade" id="myModal24">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
@@ -2330,6 +2352,8 @@
                                     </div>
                                     <div class="card-body">
                                         <button class="btn btn-primary" data-toggle="modal" data-target="#myModal26">Tambah Data</button>
+                                        <br>
+                                        <br>
                                         <div class="modal fade" id="myModal26">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
@@ -2423,6 +2447,8 @@
                                     </div>
                                     <div class="card-body">
                                         <button class="btn btn-primary" data-toggle="modal" data-target="#myModal30">Tambah Data</button>
+                                        <br>
+                                        <br>
                                         <div class="modal fade" id="myModal30">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
@@ -2522,6 +2548,8 @@
                                     </div>
                                     <div class="card-body">
                                         <button class="btn btn-primary" data-toggle="modal" data-target="#myModal28">Tambah Data</button>
+                                        <br>
+                                        <br>
                                         <div class="modal fade" id="myModal28">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
@@ -2615,6 +2643,8 @@
                                     </div>
                                     <div class="card-body">
                                         <button class="btn btn-primary" data-toggle="modal" data-target="#myModal9">Tambah Data</button>
+                                        <br>
+                                        <br>
                                         <div class="modal fade" id="myModal9">
                                             <div class="modal-dialog modal-lg">
                                                 <div class="modal-content">
@@ -3473,6 +3503,10 @@
             })
         }
         var table =  $('#myTable1').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: [
+                            'excel', 'pdf'
+                        ],
                         deferRender: true,
                         ajax: {
                             url: "/getDataPengukuhanKawasan/"+"<?php echo $hasil['nama_kawasan'];?>",
@@ -3494,6 +3528,10 @@
                         ]
                     });
             var table1 =  $('#myTable2').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: [
+                            'excel', 'pdf'
+                        ],
                         deferRender: true,
                         ajax: {
                             url: "/getDataEvaluasiFungsiDeskStudy/"+"<?php echo $hasil['nama_kawasan'];?>",
@@ -3515,6 +3553,10 @@
                         ]
                     });
             var table2 =  $('#myTable3').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: [
+                            'excel', 'pdf'
+                        ],
                         deferRender: true,
                         ajax: {
                             url: "/getDataEvaluasiFungsiEkfLapangan/"+"<?php echo $hasil['nama_kawasan'];?>",
@@ -3536,6 +3578,10 @@
                         ]
                     });
             var table3 =  $('#myTable4').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: [
+                            'excel', 'pdf'
+                        ],
                         deferRender: true,
                         ajax: {
                             url: "/getDataIndikasiTora/"+"<?php echo $hasil['nama_kawasan'];?>",
@@ -3557,6 +3603,10 @@
                         ]
                     });
             var table4 =  $('#myTable5').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: [
+                            'excel', 'pdf'
+                        ],
                         deferRender: true,
                         ajax: {
                             url: "/getDataHutanadat/"+"<?php echo $hasil['nama_kawasan'];?>",
@@ -3578,6 +3628,10 @@
                         ]
                     });
             var table5 =  $('#myTable7').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: [
+                            'excel', 'pdf'
+                        ],
                         deferRender: true,
                         ajax: {
                             url: "/getDataPotensiKawasanKonservarsi/"+"<?php echo $hasil['nama_kawasan'];?>",
@@ -3599,6 +3653,10 @@
                     });
              // Kenakaragaman hayati table       
             var table6 =  $('#myTable8').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: [
+                            'excel', 'pdf'
+                        ],
                         deferRender: true,
                         ajax: {
                             url: "/getDataKeanekaragamHayati/"+"<?php echo $hasil['nama_kawasan'];?>",
@@ -3841,6 +3899,10 @@
               
                     //------Keaneka ragaman hayati END --//
                     var tablekk =  $('#tablekk').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: [
+                            'excel', 'pdf'
+                        ],
                         deferRender: true,
                         ajax: {
                             url: "/getDataDesaKK/"+"<?php echo $hasil['nama_kawasan'];?>",
@@ -3863,6 +3925,10 @@
                     });
                     //-------------------------------Wilayah Adat ---------------------//
                     var tablewilayahadat =  $('#tablewilayahadat').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: [
+                            'excel', 'pdf'
+                        ],
                         deferRender: true,
                         ajax: {
                             url: "/getDataWilayahAdat/"+"<?php echo $hasil['nama_kawasan'];?>",
@@ -3886,6 +3952,10 @@
                     //-------------------------------END---------------------------------//
                     //-------------------------------PERMASALAHAN KK--------------------//
                     var table10 = $('#myTable10').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: [
+                            'excel', 'pdf'
+                        ],
                         deferRender: true,
                         ajax: {
                             url: "/getDataPermasalahanKK/"+"<?php echo $hasil['nama_kawasan'];?>",
@@ -3908,6 +3978,10 @@
                     });
                     //-------------------------------END------------------------------//
                       var table11 = $('#myTable11').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: [
+                            'excel', 'pdf'
+                        ],
                          responsive: {
                             details: {
                                 display: $.fn.dataTable.Responsive.display.modal( {
@@ -3941,6 +4015,10 @@
                         ]
                     });
                     var table13 = $('#myTable13').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: [
+                            'excel', 'pdf'
+                        ],
                          responsive: {
                             details: {
                                 display: $.fn.dataTable.Responsive.display.modal( {
@@ -3988,6 +4066,10 @@
                         ]
                     });
                     var table14 = $('#myTable14').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: [
+                            'excel', 'pdf'
+                        ],
                          responsive: {
                             details: {
                                 display: $.fn.dataTable.Responsive.display.modal( {
@@ -4035,6 +4117,10 @@
                         ]
                     });
                      var table15 = $('#myTable15').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: [
+                            'excel', 'pdf'
+                        ],
                          responsive: {
                             details: {
                                 display: $.fn.dataTable.Responsive.display.modal( {
@@ -4072,6 +4158,10 @@
                         ]
                     });
                      var table16 = $('#myTable16').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: [
+                            'excel', 'pdf'
+                        ],
                          responsive: {
                             details: {
                                 display: $.fn.dataTable.Responsive.display.modal( {
@@ -4105,6 +4195,10 @@
                         ]
                     });
                      var table17 = $('#myTable17').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: [
+                            'excel', 'pdf'
+                        ],
                          responsive: {
                             details: {
                                 display: $.fn.dataTable.Responsive.display.modal( {
@@ -4138,6 +4232,8 @@
                         ]
                     });
         $('document').ready(function(){
+            $('[href="#home"]').tab('show');
+           //$('#home a:first').tab('show')
             table61.columns.adjust().draw();
                 $.ajax({
                     type:'GET',
