@@ -29,7 +29,7 @@
                         <div class="col-md-3">
                             <div class="card">
                                 <div class="card-body bg-light">
-                                    <img src="<?php echo base_url('images/3671701645.jpg')?>" class="img-fluid">
+                                    <img src="<?php echo constant('API_URL') .'/'. $hasil['gambar'];?>" class="img-fluid">
                                     <br>
                                     <br>
                                     <h2><center><?php   echo $hasil['nama_kawasan'];?></center></h2>
@@ -135,6 +135,10 @@
                                                     <div class="form-group">
                                                         <label>Luas Kawasan</label>
                                                         <input class="form-control" type="text" id="luas_kawasan"  value="<?php echo $hasil['luas_kawasan'];?>">
+                                                    </div>
+                                                    <div class="form-group">
+                                                        <label>Gambar</label>
+                                                        <input class="form-control" type="file" id="gambar">
                                                     </div>
                                                 </div>
 
@@ -5708,6 +5712,7 @@
                 data.append('kabupaten', $('#kabupaten').val());
                 data.append('nama_kawasan', $('#nama_kawasan').val());
                 data.append('luas_kawasan', $('#luas_kawasan').val());
+                data.append('gambar', $('#gambar')[0].files[0]);
                 data.append('id_kawasan', $('#idkawasan').val());
                 $.ajax({
                     url:'/updatedatakawasan',
@@ -5717,11 +5722,12 @@
                     processData:false,
                     success:function(){
                          Swal.fire(
-                                'Sukses!',
-                                'Data Sukses di simpan!',
-                                'success'
-                            )
-                            document.location.reload()
+                                    'Sukses!',
+                                    'Data Sukses di ubah!',
+                                    'success'
+                                ).then(function(){
+                                    document.location.reload();
+                                })
                     }
                 })
             })

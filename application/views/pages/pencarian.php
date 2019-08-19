@@ -41,10 +41,8 @@
                                             <button class="btn btn-primary" id="cari2"><i class="fa fa-search"></i> Cari</button>
                                         </div>
                                     </div>
-                                    <div class="row" style="margin-top:10px;">
-                                       <ul class="list-group" id="listresult">
-                                          
-                                        </ul>
+                                    <div class="row" style="margin-top:10px;" id="listresult">
+
                                     </div>
                                 </div>
                             </div>
@@ -68,7 +66,7 @@
                     success:function(data){
                         var result  = JSON.parse(data);
                        result.forEach(function(element) {
-                           var html = "<li class='list-group-item'><a href='perkembangan-kawasan/managekawasan/"+element.id+"'>"+element.nama_kawasan+"</a></li>";
+                           var html = "<div class='col-md-3'><div class='card' style='width: 18rem;'> <img src='<?php echo constant('API_URL');?>/"+element.gambar+"' class='card-img-top' alt=...'><div class='card-body'> <h5 class='card-title'>"+ element.nama_kawasan +"</h5> <p class='card-text'>Pulau : "+element.pulau+"</p><p class='card-text'>Provinsi : "+element.provinsi+"</p> <p class='card-text'>Kabupaten : "+element.kabupaten+"</p><p class='card-text'>Luas : "+element.luas_kawasan+" <br><a href='perkembangan-kawasan/managekawasan/"+element.id+"' class='btn btn-primary'>More Info</a> </div></div></div>";
                             $("#listresult").append(html);
                        });
 
