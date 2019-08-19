@@ -11,9 +11,9 @@ class KeanekaragamHayatiController extends CI_Controller {
 			}
           
     }
-    public function get($id){
+    public function tumbuhan($id){
         $client     = new GuzzleHttp\Client();
-        $result = $client->get(constant('API_URL').'/keanekaragaman-hayati/?nama_kawasan='.$id);
+        $result = $client->get(constant('API_URL').'/keanekaragaman-hayati/?nama_kawasan='.$id.'&jenis=1');
         /*
             Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
             ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
@@ -22,9 +22,24 @@ class KeanekaragamHayatiController extends CI_Controller {
         $hasil =  json_decode($data,true);
         echo json_encode($hasil);
     }
-    public function get1($id){
+    public function Savetumbuhan(){
         $client     = new GuzzleHttp\Client();
-        $result = $client->get(constant('API_URL').'/keanekaragaman-hayati/?nama_kawasan='.$id);
+        $client->post(constant('API_URL').'/keanekaragaman-hayati', [
+            /*
+                isi yang akan di lempar ke api.
+                'nama_kawasan' variable apinya.
+            */
+            'form_params' => [
+                'nama_latin' => $this->input->post('namalatin'),
+                'jenis' => 1,
+                'nama_kawasan' => $this->input->post('nama_kawasan'),
+                'nama' => $this->input->post('nama'),
+            ]
+        ]);
+    }
+    public function Showtumbuhan($id){
+        $client     = new GuzzleHttp\Client();
+        $result = $client->get(constant('API_URL').'/keanekaragaman-hayati/'.$id);
         /*
             Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
             ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
@@ -33,9 +48,35 @@ class KeanekaragamHayatiController extends CI_Controller {
         $hasil =  json_decode($data,true);
         echo json_encode($hasil);
     }
-    public function get2($id){
+    public function Ubahtumbuhan(){
+        $id = $this->input->post('idtumbuhan');
+        /*
+           CURL API menggunakan guzzle. untuk constant('API_URL') jika ingin rubah valuenya
+           ada di constants.php di bagian config. lalu cari define('API_URL').
+           fungsinya untuk global var untuk link API jadi tidak merubah satu2 file cukup 1 file aja
+           di ubah untuk semua.
+       */
+       $client     = new GuzzleHttp\Client();
+       $client->patch(constant('API_URL').'/keanekaragaman-hayati/'.$id, [
+           /*
+               isi yang akan di lempar ke api.
+               'nama_kawasan' variable apinya.
+           */
+          'form_params' => [
+            'nama_latin' => $this->input->post('namalatin'),
+            'jenis' => 1,
+            'nama_kawasan' => $this->input->post('nama_kawasan'),
+            'nama' => $this->input->post('nama'),
+        ]
+       ]);
+    }
+    public function Deletetumbuhan($id){
+       $client     = new GuzzleHttp\Client();
+       $client->delete(constant('API_URL').'/keanekaragaman-hayati/'.$id);
+    }
+    public function satwa($id){
         $client     = new GuzzleHttp\Client();
-        $result = $client->get(constant('API_URL').'/keanekaragaman-hayati/?nama_kawasan='.$id);
+        $result = $client->get(constant('API_URL').'/keanekaragaman-hayati/?nama_kawasan='.$id.'&jenis=2');
         /*
             Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
             ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
@@ -44,9 +85,28 @@ class KeanekaragamHayatiController extends CI_Controller {
         $hasil =  json_decode($data,true);
         echo json_encode($hasil);
     }
-    public function get3($id){
+    public function Savesatwa(){
+         $client     = new GuzzleHttp\Client();
+        $client->post(constant('API_URL').'/keanekaragaman-hayati', [
+            /*
+                isi yang akan di lempar ke api.
+                'nama_kawasan' variable apinya.
+            */
+            'form_params' => [
+                'nama_latin' => $this->input->post('namalatin'),
+                'jenis' => 2,
+                'nama_kawasan' => $this->input->post('nama_kawasan'),
+                'nama' => $this->input->post('nama'),
+            ]
+        ]);
+    }
+     public function Deletesatwa($id){
+       $client     = new GuzzleHttp\Client();
+       $client->delete(constant('API_URL').'/keanekaragaman-hayati/'.$id);
+    }
+    public function Showsatwa($id){
         $client     = new GuzzleHttp\Client();
-        $result = $client->get(constant('API_URL').'/keanekaragaman-hayati/?nama_kawasan='.$id);
+        $result = $client->get(constant('API_URL').'/keanekaragaman-hayati/'.$id);
         /*
             Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
             ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
@@ -55,9 +115,31 @@ class KeanekaragamHayatiController extends CI_Controller {
         $hasil =  json_decode($data,true);
         echo json_encode($hasil);
     }
-    public function get4($id){
+    public function Ubahsatwa(){
+         $id = $this->input->post('idsatwa');
+        /*
+           CURL API menggunakan guzzle. untuk constant('API_URL') jika ingin rubah valuenya
+           ada di constants.php di bagian config. lalu cari define('API_URL').
+           fungsinya untuk global var untuk link API jadi tidak merubah satu2 file cukup 1 file aja
+           di ubah untuk semua.
+       */
+       $client     = new GuzzleHttp\Client();
+       $client->patch(constant('API_URL').'/keanekaragaman-hayati/'.$id, [
+           /*
+               isi yang akan di lempar ke api.
+               'nama_kawasan' variable apinya.
+           */
+          'form_params' => [
+            'nama_latin' => $this->input->post('namalatin'),
+            'jenis' => 2,
+            'nama_kawasan' => $this->input->post('nama_kawasan'),
+            'nama' => $this->input->post('nama'),
+        ]
+       ]);
+    }
+    public function spesieskunci($id){
         $client     = new GuzzleHttp\Client();
-        $result = $client->get(constant('API_URL').'/keanekaragaman-hayati/?nama_kawasan='.$id);
+        $result = $client->get(constant('API_URL').'/keanekaragaman-hayati/?nama_kawasan='.$id.'&jenis=3');
         /*
             Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
             ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
@@ -66,9 +148,24 @@ class KeanekaragamHayatiController extends CI_Controller {
         $hasil =  json_decode($data,true);
         echo json_encode($hasil);
     }
-    public function get5($id){
+    public function Savespesieskunci(){
+         $client     = new GuzzleHttp\Client();
+        $client->post(constant('API_URL').'/keanekaragaman-hayati', [
+            /*
+                isi yang akan di lempar ke api.
+                'nama_kawasan' variable apinya.
+            */
+            'form_params' => [
+                'nama_latin' => $this->input->post('namalatin'),
+                'jenis' => 3,
+                'nama_kawasan' => $this->input->post('nama_kawasan'),
+                'nama' => $this->input->post('nama'),
+            ]
+        ]);
+    }
+    public function Showspesieskunci($id){
         $client     = new GuzzleHttp\Client();
-        $result = $client->get(constant('API_URL').'/keanekaragaman-hayati/?nama_kawasan='.$id);
+        $result = $client->get(constant('API_URL').'/keanekaragaman-hayati/'.$id);
         /*
             Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
             ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
@@ -77,9 +174,35 @@ class KeanekaragamHayatiController extends CI_Controller {
         $hasil =  json_decode($data,true);
         echo json_encode($hasil);
     }
-    public function get6($id){
+    public function Ubahspesieskunci(){
+          $id = $this->input->post('idspesieskunci');
+        /*
+           CURL API menggunakan guzzle. untuk constant('API_URL') jika ingin rubah valuenya
+           ada di constants.php di bagian config. lalu cari define('API_URL').
+           fungsinya untuk global var untuk link API jadi tidak merubah satu2 file cukup 1 file aja
+           di ubah untuk semua.
+       */
+       $client     = new GuzzleHttp\Client();
+       $client->patch(constant('API_URL').'/keanekaragaman-hayati/'.$id, [
+           /*
+               isi yang akan di lempar ke api.
+               'nama_kawasan' variable apinya.
+           */
+          'form_params' => [
+            'nama_latin' => $this->input->post('namalatin'),
+            'jenis' => 3,
+            'nama_kawasan' => $this->input->post('nama_kawasan'),
+            'nama' => $this->input->post('nama'),
+        ]
+       ]);
+    }
+    public function Deletespesieskunci($id){
         $client     = new GuzzleHttp\Client();
-        $result = $client->get(constant('API_URL').'/keanekaragaman-hayati/?nama_kawasan='.$id);
+        $client->delete(constant('API_URL').'/keanekaragaman-hayati/'.$id);
+    }
+    public function tumbuhandilindungi($id){
+        $client     = new GuzzleHttp\Client();
+        $result = $client->get(constant('API_URL').'/keanekaragaman-hayati/?nama_kawasan='.$id.'&jenis=7');
         /*
             Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
             ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
@@ -88,9 +211,46 @@ class KeanekaragamHayatiController extends CI_Controller {
         $hasil =  json_decode($data,true);
         echo json_encode($hasil);
     }
-    public function get7($id){
+    public function Savetumbuhandilindungi(){
         $client     = new GuzzleHttp\Client();
-        $result = $client->get(constant('API_URL').'/keanekaragaman-hayati/?nama_kawasan='.$id);
+        $client->post(constant('API_URL').'/keanekaragaman-hayati', [
+            /*
+                isi yang akan di lempar ke api.
+                'nama_kawasan' variable apinya.
+            */
+            'form_params' => [
+                'nama_latin' => $this->input->post('namalatin'),
+                'jenis' => 7,
+                'nama_kawasan' => $this->input->post('nama_kawasan'),
+                'nama' => $this->input->post('nama'),
+            ]
+        ]);
+    }
+    public function Ubahtumbuhandilindungi(){
+          $id = $this->input->post('idtumbuhandilindungi');
+        /*
+           CURL API menggunakan guzzle. untuk constant('API_URL') jika ingin rubah valuenya
+           ada di constants.php di bagian config. lalu cari define('API_URL').
+           fungsinya untuk global var untuk link API jadi tidak merubah satu2 file cukup 1 file aja
+           di ubah untuk semua.
+       */
+       $client     = new GuzzleHttp\Client();
+       $client->patch(constant('API_URL').'/keanekaragaman-hayati/'.$id, [
+           /*
+               isi yang akan di lempar ke api.
+               'nama_kawasan' variable apinya.
+           */
+          'form_params' => [
+            'nama_latin' => $this->input->post('namalatin'),
+            'jenis' => 7,
+            'nama_kawasan' => $this->input->post('nama_kawasan'),
+            'nama' => $this->input->post('nama'),
+        ]
+       ]);
+    }
+    public function Showtumbuhandilindungi($id){
+        $client     = new GuzzleHttp\Client();
+        $result = $client->get(constant('API_URL').'/keanekaragaman-hayati/'.$id);
         /*
             Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
             ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
@@ -98,6 +258,262 @@ class KeanekaragamHayatiController extends CI_Controller {
         $data = $result->getBody()->getContents();
         $hasil =  json_decode($data,true);
         echo json_encode($hasil);
+    }
+    public function Deletetumbuhandilindungi($id){
+         $client     = new GuzzleHttp\Client();
+        $client->delete(constant('API_URL').'/keanekaragaman-hayati/'.$id);
+    }
+    public function satwadilindungi($id){
+        $client     = new GuzzleHttp\Client();
+        $result = $client->get(constant('API_URL').'/keanekaragaman-hayati/?nama_kawasan='.$id.'&jenis=8');
+        /*
+            Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
+            ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
+        */
+        $data = $result->getBody()->getContents();
+        $hasil =  json_decode($data,true);
+        echo json_encode($hasil);
+    }
+    public function Savesatwadilindungi(){
+        $client     = new GuzzleHttp\Client();
+        $client->post(constant('API_URL').'/keanekaragaman-hayati', [
+            /*
+                isi yang akan di lempar ke api.
+                'nama_kawasan' variable apinya.
+            */
+            'form_params' => [
+                'nama_latin' => $this->input->post('namalatin'),
+                'jenis' => 8,
+                'nama_kawasan' => $this->input->post('nama_kawasan'),
+                'nama' => $this->input->post('nama'),
+            ]
+        ]);
+    }
+    public function Ubahsatwadilindungi(){
+          $id = $this->input->post('idsatwadilindungi');
+        /*
+           CURL API menggunakan guzzle. untuk constant('API_URL') jika ingin rubah valuenya
+           ada di constants.php di bagian config. lalu cari define('API_URL').
+           fungsinya untuk global var untuk link API jadi tidak merubah satu2 file cukup 1 file aja
+           di ubah untuk semua.
+       */
+       $client     = new GuzzleHttp\Client();
+       $client->patch(constant('API_URL').'/keanekaragaman-hayati/'.$id, [
+           /*
+               isi yang akan di lempar ke api.
+               'nama_kawasan' variable apinya.
+           */
+          'form_params' => [
+            'nama_latin' => $this->input->post('namalatin'),
+            'jenis' => 8,
+            'nama_kawasan' => $this->input->post('nama_kawasan'),
+            'nama' => $this->input->post('nama'),
+        ]
+       ]);
+    }
+    public function Showsatwadilindungi($id){
+        $client     = new GuzzleHttp\Client();
+        $result = $client->get(constant('API_URL').'/keanekaragaman-hayati/'.$id);
+        /*
+            Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
+            ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
+        */
+        $data = $result->getBody()->getContents();
+        $hasil =  json_decode($data,true);
+        echo json_encode($hasil);
+    }
+    public function Deletesatwadilindungi($id){
+         $client     = new GuzzleHttp\Client();
+        $client->delete(constant('API_URL').'/keanekaragaman-hayati/'.$id);
+    }
+    public function habitatsatwa($id){
+        $client     = new GuzzleHttp\Client();
+        $result = $client->get(constant('API_URL').'/keanekaragaman-hayati/?nama_kawasan='.$id.'&jenis=9');
+        /*
+            Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
+            ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
+        */
+        $data = $result->getBody()->getContents();
+        $hasil =  json_decode($data,true);
+        echo json_encode($hasil);
+    }
+    public function Savehabitatsatwa(){
+        $client     = new GuzzleHttp\Client();
+        $client->post(constant('API_URL').'/keanekaragaman-hayati', [
+            /*
+                isi yang akan di lempar ke api.
+                'nama_kawasan' variable apinya.
+            */
+            'form_params' => [
+                'nama_latin' => $this->input->post('namalatin'),
+                'jenis' => 9,
+                'nama_kawasan' => $this->input->post('nama_kawasan'),
+                'nama' => $this->input->post('nama'),
+            ]
+        ]);
+    }
+    public function Ubahhabitatsatwa(){
+          $id = $this->input->post('idhabitatsatwa');
+        /*
+           CURL API menggunakan guzzle. untuk constant('API_URL') jika ingin rubah valuenya
+           ada di constants.php di bagian config. lalu cari define('API_URL').
+           fungsinya untuk global var untuk link API jadi tidak merubah satu2 file cukup 1 file aja
+           di ubah untuk semua.
+       */
+       $client     = new GuzzleHttp\Client();
+       $client->patch(constant('API_URL').'/keanekaragaman-hayati/'.$id, [
+           /*
+               isi yang akan di lempar ke api.
+               'nama_kawasan' variable apinya.
+           */
+          'form_params' => [
+            'nama_latin' => $this->input->post('namalatin'),
+            'jenis' => 9,
+            'nama_kawasan' => $this->input->post('nama_kawasan'),
+            'nama' => $this->input->post('nama'),
+        ]
+       ]);
+    }
+    public function Showhabitatsatwa($id){
+        $client     = new GuzzleHttp\Client();
+        $result = $client->get(constant('API_URL').'/keanekaragaman-hayati/'.$id);
+        /*
+            Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
+            ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
+        */
+        $data = $result->getBody()->getContents();
+        $hasil =  json_decode($data,true);
+        echo json_encode($hasil);
+    }
+    public function Deletehabitatsatwa($id){
+         $client     = new GuzzleHttp\Client();
+        $client->delete(constant('API_URL').'/keanekaragaman-hayati/'.$id);
+    }
+    public function tumbuhanliar($id){
+        $client     = new GuzzleHttp\Client();
+        $result = $client->get(constant('API_URL').'/keanekaragaman-hayati/?nama_kawasan='.$id.'&jenis=10');
+        /*
+            Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
+            ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
+        */
+        $data = $result->getBody()->getContents();
+        $hasil =  json_decode($data,true);
+        echo json_encode($hasil);
+    }
+    public function Savetumbuhanliar(){
+        $client     = new GuzzleHttp\Client();
+        $client->post(constant('API_URL').'/keanekaragaman-hayati', [
+            /*
+                isi yang akan di lempar ke api.
+                'nama_kawasan' variable apinya.
+            */
+            'form_params' => [
+                'nama_latin' => $this->input->post('namalatin'),
+                'jenis' => 10,
+                'nama_kawasan' => $this->input->post('nama_kawasan'),
+                'nama' => $this->input->post('nama'),
+            ]
+        ]);
+    }
+    public function Ubahtumbuhanliar(){
+          $id = $this->input->post('idtumbuhanliar');
+        /*
+           CURL API menggunakan guzzle. untuk constant('API_URL') jika ingin rubah valuenya
+           ada di constants.php di bagian config. lalu cari define('API_URL').
+           fungsinya untuk global var untuk link API jadi tidak merubah satu2 file cukup 1 file aja
+           di ubah untuk semua.
+       */
+       $client     = new GuzzleHttp\Client();
+       $client->patch(constant('API_URL').'/keanekaragaman-hayati/'.$id, [
+           /*
+               isi yang akan di lempar ke api.
+               'nama_kawasan' variable apinya.
+           */
+          'form_params' => [
+            'nama_latin' => $this->input->post('namalatin'),
+            'jenis' => 10,
+            'nama_kawasan' => $this->input->post('nama_kawasan'),
+            'nama' => $this->input->post('nama'),
+        ]
+       ]);
+    }
+    public function Showtumbuhanliar($id){
+        $client     = new GuzzleHttp\Client();
+        $result = $client->get(constant('API_URL').'/keanekaragaman-hayati/'.$id);
+        /*
+            Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
+            ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
+        */
+        $data = $result->getBody()->getContents();
+        $hasil =  json_decode($data,true);
+        echo json_encode($hasil);
+    }
+    public function Deletetumbuhanliar($id){
+         $client     = new GuzzleHttp\Client();
+        $client->delete(constant('API_URL').'/keanekaragaman-hayati/'.$id);
+    }
+    public function potensi($id){
+        $client     = new GuzzleHttp\Client();
+        $result = $client->get(constant('API_URL').'/keanekaragaman-hayati/?nama_kawasan='.$id.'&jenis=11');
+        /*
+            Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
+            ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
+        */
+        $data = $result->getBody()->getContents();
+        $hasil =  json_decode($data,true);
+        echo json_encode($hasil);
+    }
+     public function Savepotensi(){
+        $client     = new GuzzleHttp\Client();
+        $client->post(constant('API_URL').'/keanekaragaman-hayati', [
+            /*
+                isi yang akan di lempar ke api.
+                'nama_kawasan' variable apinya.
+            */
+            'form_params' => [
+                'deskripsi' => $this->input->post('deskripsi'),
+                'jenis' => 11,
+                'nama_kawasan' => $this->input->post('nama_kawasan'),
+                'nama' => $this->input->post('nama'),
+            ]
+        ]);
+    }
+    public function Ubahpotensi(){
+          $id = $this->input->post('idpotensi');
+        /*
+           CURL API menggunakan guzzle. untuk constant('API_URL') jika ingin rubah valuenya
+           ada di constants.php di bagian config. lalu cari define('API_URL').
+           fungsinya untuk global var untuk link API jadi tidak merubah satu2 file cukup 1 file aja
+           di ubah untuk semua.
+       */
+       $client     = new GuzzleHttp\Client();
+       $client->patch(constant('API_URL').'/keanekaragaman-hayati/'.$id, [
+           /*
+               isi yang akan di lempar ke api.
+               'nama_kawasan' variable apinya.
+           */
+          'form_params' => [
+            'deskripsi' => $this->input->post('deskripsi'),
+            'jenis' => 11,
+            'nama_kawasan' => $this->input->post('nama_kawasan'),
+            'nama' => $this->input->post('nama'),
+        ]
+       ]);
+    }
+    public function Showpotensi($id){
+        $client     = new GuzzleHttp\Client();
+        $result = $client->get(constant('API_URL').'/keanekaragaman-hayati/'.$id);
+        /*
+            Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
+            ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
+        */
+        $data = $result->getBody()->getContents();
+        $hasil =  json_decode($data,true);
+        echo json_encode($hasil);
+    }
+    public function Deletepotensi($id){
+         $client     = new GuzzleHttp\Client();
+        $client->delete(constant('API_URL').'/keanekaragaman-hayati/'.$id);
     }
     public function get8($id){
         $client     = new GuzzleHttp\Client();

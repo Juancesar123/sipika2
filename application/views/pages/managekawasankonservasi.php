@@ -192,6 +192,669 @@
                                         </table>
                                     </div>
                                 </div>
+                                <div id="keanekaragamanhayati" class="card tab-pane fade">
+                                    <div class="card-header">
+                                        Keanekaragaman Hayati
+                                    </div>
+                                    <div class="card-body">
+                                        
+                                        <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
+                                          <li class="nav-item">
+                                            <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#tumbuhan" role="tab" aria-controls="pills-home" aria-selected="true">Tumbuhan</a>
+                                          </li>
+                                          <li class="nav-item">
+                                            <a class="nav-link" id="pills-profile-tab" data-toggle="pill" href="#satwa" role="tab" aria-controls="pills-profile" aria-selected="false">Satwa</a>
+                                          </li>
+                                          <li class="nav-item">
+                                            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#spesieskunci" role="tab" aria-controls="pills-contact" aria-selected="false">Spesies Kunci</a>
+                                          </li>
+                                          <li class="nav-item">
+                                            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#satwaprioritas" role="tab" aria-controls="pills-contact" aria-selected="false">25 Satwa Prioritas</a>
+                                          </li>
+                                          <li class="nav-item">
+                                            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#tumbuhanendemik" role="tab" aria-controls="pills-contact" aria-selected="false">Tumbuhan Endemik</a>
+                                          </li>
+                                          <li class="nav-item" style="margin-top: 5px">
+                                            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#satwaendemik" role="tab" aria-controls="pills-contact" aria-selected="false">Satwa Endemik</a>
+                                          </li>
+                                          <li class="nav-item" style="margin-top: 5px">
+                                            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#jenistumbuhandilindungi" role="tab" aria-controls="pills-contact" aria-selected="false">Jenis Tumbuhan Dilindungi</a>
+                                          </li>
+                                          <li class="nav-item" style="margin-top: 5px">
+                                            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#jenissatwadilindungi" role="tab" aria-controls="pills-contact" aria-selected="false">Jenis Satwa Di Lindungi</a>
+                                          </li>
+                                          <li class="nav-item" style="margin-top: 5px">
+                                            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#habitatsatwaprioritas" role="tab" aria-controls="pills-contact" aria-selected="false">Habitat 25 Satwa Prioritas</a>
+                                          </li>
+                                           <li class="nav-item" style="margin-top: 5px">
+                                            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#tumbuhansatwaliar" role="tab" aria-controls="pills-contact" aria-selected="false">Tumbuhan dan Satwa Liar prioritas pengelolaan</a>
+                                          </li>
+                                           <li class="nav-item" style="margin-top: 5px">
+                                            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#potensihhbk" role="tab" aria-controls="pills-contact" aria-selected="false">Potensi HHBK</a>
+                                          </li>
+                                        </ul>
+                                        <div class="tab-content" id="pills-tabContent">
+                                          <div class="tab-pane fade show active" id="tumbuhan" role="tabpanel" aria-labelledby="pills-home-tab">
+                                                <button class="btn btn-primary" data-toggle="modal" data-target="#myModal38">Tambah Data</button>
+                                                <br>
+                                                <br>
+                                                <div class="modal fade" id="myModal38">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+
+                                                        <!-- Modal Header -->
+                                                        <div class="modal-header">
+                                                            <h4 class="modal-title">Input Data Tumbuhan</h4>
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        </div>
+                                                        <form id="formtumbuhan">
+                                                            <!-- Modal body -->
+                                                            <div class="modal-body">
+                                                                <div class="form-group">
+                                                                    <label>Nama</label>
+                                                                    <input type="text" class="form-control" id="namatumbuhan" name="namatumbuhan">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Nama Latin</label>
+                                                                    <input type="text" class="form-control" id="namalatintumbuhan" name="namalatintumbuhan">
+                                                                </div>
+                                                                <input class="form-control" type="hidden" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
+                                                            </div>
+
+                                                            <!-- Modal footer -->
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                                            </div>
+                                                        </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal fade" id="myModal39">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+
+                                                        <!-- Modal Header -->
+                                                        <div class="modal-header">
+                                                            <h4 class="modal-title">Ubah Data Tumbuhan</h4>
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        </div>
+                                                        <form id="formtumbuhanedit">
+                                                            <!-- Modal body -->
+                                                            <div class="modal-body">
+                                                                <div class="form-group">
+                                                                    <label>Nama</label>
+                                                                    <input type="text" class="form-control" id="namatumbuhanedit" name="namatumbuhanedit">
+                                                                    <input type="hidden" id="idtumbuhan">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Nama Latin</label>
+                                                                    <input type="text" class="form-control" id="namalatintumbuhanedit" name="namalatintumbuhanedit">
+                                                                </div>
+                                                                <input class="form-control" type="hidden" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
+                                                            </div>
+
+                                                            <!-- Modal footer -->
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                                            </div>
+                                                        </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                               <table class="table" id="myTable81" style="width:100%">
+                                                    <thead>
+                                                        <th>Nama</th>
+                                                        <th>Nama Latin</th>
+                                                        <th>Action</th>
+                                                    </thead>
+                                                </table>
+                                          </div>
+                                          <div class="tab-pane fade" id="satwa" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                              <button class="btn btn-primary" data-toggle="modal" data-target="#myModal40">Tambah Data</button>
+                                                <br>
+                                                <br>
+                                                <div class="modal fade" id="myModal40">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+
+                                                        <!-- Modal Header -->
+                                                        <div class="modal-header">
+                                                            <h4 class="modal-title">Input Data Satwa</h4>
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        </div>
+                                                        <form id="formsatwa">
+                                                            <!-- Modal body -->
+                                                            <div class="modal-body">
+                                                                <div class="form-group">
+                                                                    <label>Nama</label>
+                                                                    <input type="text" class="form-control" id="namasatwa" name="namasatwa">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Nama Latin</label>
+                                                                    <input type="text" class="form-control" id="namalatinsatwa" name="namalatinsatwa">
+                                                                </div>
+                                                                <input class="form-control" type="hidden" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
+                                                            </div>
+
+                                                            <!-- Modal footer -->
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                                            </div>
+                                                        </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal fade" id="myModal41">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+
+                                                        <!-- Modal Header -->
+                                                        <div class="modal-header">
+                                                            <h4 class="modal-title">Ubah Data Satwa</h4>
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        </div>
+                                                        <form id="formsatwaedit">
+                                                            <!-- Modal body -->
+                                                            <div class="modal-body">
+                                                                <div class="form-group">
+                                                                    <label>Nama</label>
+                                                                    <input type="text" class="form-control" id="namasatwaedit" name="namasatwaedit">
+                                                                    <input type="hidden" id="idsatwa">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Nama Latin</label>
+                                                                    <input type="text" class="form-control" id="namalatinsatwaedit" name="namalatinsatwaedit">
+                                                                </div>
+                                                                <input class="form-control" type="hidden" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
+                                                            </div>
+
+                                                            <!-- Modal footer -->
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                                            </div>
+                                                        </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                               <table class="table" id="myTable82" style="width:100%">
+                                                    <thead>
+                                                        <th>Nama</th>
+                                                        <th>Nama Latin</th>
+                                                        <th>Action</th>
+                                                    </thead>
+                                                </table>
+                                          </div>
+                                          <div class="tab-pane fade" id="spesieskunci" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                               <button class="btn btn-primary" data-toggle="modal" data-target="#myModal42">Tambah Data</button>
+                                                <br>
+                                                <br>
+                                                <div class="modal fade" id="myModal42">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+
+                                                        <!-- Modal Header -->
+                                                        <div class="modal-header">
+                                                            <h4 class="modal-title">Input Data Spesies Kunci</h4>
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        </div>
+                                                        <form id="formspesies">
+                                                            <!-- Modal body -->
+                                                            <div class="modal-body">
+                                                                <div class="form-group">
+                                                                    <label>Nama</label>
+                                                                    <input type="text" class="form-control" id="namaspesies" name="namaspesies">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Nama Latin</label>
+                                                                    <input type="text" class="form-control" id="namalatinspesies" name="namalatinspesies">
+                                                                </div>
+                                                                <input class="form-control" type="hidden" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
+                                                            </div>
+
+                                                            <!-- Modal footer -->
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                                            </div>
+                                                        </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal fade" id="myModal43">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+
+                                                        <!-- Modal Header -->
+                                                        <div class="modal-header">
+                                                            <h4 class="modal-title">Ubah Data Spesies</h4>
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        </div>
+                                                        <form id="formspesiesedit">
+                                                            <!-- Modal body -->
+                                                            <div class="modal-body">
+                                                                <div class="form-group">
+                                                                    <label>Nama</label>
+                                                                    <input type="text" class="form-control" id="namaspesiesedit" name="namaspesiesedit">
+                                                                    <input type="hidden" id="idspesieskunci">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Nama Latin</label>
+                                                                    <input type="text" class="form-control" id="namalatinspesiesedit" name="namalatinspesiesedit">
+                                                                </div>
+                                                                <input class="form-control" type="hidden" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
+                                                            </div>
+
+                                                            <!-- Modal footer -->
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                                            </div>
+                                                        </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                               <table class="table" id="myTable83" style="width:100%">
+                                                    <thead>
+                                                        <th>Nama</th>
+                                                        <th>Nama Latin</th>
+                                                        <th>Action</th>
+                                                    </thead>
+                                                </table>
+                                          </div>
+                                          <div class="tab-pane fade" id="jenistumbuhandilindungi" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                               <button class="btn btn-primary" data-toggle="modal" data-target="#myModal50">Tambah Data</button>
+                                                <br>
+                                                <br>
+                                                <div class="modal fade" id="myModal50">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+
+                                                        <!-- Modal Header -->
+                                                        <div class="modal-header">
+                                                            <h4 class="modal-title">Input Data Tumbuhan Di Lindungi</h4>
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        </div>
+                                                        <form id="formtumbuhandilindungi">
+                                                            <!-- Modal body -->
+                                                            <div class="modal-body">
+                                                                <div class="form-group">
+                                                                    <label>Nama</label>
+                                                                    <input type="text" class="form-control" id="namatumbuhandilindungi" name="namatumbuhandilindungi">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Nama Latin</label>
+                                                                    <input type="text" class="form-control" id="namalatintumbuhandilindungi" name="namalatintumbuhandilindungi">
+                                                                </div>
+                                                                <input class="form-control" type="hidden" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
+                                                            </div>
+
+                                                            <!-- Modal footer -->
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                                            </div>
+                                                        </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal fade" id="myModal51">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+
+                                                        <!-- Modal Header -->
+                                                        <div class="modal-header">
+                                                            <h4 class="modal-title">Ubah Data Tumbuhan Dilindungi</h4>
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        </div>
+                                                        <form id="formtumbuhandilindungiedit">
+                                                            <!-- Modal body -->
+                                                            <div class="modal-body">
+                                                                <div class="form-group">
+                                                                    <label>Nama</label>
+                                                                    <input type="text" class="form-control" id="namatumbuhandilindungiedit" name="namatumbuhandilindungiedit">
+                                                                    <input type="hidden" id="idtumbuhandilindungi">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Nama Latin</label>
+                                                                    <input type="text" class="form-control" id="namalatintumbuhandilindungiedit" name="namalatintumbuhandilindungiedit">
+                                                                </div>
+                                                                <input class="form-control" type="hidden" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
+                                                            </div>
+
+                                                            <!-- Modal footer -->
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                                            </div>
+                                                        </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                               <table class="table" id="myTable87" style="width:100%">
+                                                    <thead>
+                                                        <th>Nama</th>
+                                                        <th>Nama Latin</th>
+                                                        <th>Action</th>
+                                                    </thead>
+                                                </table>
+                                          </div>
+                                          <div class="tab-pane fade" id="jenissatwadilindungi" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                               <button class="btn btn-primary" data-toggle="modal" data-target="#myModal52">Tambah Data</button>
+                                                <br>
+                                                <br>
+                                                <div class="modal fade" id="myModal52">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+
+                                                        <!-- Modal Header -->
+                                                        <div class="modal-header">
+                                                            <h4 class="modal-title">Input Data Satwa Di Lindungi</h4>
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        </div>
+                                                        <form id="formsatwadilindungi">
+                                                            <!-- Modal body -->
+                                                            <div class="modal-body">
+                                                                <div class="form-group">
+                                                                    <label>Nama</label>
+                                                                    <input type="text" class="form-control" id="namasatwadilindungi" name="namasatwadilindungi">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Nama Latin</label>
+                                                                    <input type="text" class="form-control" id="namalatinsatwadilindungi" name="namalatinsatwadilindungi">
+                                                                </div>
+                                                                <input class="form-control" type="hidden" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
+                                                            </div>
+
+                                                            <!-- Modal footer -->
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                                            </div>
+                                                        </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal fade" id="myModal53">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+
+                                                        <!-- Modal Header -->
+                                                        <div class="modal-header">
+                                                            <h4 class="modal-title">Ubah Data Satwa Di Lindungi</h4>
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        </div>
+                                                        <form id="formsatwadilindungiedit">
+                                                            <!-- Modal body -->
+                                                            <div class="modal-body">
+                                                                <div class="form-group">
+                                                                    <label>Nama</label>
+                                                                    <input type="text" class="form-control" id="namasatwadilindungiedit" name="namasatwadilindungiedit">
+                                                                    <input type="hidden" id="idsatwadilindungi">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Nama Latin</label>
+                                                                    <input type="text" class="form-control" id="namalatinsatwadilindungiedit" name="namalatinsatwadilindungiedit">
+                                                                </div>
+                                                                <input class="form-control" type="hidden" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
+                                                            </div>
+
+                                                            <!-- Modal footer -->
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                                            </div>
+                                                        </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                               <table class="table" id="myTable88" style="width:100%">
+                                                    <thead>
+                                                        <th>Nama</th>
+                                                        <th>Nama Latin</th>
+                                                        <th>Action</th>
+                                                    </thead>
+                                                </table>
+                                          </div>
+                                          <div class="tab-pane fade" id="habitatsatwaprioritas" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                               <button class="btn btn-primary" data-toggle="modal" data-target="#myModal54">Tambah Data</button>
+                                                <br>
+                                                <br>
+                                                <div class="modal fade" id="myModal54">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+
+                                                        <!-- Modal Header -->
+                                                        <div class="modal-header">
+                                                            <h4 class="modal-title">Input Data Habitat 25 Satwa Prioritas</h4>
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        </div>
+                                                        <form id="formhabitatsatwa">
+                                                            <!-- Modal body -->
+                                                            <div class="modal-body">
+                                                                <div class="form-group">
+                                                                    <label>Nama</label>
+                                                                    <input type="text" class="form-control" id="namahabitatsatwa" name="namahabitatsatwa">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Nama Latin</label>
+                                                                    <input type="text" class="form-control" id="namalatinhabitatsatwa" name="namalatinhabitatsatwa">
+                                                                </div>
+                                                                <input class="form-control" type="hidden" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
+                                                            </div>
+
+                                                            <!-- Modal footer -->
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                                            </div>
+                                                        </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal fade" id="myModal55">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+
+                                                        <!-- Modal Header -->
+                                                        <div class="modal-header">
+                                                            <h4 class="modal-title">Ubah Data Habitat 25 Satwa Prioritas</h4>
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        </div>
+                                                        <form id="formhabitatsatwaedit">
+                                                            <!-- Modal body -->
+                                                            <div class="modal-body">
+                                                                <div class="form-group">
+                                                                    <label>Nama</label>
+                                                                    <input type="text" class="form-control" id="namahabitatsatwaedit" name="namahabitatsatwaedit">
+                                                                    <input type="hidden" id="idhabitatsatwa">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Nama Latin</label>
+                                                                    <input type="text" class="form-control" id="namalatinhabitatsatwaedit" name="namalatinhabitatsatwaedit">
+                                                                </div>
+                                                                <input class="form-control" type="hidden" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
+                                                            </div>
+
+                                                            <!-- Modal footer -->
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                                            </div>
+                                                        </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                               <table class="table" id="myTable89" style="width:100%">
+                                                    <thead>
+                                                        <th>Nama</th>
+                                                        <th>Nama Latin</th>
+                                                        <th>Action</th>
+                                                    </thead>
+                                                </table>
+                                          </div>
+                                          <div class="tab-pane fade" id="tumbuhansatwaliar" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                               <button class="btn btn-primary" data-toggle="modal" data-target="#myModal56">Tambah Data</button>
+                                                <br>
+                                                <br>
+                                                <div class="modal fade" id="myModal56">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+
+                                                        <!-- Modal Header -->
+                                                        <div class="modal-header">
+                                                            <h4 class="modal-title">Input Data Tumbuhan dan Satwa Liar prioritas pengelolaan</h4>
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        </div>
+                                                        <form id="formtumbuhanliar">
+                                                            <!-- Modal body -->
+                                                            <div class="modal-body">
+                                                                <div class="form-group">
+                                                                    <label>Nama</label>
+                                                                    <input type="text" class="form-control" id="namatumbuhanliar" name="namatumbuhanliar">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Nama Latin</label>
+                                                                    <input type="text" class="form-control" id="namalatintumbuhanliar" name="namalatintumbuhanliar">
+                                                                </div>
+                                                                <input class="form-control" type="hidden" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
+                                                            </div>
+
+                                                            <!-- Modal footer -->
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                                            </div>
+                                                        </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal fade" id="myModal57">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+
+                                                        <!-- Modal Header -->
+                                                        <div class="modal-header">
+                                                            <h4 class="modal-title">Ubah Data Tumbuhan dan Satwa Liar prioritas pengelolaan</h4>
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        </div>
+                                                        <form id="formtumbuhanliaredit">
+                                                            <!-- Modal body -->
+                                                            <div class="modal-body">
+                                                                <div class="form-group">
+                                                                    <label>Nama</label>
+                                                                    <input type="text" class="form-control" id="namatumbuhanliaredit" name="namatumbuhanliaredit">
+                                                                    <input type="hidden" id="idtumbuhanliar">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Nama Latin</label>
+                                                                    <input type="text" class="form-control" id="namalatintumbuhanliaredit" name="namalatintumbuhanliaredit">
+                                                                </div>
+                                                                <input class="form-control" type="hidden" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
+                                                            </div>
+
+                                                            <!-- Modal footer -->
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                                            </div>
+                                                        </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                               <table class="table" id="myTable810" style="width:100%">
+                                                    <thead>
+                                                        <th>Nama</th>
+                                                        <th>Nama Latin</th>
+                                                        <th>Action</th>
+                                                    </thead>
+                                                </table>
+                                          </div>
+                                          <div class="tab-pane fade" id="potensihhbk" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                               <button class="btn btn-primary" data-toggle="modal" data-target="#myModal58">Tambah Data</button>
+                                                <br>
+                                                <br>
+                                                <div class="modal fade" id="myModal58">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+
+                                                        <!-- Modal Header -->
+                                                        <div class="modal-header">
+                                                            <h4 class="modal-title">Input Data Potensi HHBK</h4>
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        </div>
+                                                        <form id="formpotensihhbk">
+                                                            <!-- Modal body -->
+                                                            <div class="modal-body">
+                                                                <div class="form-group">
+                                                                    <label>Nama</label>
+                                                                    <input type="text" class="form-control" id="namapotensi" name="namapotensi">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Deskripsi</label>
+                                                                    <textarea class="form-control" id="deskripsipotensi" name="deskripsipotensi"></textarea>
+                                                                </div>
+                                                                <input class="form-control" type="hidden" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
+                                                            </div>
+
+                                                            <!-- Modal footer -->
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                                            </div>
+                                                        </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal fade" id="myModal59">
+                                                    <div class="modal-dialog">
+                                                        <div class="modal-content">
+
+                                                        <!-- Modal Header -->
+                                                        <div class="modal-header">
+                                                            <h4 class="modal-title">Ubah Data Potensi HHBK</h4>
+                                                            <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                        </div>
+                                                        <form id="formpotensihhbkedit">
+                                                            <!-- Modal body -->
+                                                            <div class="modal-body">
+                                                                <div class="form-group">
+                                                                    <label>Nama</label>
+                                                                    <input type="text" class="form-control" id="namapotensiedit" name="namapotensiedit">
+                                                                    <input type="hidden" id="idtumbuhanliar">
+                                                                </div>
+                                                                <div class="form-group">
+                                                                    <label>Deskripsi</label>
+                                                                    <textarea type="text" class="form-control" id="deskripsipotensiedit" name="deskripsipotensiedit"></textarea>
+                                                                </div>
+                                                                <input class="form-control" type="hidden" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
+                                                            </div>
+
+                                                            <!-- Modal footer -->
+                                                            <div class="modal-footer">
+                                                                <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                                <button type="submit" class="btn btn-primary">Simpan</button>
+                                                            </div>
+                                                        </form>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                               <table class="table" id="myTable811" style="width:100%">
+                                                    <thead>
+                                                        <th>Nama</th>
+                                                        <th>Deskripsi</th>
+                                                        <th>Action</th>
+                                                    </thead>
+                                                </table>
+                                          </div>
+                                        </div>
+                                       
+                                    </div>
+                                </div>
+                                
                                 <div id="pengukuhankawasan" class="card tab-pane fade">
                                     <div class="card-header">
                                         Perkembangan Pengukuhan Kawasan
@@ -3228,6 +3891,222 @@
                         }
                     })
         }
+        function myfunc19(id){
+             Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                        if (result.value) {
+                             $.ajax({
+                                url:'/deleteDataKeanekaragamHayatiTumbuhan/'+id,
+                                type:'GET',
+                                success:function(){
+                                    Swal.fire(
+                                                'Sukses!',
+                                                'Data Sukses di hapus!',
+                                                'success'
+                                            )
+                                            table61.ajax.reload();
+                                }
+                            })
+                        }
+                    })
+            
+        }
+        function myfunc20(id){
+             Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                        if (result.value) {
+                             $.ajax({
+                                url:'/deleteDataKeanekaragamHayatiSatwa/'+id,
+                                type:'GET',
+                                success:function(){
+                                    Swal.fire(
+                                                'Sukses!',
+                                                'Data Sukses di hapus!',
+                                                'success'
+                                            )
+                                            table62.ajax.reload();
+                                }
+                            })
+                        }
+                    })
+            
+        }
+        function myfunc21(id){
+             Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                        if (result.value) {
+                             $.ajax({
+                                url:'/deleteDataKeanekaragamHayatiSpesiesKunci/'+id,
+                                type:'GET',
+                                success:function(){
+                                    Swal.fire(
+                                                'Sukses!',
+                                                'Data Sukses di hapus!',
+                                                'success'
+                                            )
+                                            table63.ajax.reload();
+                                }
+                            })
+                        }
+                    })
+            
+        }
+        function myfunc25(id){
+             Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                        if (result.value) {
+                             $.ajax({
+                                url:'/deleteDataKeanekaragamHayatiTumbuhanDiLindungi/'+id,
+                                type:'GET',
+                                success:function(){
+                                    Swal.fire(
+                                                'Sukses!',
+                                                'Data Sukses di hapus!',
+                                                'success'
+                                            )
+                                            table67.ajax.reload();
+                                }
+                            })
+                        }
+                    })
+            
+        }
+        function myfunc26(id){
+             Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                        if (result.value) {
+                             $.ajax({
+                                url:'/deleteDataKeanekaragamHayatiSatwaDiLindungi/'+id,
+                                type:'GET',
+                                success:function(){
+                                    Swal.fire(
+                                                'Sukses!',
+                                                'Data Sukses di hapus!',
+                                                'success'
+                                            )
+                                            table68.ajax.reload();
+                                }
+                            })
+                        }
+                    })
+            
+        }
+        function myfunc27(id){
+             Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                        if (result.value) {
+                             $.ajax({
+                                url:'/deleteDataKeanekaragamHayatiHabitatSatwa/'+id,
+                                type:'GET',
+                                success:function(){
+                                    Swal.fire(
+                                                'Sukses!',
+                                                'Data Sukses di hapus!',
+                                                'success'
+                                            )
+                                            table69.ajax.reload();
+                                }
+                            })
+                        }
+                    })
+            
+        }
+        function myfunc28(id){
+             Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                        if (result.value) {
+                             $.ajax({
+                                url:'/deleteDataKeanekaragamHayatiTumbuhanLiar/'+id,
+                                type:'GET',
+                                success:function(){
+                                    Swal.fire(
+                                                'Sukses!',
+                                                'Data Sukses di hapus!',
+                                                'success'
+                                            )
+                                            table610.ajax.reload();
+                                }
+                            })
+                        }
+                    })
+            
+        }
+        function myfunc29(id){
+             Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                        if (result.value) {
+                             $.ajax({
+                                url:'/deleteDataKeanekaragamHayatiPotensi/'+id,
+                                type:'GET',
+                                success:function(){
+                                    Swal.fire(
+                                                'Sukses!',
+                                                'Data Sukses di hapus!',
+                                                'success'
+                                            )
+                                            table611.ajax.reload();
+                                }
+                            })
+                        }
+                    })
+            
+        }
         function editfunc(id){
             $.ajax({
                 url:'/showDataPengukuhanKawasan/'+id,
@@ -3506,6 +4385,102 @@
                 }
             })
         }
+        function editfunc19(id){
+            $.ajax({
+                url:'/showDataKeanekaragamHayatiTumbuhan/'+id,
+                type:'GET',
+                success:function(data){
+                    var hasil = JSON.parse(data);
+                    $( '#idtumbuhan' ).val(hasil.id);
+                    $( '#namalatintumbuhanedit' ).val(hasil.nama_latin);
+                    $( '#namatumbuhanedit' ).val(hasil.nama);
+                }
+            })
+        }
+          function editfunc21(id){
+            $.ajax({
+                url:'/showDataKeanekaragamHayatiSpesiesKunci/'+id,
+                type:'GET',
+                success:function(data){
+                    var hasil = JSON.parse(data);
+                    $( '#idspesieskunci' ).val(hasil.id);
+                    $( '#namalatinspesiesedit' ).val(hasil.nama_latin);
+                    $( '#namaspesiesedit' ).val(hasil.nama);
+                }
+            })
+        }
+        function editfunc20(id){
+            $.ajax({
+                url:'/showDataKeanekaragamHayatiSatwa/'+id,
+                type:'GET',
+                success:function(data){
+                    var hasil = JSON.parse(data);
+                    $( '#idsatwa' ).val(hasil.id);
+                    $( '#namalatinsatwaedit' ).val(hasil.nama_latin);
+                    $( '#namasatwaedit' ).val(hasil.nama);
+                }
+            })
+        }
+        function editfunc25(id){
+            $.ajax({
+                url:'/showDataKeanekaragamHayatiTumbuhanDiLindungi/'+id,
+                type:'GET',
+                success:function(data){
+                    var hasil = JSON.parse(data);
+                    $( '#idtumbuhandilindungi' ).val(hasil.id);
+                    $( '#namalatintumbuhandilindungiedit' ).val(hasil.nama_latin);
+                    $( '#namatumbuhandilindungiedit' ).val(hasil.nama);
+                }
+            })
+        }
+        function editfunc26(id){
+            $.ajax({
+                url:'/showDataKeanekaragamHayatiSatwaDiLindungi/'+id,
+                type:'GET',
+                success:function(data){
+                    var hasil = JSON.parse(data);
+                    $( '#idsatwadilindungi' ).val(hasil.id);
+                    $( '#namalatinsatwadilindungiedit' ).val(hasil.nama_latin);
+                    $( '#namasatwadilindungiedit' ).val(hasil.nama);
+                }
+            })
+        }
+        function editfunc27(id){
+            $.ajax({
+                url:'/showDataKeanekaragamHayatiHabitatSatwa/'+id,
+                type:'GET',
+                success:function(data){
+                    var hasil = JSON.parse(data);
+                    $( '#idhabitatsatwa' ).val(hasil.id);
+                    $( '#namalatinhabitatsatwaedit' ).val(hasil.nama_latin);
+                    $( '#namahabitatsatwaedit' ).val(hasil.nama);
+                }
+            })
+        }
+        function editfunc28(id){
+            $.ajax({
+                url:'/showDataKeanekaragamHayatiTumbuhanLiar/'+id,
+                type:'GET',
+                success:function(data){
+                    var hasil = JSON.parse(data);
+                    $( '#idtumbuhanliar' ).val(hasil.id);
+                    $( '#namalatintumbuhanliaredit' ).val(hasil.nama_latin);
+                    $( '#namatumbuhanliaredit' ).val(hasil.nama);
+                }
+            })
+        }
+        function editfunc29(id){
+            $.ajax({
+                url:'/showDataKeanekaragamHayatiPotensi/'+id,
+                type:'GET',
+                success:function(data){
+                    var hasil = JSON.parse(data);
+                    $( '#idpotensi' ).val(hasil.id);
+                    $( '#deskripsipotensiedit' ).val(hasil.deskripsi);
+                    $( '#namapotensiedit' ).val(hasil.nama);
+                }
+            })
+        }
         var table =  $('#myTable1').DataTable({
                         dom: 'Bfrtip',
                         buttons: [
@@ -3683,7 +4658,7 @@
                     var table61 =  $('#myTable81').DataTable({
                         deferRender: true,
                         ajax: {
-                            url: "/getDataKeanekaragamHayati1/"+"<?php echo $hasil['nama_kawasan'];?>",
+                            url: "/getDataKeanekaragamHayatiTumbuhan/"+"<?php echo $hasil['nama_kawasan'];?>",
                             type: "GET",
                             dataSrc: function (d) {
                                 return d
@@ -3695,7 +4670,7 @@
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal14' onclick='editfunc6("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc6("+data.id+")'>Delete</button>";
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal39' onclick='editfunc19("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc19("+data.id+")'>Delete</button>";
                                 }
                             }
                         ]
@@ -3704,7 +4679,7 @@
                     var table62 =  $('#myTable82').DataTable({
                         deferRender: true,
                         ajax: {
-                            url: "/getDataKeanekaragamHayati2/"+"<?php echo $hasil['nama_kawasan'];?>",
+                            url: "/getDataKeanekaragamHayatiSatwa/"+"<?php echo $hasil['nama_kawasan'];?>",
                             type: "GET",
                             dataSrc: function (d) {
                                 return d
@@ -3716,7 +4691,7 @@
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal14' onclick='editfunc6("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc6("+data.id+")'>Delete</button>";
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal41' onclick='editfunc20("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc20("+data.id+")'>Delete</button>";
                                 }
                             }
                         ]
@@ -3724,7 +4699,7 @@
                     var table63 =  $('#myTable83').DataTable({
                         deferRender: true,
                         ajax: {
-                            url: "/getDataKeanekaragamHayati3/"+"<?php echo $hasil['nama_kawasan'];?>",
+                            url: "/getDataKeanekaragamHayatiSpesiesKunci/"+"<?php echo $hasil['nama_kawasan'];?>",
                             type: "GET",
                             dataSrc: function (d) {
                                 return d
@@ -3736,7 +4711,7 @@
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal14' onclick='editfunc6("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc6("+data.id+")'>Delete</button>";
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal43' onclick='editfunc21("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc21("+data.id+")'>Delete</button>";
                                 }
                             }
                         ]
@@ -3804,7 +4779,7 @@
                     var table67 =  $('#myTable87').DataTable({
                         deferRender: true,
                         ajax: {
-                            url: "/getDataKeanekaragamHayati7/"+"<?php echo $hasil['nama_kawasan'];?>",
+                            url: "/getDataKeanekaragamHayatiTumbuhanDiLindungi/"+"<?php echo $hasil['nama_kawasan'];?>",
                             type: "GET",
                             dataSrc: function (d) {
                                 return d
@@ -3816,7 +4791,7 @@
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal14' onclick='editfunc6("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc6("+data.id+")'>Delete</button>";
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal51' onclick='editfunc25("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc25("+data.id+")'>Delete</button>";
                                 }
                             }
                         ]
@@ -3824,7 +4799,7 @@
                     var table68 =  $('#myTable88').DataTable({
                         deferRender: true,
                         ajax: {
-                            url: "/getDataKeanekaragamHayati8/"+"<?php echo $hasil['nama_kawasan'];?>",
+                            url: "/getDataKeanekaragamHayatiSatwaDiLindungi/"+"<?php echo $hasil['nama_kawasan'];?>",
                             type: "GET",
                             dataSrc: function (d) {
                                 return d
@@ -3836,7 +4811,7 @@
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal14' onclick='editfunc6("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc6("+data.id+")'>Delete</button>";
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal53' onclick='editfunc26("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc26("+data.id+")'>Delete</button>";
                                 }
                             }
                         ]
@@ -3844,7 +4819,7 @@
                      var table69 =  $('#myTable89').DataTable({
                         deferRender: true,
                         ajax: {
-                            url: "/getDataKeanekaragamHayati9/"+"<?php echo $hasil['nama_kawasan'];?>",
+                            url: "/getDataKeanekaragamHayatiHabitatSatwa/"+"<?php echo $hasil['nama_kawasan'];?>",
                             type: "GET",
                             dataSrc: function (d) {
                                 return d
@@ -3856,14 +4831,14 @@
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal14' onclick='editfunc6("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc6("+data.id+")'>Delete</button>";
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal55' onclick='editfunc27("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc27("+data.id+")'>Delete</button>";
                                 }
                             }
                         ]
                     }); var table610 =  $('#myTable810').DataTable({
                         deferRender: true,
                         ajax: {
-                            url: "/getDataKeanekaragamHayati10/"+"<?php echo $hasil['nama_kawasan'];?>",
+                            url: "/getDataKeanekaragamHayatiTumbuhanLiar/"+"<?php echo $hasil['nama_kawasan'];?>",
                             type: "GET",
                             dataSrc: function (d) {
                                 return d
@@ -3875,7 +4850,7 @@
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal14' onclick='editfunc6("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc6("+data.id+")'>Delete</button>";
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal57' onclick='editfunc28("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc28("+data.id+")'>Delete</button>";
                                 }
                             }
                         ]
@@ -3883,7 +4858,7 @@
                     var table611 =  $('#myTable811').DataTable({
                         deferRender: true,
                         ajax: {
-                            url: "/getDataKeanekaragamHayati11/"+"<?php echo $hasil['nama_kawasan'];?>",
+                            url: "/getDataKeanekaragamHayatiPotensi/"+"<?php echo $hasil['nama_kawasan'];?>",
                             type: "GET",
                             dataSrc: function (d) {
                                 return d
@@ -3891,11 +4866,11 @@
                         },
                         columns: [
                             { data: 'nama' },
-                            { data: 'nama_latin' },
+                            { data: 'deskripsi' },
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal14' onclick='editfunc6("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc6("+data.id+")'>Delete</button>";
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal59' onclick='editfunc29("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc29("+data.id+")'>Delete</button>";
                                 }
                             }
                         ]
@@ -4298,6 +5273,642 @@
                             $("#unitpengelolapermasalahanedit").append(html);
                         });
                     }
+                })
+                $('form[id="formpotensihhbkedit"]').validate({
+                    rules: {
+                        namapotensiedit: 'required',
+                        deskripsipotensiedit:{
+                            required:true
+                        },
+                    },
+                    messages: {
+                        judul: 'This field is required',
+                        file:'This field mustbe images'
+
+                    },
+                    submitHandler: function(form) {
+
+                        var data;
+                        data = new FormData();
+                        data.append('nama', $('#namapotensiedit').val());
+                        data.append('deskripsi',$('#deskripsipotensiedit').val());
+                        data.append('nama_kawasan',$('#namakawasan').val());
+                        data.append('idpotensi',$('#idpotensi').val());
+                         $.ajax({
+                                url:'/ubahDataKeanekaRagamanHayatiPotensi',
+                                method:'POST',
+                                data:data,
+                                contentType: false,
+                                processData:false,
+                                success:function(){
+                                    Swal.fire(
+                                                'Sukses!',
+                                                'Data Sukses di simpan!',
+                                                'success'
+                                            ).then(function(){
+                                                $( '#namapotensiedit' ).val('')
+                                                $( '#deskripsipotensiedit' ).val('')
+                                                $('#myModal59').modal('toggle')
+                                            })
+                                            table611.ajax.reload();
+                                }
+                            })
+                     }
+                })
+                $('form[id="formpotensihhbk"]').validate({
+                    rules: {
+                        namapotensi: 'required',
+                        deskripsipotensi:{
+                            required:true
+                        },
+                    },
+                    messages: {
+                        judul: 'This field is required',
+                        file:'This field mustbe images'
+
+                    },
+                    submitHandler: function(form) {
+                        var data;
+                        data = new FormData();
+                        data.append('nama', $('#namapotensi').val());
+                        data.append('deskripsi',$('#deskripsipotensi').val());
+                        data.append('nama_kawasan',$('#namakawasan').val());
+                         $.ajax({
+                                url:'/simpanDataKeanekaRagamanHayatiPotensi',
+                                method:'POST',
+                                data:data,
+                                contentType: false,
+                                processData:false,
+                                success:function(){
+                                    Swal.fire(
+                                                'Sukses!',
+                                                'Data Sukses di simpan!',
+                                                'success'
+                                            ).then(function(){
+                                                $( '#namapotensi' ).val('')
+                                                $( '#deskripsipotensi' ).val('')
+                                                $('#myModal58').modal('toggle')
+                                            })
+                                            table611.ajax.reload();
+                                }
+                            })
+                     }
+                })
+                 $('form[id="formtumbuhanliaredit"]').validate({
+                    rules: {
+                        namatumbuhanliaredit: 'required',
+                        namalatintumbuhanliaredit:{
+                            required:true
+                        },
+                    },
+                    messages: {
+                        judul: 'This field is required',
+                        file:'This field mustbe images'
+
+                    },
+                    submitHandler: function(form) {
+
+                        var data;
+                        data = new FormData();
+                        data.append('nama', $('#namatumbuhanliaredit').val());
+                        data.append('namalatin',$('#namalatintumbuhanliaredit').val());
+                        data.append('nama_kawasan',$('#namakawasan').val());
+                        data.append('idtumbuhanliar',$('#idtumbuhanliar').val());
+                         $.ajax({
+                                url:'/ubahDataKeanekaRagamanHayatiTumbuhanLiar',
+                                method:'POST',
+                                data:data,
+                                contentType: false,
+                                processData:false,
+                                success:function(){
+                                    Swal.fire(
+                                                'Sukses!',
+                                                'Data Sukses di simpan!',
+                                                'success'
+                                            ).then(function(){
+                                                $( '#namatumbuhanliaredit' ).val('')
+                                                $( '#namalatintumbuhanliaredit' ).val('')
+                                                $('#myModal57').modal('toggle')
+                                            })
+                                            table610.ajax.reload();
+                                }
+                            })
+                     }
+                })
+                $('form[id="formtumbuhanliar"]').validate({
+                    rules: {
+                        namatumbuhanliar: 'required',
+                        namalatintumbuhanliar:{
+                            required:true
+                        },
+                    },
+                    messages: {
+                        judul: 'This field is required',
+                        file:'This field mustbe images'
+
+                    },
+                    submitHandler: function(form) {
+                        var data;
+                        data = new FormData();
+                        data.append('nama', $('#namatumbuhanliar').val());
+                        data.append('namalatin',$('#namalatintumbuhanliar').val());
+                        data.append('nama_kawasan',$('#namakawasan').val());
+                         $.ajax({
+                                url:'/simpanDataKeanekaRagamanHayatiTumbuhanLiar',
+                                method:'POST',
+                                data:data,
+                                contentType: false,
+                                processData:false,
+                                success:function(){
+                                    Swal.fire(
+                                                'Sukses!',
+                                                'Data Sukses di simpan!',
+                                                'success'
+                                            ).then(function(){
+                                                $( '#namatumbuhanliar' ).val('')
+                                                $( '#namalatintumbuhanliar' ).val('')
+                                                $('#myModal56').modal('toggle')
+                                            })
+                                            table610.ajax.reload();
+                                }
+                            })
+                     }
+                })
+                $('form[id="formhabitatsatwaedit"]').validate({
+                    rules: {
+                        namahabitatsatwaedit: 'required',
+                        namalatinhabitatsatwaedit:{
+                            required:true
+                        },
+                    },
+                    messages: {
+                        judul: 'This field is required',
+                        file:'This field mustbe images'
+
+                    },
+                    submitHandler: function(form) {
+
+                        var data;
+                        data = new FormData();
+                        data.append('nama', $('#namahabitatsatwaedit').val());
+                        data.append('namalatin',$('#namalatinhabitatsatwaedit').val());
+                        data.append('nama_kawasan',$('#namakawasan').val());
+                        data.append('idhabitatsatwa',$('#idhabitatsatwa').val());
+                         $.ajax({
+                                url:'/ubahDataKeanekaRagamanHayatiHabitatSatwa',
+                                method:'POST',
+                                data:data,
+                                contentType: false,
+                                processData:false,
+                                success:function(){
+                                    Swal.fire(
+                                                'Sukses!',
+                                                'Data Sukses di simpan!',
+                                                'success'
+                                            ).then(function(){
+                                                $( '#namahabitatsatwaedit' ).val('')
+                                                $( '#namalatinhabitatsatwaedit' ).val('')
+                                                $('#myModal55').modal('toggle')
+                                            })
+                                            table69.ajax.reload();
+                                }
+                            })
+                     }
+                })
+                $('form[id="formhabitatsatwa"]').validate({
+                    rules: {
+                        namahabitatsatwa: 'required',
+                        namalatinhabitatsatwa:{
+                            required:true
+                        },
+                    },
+                    messages: {
+                        judul: 'This field is required',
+                        file:'This field mustbe images'
+
+                    },
+                    submitHandler: function(form) {
+                        var data;
+                        data = new FormData();
+                        data.append('nama', $('#namahabitatsatwa').val());
+                        data.append('namalatin',$('#namalatinhabitatsatwa').val());
+                        data.append('nama_kawasan',$('#namakawasan').val());
+                         $.ajax({
+                                url:'/simpanDataKeanekaRagamanHayatiHabitatSatwa',
+                                method:'POST',
+                                data:data,
+                                contentType: false,
+                                processData:false,
+                                success:function(){
+                                    Swal.fire(
+                                                'Sukses!',
+                                                'Data Sukses di simpan!',
+                                                'success'
+                                            ).then(function(){
+                                                $( '#namahabitatsatwa' ).val('')
+                                                $( '#namalatinhabitatsatwa' ).val('')
+                                                $('#myModal54').modal('toggle')
+                                            })
+                                            table69.ajax.reload();
+                                }
+                            })
+                     }
+                })
+                $('form[id="formsatwadilindungiedit"]').validate({
+                    rules: {
+                        namasatwadilindungiedit: 'required',
+                        namalatinsatwadilindungiedit:{
+                            required:true
+                        },
+                    },
+                    messages: {
+                        judul: 'This field is required',
+                        file:'This field mustbe images'
+
+                    },
+                    submitHandler: function(form) {
+
+                        var data;
+                        data = new FormData();
+                        data.append('nama', $('#namasatwadilindungiedit').val());
+                        data.append('namalatin',$('#namalatinsatwadilindungiedit').val());
+                        data.append('nama_kawasan',$('#namakawasan').val());
+                        data.append('idsatwadilindungi',$('#idsatwadilindungi').val());
+                         $.ajax({
+                                url:'/ubahDataKeanekaRagamanHayatiSatwaDiLindungi',
+                                method:'POST',
+                                data:data,
+                                contentType: false,
+                                processData:false,
+                                success:function(){
+                                    Swal.fire(
+                                                'Sukses!',
+                                                'Data Sukses di simpan!',
+                                                'success'
+                                            ).then(function(){
+                                                $( '#namasatwadilindungiedit' ).val('')
+                                                $( '#namalatinsatwadilindungiedit' ).val('')
+                                                $('#myModal53').modal('toggle')
+                                            })
+                                            table68.ajax.reload();
+                                }
+                            })
+                     }
+                })
+                $('form[id="formsatwadilindungi"]').validate({
+                    rules: {
+                        namasatwadilindungi: 'required',
+                        namalatinsatwadilindungi:{
+                            required:true
+                        },
+                    },
+                    messages: {
+                        judul: 'This field is required',
+                        file:'This field mustbe images'
+
+                    },
+                    submitHandler: function(form) {
+                        var data;
+                        data = new FormData();
+                        data.append('nama', $('#namasatwadilindungi').val());
+                        data.append('namalatin',$('#namalatinsatwadilindungi').val());
+                        data.append('nama_kawasan',$('#namakawasan').val());
+                         $.ajax({
+                                url:'/simpanDataKeanekaRagamanHayatiSatwaDiLindungi',
+                                method:'POST',
+                                data:data,
+                                contentType: false,
+                                processData:false,
+                                success:function(){
+                                    Swal.fire(
+                                                'Sukses!',
+                                                'Data Sukses di simpan!',
+                                                'success'
+                                            ).then(function(){
+                                                $( '#namasatwadilindungi' ).val('')
+                                                $( '#namalatinsatwadilindungiedit' ).val('')
+                                                $('#myModal52').modal('toggle')
+                                            })
+                                            table68.ajax.reload();
+                                }
+                            })
+                     }
+                })
+                $('form[id="formtumbuhandilindungiedit"]').validate({
+                    rules: {
+                        namatumbuhandilindungiedit: 'required',
+                        namalatintumbuhandilindungiedit:{
+                            required:true
+                        },
+                    },
+                    messages: {
+                        judul: 'This field is required',
+                        file:'This field mustbe images'
+
+                    },
+                    submitHandler: function(form) {
+                        var data;
+                        data = new FormData();
+                        data.append('nama', $('#namatumbuhandilindungiedit').val());
+                        data.append('namalatin',$('#namalatintumbuhandilindungiedit').val());
+                        data.append('nama_kawasan',$('#namakawasan').val());
+                        data.append('idtumbuhandilindungi',$('#idtumbuhandilindungi').val());
+                         $.ajax({
+                                url:'/ubahDataKeanekaRagamanHayatiTumbuhanDiLindungi',
+                                method:'POST',
+                                data:data,
+                                contentType: false,
+                                processData:false,
+                                success:function(){
+                                    Swal.fire(
+                                                'Sukses!',
+                                                'Data Sukses di simpan!',
+                                                'success'
+                                            ).then(function(){
+                                                $( '#namalatintumbuhandilindungiedit' ).val('')
+                                                $( '#namatumbuhandilindungiedit' ).val('')
+                                                $('#myModal51').modal('toggle')
+                                            })
+                                            table67.ajax.reload();
+                                }
+                            })
+                     }
+                })
+                $('form[id="formtumbuhandilindungi"]').validate({
+                    rules: {
+                        namatumbuhandilindungi: 'required',
+                        namalatintumbuhandilindungi:{
+                            required:true
+                        },
+                    },
+                    messages: {
+                        judul: 'This field is required',
+                        file:'This field mustbe images'
+
+                    },
+                    submitHandler: function(form) {
+                        var data;
+                        data = new FormData();
+                        data.append('nama', $('#namatumbuhandilindungi').val());
+                        data.append('namalatin',$('#namalatintumbuhandilindungi').val());
+                        data.append('nama_kawasan',$('#namakawasan').val());
+                         $.ajax({
+                                url:'/simpanDataKeanekaRagamanHayatiTumbuhanDiLindungi',
+                                method:'POST',
+                                data:data,
+                                contentType: false,
+                                processData:false,
+                                success:function(){
+                                    Swal.fire(
+                                                'Sukses!',
+                                                'Data Sukses di simpan!',
+                                                'success'
+                                            ).then(function(){
+                                                $( '#namalatintumbuhandilindungi' ).val('')
+                                                $( '#namatumbuhandilindungi' ).val('')
+                                                $('#myModal50').modal('toggle')
+                                            })
+                                            table67.ajax.reload();
+                                }
+                            })
+                     }
+                })
+                 $('form[id="formspesiesedit"]').validate({
+                    rules: {
+                        namaspesiesedit: 'required',
+                        namalatinspesiesedit:{
+                            required:true
+                        },
+                    },
+                    messages: {
+                        judul: 'This field is required',
+                        file:'This field mustbe images'
+
+                    },
+                    submitHandler: function(form) {
+                        var data;
+                        data = new FormData();
+                        data.append('nama', $('#namaspesiesedit').val());
+                        data.append('namalatin',$('#namalatinspesiesedit').val());
+                        data.append('nama_kawasan',$('#namakawasan').val());
+                        data.append('idspesieskunci',$('#idspesieskunci').val());
+                         $.ajax({
+                                url:'/ubahDataKeanekaRagamanHayatiSpesiesKunci',
+                                method:'POST',
+                                data:data,
+                                contentType: false,
+                                processData:false,
+                                success:function(){
+                                    Swal.fire(
+                                                'Sukses!',
+                                                'Data Sukses di simpan!',
+                                                'success'
+                                            ).then(function(){
+                                                $( '#namalatinspesiesedit' ).val('')
+                                                $( '#namaspesiesedit' ).val('')
+                                                $('#myModal43').modal('toggle')
+                                            })
+                                            table63.ajax.reload();
+                                }
+                            })
+                     }
+                })
+                 $('form[id="formspesies"]').validate({
+                    rules: {
+                        namaspesies: 'required',
+                        namalatinspesies:{
+                            required:true
+                        },
+                    },
+                    messages: {
+                        judul: 'This field is required',
+                        file:'This field mustbe images'
+
+                    },
+                    submitHandler: function(form) {
+                        var data;
+                        data = new FormData();
+                        data.append('nama', $('#namaspesies').val());
+                        data.append('namalatin',$('#namalatinspesies').val());
+                        data.append('nama_kawasan',$('#namakawasan').val());
+                         $.ajax({
+                                url:'/simpanDataKeanekaRagamanHayatiSpesiesKunci',
+                                method:'POST',
+                                data:data,
+                                contentType: false,
+                                processData:false,
+                                success:function(){
+                                    Swal.fire(
+                                                'Sukses!',
+                                                'Data Sukses di simpan!',
+                                                'success'
+                                            ).then(function(){
+                                                $( '#namalatinspesies' ).val('')
+                                                $( '#namaspesies' ).val('')
+                                                $('#myModal42').modal('toggle')
+                                            })
+                                            table63.ajax.reload();
+                                }
+                            })
+                     }
+                })
+                 $('form[id="formsatwaedit"]').validate({
+                    rules: {
+                        namasatwaedit: 'required',
+                        namalatinsatwaedit:{
+                            required:true
+                        },
+                    },
+                    messages: {
+                        judul: 'This field is required',
+                        file:'This field mustbe images'
+
+                    },
+                    submitHandler: function(form) {
+                        var data;
+                        data = new FormData();
+                        data.append('nama', $('#namasatwaedit').val());
+                        data.append('namalatin',$('#namalatinsatwaedit').val());
+                        data.append('nama_kawasan',$('#namakawasan').val());
+                        data.append('idsatwa',$('#idsatwa').val());
+                         $.ajax({
+                                url:'/ubahDataKeanekaRagamanHayatiSatwa',
+                                method:'POST',
+                                data:data,
+                                contentType: false,
+                                processData:false,
+                                success:function(){
+                                    Swal.fire(
+                                                'Sukses!',
+                                                'Data Sukses di simpan!',
+                                                'success'
+                                            ).then(function(){
+                                                $( '#namalatinsatwaedit' ).val('')
+                                                $( '#namasatwaedit' ).val('')
+                                                $('#myModal41').modal('toggle')
+                                            })
+                                            table62.ajax.reload();
+                                }
+                            })
+                     }
+                })
+                $('form[id="formsatwa"]').validate({
+                    rules: {
+                        namasatwa: 'required',
+                        namalatinsatwa:{
+                            required:true
+                        },
+                    },
+                    messages: {
+                        judul: 'This field is required',
+                        file:'This field mustbe images'
+
+                    },
+                    submitHandler: function(form) {
+                        var data;
+                        data = new FormData();
+                        data.append('nama', $('#namasatwa').val());
+                        data.append('namalatin',$('#namalatinsatwa').val());
+                        data.append('nama_kawasan',$('#namakawasan').val());
+                         $.ajax({
+                                url:'/simpanDataKeanekaRagamanHayatiSatwa',
+                                method:'POST',
+                                data:data,
+                                contentType: false,
+                                processData:false,
+                                success:function(){
+                                    Swal.fire(
+                                                'Sukses!',
+                                                'Data Sukses di simpan!',
+                                                'success'
+                                            ).then(function(){
+                                                $( '#namalatinsatwa' ).val('')
+                                                $( '#namasatwa' ).val('')
+                                                $('#myModal40').modal('toggle')
+                                            })
+                                            table62.ajax.reload();
+                                }
+                            })
+                     }
+                })
+                $('form[id="formtumbuhanedit"]').validate({
+                    rules: {
+                        namatumbuhanedit: 'required',
+                        namalatintumbuhanedit:{
+                            required:true
+                        },
+                    },
+                    messages: {
+                        judul: 'This field is required',
+                        file:'This field mustbe images'
+
+                    },
+                    submitHandler: function(form) {
+                        var data;
+                        data = new FormData();
+                        data.append('nama', $('#namatumbuhanedit').val());
+                        data.append('namalatin',$('#namalatintumbuhanedit').val());
+                        data.append('nama_kawasan',$('#namakawasan').val());
+                         data.append('idtumbuhan',$('#idtumbuhan').val());
+                         $.ajax({
+                                url:'/ubahDataKeanekaRagamanHayatiTumbuhan',
+                                method:'POST',
+                                data:data,
+                                contentType: false,
+                                processData:false,
+                                success:function(){
+                                    Swal.fire(
+                                                'Sukses!',
+                                                'Data Sukses di simpan!',
+                                                'success'
+                                            ).then(function(){
+                                                $( '#namalatintumbuhanedit' ).val('')
+                                                $( '#namatumbuhanedit' ).val('')
+                                                $('#myModal39').modal('toggle')
+                                            })
+                                            table61.ajax.reload();
+                                }
+                            })
+                     }
+                })
+                $('form[id="formtumbuhan"]').validate({
+                    rules: {
+                        namatumbuhan: 'required',
+                        namalatintumbuhan:{
+                            required:true
+                        },
+                    },
+                    messages: {
+                        judul: 'This field is required',
+                        file:'This field mustbe images'
+
+                    },
+                    submitHandler: function(form) {
+                        var data;
+                        data = new FormData();
+                        data.append('nama', $('#namatumbuhan').val());
+                        data.append('namalatin',$('#namalatintumbuhan').val());
+                        data.append('nama_kawasan',$('#namakawasan').val());
+                         $.ajax({
+                                url:'/simpanDataKeanekaRagamanHayatiTumbuhan',
+                                method:'POST',
+                                data:data,
+                                contentType: false,
+                                processData:false,
+                                success:function(){
+                                    Swal.fire(
+                                                'Sukses!',
+                                                'Data Sukses di simpan!',
+                                                'success'
+                                            ).then(function(){
+                                                $( '#namalatintumbuhan' ).val('')
+                                                $( '#namatumbuhan' ).val('')
+                                                $('#myModal38').modal('toggle')
+                                            })
+                                            table61.ajax.reload();
+                                }
+                            })
+                     }
                 })
                 $('form[id="formpembangunanstrategisedit"]').validate({
                     rules: {
@@ -5731,55 +7342,7 @@
                     }
                 })
             })
-            $('#SaveDataKeanekaragamanHayati').click(function(){
-                var data;
-                data = new FormData();
-                data.append('nama', $('#namahayati').val());
-                data.append('nama_latin',$('#namalatinhayati').val());
-                data.append('deskripsi', $('#deskripsihayati').val());
-                data.append('jenis', $('#jenishayati').val());
-                data.append('nama_kawasan', $('#namakawasan').val());
-                $.ajax({
-                    url:'/saveDataKeanekaragamHayati',
-                    method:'POST',
-                    data:data,
-                    contentType: false,
-                    processData:false,
-                    success:function(){
-                         Swal.fire(
-                                'Sukses!',
-                                'Data Sukses di simpan!',
-                                'success'
-                            )
-                            table6.ajax.reload();
-                    }
-                })
-            })
-            $('#UpdateDataKeanekaragamanHayati').click(function(){
-                var data;
-                data = new FormData();
-                data.append('nama', $('#namahayatiedit').val());
-                data.append('nama_latin',$('#namalatinhayatiedit').val());
-                data.append('deskripsi', $('#deskripsihayatiedit').val());
-                data.append('jenis', $('#jenishayatiedit').val());
-                data.append('nama_kawasan', $('#namakawasan').val());
-                data.append('id_keanekaragamhayati', $('#idkeanekaragamhayati').val());
-                $.ajax({
-                    url:'/updateDataKeanekaragamHayati',
-                    method:'POST',
-                    data:data,
-                    contentType: false,
-                    processData:false,
-                    success:function(){
-                         Swal.fire(
-                                'Sukses!',
-                                'Data Sukses di simpan!',
-                                'success'
-                            )
-                            table6.ajax.reload();
-                    }
-                })
-            })
+           
             $('#SaveDataKondisiKawasan').click(function(){
                 var data;
                 data = new FormData();
