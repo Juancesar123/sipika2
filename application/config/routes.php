@@ -279,6 +279,7 @@ $route['getDataPembangunanStrategis/(:any)'] = "PembangunanStrategisController/g
 $route['showDataPembangunanStrategis/(:any)'] = "PembangunanStrategisController/show/$1";
 $route['deleteDataPembangunanStrategis/(:any)'] = "PembangunanStrategisController/destroy/$1";
 //endroute
+
 //route potensi keaneka ragaman hayati
 $route['simpanDataKeanekaRagamanHayatiTumbuhan'] = "KeanekaragamHayatiController/Savetumbuhan";
 $route['showDataKeanekaragamHayatiTumbuhan/(:any)'] = "KeanekaragamHayatiController/Showtumbuhan/$1";
@@ -320,12 +321,22 @@ $route['showDataKeanekaragamHayatiPotensi/(:any)'] = "KeanekaragamHayatiControll
 $route['ubahDataKeanekaRagamanHayatiPotensi'] = "KeanekaragamHayatiController/Ubahpotensi";
 $route['getDataKeanekaragamHayatiPotensi/(:any)'] = "KeanekaragamHayatiController/potensi/$1";
 $route['deleteDataKeanekaragamHayatiPotensi/(:any)'] = "KeanekaragamHayatiController/Deletepotensi/$1";
-
+$route['getDataSatwaEndemik/(:any)'] = "KeanekaragamHayatiController/getSatwaEndemik/$1";
+$route['setDataSatwaEndemik'] = "KeanekaragamHayatiController/setSatwaEndemik";
+$route['updateDataSatwaEndemik'] = "KeanekaragamHayatiController/updateSatwaEndemik";
 //endroute
 //Route Pencarian
 $route['pencarian'] = "PencarianController";
 $route['pencarian/cari/(:any)'] = "PencarianController/cari/$1";
 //end Route
+//route Peta Kawasan Konsevarsi
+$route['saveDataPetaKawasanKonsevarsi'] = "PetaKawasanKonsevarsiController/store";
+$route['updateDataPetaKawasanKonservarsi'] = "PetaKawasanKonsevarsiController/update";
+$route['getDataPetaKawasanKonsevarsi/(:any)'] = "PetaKawasanKonsevarsiController/getData/$1";
+$route['showDataPetaKawasanKonsevarsi/(:any)'] = "PetaKawasanKonsevarsiController/show/$1";
+$route['deleteDataPetaKawasanKonsevarsi/(:any)'] = "PetaKawasanKonsevarsiController/destroy/$1";
+$route['getAllImagesKawasanKonsevarsi/(:any)'] = "PetaKawasanKonsevarsiController/getimages/$1";
+//endroute
 //route Dashboard
 $route['getDataDashboard/(:any)'] = "DashboardController/getCountData/$1";
 $route['getDataAllDashboard'] = "DashboardController/getAllData/$1";

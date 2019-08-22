@@ -34,6 +34,7 @@
                                     <br>
                                     <h2><center><?php   echo $hasil['nama_kawasan'];?></center></h2>
                                     <p><center>REGISTER : <?php   echo $hasil['register'];?></center></p>
+                                    <p><center><button class="btn btn-outline-success" onclick="viewallimages()" data-toggle="modal" data-target="#modalsimages">View all images </button></center></p>
                                     <br>
                                     <div class="bg-light border-right" id="sidebar-wrapper">
                                     <div class="sidebar-heading">
@@ -68,6 +69,7 @@
                                             <a data-toggle="tab" href="#sosekbud" class="list-group-item list-group-item-action bg-light" style="color:blue">Sosekbud</a>
                                              <a data-toggle="tab" href="#penutupanlahanperkawasan" class="list-group-item list-group-item-action bg-light" style="color:blue">Penutupan Lahan Per Kawasan</a>
                                             <a data-toggle="tab" href="#openareaperkawasan" class="list-group-item list-group-item-action bg-light" style="color:blue">Open Area Per Kawasan</a>
+                                            <a data-toggle="tab" href="#petakawasankonsevarsi" class="list-group-item list-group-item-action bg-light" style="color:blue">Peta Kawasan Konsevarsi</a>
                                         </div>
                                         <br>
                                         <div class="sidebar-heading">
@@ -95,6 +97,28 @@
                                         </div>
                                     </div>
                                     <div class="card-body">
+                                        <div class="modal fade" id="modalsimages">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">View Images Kawasan Konsevarsi</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+                                                    <div class="modal-body">
+                                                        <div class="row" id="resultimages">
+                                                           
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Modal footer -->
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                         <div class="modal fade" id="myModal">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
@@ -387,6 +411,26 @@
                                                         <th>Action</th>
                                                     </thead>
                                                 </table>
+                                          </div>
+                                          <div class="tab-pane fade" id="satwaendemik" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                              <div class="form-group">
+                                                <label>Satwa Endemik</label>
+                                                <div class="radio">
+                                                  <label><input type="radio" name="pilihansatwa" id="pilihansatwa" value="lokal">Lokal</label>
+                                                </div>
+                                                <div class="radio">
+                                                  <label><input type="radio" name="pilihansatwa" id="pilihansatwa" value="regional">Regional</label>
+                                                  <input type="hidden" id="idsatwaendemik">
+                                                </div>
+                                                <div class="radio disabled">
+                                                  <label><input type="radio" name="pilihansatwa" id="pilihansatwa" value="nasional"> Nasional</label>
+                                                 <input class="form-control" type="hidden" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
+                                                </div>
+                                              </div>
+                                              <button class="btn btn-primary" id="saveDataSatwaEndemik">Save</button>
+                                          </div>
+                                          <div class="tab-pane fade" id="tumbuhanendemik" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                              
                                           </div>
                                           <div class="tab-pane fade" id="spesieskunci" role="tabpanel" aria-labelledby="pills-contact-tab">
                                                <button class="btn btn-primary" data-toggle="modal" data-target="#myModal42">Tambah Data</button>
@@ -2911,6 +2955,113 @@
                                         </table>
                                     </div>
                                 </div>
+                                <div id="petakawasankonsevarsi" class="card tab-pane fade">
+                                    <div class="card-header">
+                                        Peta Kawasan Konsevarsi
+                                    </div>
+                                    <div class="card-body">
+                                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal46">Tambah Data</button>
+                                        <br>
+                                        <br>
+                                        <div class="modal fade" id="myModal46">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Input Peta Kawasan Konsevarsi</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+                                                <form id="formpetakawasankonsevarsi">
+                                                    <!-- Modal body -->
+                                                    <div class="modal-body">
+                                                        <div class="form-group">
+                                                            <label>Peta Batas Konsevarsi</label>
+                                                            <input type="file" class="form-control" id="petabataskonsevarsi" name="petabataskonsevarsi">
+                                                            <input class="form-control" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" type="hidden" disabled>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Peta Atlas Kawasan Konsevarsi</label>
+                                                            <input type="file" class="form-control" id="petaatlaskawasankonsevarsi" name="petaatlaskawasankonsevarsi">
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label>Peta SHP</label>
+                                                            <input type="file" class="form-control" id="petashpkawasan" name="petashpkawasan">
+                                                        </div>
+                                                         <div class="form-group">
+                                                            <label>Foto</label>
+                                                            <input type="file" class="form-control" id="fotokawasan" name="fotokawasan" multiple>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Modal footer -->
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Simpan</button>
+                                                    </div>
+
+                                                    </div>
+                                                </form>
+                                            </div>
+                                        </div>
+                                        <div class="modal fade" id="myModal47">
+                                            <div class="modal-dialog">
+                                                <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">Ubah Peta Kawasan Konsevarsi</h4>
+                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                </div>
+                                                <form id="formpetakawasankonsevarsiedit">
+                                                    <!-- Modal body -->
+                                                    <div class="modal-body">
+                                                        <div class="form-group">
+                                                            <label>Peta Batas Konsevarsi</label>
+                                                            <input type="file" class="form-control" id="petabataskonsevarsiedit" name="petabataskonsevarsiedit">
+                                                            <input type="hidden" id="petabataskonsevarsihidden">
+                                                            <input type="hidden" id="idpetakawasan">
+                                                            <input class="form-control" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" type="hidden" disabled>
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Peta Atlas Kawasan Konsevarsi</label>
+                                                            <input type="file" class="form-control" id="petaatlaskawasankonsevarsiedit" name="petaatlaskawasankonsevarsiedit">
+                                                             <input type="hidden" id="petaatlaskawasankonsevarsihidden">
+                                                        </div>
+
+                                                        <div class="form-group">
+                                                            <label>Peta SHP</label>
+                                                            <input type="file" class="form-control" id="petashpkawasanedit" name="petashpkawasanedit">
+                                                            <input type="hidden" id="petashpkawasanhidden">
+                                                        </div>
+                                                         <div class="form-group">
+                                                            <label>Foto</label>
+                                                            <input type="file" class="form-control" id="fotokawasanedit" name="fotokawasanedit" multiple>
+                                                            <input type="hidden" id="fotokawasanhidden">
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Modal footer -->
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                        <button id="submit" class="btn btn-primary">Simpan</button>
+                                                    </div>
+
+                                                    </form>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <table class="table" id="myTable18" style="width:100%">
+                                            <thead>
+                                                <th>Peta Batas Kawasan Konsevarsi</th>
+                                                <th>Peta Atlas Kawasan Konsevarsi</th>
+                                                 <th>Peta SHP</th>
+                                                <th>Action</th>
+                                            </thead>
+                                        </table>
+                                    </div>
+                                </div>
                                 <div id="sosekbud" class="card tab-pane fade">
                                     <div class="card-header">
                                         Sosekbud
@@ -3945,6 +4096,33 @@
                     })
             
         }
+         function myfunc22(id){
+             Swal.fire({
+                title: 'Are you sure?',
+                text: "You won't be able to revert this!",
+                type: 'warning',
+                showCancelButton: true,
+                confirmButtonColor: '#3085d6',
+                cancelButtonColor: '#d33',
+                confirmButtonText: 'Yes, delete it!'
+                }).then((result) => {
+                        if (result.value) {
+                             $.ajax({
+                                url:'/deleteDataPetaKawasanKonsevarsi/'+id,
+                                type:'GET',
+                                success:function(){
+                                    Swal.fire(
+                                                'Sukses!',
+                                                'Data Sukses di hapus!',
+                                                'success'
+                                            )
+                                            table18.ajax.reload();
+                                }
+                            })
+                        }
+                    })
+            
+        }
         function myfunc21(id){
              Swal.fire({
                 title: 'Are you sure?',
@@ -4128,7 +4306,23 @@
                 }
             })
         }
-        
+        function viewallimages(){
+            $.ajax({
+                url:'/getAllImagesKawasanKonsevarsi/'+"<?php echo $hasil['nama_kawasan'];?>",
+                type:'GET',
+                success:function(data){
+                    var hasil = JSON.parse(data);
+                    hasil.forEach(function(element) {
+                        var fotokawasan = element.foto.split(",");
+                        for(var i = 0; i < fotokawasan.length; i++){
+                            var html ="<div class='col-md-3'><img class='img-fluid' src='<?php echo constant('API_URL');?>/"+fotokawasan[i]+"' ></div>";
+                            $("#resultimages").append(html);
+                        }
+                       
+                    });
+                }
+            })
+        }
         function editfunc1(id){
             $.ajax({
                 url:'/showDataEvaluasiFungsiDeskStudy/'+id,
@@ -4418,6 +4612,20 @@
                     $( '#idsatwa' ).val(hasil.id);
                     $( '#namalatinsatwaedit' ).val(hasil.nama_latin);
                     $( '#namasatwaedit' ).val(hasil.nama);
+                }
+            })
+        }
+        function editfunc22(id){
+            $.ajax({
+                url:'/showDataPetaKawasanKonsevarsi/'+id,
+                type:'GET',
+                success:function(data){
+                    var hasil = JSON.parse(data);
+                    $( '#idpetakawasan' ).val(hasil.id);
+                    $( '#petaatlaskawasankonsevarsihidden' ).val(hasil.peta_atlas_potensi_kawasan_konsevarsi);
+                    $( '#petabataskonsevarsihidden' ).val(hasil.peta_batas_kawasan_konsevarsi);
+                    $( '#fotokawasanhidden' ).val(hasil.foto);
+                    $( '#petashpkawasanhidden' ).val(hasil.peta_shp);
                 }
             })
         }
@@ -5210,7 +5418,128 @@
                             }
                         ]
                     });
+                     var table18 = $('#myTable18').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: [
+                            'excel', 'pdf'
+                        ],
+                         responsive: {
+                            details: {
+                                display: $.fn.dataTable.Responsive.display.modal( {
+                                    header: function ( row ) {
+                                        var data = row.data();
+                                        return 'Details for Pembangunan Strategis';
+                                    }
+                                } ),
+                                renderer: $.fn.dataTable.Responsive.renderer.tableAll()
+                            }
+                        },
+                        deferRender: true,
+                        ajax: {
+                            url: "/getDataPetaKawasanKonsevarsi/"+"<?php echo $hasil['nama_kawasan'];?>",
+                            type: "GET",
+                            dataSrc: function (d) {
+                                return d
+                            }
+                        },
+                        columns: [
+                             {
+                                data:null,
+                                render:function (data,type,row){
+                                    return "<a href='<?php echo constant('API_URL');?>/"+data.peta_batas_kawasan_konsevarsi+"' download target='_blank'>Download</a>";
+                                }
+                            },
+                            {
+                                data:null,
+                                render:function (data,type,row){
+                                    return "<a href='<?php echo constant('API_URL');?>/"+data.peta_atlas_potensi_kawasan_konsevarsi+"' download target='_blank'>Download</a>";
+                                }
+                            },
+                            {
+                                data:null,
+                                render:function (data,type,row){
+                                    return "<a href='<?php echo constant('API_URL');?>/"+data.peta_shp+"' target='_blank'>Download</a>";
+                                }
+                            },
+                            {
+                                data: null,
+                                render: function ( data, type, row ) {
+                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal47'onclick='editfunc22("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc22("+data.id+")'>Delete</button>";
+                                }
+                            }
+                        ]
+                    });
         $('document').ready(function(){
+            $.ajax({
+                type:'GET',
+                url:'/getDataSatwaEndemik/'+"<?php echo $hasil['nama_kawasan'];?>",
+                success:function(data){
+                    var result = JSON.parse(data);
+                    console.log(result.length);
+                    if(result.length == 0){
+                        //$("input[name='"+name+"'][value='"+value+"']").prop('checked', true);
+                    }else{
+                        result.forEach(function(element) {
+                            $('#idsatwaendemik').val(element.id);
+                            $("input[name='pilihansatwa'][value='"+element.jenis+"']").prop('checked', true);
+                        });
+                        
+                    }
+                }
+            })
+            $("#saveDataSatwaEndemik").click(function(){
+                $.ajax({
+                type:'GET',
+                url:'/getDataSatwaEndemik/'+"<?php echo $hasil['nama_kawasan'];?>",
+                success:function(data){
+                    var result = JSON.parse(data);
+                    if(result.length == 0){
+                        var data;
+                        data = new FormData();
+                        data.append('jenis', $('#pilihansatwa').val());
+                        data.append('namakawasan',$('#namakawasan').val());
+                        $.ajax({
+                            type:'POST',
+                            url:'/setDataSatwaEndemik',
+                            data:data,
+                            contentType: false,
+                            processData:false,
+                            success:function(){
+                                 Swal.fire(
+                                                'Sukses!',
+                                                'Data Sukses di simpan!',
+                                                'success'
+                                            ).then(function(){
+                                               document.location.reload();
+                                            })
+                            }
+                        })
+                    }else{
+                        var data;
+                        data = new FormData();
+                        data.append('jenis', $('#pilihansatwa').val());
+                        data.append('namakawasan',$('#namakawasan').val());
+                        data.append('idsatwaendemik',$('#idsatwaendemik').val());
+                        $.ajax({
+                            type:'POST',
+                            url:'/updateDataSatwaEndemik',
+                            data:data,
+                            contentType: false,
+                            processData:false,
+                            success:function(){
+                                 Swal.fire(
+                                                'Sukses!',
+                                                'Data Sukses di simpan!',
+                                                'success'
+                                            ).then(function(){
+                                               document.location.reload();
+                                            })
+                            }
+                        })
+                    }
+                }
+            })
+            })
             $('[href="#home"]').tab('show');
            //$('#home a:first').tab('show')
             table61.columns.adjust().draw();
@@ -5311,6 +5640,216 @@
                                                 $('#myModal59').modal('toggle')
                                             })
                                             table611.ajax.reload();
+                                }
+                            })
+                     }
+                })
+                $("#testbug").click(function(){
+                     var datafile = ('#petaatlaskawasankonsevarsiedit')[0].files[0];
+                        if(datafile == undefined){
+                            var data;
+                            data = new FormData();
+                            const fotokawasan = $("#fotokawasan")[0].files;
+                            data.append('petaatlaskawasankonsevarsi', $('#petaatlaskawasankonsevarsihidden').val());
+                            data.append('petabataskonsevarsi',$('#petabataskonsevarsihidden').val());
+                            data.append('petashpkawasan',$('#petashpkawasanhidden').val());
+                            data.append('fotokawasan',$('#fotokawasanhidden').val());
+                            data.append('nama_kawasan',$('#namakawasan').val());
+                            data.append('idpetakawasan',$('#idpetakawasan').val());
+                            data.append('status',$('#filenotfound').val());
+                             $.ajax({
+                                    url:'/updateDataPetaKawasanKonservarsi',
+                                    method:'POST',
+                                    data:data,
+                                    contentType: false,
+                                    processData:false,
+                                    success:function(){
+                                        Swal.fire(
+                                                    'Sukses!',
+                                                    'Data Sukses di simpan!',
+                                                    'success'
+                                                ).then(function(){
+                                                    $( '#petaatlaskawasankonsevarsi' ).val('')
+                                                    $( '#petabataskonsevarsi' ).val('')
+                                                    $( '#fotokawasan' ).val('')
+                                                    $( '#petashpkawasan' ).val('')
+                                                    $('#myModal47').modal('toggle')
+                                                })
+                                                table18.ajax.reload();
+                                    }
+                                })
+                        }else{
+                            var data;
+                            data = new FormData();
+                            const fotokawasan = $("#fotokawasanedit")[0].files;
+                            data.append('petaatlaskawasankonsevarsi', $('#petaatlaskawasankonsevarsiedit')[0].files[0]);
+                            data.append('petabataskonsevarsi',$('#petabataskonsevarsiedit')[0].files[0]);
+                            data.append('petashpkawasan',$('#petashpkawasanedit')[0].files[0]);
+                            for(const file of fotokawasan){
+                                data.append('fotokawasan[]',file);
+                            }
+                            data.append('nama_kawasan',$('#namakawasan').val());
+                            data.append('idpetakawasan',$('#idpetakawasan').val());
+                             $.ajax({
+                                    url:'/updateDataPetaKawasanKonservarsi',
+                                    method:'POST',
+                                    data:data,
+                                    contentType: false,
+                                    processData:false,
+                                    success:function(){
+                                        Swal.fire(
+                                                    'Sukses!',
+                                                    'Data Sukses di simpan!',
+                                                    'success'
+                                                ).then(function(){
+                                                    $( '#petaatlaskawasankonsevarsiedit' ).val('')
+                                                    $( '#petabataskonsevarsiedit' ).val('')
+                                                    $( '#fotokawasanedit' ).val('')
+                                                    $( '#petashpkawasanedit' ).val('')
+                                                    $('#myModal47').modal('toggle')
+                                                })
+                                                table18.ajax.reload();
+                                    }
+                                })
+                        }
+                })
+                $('form[id="formpetakawasankonsevarsiedit"]').validate({
+                    rules: {
+                        petaatlaskawasankonsevarsiedit: {
+                            accept: "image/*",
+                        },
+                        petabataskonsevarsiedit:{
+                            accept: "image/*",
+                        },
+                    },
+                    messages: {
+                        judul: 'This field is required',
+                        file:'This field mustbe images'
+
+                    },
+                    submitHandler: function(form) {
+                       var datafile = $('#petaatlaskawasankonsevarsiedit')[0].files[0];
+                        if(datafile == undefined){
+                            var data;
+                            data = new FormData();
+                            const fotokawasan = $("#fotokawasan")[0].files;
+                            data.append('petaatlaskawasankonsevarsi', $('#petaatlaskawasankonsevarsihidden').val());
+                            data.append('petabataskonsevarsi',$('#petabataskonsevarsihidden').val());
+                            data.append('petashpkawasan',$('#petashpkawasanhidden').val());
+                            data.append('fotokawasan',$('#fotokawasanhidden').val());
+                            data.append('nama_kawasan',$('#namakawasan').val());
+                            data.append('idpetakawasan',$('#idpetakawasan').val());
+                            data.append('status',$('#filenotfound').val());
+                             $.ajax({
+                                    url:'/updateDataPetaKawasanKonservarsi',
+                                    method:'POST',
+                                    data:data,
+                                    contentType: false,
+                                    processData:false,
+                                    success:function(){
+                                        Swal.fire(
+                                                    'Sukses!',
+                                                    'Data Sukses di simpan!',
+                                                    'success'
+                                                ).then(function(){
+                                                    $( '#petaatlaskawasankonsevarsi' ).val('')
+                                                    $( '#petabataskonsevarsi' ).val('')
+                                                    $( '#fotokawasan' ).val('')
+                                                    $( '#petashpkawasan' ).val('')
+                                                    $('#myModal47').modal('toggle')
+                                                })
+                                                table18.ajax.reload();
+                                    }
+                                })
+                        }else{
+                            var data;
+                            data = new FormData();
+                            const fotokawasan = $("#fotokawasanedit")[0].files;
+                            data.append('petaatlaskawasankonsevarsi', $('#petaatlaskawasankonsevarsiedit')[0].files[0]);
+                            data.append('petabataskonsevarsi',$('#petabataskonsevarsiedit')[0].files[0]);
+                            data.append('petashpkawasan',$('#petashpkawasanedit')[0].files[0]);
+                            for(const file of fotokawasan){
+                                data.append('fotokawasan[]',file);
+                            }
+                            data.append('nama_kawasan',$('#namakawasan').val());
+                            data.append('idpetakawasan',$('#idpetakawasan').val());
+                             $.ajax({
+                                    url:'/updateDataPetaKawasanKonservarsi',
+                                    method:'POST',
+                                    data:data,
+                                    contentType: false,
+                                    processData:false,
+                                    success:function(){
+                                        Swal.fire(
+                                                    'Sukses!',
+                                                    'Data Sukses di simpan!',
+                                                    'success'
+                                                ).then(function(){
+                                                    $( '#petaatlaskawasankonsevarsiedit' ).val('')
+                                                    $( '#petabataskonsevarsiedit' ).val('')
+                                                    $( '#fotokawasanedit' ).val('')
+                                                    $( '#petashpkawasanedit' ).val('')
+                                                    $('#myModal47').modal('toggle')
+                                                })
+                                                table18.ajax.reload();
+                                    }
+                                })
+                        }
+                    }
+                })
+                 $('form[id="formpetakawasankonsevarsi"]').validate({
+                    rules: {
+                        petaatlaskawasankonsevarsi: {
+                            required:true,
+                            accept: "image/*",
+                        },
+                        petabataskonsevarsi:{
+                            required:true,
+                            accept: "image/*",
+                        },
+                         petashpkawasan:{
+                            required:true
+                        },
+                         fotokawasan:{
+                            required:true
+                        },
+                    },
+                    messages: {
+                        judul: 'This field is required',
+                        file:'This field mustbe images'
+
+                    },
+                    submitHandler: function(form) {
+                       // console($('#fotokawasan')[0].files[0]);
+                        var data;
+                        data = new FormData();
+                        const fotokawasan = $("#fotokawasan")[0].files;
+                        data.append('petaatlaskawasankonsevarsi', $('#petaatlaskawasankonsevarsi')[0].files[0]);
+                        data.append('petabataskonsevarsi',$('#petabataskonsevarsi')[0].files[0]);
+                        data.append('petashpkawasan',$('#petashpkawasan')[0].files[0]);
+                       for(const file of fotokawasan){
+                            data.append('fotokawasan[]',file);
+                        }
+                        data.append('nama_kawasan',$('#namakawasan').val());
+                         $.ajax({
+                                url:'/saveDataPetaKawasanKonsevarsi',
+                                method:'POST',
+                                data:data,
+                                contentType: false,
+                                processData:false,
+                                success:function(){
+                                    Swal.fire(
+                                                'Sukses!',
+                                                'Data Sukses di simpan!',
+                                                'success'
+                                            ).then(function(){
+                                                $( '#petaatlaskawasankonsevarsi' ).val('')
+                                                $( '#petabataskonsevarsi' ).val('')
+                                                $( '#fotokawasan' ).val('')
+                                                $( '#petashpkawasan' ).val('')
+                                                $('#myModal46').modal('toggle')
+                                            })
+                                            table18.ajax.reload();
                                 }
                             })
                      }
