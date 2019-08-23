@@ -322,8 +322,14 @@ $route['ubahDataKeanekaRagamanHayatiPotensi'] = "KeanekaragamHayatiController/Ub
 $route['getDataKeanekaragamHayatiPotensi/(:any)'] = "KeanekaragamHayatiController/potensi/$1";
 $route['deleteDataKeanekaragamHayatiPotensi/(:any)'] = "KeanekaragamHayatiController/Deletepotensi/$1";
 $route['getDataSatwaEndemik/(:any)'] = "KeanekaragamHayatiController/getSatwaEndemik/$1";
+$route['getDataTumbuhanEndemik/(:any)'] = "KeanekaragamHayatiController/getTumbuhanEndemik/$1";
 $route['setDataSatwaEndemik'] = "KeanekaragamHayatiController/setSatwaEndemik";
 $route['updateDataSatwaEndemik'] = "KeanekaragamHayatiController/updateSatwaEndemik";
+$route['setDataTumbuhanEndemik'] = "KeanekaragamHayatiController/setTumbuhanEndemik";
+$route['updateDataTumbuhanEndemik'] = "KeanekaragamHayatiController/updateTumbuhanEndemik";
+$route['getDataSatwaPrioritas/(:any)'] = "KeanekaragamHayatiController/getSatwaPrioritas/$1";
+$route['setDataSatwaPrioritas'] = "KeanekaragamHayatiController/setSatwaPrioritas";
+$route['updateDataSatwaPrioritas'] = "KeanekaragamHayatiController/updateSatwaPrioritas";
 //endroute
 //Route Pencarian
 $route['pencarian'] = "PencarianController";

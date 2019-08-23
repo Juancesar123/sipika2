@@ -526,6 +526,41 @@ class KeanekaragamHayatiController extends CI_Controller {
         $hasil =  json_decode($data,true);
         echo json_encode($hasil);
     }
+    public function getTumbuhanEndemik($id){
+        $client     = new GuzzleHttp\Client();
+        $result = $client->get(constant('API_URL').'/tumbuhan-endemik/?nama_kawasan='.$id);
+        /*
+            Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
+            ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
+        */
+        $data = $result->getBody()->getContents();
+        $hasil =  json_decode($data,true);
+        echo json_encode($hasil);
+    }
+    public function getSatwaPrioritas($id){
+      $client     = new GuzzleHttp\Client();
+      $result = $client->get(constant('API_URL').'/satwa-prioritas/?nama_kawasan='.$id);
+      /*
+          Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
+          ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
+      */
+      $data = $result->getBody()->getContents();
+      $hasil =  json_decode($data,true);
+      echo json_encode($hasil);
+    }
+    public function setSatwaPrioritas(){
+        $client     = new GuzzleHttp\Client();
+        $client->post(constant('API_URL').'/satwa-prioritas', [
+            /*
+                isi yang akan di lempar ke api.
+                'nama_kawasan' variable apinya.
+            */
+            'form_params' => [
+                'nama_kawasan' => $this->input->post('namakawasan'),
+                'jenis' => $this->input->post('jenis')
+            ]
+        ]);
+    }
     public function setSatwaEndemik(){
         $client     = new GuzzleHttp\Client();
         $client->post(constant('API_URL').'/satwa-endemik', [
@@ -539,6 +574,27 @@ class KeanekaragamHayatiController extends CI_Controller {
             ]
         ]);
     }
+     public function updateSatwaPrioritas(){
+        $client     = new GuzzleHttp\Client();
+        $id = $this->input->post('idsatwaprioritas');
+        /*
+           CURL API menggunakan guzzle. untuk constant('API_URL') jika ingin rubah valuenya
+           ada di constants.php di bagian config. lalu cari define('API_URL').
+           fungsinya untuk global var untuk link API jadi tidak merubah satu2 file cukup 1 file aja
+           di ubah untuk semua.
+       */
+       $client     = new GuzzleHttp\Client();
+       $client->patch(constant('API_URL').'/satwa-prioritas/'.$id, [
+           /*
+               isi yang akan di lempar ke api.
+               'nama_kawasan' variable apinya.
+           */
+          'form_params' => [
+            'jenis' => $this->input->post('jenis'),
+            'nama_kawasan' => $this->input->post('namakawasan'),
+        ]
+       ]);
+    }
     public function updateSatwaEndemik(){
         $client     = new GuzzleHttp\Client();
         $id = $this->input->post('idsatwaendemik');
@@ -550,6 +606,40 @@ class KeanekaragamHayatiController extends CI_Controller {
        */
        $client     = new GuzzleHttp\Client();
        $client->patch(constant('API_URL').'/satwa-endemik/'.$id, [
+           /*
+               isi yang akan di lempar ke api.
+               'nama_kawasan' variable apinya.
+           */
+          'form_params' => [
+            'jenis' => $this->input->post('jenis'),
+            'nama_kawasan' => $this->input->post('namakawasan'),
+        ]
+       ]);
+    }
+    public function setTumbuhanEndemik(){
+        $client     = new GuzzleHttp\Client();
+        $client->post(constant('API_URL').'/tumbuhan-endemik', [
+            /*
+                isi yang akan di lempar ke api.
+                'nama_kawasan' variable apinya.
+            */
+            'form_params' => [
+                'nama_kawasan' => $this->input->post('namakawasan'),
+                'jenis' => $this->input->post('jenis')
+            ]
+        ]);
+    }
+    public function updateTumbuhanEndemik(){
+        $client     = new GuzzleHttp\Client();
+        $id = $this->input->post('idtumbuhanendemik');
+        /*
+           CURL API menggunakan guzzle. untuk constant('API_URL') jika ingin rubah valuenya
+           ada di constants.php di bagian config. lalu cari define('API_URL').
+           fungsinya untuk global var untuk link API jadi tidak merubah satu2 file cukup 1 file aja
+           di ubah untuk semua.
+       */
+       $client     = new GuzzleHttp\Client();
+       $client->patch(constant('API_URL').'/tumbuhan-endemik/'.$id, [
            /*
                isi yang akan di lempar ke api.
                'nama_kawasan' variable apinya.

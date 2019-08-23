@@ -233,7 +233,7 @@
                                             <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#spesieskunci" role="tab" aria-controls="pills-contact" aria-selected="false">Spesies Kunci</a>
                                           </li>
                                           <li class="nav-item">
-                                            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#satwaprioritas" role="tab" aria-controls="pills-contact" aria-selected="false">25 Satwa Prioritas</a>
+                                            <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#25satwaprioritas" role="tab" aria-controls="pills-contact" aria-selected="false">25 Satwa Prioritas</a>
                                           </li>
                                           <li class="nav-item">
                                             <a class="nav-link" id="pills-contact-tab" data-toggle="pill" href="#tumbuhanendemik" role="tab" aria-controls="pills-contact" aria-selected="false">Tumbuhan Endemik</a>
@@ -430,7 +430,114 @@
                                               <button class="btn btn-primary" id="saveDataSatwaEndemik">Save</button>
                                           </div>
                                           <div class="tab-pane fade" id="tumbuhanendemik" role="tabpanel" aria-labelledby="pills-profile-tab">
-                                              
+                                              <div class="form-group">
+                                                <label>Tumbuhan Endemik</label>
+                                                <div class="radio">
+                                                  <label><input type="radio" name="pilihantumbuhan" id="pilihantumbuhan" value="lokal">Lokal</label>
+                                                </div>
+                                                <div class="radio">
+                                                  <label><input type="radio" name="pilihantumbuhan" id="pilihantumbuhan" value="regional">Regional</label>
+                                                  <input type="hidden" id="idtumbuhanendemik">
+                                                </div>
+                                                <div class="radio disabled">
+                                                  <label><input type="radio" name="pilihantumbuhan" id="pilihantumbuhan" value="nasional"> Nasional</label>
+                                                 <input class="form-control" type="hidden" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
+                                                </div>
+                                              </div>
+                                              <button class="btn btn-primary" id="saveDataTumbuhanEndemik">Save</button>
+                                          </div>
+                                            <div class="tab-pane fade" id="25satwaprioritas" role="tabpanel" aria-labelledby="pills-profile-tab">
+
+                                              <div class="form-group">
+                                                <label>25 Satwa Prioritas</label>
+                                                <div class="row">
+                                                    <div class="col-md-4">
+                                                        <div class="checkbox">
+                                                          <label><input type="checkbox" name="pilihansatwaprioritas[]" value="harimau sumatra">Harimau Sumatra</label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                          <label><input type="checkbox" name="pilihansatwaprioritas[]" value="badak">Badak</label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                          <label><input type="checkbox" name="pilihansatwaprioritas[]" value="owa">Owa</label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                          <label><input type="checkbox" name="pilihansatwaprioritas[]" value="bekantan">Bekantan</label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                          <label><input type="checkbox" name="pilihansatwaprioritas[]" value="jalak bali">Jalak Bali</label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                          <label><input type="checkbox" name="pilihansatwaprioritas[]" value="babi rusa">Babi Rusa</label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                          <label><input type="checkbox" name="pilihansatwaprioritas[]" value="elang">Elang</label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                          <label><input type="checkbox" name="pilihansatwaprioritas[]" value="macan tutul">Macan Tutul Jawa</label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                          <label><input type="checkbox" name="pilihansatwaprioritas[]" value="cendrawasih">Cendrawasih</label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                          <label><input type="checkbox" name="pilihansatwaprioritas[]" value="tarsius">Tarsius</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="checkbox">
+                                                          <label><input type="checkbox" name="pilihansatwaprioritas[]" value="banteng">Banteng</label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                          <label><input type="checkbox" name="pilihansatwaprioritas[]" value="orang utan">Orang Utan</label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                          <label><input type="checkbox" name="pilihansatwaprioritas[]" value="komodo">Komodo</label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                          <label><input type="checkbox" name="pilihansatwaprioritas[]" value="maleo">Maleo</label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                          <label><input type="checkbox" name="pilihansatwaprioritas[]" value="anoa">Anoa</label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                          <label><input type="checkbox" name="pilihansatwaprioritas[]" value="kaka tua">Kaka Tua</label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                          <label><input type="checkbox" name="pilihansatwaprioritas[]" value="rusa bawean">Rusa Bawean</label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                          <label><input type="checkbox" name="pilihansatwaprioritas[]" value="surili">Surili</label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                          <label><input type="checkbox" name="pilihansatwaprioritas[]" value="monyet hitam sulawesi">Monyet Hitam Sulawesi</label>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <div class="checkbox">
+                                                          <label><input type="checkbox" name="pilihansatwaprioritas[]" value="julang sumba">Julang Sumba</label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                          <label><input type="checkbox"  name="pilihansatwaprioritas[]" value="penyu">Penyu</label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                          <label><input type="checkbox" name="pilihansatwaprioritas[]" value="celepuk rinjani">Celepuk Rinjani</label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                          <label><input type="checkbox" name="pilihansatwaprioritas[]" value="julang sumba">Julang Sumba</label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                          <label><input type="checkbox" name="pilihansatwaprioritas[]" value="nuri kepala hitam">Nuri Kepala Hitam</label>
+                                                        </div>
+                                                        <div class="checkbox">
+                                                          <label><input type="checkbox" name="pilihansatwaprioritas[]" value="kanguru pohon">Kanguru Pohon</label>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                 <input class="form-control" type="hidden" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
+                                                 <input type="hidden" id="idsatwaprioritas">
+                                                </div>
+
+                                              <button class="btn btn-primary" id="saveDatasatwaprioritas">Save</button>
                                           </div>
                                           <div class="tab-pane fade" id="spesieskunci" role="tabpanel" aria-labelledby="pills-contact-tab">
                                                <button class="btn btn-primary" data-toggle="modal" data-target="#myModal42">Tambah Data</button>
@@ -5481,11 +5588,167 @@
                     }else{
                         result.forEach(function(element) {
                             $('#idsatwaendemik').val(element.id);
-                            $("input[name='pilihansatwa'][value='"+element.jenis+"']").prop('checked', true);
+                           // $("input[name='pilihansatwa'][value='"+element.jenis+"']").prop('checked', true);
+                            $('#satwaendemik').find(':radio[name=pilihansatwa][value="'+element.jenis+'"]').prop('checked', true);
+                            // $('#tumbuhanendemik').find(':radio[name=pilihantumbuhan][value="'+element.jenis+'"]').prop('checked', true);
                         });
                         
                     }
                 }
+            })
+            $.ajax({
+                type:'GET',
+                url:'/getDataTumbuhanEndemik/'+"<?php echo $hasil['nama_kawasan'];?>",
+                success:function(data){
+                    var result = JSON.parse(data);
+                    console.log(result.length);
+                    if(result.length == 0){
+                        //$("input[name='"+name+"'][value='"+value+"']").prop('checked', true);
+                    }else{
+                        result.forEach(function(element) {
+                            $('#idtumbuhanendemik').val(element.id);
+                           // $("input[name='pilihansatwa'][value='"+element.jenis+"']").prop('checked', true);
+                           // $('#satwaendemik').find(':radio[name=pilihansatwa][value="'+element.jenis+'"]').prop('checked', true);
+                            $('#tumbuhanendemik').find(':radio[name=pilihantumbuhan][value="'+element.jenis+'"]').prop('checked', true);
+                        });
+                        
+                    }
+                }
+            })//
+            $.ajax({
+                type:'GET',
+                url:'/getDataSatwaPrioritas/'+"<?php echo $hasil['nama_kawasan'];?>",
+                success:function(data){
+                    var result = JSON.parse(data);
+                    console.log(result.length);
+                    if(result.length == 0){
+                        //$("input[name='"+name+"'][value='"+value+"']").prop('checked', true);
+                    }else{
+                        result.forEach(function(element) {
+                            $('#idsatwaprioritas').val(element.id);
+                            var strArray = element.jenis.split(",");
+                           // $("input[name='pilihansatwa'][value='"+element.jenis+"']").prop('checked', true);
+                           // $('#satwaendemik').find(':radio[name=pilihansatwa][value="'+element.jenis+'"]').prop('checked', true);
+                           for(var i = 0; i < strArray.length; i++){
+                               $('#25satwaprioritas').find('input[type="checkbox"][value="'+strArray[i]+'"]').prop('checked', true);
+                            }
+                            
+                        });
+                        
+                    }
+                }
+            })
+            $("#saveDatasatwaprioritas").click(function(){
+                $.ajax({
+                    type:'GET',
+                    url:'/getDataSatwaPrioritas/'+"<?php echo $hasil['nama_kawasan'];?>",
+                    success:function(data){
+                        var result = JSON.parse(data);
+                        if(result.length == 0){
+                            var data;
+                            data = new FormData();
+                            var sel = $('input[type=checkbox]:checked').map(function(_, el) {
+                                return $(el).val();
+                            }).get();
+                            data.append('jenis', sel);
+                            data.append('namakawasan',$('#namakawasan').val());
+                            $.ajax({
+                                type:'POST',
+                                url:'/setDataSatwaPrioritas',
+                                data:data,
+                                contentType: false,
+                                processData:false,
+                                success:function(){
+                                     Swal.fire(
+                                                    'Sukses!',
+                                                    'Data Sukses di simpan!',
+                                                    'success'
+                                                ).then(function(){
+                                                  document.location.reload();
+                                                })
+                                }
+                            })
+                        }else{
+                            var data;
+                            data = new FormData();
+                            var sel = $('input[type=checkbox]:checked').map(function(_, el) {
+                                return $(el).val();
+                            }).get();
+                            data.append('jenis',sel);
+                            data.append('namakawasan',$('#namakawasan').val());
+                            data.append('idsatwaprioritas',$('#idsatwaprioritas').val());
+                            $.ajax({
+                                type:'POST',
+                                url:'/updateDataSatwaPrioritas',
+                                data:data,
+                                contentType: false,
+                                processData:false,
+                                success:function(){
+                                     Swal.fire(
+                                                    'Sukses!',
+                                                    'Data Sukses di simpan!',
+                                                    'success'
+                                                ).then(function(){
+                                                   document.location.reload();
+                                                })
+                                }
+                            })
+                        }
+                    }
+                })
+            })
+            $("#saveDataTumbuhanEndemik").click(function(){
+                    $.ajax({
+                    type:'GET',
+                    url:'/getDataTumbuhanEndemik/'+"<?php echo $hasil['nama_kawasan'];?>",
+                    success:function(data){
+                        var result = JSON.parse(data);
+                        if(result.length == 0){
+                            var data;
+                            data = new FormData();
+                            data.append('jenis', $('input[name=pilihantumbuhan]:checked').val());
+                            data.append('namakawasan',$('#namakawasan').val());
+                            $.ajax({
+                                type:'POST',
+                                url:'/setDataTumbuhanEndemik',
+                                data:data,
+                                contentType: false,
+                                processData:false,
+                                success:function(){
+                                     Swal.fire(
+                                                    'Sukses!',
+                                                    'Data Sukses di simpan!',
+                                                    'success'
+                                                ).then(function(){
+                                                  document.location.reload();
+                                                })
+                                }
+                            })
+                        }else{
+                            var data;
+                            data = new FormData();
+                            data.append('jenis', $('input[name=pilihantumbuhan]:checked').val());
+                            data.append('namakawasan',$('#namakawasan').val());
+                            data.append('idtumbuhanendemik',$('#idtumbuhanendemik').val());
+                            $.ajax({
+                                type:'POST',
+                                url:'/updateDataTumbuhanEndemik',
+                                data:data,
+                                contentType: false,
+                                processData:false,
+                                success:function(){
+                                     Swal.fire(
+                                                    'Sukses!',
+                                                    'Data Sukses di simpan!',
+                                                    'success'
+                                                ).then(function(){
+                                                   document.location.reload();
+                                                })
+                                }
+                            })
+                        }
+                    }
+                })
             })
             $("#saveDataSatwaEndemik").click(function(){
                 $.ajax({
@@ -5496,7 +5759,7 @@
                     if(result.length == 0){
                         var data;
                         data = new FormData();
-                        data.append('jenis', $('#pilihansatwa').val());
+                        data.append('jenis', $('input[name=pilihansatwa]:checked').val());
                         data.append('namakawasan',$('#namakawasan').val());
                         $.ajax({
                             type:'POST',
@@ -5510,14 +5773,14 @@
                                                 'Data Sukses di simpan!',
                                                 'success'
                                             ).then(function(){
-                                               document.location.reload();
+                                              document.location.reload();
                                             })
                             }
                         })
                     }else{
                         var data;
                         data = new FormData();
-                        data.append('jenis', $('#pilihansatwa').val());
+                        data.append('jenis', $('input[name=pilihansatwa]:checked').val());
                         data.append('namakawasan',$('#namakawasan').val());
                         data.append('idsatwaendemik',$('#idsatwaendemik').val());
                         $.ajax({
