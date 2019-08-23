@@ -17,7 +17,7 @@ class PencarianController extends CI_Controller {
     }
     public function cari($id){
         $client     = new GuzzleHttp\Client();
-        $result = $client->get(constant('API_URL').'/perkembangan-kawasan?nama_kawasan='.$id);
+        $result = $client->get(constant('API_URL').'/perkembangan-kawasan?nama_kawasan[$like]='.$id.'%');
         /*
             Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
             ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string

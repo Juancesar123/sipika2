@@ -88,7 +88,7 @@
                         <div class="col-md-9">
                             <div class="tab-content">
                                 <div id="home" class="card tab-pane fade in ">
-                                    <div class="card-header">
+                                    <div class="card-header" style="padding-bottom: 30px;">
                                         Profile Kawasan
                                         <div class="float-right">
                                            
@@ -1309,7 +1309,7 @@
                                                 </div>
                                             </div>
                                         </div>
-                                        <table class="table" id="myTable2" style="width:100%">
+                                        <table class="table display" id="myTable2" style="width:100%">
                                             <thead>
                                                 <th>Rekomendasi</th>
                                                 <th>Tahun Pelaksanaan</th>
@@ -4799,7 +4799,20 @@
         var table =  $('#myTable1').DataTable({
                         dom: 'Bfrtip',
                         buttons: [
-                            'excel', 'pdf'
+                             {
+                                extend: 'excel',
+                                title :'Perkembangan Pengukuhan Kawasan',
+                                exportOptions: {
+                                    columns: [ 0,1,2 ]
+                                }
+                            }, 
+                            {
+                                extend: 'pdf',
+                                title :'Perkembangan Pengukuhan Kawasan',
+                                exportOptions: {
+                                    columns: [ 0,1,2 ]
+                                }
+                            }
                         ],
                         deferRender: true,
                         ajax: {
@@ -4824,7 +4837,20 @@
             var table1 =  $('#myTable2').DataTable({
                         dom: 'Bfrtip',
                         buttons: [
-                            'excel', 'pdf'
+                             {
+                                extend: 'excel',
+                                title :'Evaluasi Desk Study',
+                                exportOptions: {
+                                    columns: [ 0,1,2 ]
+                                }
+                            }, 
+                            {
+                                extend: 'pdf',
+                                title :'Evaluasi Desk Study',
+                                exportOptions: {
+                                    columns: [ 0,1,2 ]
+                                }
+                            }
                         ],
                         deferRender: true,
                         ajax: {
@@ -4834,6 +4860,9 @@
                                 return d
                             }
                         },
+                        // columnDefs: [
+                        //     { "visible": false, "targets": [4,5,6,7] }
+                        // ],
                         columns: [
                             { data: 'rekomendasi' },
                             { data: 'tahun_pelaksanaan' },
@@ -4849,7 +4878,20 @@
             var table2 =  $('#myTable3').DataTable({
                         dom: 'Bfrtip',
                         buttons: [
-                            'excel', 'pdf'
+                             {
+                                extend: 'excel',
+                                title :'Evaluasi Fungsi EKF Lapangan',
+                                exportOptions: {
+                                    columns: [ 0,1,2 ]
+                                }
+                            }, 
+                            {
+                                extend: 'pdf',
+                                title :'Evaluasi Fungsi EKF Lapangan',
+                                exportOptions: {
+                                    columns: [ 0,1,2 ]
+                                }
+                            }
                         ],
                         deferRender: true,
                         ajax: {
@@ -4874,7 +4916,20 @@
             var table3 =  $('#myTable4').DataTable({
                         dom: 'Bfrtip',
                         buttons: [
-                            'excel', 'pdf'
+                             {
+                                extend: 'excel',
+                                title :'Indikasi Tora Dalam KK',
+                                exportOptions: {
+                                    columns: [ 0,1,2 ]
+                                }
+                            }, 
+                            {
+                                extend: 'pdf',
+                                title :'Indikasi Tora Dalam KK',
+                                exportOptions: {
+                                    columns: [ 0,1,2 ]
+                                }
+                            }
                         ],
                         deferRender: true,
                         ajax: {
@@ -4899,7 +4954,20 @@
             var table4 =  $('#myTable5').DataTable({
                         dom: 'Bfrtip',
                         buttons: [
-                            'excel', 'pdf'
+                            {
+                                extend: 'excel',
+                                title :'Hutan Adat',
+                                exportOptions: {
+                                    columns: [ 0,1,2 ]
+                                }
+                            }, 
+                            {
+                                extend: 'pdf',
+                                title :'Hutan Adat',
+                                exportOptions: {
+                                    columns: [ 0,1,2 ]
+                                }
+                            }
                         ],
                         deferRender: true,
                         ajax: {
@@ -4924,7 +4992,20 @@
             var table5 =  $('#myTable7').DataTable({
                         dom: 'Bfrtip',
                         buttons: [
-                            'excel', 'pdf'
+                             {
+                                extend: 'excel',
+                                title :'Evaluasi Fungsi EKF Lapangan',
+                                exportOptions: {
+                                    columns: [ 0,1 ]
+                                }
+                            }, 
+                            {
+                                extend: 'pdf',
+                                title :'Evaluasi Fungsi EKF Lapangan',
+                                exportOptions: {
+                                    columns: [ 0,1 ]
+                                }
+                            }
                         ],
                         deferRender: true,
                         ajax: {
@@ -4949,7 +5030,20 @@
             var table6 =  $('#myTable8').DataTable({
                         dom: 'Bfrtip',
                         buttons: [
-                            'excel', 'pdf'
+                            {
+                                extend: 'excel',
+                                title :'Keaneka Ragaman Hayati',
+                                exportOptions: {
+                                    columns: [ 0,1 ]
+                                }
+                            }, 
+                            {
+                                extend: 'pdf',
+                                title :'Keaneka Ragaman Hayati',
+                                exportOptions: {
+                                    columns: [ 0,1 ]
+                                }
+                            }
                         ],
                         deferRender: true,
                         ajax: {
@@ -4972,6 +5066,22 @@
                     });
                     var table61 =  $('#myTable81').DataTable({
                         deferRender: true,
+                         buttons: [
+                            {
+                                extend: 'excel',
+                                title :'Keaneka Ragaman Hayati Tumbuhan',
+                                exportOptions: {
+                                    columns: [ 0,1 ]
+                                }
+                            }, 
+                            {
+                                extend: 'pdf',
+                                title :'Keaneka Ragaman Hayati Tumbuhan',
+                                exportOptions: {
+                                    columns: [ 0,1 ]
+                                }
+                            }
+                        ],
                         ajax: {
                             url: "/getDataKeanekaragamHayatiTumbuhan/"+"<?php echo $hasil['nama_kawasan'];?>",
                             type: "GET",
@@ -4993,6 +5103,22 @@
                     
                     var table62 =  $('#myTable82').DataTable({
                         deferRender: true,
+                         buttons: [
+                            {
+                                extend: 'excel',
+                                title :'Keaneka Ragaman Hayati Satwa',
+                                exportOptions: {
+                                    columns: [ 0,1 ]
+                                }
+                            }, 
+                            {
+                                extend: 'pdf',
+                                title :'Keaneka Ragaman Hayati Satwa',
+                                exportOptions: {
+                                    columns: [ 0,1 ]
+                                }
+                            }
+                        ],
                         ajax: {
                             url: "/getDataKeanekaragamHayatiSatwa/"+"<?php echo $hasil['nama_kawasan'];?>",
                             type: "GET",
@@ -5013,6 +5139,22 @@
                     });
                     var table63 =  $('#myTable83').DataTable({
                         deferRender: true,
+                         buttons: [
+                            {
+                                extend: 'excel',
+                                title :'Keaneka Ragaman Hayati Spesies Kunci',
+                                exportOptions: {
+                                    columns: [ 0,1 ]
+                                }
+                            }, 
+                            {
+                                extend: 'pdf',
+                                title :'Keaneka Ragaman Hayati Spesies Kunci',
+                                exportOptions: {
+                                    columns: [ 0,1 ]
+                                }
+                            }
+                        ],
                         ajax: {
                             url: "/getDataKeanekaragamHayatiSpesiesKunci/"+"<?php echo $hasil['nama_kawasan'];?>",
                             type: "GET",
@@ -5195,7 +5337,20 @@
                     var tablekk =  $('#tablekk').DataTable({
                         dom: 'Bfrtip',
                         buttons: [
-                            'excel', 'pdf'
+                            {
+                                extend: 'excel',
+                                title :'Desa Sekitar KK',
+                                exportOptions: {
+                                    columns: [ 0,1,2 ]
+                                }
+                            }, 
+                            {
+                                extend: 'pdf',
+                                title :'Desa Sekitar KK',
+                                exportOptions: {
+                                    columns: [ 0,1,2 ]
+                                }
+                            }
                         ],
                         deferRender: true,
                         ajax: {
@@ -5220,8 +5375,21 @@
                     //-------------------------------Wilayah Adat ---------------------//
                     var tablewilayahadat =  $('#tablewilayahadat').DataTable({
                         dom: 'Bfrtip',
-                        buttons: [
-                            'excel', 'pdf'
+                       buttons: [
+                            {
+                                extend: 'excel',
+                                title :'Wilayah Adat',
+                                exportOptions: {
+                                    columns: [ 0,1,2 ]
+                                }
+                            }, 
+                            {
+                                extend: 'pdf',
+                                title :'Wilayah Adat',
+                                exportOptions: {
+                                    columns: [ 0,1,2 ]
+                                }
+                            }
                         ],
                         deferRender: true,
                         ajax: {
@@ -5247,8 +5415,21 @@
                     //-------------------------------PERMASALAHAN KK--------------------//
                     var table10 = $('#myTable10').DataTable({
                         dom: 'Bfrtip',
-                        buttons: [
-                            'excel', 'pdf'
+                         buttons: [
+                            {
+                                extend: 'excel',
+                                title :'Permasalahan Pengelolaan KK',
+                                exportOptions: {
+                                    columns: [ 0,1,2 ]
+                                }
+                            }, 
+                            {
+                                extend: 'pdf',
+                                title :'Permasalahan Pengelolaan KK',
+                                exportOptions: {
+                                    columns: [ 0,1,2 ]
+                                }
+                            }
                         ],
                         deferRender: true,
                         ajax: {
@@ -5274,7 +5455,20 @@
                       var table11 = $('#myTable11').DataTable({
                         dom: 'Bfrtip',
                         buttons: [
-                            'excel', 'pdf'
+                            {
+                                extend: 'excel',
+                                title :'Sosekbud',
+                                exportOptions: {
+                                    columns: [ 0,1 ]
+                                }
+                            }, 
+                            {
+                                extend: 'pdf',
+                                title :'Sosekbud',
+                                exportOptions: {
+                                    columns: [ 0,1 ]
+                                }
+                            }
                         ],
                          responsive: {
                             details: {
@@ -5310,8 +5504,21 @@
                     });
                     var table13 = $('#myTable13').DataTable({
                         dom: 'Bfrtip',
-                        buttons: [
-                            'excel', 'pdf'
+                         buttons: [
+                            {
+                                extend: 'excel',
+                                title :'Penutupan Lahan Per Kawasan',
+                                exportOptions: {
+                                    columns: [ 0,1,2 ]
+                                }
+                            }, 
+                            {
+                                extend: 'pdf',
+                                title :'Penutupan Lahan Per Kawasan',
+                                exportOptions: {
+                                    columns: [ 0,1,2 ]
+                                }
+                            }
                         ],
                          responsive: {
                             details: {
@@ -5361,8 +5568,21 @@
                     });
                     var table14 = $('#myTable14').DataTable({
                         dom: 'Bfrtip',
-                        buttons: [
-                            'excel', 'pdf'
+                         buttons: [
+                            {
+                                extend: 'excel',
+                                title :'Open Area Kawasan',
+                                exportOptions: {
+                                    columns: [ 0,1,2 ]
+                                }
+                            }, 
+                            {
+                                extend: 'pdf',
+                                title :'Keaneka Ragaman Hayati',
+                                exportOptions: {
+                                    columns: [ 0,1,2 ]
+                                }
+                            }
                         ],
                          responsive: {
                             details: {
@@ -5413,7 +5633,20 @@
                      var table15 = $('#myTable15').DataTable({
                         dom: 'Bfrtip',
                         buttons: [
-                            'excel', 'pdf'
+                            {
+                                extend: 'excel',
+                                title :'Kemitraan Konsevarsi',
+                                exportOptions: {
+                                    columns: [ 0,1 ]
+                                }
+                            }, 
+                            {
+                                extend: 'pdf',
+                                title :'Kemitraan Konsevarsi',
+                                exportOptions: {
+                                    columns: [ 0,1 ]
+                                }
+                            }
                         ],
                          responsive: {
                             details: {
@@ -5454,7 +5687,20 @@
                      var table16 = $('#myTable16').DataTable({
                         dom: 'Bfrtip',
                         buttons: [
-                            'excel', 'pdf'
+                            {
+                                extend: 'excel',
+                                title :'Penguatan Fungsi KK',
+                                exportOptions: {
+                                    columns: [ 0,1,2,3 ]
+                                }
+                            }, 
+                            {
+                                extend: 'pdf',
+                                title :'Penguatan Fungsi KK',
+                                exportOptions: {
+                                    columns: [ 0,1,2,3 ]
+                                }
+                            }
                         ],
                          responsive: {
                             details: {
@@ -5491,7 +5737,20 @@
                      var table17 = $('#myTable17').DataTable({
                         dom: 'Bfrtip',
                         buttons: [
-                            'excel', 'pdf'
+                            {
+                                extend: 'excel',
+                                title :'Pembangunan Strategis',
+                                exportOptions: {
+                                    columns: [ 0,1,2,3 ]
+                                }
+                            }, 
+                            {
+                                extend: 'pdf',
+                                title :'Pembangunan Strategis',
+                                exportOptions: {
+                                    columns: [ 0,1,2,3 ]
+                                }
+                            }
                         ],
                          responsive: {
                             details: {
@@ -5528,7 +5787,20 @@
                      var table18 = $('#myTable18').DataTable({
                         dom: 'Bfrtip',
                         buttons: [
-                            'excel', 'pdf'
+                            {
+                                extend: 'excel',
+                                title :'Peta Kawasan Konsevarsi',
+                                exportOptions: {
+                                    columns: [ 0,1,2 ]
+                                }
+                            }, 
+                            {
+                                extend: 'pdf',
+                                title :'Peta Kawasan Konsevarsi',
+                                exportOptions: {
+                                    columns: [ 0,1,2 ]
+                                }
+                            }
                         ],
                          responsive: {
                             details: {
