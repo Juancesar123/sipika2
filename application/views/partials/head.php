@@ -3,7 +3,7 @@
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-  <title>Appular Admin</title>
+  <title>Sipika Admin</title>
   <!-- plugins:css -->
   <link rel="stylesheet" href="<?php echo base_url('vendors/iconfonts/font-awesome/css/all.min.css')?>">
   <link rel="stylesheet" href="<?php echo base_url('vendors/css/vendor.bundle.base.css')?>">

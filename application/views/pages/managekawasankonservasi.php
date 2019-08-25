@@ -5065,7 +5065,7 @@
                         ]
                     });
                     var table61 =  $('#myTable81').DataTable({
-                        deferRender: true,
+                         dom: 'Bfrtip',
                          buttons: [
                             {
                                 extend: 'excel',
@@ -5082,6 +5082,7 @@
                                 }
                             }
                         ],
+                        deferRender: true,
                         ajax: {
                             url: "/getDataKeanekaragamHayatiTumbuhan/"+"<?php echo $hasil['nama_kawasan'];?>",
                             type: "GET",
@@ -5102,6 +5103,7 @@
                     });
                     
                     var table62 =  $('#myTable82').DataTable({
+                        dom: 'Bfrtip',
                         deferRender: true,
                          buttons: [
                             {
@@ -5138,6 +5140,7 @@
                         ]
                     });
                     var table63 =  $('#myTable83').DataTable({
+                        dom: 'Bfrtip',
                         deferRender: true,
                          buttons: [
                             {
@@ -5174,6 +5177,7 @@
                         ]
                     });
                     var table64 =  $('#myTable84').DataTable({
+                        dom: 'Bfrtip',
                         deferRender: true,
                         ajax: {
                             url: "/getDataKeanekaragamHayati4/"+"<?php echo $hasil['nama_kawasan'];?>",
@@ -5194,6 +5198,7 @@
                         ]
                     });
                     var table65 =  $('#myTable85').DataTable({
+                        dom: 'Bfrtip',
                         deferRender: true,
                         ajax: {
                             url: "/getDataKeanekaragamHayati5/"+"<?php echo $hasil['nama_kawasan'];?>",
@@ -5214,6 +5219,7 @@
                         ]
                     });
                     var table66 =  $('#myTable86').DataTable({
+                        dom: 'Bfrtip',
                         deferRender: true,
                         ajax: {
                             url: "/getDataKeanekaragamHayati6/"+"<?php echo $hasil['nama_kawasan'];?>",
@@ -5234,6 +5240,23 @@
                         ]
                     });
                     var table67 =  $('#myTable87').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: [
+                            {
+                                extend: 'excel',
+                                title :'Keaneka Ragaman Hayati Tumbuhan Di Lindungi',
+                                exportOptions: {
+                                    columns: [ 0,1 ]
+                                }
+                            }, 
+                            {
+                                extend: 'pdf',
+                                title :'Keaneka Ragaman Hayati Tumbuhan Di Lindungi',
+                                exportOptions: {
+                                    columns: [ 0,1 ]
+                                }
+                            }
+                        ],
                         deferRender: true,
                         ajax: {
                             url: "/getDataKeanekaragamHayatiTumbuhanDiLindungi/"+"<?php echo $hasil['nama_kawasan'];?>",
@@ -5254,6 +5277,23 @@
                         ]
                     });
                     var table68 =  $('#myTable88').DataTable({
+                        dom: 'Bfrtip',
+                         buttons: [
+                            {
+                                extend: 'excel',
+                                title :'Keaneka Ragaman Hayati Satwa Di Lindungi',
+                                exportOptions: {
+                                    columns: [ 0,1 ]
+                                }
+                            }, 
+                            {
+                                extend: 'pdf',
+                                title :'Keaneka Ragaman Hayati Satwa Di Lindungi',
+                                exportOptions: {
+                                    columns: [ 0,1 ]
+                                }
+                            }
+                        ],
                         deferRender: true,
                         ajax: {
                             url: "/getDataKeanekaragamHayatiSatwaDiLindungi/"+"<?php echo $hasil['nama_kawasan'];?>",
@@ -5274,6 +5314,23 @@
                         ]
                     });
                      var table69 =  $('#myTable89').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: [
+                            {
+                                extend: 'excel',
+                                title :'Keaneka Ragaman Hayati Habitat 25 Satwa',
+                                exportOptions: {
+                                    columns: [ 0,1 ]
+                                }
+                            }, 
+                            {
+                                extend: 'pdf',
+                                title :'Keaneka Ragaman Hayati Satwa Habitat 25 Satwa',
+                                exportOptions: {
+                                    columns: [ 0,1 ]
+                                }
+                            }
+                        ],
                         deferRender: true,
                         ajax: {
                             url: "/getDataKeanekaragamHayatiHabitatSatwa/"+"<?php echo $hasil['nama_kawasan'];?>",
@@ -5292,7 +5349,25 @@
                                 }
                             }
                         ]
-                    }); var table610 =  $('#myTable810').DataTable({
+                    }); 
+                     var table610 =  $('#myTable810').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: [
+                            {
+                                extend: 'excel',
+                                title :'Keaneka Ragaman Hayati Tumbuhan Dan Satwa Liar',
+                                exportOptions: {
+                                    columns: [ 0,1 ]
+                                }
+                            }, 
+                            {
+                                extend: 'pdf',
+                                title :'Keaneka Ragaman Hayati Tumbuhan Dan Satwa Liar',
+                                exportOptions: {
+                                    columns: [ 0,1 ]
+                                }
+                            }
+                        ],
                         deferRender: true,
                         ajax: {
                             url: "/getDataKeanekaragamHayatiTumbuhanLiar/"+"<?php echo $hasil['nama_kawasan'];?>",
@@ -5313,6 +5388,23 @@
                         ]
                     });
                     var table611 =  $('#myTable811').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: [
+                            {
+                                extend: 'excel',
+                                title :'Keaneka Ragaman Hayati Potensi HHBK',
+                                exportOptions: {
+                                    columns: [ 0,1 ]
+                                }
+                            }, 
+                            {
+                                extend: 'pdf',
+                                title :'Keaneka Ragaman Hayati Potensi HHBK',
+                                exportOptions: {
+                                    columns: [ 0,1 ]
+                                }
+                            }
+                        ],
                         deferRender: true,
                         ajax: {
                             url: "/getDataKeanekaragamHayatiPotensi/"+"<?php echo $hasil['nama_kawasan'];?>",

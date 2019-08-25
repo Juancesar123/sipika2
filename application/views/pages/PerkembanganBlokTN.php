@@ -14,13 +14,13 @@
                     <div class="row">
                         <div class="col-md-12 grid-margin">
                         <div class="d-flex align-items-baseline flex-wrap mt-3">
-                            <h2 class="mr-4 mb-0">Perkembangan Zonasi TN</h2>
+                            <h2 class="mr-4 mb-0">Perkembangan Blok TN</h2>
                             <div class="d-flex align-items-baseline mt-2 mt-sm-0">
                             <i class="fas fa-home mr-1 text-muted"></i>
                             <i class="fas fa-chevron-right fa-xs mr-1 text-muted"></i>
                             <p class="mb-0 mr-1">Subdit Penataan</p>
                             <i class="fas fa-chevron-right fa-xs mr-1 text-muted"></i>
-                            <p class="mb-0">Perkembangan Zonasi TN</p>
+                            <p class="mb-0">Perkembangan Blok TN</p>
                             </div>
                         </div>
                         </div>
@@ -29,7 +29,7 @@
                         <div class="col-12">
                             <div class="card">
                                 <div class="card-header">
-                                    <h4>Perkembangan Zonasi TN</h4>
+                                    <h4>Perkembangan Blok TN</h4>
                                     <button class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">Tambah</button>
                                 </div>
                                 <div class="card-body">
@@ -37,30 +37,31 @@
                                     <div class="modal-dialog modal-lg" role="document">
                                         <div class="modal-content">
                                         <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Form Input Perkembangan Zonasi TN</h5>
+                                            <h5 class="modal-title" id="exampleModalLabel">Form Input Perkembangan Blok TN</h5>
                                             <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                             <span aria-hidden="true">&times;</span>
                                             </button>
                                         </div>
-                                        <form id="formperkembanganzonasiTn">
+                                        <form id="formperkembaganbloktn">
                                             <div class="modal-body">
                                                 <div class="row">
                                                     <div class="col-4">
+                                                        <h5>Basic Info</h5>
                                                         <div class="form-group">
-                                                            <label>Data Surat Keputusan Zonasi Taman Nasional</label>
+                                                            <label>Data Surat Keputusan Blok TN</label>
                                                             <select class="form-control" type="text" id="datasurat" name="datasurat">
-                                                                <option value="tes1">Tes 1</option>
-                                                                <option value="tes12">Tes 2</option>
+                                                                    <option value="tes1">Tes 1</option>
+                                                                    <option value="tes12">Tes 2</option>
                                                             </select>
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Nama Kawasan</label>
                                                             <input class="form-control" type="text" id="namakawasan" name="namakawasan">
                                                         </div>
-                                                    
+                                                       
                                                         <div class="form-group">
-                                                            <label>Status Zonasi</label>
-                                                            <select class="form-control" id="statuszonasi" name="statuszonasi">
+                                                            <label>Status Blok</label>
+                                                            <select class="form-control" id="statusblok" name="statusblok">
                                                                 <option value="ditetapkan">Ditetapkan</option>
                                                                 <option value="revisi">Revisi</option>
                                                                 <option value="dalam proses">Dalam Proses</option>
@@ -78,9 +79,10 @@
                                                             <label>Peta</label>
                                                             <input class="form-control" type="file" id="peta" name="peta">
                                                         </div>
+                                                       
                                                         <div class="form-group">
                                                             <label>Peta SHP</label>
-                                                            <input class="form-control" type="file" id="petashp"name="petashp">
+                                                            <input class="form-control" type="file" id="petashp" name="petashp">
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Deskripsi</label>
@@ -89,9 +91,9 @@
                                                     </div>
                                                     <div class="col-4">
                                                         <div class="form-group">
-                                                            <h3>SK Zonasi KPHK TN</h3>
+                                                            <h5>SK Blok</h5>
                                                             <label>Judul SK</label>
-                                                            <input class="form-control" type="text" id="judulsk" name="judulsk">
+                                                            <input class="form-control" type="text" id="judulsk" name="judulsk"> 
                                                             <label>Nomor SK</label>
                                                             <input class="form-control" type="text" id="nomorsk" name="nomorsk">
                                                             <label>Tanggal SK</label>
@@ -101,46 +103,45 @@
                                                         </div>
                                                     </div>
                                                     <div class="col-4">
+                                                        <h5>Data Luas Blok</h5>
                                                         <div class="form-group">
-                                                            <label>Data Luas Zona</label>
-                                                            <input class="form-control" type="text" id="dataluaszona" name="dataluaszona">
+                                                            <label>Blok Perlindungan (Ha)</label>
+                                                            <input class="form-control" type="text" id="blokperlindungan" name="blokperlindungan">
+                                                        </div>
+                                                       
+                                                        <div class="form-group">
+                                                            <label>Blok Pemanfaatan (Ha)</label>
+                                                            <input class="form-control" type="text" id="blokpemanfaatan" name="blokpemanfaatan">
                                                         </div>
                                                         <div class="form-group">
-                                                            <label>Zona Inti (Ha)</label>
-                                                            <input class="form-control" type="text" id="zonainti" name="zonainti">
+                                                            <label>Blok Koleksi (Ha)</label>
+                                                            <input class="form-control" type="text" id="blokkoleksi" name="blokkoleksi">
                                                         </div>
-                                                    
+                                                       
                                                         <div class="form-group">
-                                                            <label>Zona Pemanfaatan (Ha)</label>
-                                                            <input class="form-control" type="text" id="zonapemanfaatan" name="zonapemanfaatan">
+                                                            <label>Blok Perlindungan Bahari (Ha)</label>
+                                                            <input class="form-control" type="text" id="blokperlindunganbahari" name="blokperlindunganbahari">
                                                         </div>
+
                                                         <div class="form-group">
-                                                            <label>Zona Tradisional (Ha)</label>
-                                                            <input class="form-control" type="text" id="zonatradisional" name="zonatradisional">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label>Zona Religi, Budaya, Sejarah (Ha)</label>
-                                                            <input class="form-control" type="text" id="zonareligi" name="zonareligi">
+                                                            <label>Blok Tradisional</label>
+                                                            <input class="form-control" type="text" id="bloktradisional" name="bloktradisional">
                                                         </div>
                                                         <div class="form-group">
-                                                            <label>Zona Rimba</label>
-                                                            <input class="form-control" type="text" id="zonarimba" name="zonarimba">
+                                                            <label>Blok Rehabilitasi (Ha)</label>
+                                                            <input class="form-control" type="text" id="blokrehabilitasi" name="blokrehabilitasi">
+                                                        </div>
+                                                         <div class="form-group">
+                                                            <label>Blok Religi, Budaya, Sejarah (Ha)</label>
+                                                            <input class="form-control" type="text" id="blokreligi" name="blokreligi">
                                                         </div>
                                                         <div class="form-group">
-                                                            <label>Zona Perlindungan Bahari (Ha)</label>
-                                                            <input class="form-control" type="text" id="zonaperlindunganbahari" name="zonaperlindunganbahari">
+                                                            <label>Blok Khusus (Ha)</label>
+                                                            <input class="form-control" type="text" id="blokkhusus" name="blokkhusus">
                                                         </div>
                                                         <div class="form-group">
-                                                            <label>Zona Rehabilitasi (Ha)</label>
-                                                            <input class="form-control" type="text" id="zonarehabilitasi" name="zonarehabilitasi">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label>Zona Khusus (Ha)</label>
-                                                            <input class="form-control" type="text" id="zonakhusus" name="zonakhusus">
-                                                        </div>
-                                                        <div class="form-group">
-                                                            <label>Zona Lainnya</label>
-                                                            <input class="form-control" type="text" id="zonalainnya" name="zonalainnya">
+                                                            <label>Blok Lainnya</label>
+                                                            <input class="form-control" type="text" id="bloklainnya" name="bloklainnya">
                                                         </div>
                                                     </div>
                                                 </div>
@@ -156,128 +157,132 @@
                                     <div class="modal fade bd-example-modal-lg" id="modals2" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                                     <div class="modal-dialog modal-lg" role="document">
                                         <div class="modal-content">
-                                        <div class="modal-header">
-                                            <h5 class="modal-title" id="exampleModalLabel">Form Ubah Perkembangan Zonasi TN</h5>
-                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                                            <span aria-hidden="true">&times;</span>
-                                            </button>
-                                        </div>
-                                        <div class="modal-body">
-                                        <div class="row">
-                                                <div class="col-4">
-                                                    <div class="form-group">
-                                                        <label>Data Surat Keputusan Zonasi Taman Nasional</label>
-                                                        <select class="form-control" type="text" id="datasurat">
-                                                                <option value="tes1">Tes 1</option>
-                                                                <option value="tes12">Tes 2</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Nama Kawasan</label>
-                                                        <input class="form-control" type="text" id="namakawasan">
-                                                    </div>
-                                                   
-                                                    <div class="form-group">
-                                                        <label>Status Zonasi</label>
-                                                        <select class="form-control" id="statuszonasi">
-                                                            <option value="ditetapkan">Ditetapkan</option>
-                                                            <option value="revisi">Revisi</option>
-                                                            <option value="dalam proses">Dalam Proses</option>
-                                                        </select>
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Luas</label>
-                                                        <input class="form-control" type="text" id="luas">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Penataan Kawasan</label>
-                                                        <input class="form-control" type="file" id="penataankawasan">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Peta</label>
-                                                        <input class="form-control" type="file" id="peta">
-                                                    </div>
-                                                   
-                                                    <div class="form-group">
-                                                        <label>Peta SHP</label>
-                                                        <input class="form-control" type="file" id="petashp">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Deskripsi</label>
-                                                        <textarea class="form-control" type="text" id="deskripsi"></textarea>
-                                                    </div>
-                                                </div>
-                                                <div class="col-4">
-                                                    <div class="form-group">
-                                                        <h3>SK Zonasi KPHK TN</h3>
-                                                        <label>Judul SK</label>
-                                                        <input class="form-control" type="text" id="judulsk">
-                                                        <label>Nomor SK</label>
-                                                        <input class="form-control" type="text" id="nomorsk">
-                                                        <label>Tanggal SK</label>
-                                                        <input class="form-control" type="date" id="tanggalsk">
-                                                        <label>Dokumen SK</label>
-                                                        <input class="form-control" type="file" id="dokumensk">
-                                                    </div>
-                                                </div>
-                                                <div class="col-4">
-                                                    
-                                                    <div class="form-group">
-                                                        <label>Data Luas Zona</label>
-                                                        <input class="form-control" type="text" id="dataluaszona">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Zona Inti (Ha)</label>
-                                                        <input class="form-control" type="text" id="zonainti">
-                                                    </div>
-                                                   
-                                                    <div class="form-group">
-                                                        <label>Zona Pemanfaatan (Ha)</label>
-                                                        <input class="form-control" type="text" id="zonapemanfaatan">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Zona Tradisional (Ha)</label>
-                                                        <input class="form-control" type="text" id="zonatradisional">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Zona Religi, Budaya, Sejarah (Ha)</label>
-                                                        <input class="form-control" type="text" id="zonareligi">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Zona Rimba</label>
-                                                        <input class="form-control" type="text" id="zonarimba">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Zona Perlindungan Bahari (Ha)</label>
-                                                        <input class="form-control" type="text" id="zonaperlindunganbahari">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Zona Rehabilitasi (Ha)</label>
-                                                        <input class="form-control" type="text" id="zonarehabilitasi">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Zona Khusus (Ha)</label>
-                                                        <input class="form-control" type="text" id="zonakhusus">
-                                                    </div>
-                                                    <div class="form-group">
-                                                        <label>Zona Lainnya</label>
-                                                        <input class="form-control" type="text" id="zonalainnya">
-                                                    </div>
-                                                </div>
+                                            <div class="modal-header">
+                                                <h5 class="modal-title" id="exampleModalLabel">Form Ubah Perkembangan Blok TN</h5>
+                                                <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                                </button>
                                             </div>
-                                        </div>
-                                        <div class="modal-footer">
-                                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary" id="UpdateData">Save changes</button>
-                                        </div>
+                                            <form id="formperkembaganbloktnedit">
+                                                <div class="modal-body">
+                                                    <div class="row">
+                                                        <div class="col-4">
+                                                            <div class="form-group">
+                                                                <label>Data Surat Keputusan Blok TN</label>
+                                                                <select class="form-control" type="text" id="datasuratedit" name="datasuratedit">
+                                                                        <option value="tes1">Tes 1</option>
+                                                                        <option value="tes12">Tes 2</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Nama Kawasan</label>
+                                                                <input class="form-control" type="text" id="namakawasanedit" name="namakawasanedit">
+                                                            </div>
+                                                           
+                                                            <div class="form-group">
+                                                                <label>Status Blok</label>
+                                                                <select class="form-control" id="statusblokedit" name="statusblokedit">
+                                                                    <option value="ditetapkan">Ditetapkan</option>
+                                                                    <option value="revisi">Revisi</option>
+                                                                    <option value="dalam proses">Dalam Proses</option>
+                                                                </select>
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Luas</label>
+                                                                <input class="form-control" type="text" id="luasedit" name="luasedit">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Penataan Kawasan</label>
+                                                                <input class="form-control" type="file" id="penataankawasanedit" name="penataankawasanedit">
+                                                                <input type="hidden" id="penataankawasanhidden">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Peta</label>
+                                                                <input class="form-control" type="file" id="petaedit" name="petaedit">
+                                                                <input type="hidden" id="petahidden">
+                                                            </div>
+                                                           
+                                                            <div class="form-group">
+                                                                <label>Peta SHP</label>
+                                                                <input class="form-control" type="file" id="petashpedit" name="petashpedit">
+                                                                <input type="hidden" id="petashphidden">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Deskripsi</label>
+                                                                <textarea class="form-control" type="text" id="deskripsiedit" name="deskripsiedit"></textarea>
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <div class="form-group">
+                                                                <h3>SK Blok</h3>
+                                                                <label>Judul SK</label>
+                                                                <input class="form-control" type="text" id="judulskedit" name="judulskedit">
+                                                                <label>Nomor SK</label>
+                                                                <input class="form-control" type="text" id="nomorskedit" name="nomorskedit">
+                                                                <label>Tanggal SK</label>
+                                                                <input class="form-control" type="date" id="tanggalskedit" name="tanggalskedit">
+                                                                <label>Dokumen SK</label>
+                                                                <input class="form-control" type="file" id="dokumenskedit" name="dokumenskedit">
+                                                                <input type="hidden" id="dokumenskhidden">
+                                                                <input type="hidden" id="idperkembanganbloktn" name="idperkembanganbloktn">
+                                                            </div>
+                                                        </div>
+                                                        <div class="col-4">
+                                                            <div class="form-group">
+                                                                <label>Blok Perlindungan (Ha)</label>
+                                                                <input class="form-control" type="text" id="blokperlindunganedit" name="blokperlindunganedit">
+                                                            </div>
+                                                           
+                                                            <div class="form-group">
+                                                                <label>Blok Pemanfaatan (Ha)</label>
+                                                                <input class="form-control" type="text" id="blokpemanfaatanedit" name="blokpemanfaatanedit">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Blok Koleksi (Ha)</label>
+                                                                <input class="form-control" type="text" id="blokkoleksiedit" name="blokkoleksiedit">
+                                                            </div>
+                                                           
+                                                            <div class="form-group">
+                                                                <label>Blok Perlindungan Bahari (Ha)</label>
+                                                                <input class="form-control" type="text" id="blokperlindunganbahariedit" name="blokperlindunganbahariedit">
+                                                            </div>
+
+                                                            <div class="form-group">
+                                                                <label>Blok Tradisional</label>
+                                                                <input class="form-control" type="text" id="bloktradisionaledit" name="bloktradisionaledit">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Blok Rehabilitasi (Ha)</label>
+                                                                <input class="form-control" type="text" id="blokrehabilitasiedit" name="blokrehabilitasiedit">
+                                                            </div>
+                                                             <div class="form-group">
+                                                                <label>Blok Religi, Budaya, Sejarah (Ha)</label>
+                                                                <input class="form-control" type="text" id="blokreligiedit" name="blokreligiedit">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Blok Khusus (Ha)</label>
+                                                                <input class="form-control" type="text" id="blokkhususedit" name="blokkhususedit">
+                                                            </div>
+                                                            <div class="form-group">
+                                                                <label>Blok Lainnya</label>
+                                                                <input class="form-control" type="text" id="bloklainnyaedit" name="bloklainnyaedit">
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                                                    <button class="btn btn-primary" type="submit">Save changes</button>
+                                                </div>
+                                            </form>
                                         </div>
                                     </div>
                                     </div>
-                                    <table class="table" id="myTable">
+                                    <table class="table display" id="myTable" style="width: 100%">
                                         <thead>
                                             <th>Data Surat</th>
                                             <th>Nama Kawasan</th>
-                                            <th>Status Zonasi</th>
+                                            <th>Status Blok</th>
                                             <th>Action</th>
                                         </thead>
                                     </table>
@@ -305,7 +310,7 @@
                 }).then((result) => {
                     if (result.value) {
                         $.ajax({
-                            url:'/deletePerkembanganZonasiTn/'+id,
+                            url:'/deletePerkembanganbloktn/'+id,
                             type:'GET',
                             success:function(){
                                 Swal.fire(
@@ -321,28 +326,38 @@
         }
         function editfunc(id){
             $.ajax({
-                url:'/showDataPerkembanganzonasiTn/'+id,
+                url:'/showDataPerkembanganbloktn/'+id,
                 type:'GET',
                 success:function(data){
                     var hasil = JSON.parse(data);
-                    $( '#tahunpengesahanedit' ).val(hasil.tahun_pengesahaan);
-                    $( '#luaskphkedit' ).val(hasil.luas_kphk);
-                    $( '#provinsiedit' ).val(hasil.master_provinsi.kode);
-                    $('#provinsiedit').select2().trigger('change');
-                    $( '#judulskedit' ).val(hasil.judul_sk);
+                    $( '#datasuratedit' ).val(hasil.datasurat);
+                    $( '#namakawasanedit' ).val(hasil.nama_kawasan);
+                    $( '#statusblokedit' ).val(hasil.status_blok);
+                    $('#luasedit').val(hasil.luas);
+                    $( '#penataankawasanhidden' ).val(hasil.penataan_kawasan);
+                    $( '#petahidden' ).val(hasil.peta);
+                    $( '#petashphidden' ).val(hasil.petashp);
+                    $( '#deskripsiedit' ).val(hasil.deskripsi);
+                    $('#judulskedit').val(hasil.judul_sk);
+                    $( '#dokumenskhidden' ).val(hasil.dokumen_sk);
                     $( '#nomorskedit' ).val(hasil.nomor_sk);
-                    $( '#tanggalskedit' ).val(hasil.tanggal_sk);
-                    $( '#kabupatenkotaedit' ).val(hasil.master_provinsi.kode);
-                    $('#kabupatenkotaedit').select2().trigger('change');
-                    $( '#dokumenskhide' ).val(hasil.dokumen_sk);
-                    $( '#idkphkedit' ).val(hasil.id);
+                    $( '#blokperlindunganedit' ).val(hasil.blok_perlindungan);
+                    $( '#blokpemanfaatanedit' ).val(hasil.blok_pemanfaatan);
+                    $( '#blokreligiedit' ).val(hasil.blok_religi);
+                    $( '#blokkoleksiedit' ).val(hasil.blok_koleksi);
+                    $( '#bloktradisionaledit' ).val(hasil.blok_tradisional);
+                    $( '#blokperlindunganbahariedit' ).val(hasil.blok_perlindungan_bahari);
+                    $( '#blokkhususedit' ).val(hasil.blok_khusus);
+                    $( '#bloklainnyaedit' ).val(hasil.blok_lainnya);
+                    $( '#blokrehabilitasiedit' ).val(hasil.blok_rehabilitasi);
+                    $( '#idperkembanganbloktn' ).val(hasil.id);
                 }
             })
         }
         var table =  $('#myTable').DataTable({
                         deferRender: true,
                         ajax: {
-                            url: "/getDataPerkembanganzonasiTn",
+                            url: "/getDataPerkembanganbloktn",
                             type: "GET",
                             dataSrc: function (d) {
                                 return d
@@ -351,7 +366,7 @@
                         columns: [
                             { data: 'datasurat' },
                             { data: 'nama_kawasan' },
-                            { data: 'status_zonasi' },                            	
+                            { data: 'status_blok' },                            	
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
@@ -361,66 +376,191 @@
                         ]
                     });
         $('document').ready(function(){
-            $('#UpdateData').click(function(){
-                var file = $('#dokumenskedit')[0].files[0];
-                if(file == undefined){
-                    var data;
-                    data = new FormData();
-                    data.append( 'tahunpengesahan', $( '#tahunpengesahan' ).val());
-                    data.append( 'luaskphk', $( '#luaskphk' ).val());
-                    data.append( 'provinsi', $( '#provinsiedit' ).val());
-                    data.append( 'kabupaten_kotaedit', $( '#kabupatenkotaedit' ).val());
-                    data.append( 'judulsk', $( '#judulsk' ).val());
-                    data.append( 'nomorsk', $( '#nomorsk' ).val());
-                    data.append( 'tanggalsk', $( '#tanggalsk' ).val());
-                    data.append( 'idkphk', $( '#idkphkedit' ).val());
-                    data.append( 'dokumensk',  $( '#dokumenskhide' ).val());
-                    data.append( 'status',  'filenotfound');
-                    $.ajax({
-                        url:'/updateDataKphkTn',
-                        method:'POST',
-                        data:data,
-                        contentType: false,
-                        processData:false,
-                        success:function(){
-                            Swal.fire(
-                                    'Sukses!',
-                                    'Data Sukses di simpan!',
-                                    'success'
-                                )
-                                table.ajax.reload();
-                        }
-                    })
-                }else{
-                    var data;
-                    data = new FormData();
-                    data.append( 'dokumensk', $( '#dokumenskedit' )[0].files[0] );
-                    data.append( 'tahunpengesahan', $( '#tahunpengesahanedit' ).val());
-                    data.append( 'luaskphk', $( '#luaskphkedit' ).val());
-                    data.append( 'provinsi', $( '#provinsiedit' ).val());
-                    data.append( 'kabupaten_kota_kphk', $( '#kabupatenkotaedit' ).val());
-                    data.append( 'judulsk', $( '#judulskedit' ).val());
-                    data.append( 'nomorsk', $( '#nomorskedit' ).val());
-                    data.append( 'tanggalsk', $( '#tanggalskedit' ).val());
-                    data.append( 'idkphk', $( '#idkphkedit' ).val());
-                    $.ajax({
-                        url:'/updateDataKphkTn',
-                        method:'POST',
-                        data:data,
-                        contentType: false,
-                        processData:false,
-                        success:function(){
-                            Swal.fire(
-                                    'Sukses!',
-                                    'Data Sukses di simpan!',
-                                    'success'
-                                )
-                                table.ajax.reload();
-                        }
-                    })
+            $('form[id="formperkembaganbloktnedit"]').validate({
+                rules: {
+                    luasedit:{
+                        required:true,
+                        number:true
+                    },
+                    datasuratedit: 'required',
+                    namakawasanedit: 'required',
+                    statusblokedit:'required',
+                    judulskedit:'required',
+                    nomorskedit: 'required',
+                    tanggalskedit:'required',
+                    deskripsiedit:'required',
+                    blokperlindunganedit:{
+                        required:true,
+                        number:true,
+                    },
+                    blokpemanfaatanedit:{
+                        required:true,
+                        number:true,
+                    },
+                    blokreligiedit:{
+                        required:true,
+                        number:true,
+                    },
+                    bloktradisionaledit:{
+                        required:true,
+                        number:true,
+                    },
+                    blokkoleksiedit:{
+                        required:true,
+                        number:true,
+                    },
+                    blokperlindunganbahariedit:{
+                        required:true,
+                        number:true,
+                    },
+                    blokrehabilitasiedit:{
+                        required:true,
+                        number:true,
+                    },
+                    blokkhususedit:{
+                        required:true,
+                        number:true,
+                    },
+                    bloklainnyaedit:{
+                        required:true,
+                        number:true,
+                    },
+                },
+                messages: {
+                    judul: 'This field is required',
+
+                },
+                submitHandler: function(form) {
+                    var file = $('#dokumenskedit')[0].files[0];
+                    if(file == undefined){
+                        var data;
+                        data = new FormData();
+                        data.append( 'dokumensk', $( '#dokumenskhidden' ).val());
+                        data.append( 'datasurat', $( '#datasuratedit' ).val());
+                        data.append( 'namakawasan', $( '#namakawasanedit' ).val());
+                        data.append( 'luas', $( '#luasedit' ).val());
+                        data.append( 'statusblok', $( '#statusblokedit' ).val());
+                        data.append( 'judulsk', $( '#judulskedit' ).val());
+                        data.append( 'nomorsk', $( '#nomorskedit' ).val());
+                        data.append( 'tanggalsk', $( '#tanggalskedit' ).val());
+                        data.append( 'penataankawasan', $( '#penataankawasanhidden' ).val() );
+                        data.append( 'peta', $( '#petahidden' ).val() );
+                        data.append( 'petashp', $( '#petashphidden' ).val() );
+                        data.append( 'deskripsi', $( '#deskripsiedit' ).val());
+                        data.append( 'blokperlindungan', $( '#blokperlindunganedit' ).val());
+                        data.append( 'blokpemanfaatan', $( '#blokpemanfaatanedit' ).val());
+                        data.append( 'bloktradisional', $( '#bloktradisionaledit' ).val());
+                        data.append( 'blokreligi', $( '#blokreligiedit' ).val());
+                        data.append( 'blokkoleksi', $( '#blokkoleksiedit' ).val());
+                        data.append( 'blokperlindunganbahari', $( '#blokperlindunganbahariedit' ).val());
+                        data.append( 'blokrehabilitasi', $( '#blokrehabilitasiedit' ).val());
+                        data.append( 'blokkhusus', $( '#blokkhususedit' ).val());
+                        data.append( 'bloklainnya', $( '#bloklainnyaedit' ).val());
+                        data.append('idperkembanganbloktn',$("#idperkembanganbloktn").val());
+                        data.append( 'status',  'filenotfound');
+                        $.ajax({
+                            url:'/updateDataPerkembanganbloktn',
+                            method:'POST',
+                            data:data,
+                            contentType: false,
+                            processData:false,
+                            success:function(){
+                                Swal.fire(
+                                        'Sukses!',
+                                        'Data Sukses di simpan!',
+                                        'success'
+                                    ).then(function(){
+                                        $( '#dokumenskedit' ).val('')
+                                        $( '#datasuratedit' ).val('')
+                                        $( '#namakawasanedit' ).val('')
+                                        $( '#luasedit' ).val('')
+                                        $( '#statusblokedit' ).val('')
+                                        $( '#judulskedit' ).val('')
+                                        $( '#nomorskedit' ).val('')
+                                        $( '#tanggalskedit' ).val('')
+                                        $( '#penataankawasanedit' ).val('')
+                                        $( '#petashpedit' ).val('')
+                                        $( '#deskripsiedit' ).val('')
+                                        $( '#blokperlindunganedit' ).val('')
+                                        $( '#blokpemanfaatanedit' ).val('')
+                                        $( '#bloktradisionaledit' ).val('')
+                                        $( '#blokreligiedit' ).val('')
+                                        $( '#blokkoleksiedit' ).val('')
+                                        $( '#blokperlindunganbahariedit' ).val('')
+                                        $( '#blokrehabilitasiedit' ).val('')
+                                        $( '#blokkhususedit' ).val('')
+                                        $( '#bloklainnyaedit' ).val('')
+                                        $('#modals2').modal('toggle');
+                                    })
+                                    table.ajax.reload();
+                            }
+                        })
+                    }else{
+                        var data;
+                        data = new FormData();
+                        data.append( 'dokumensk', $( '#dokumenskedit' )[0].files[0]);
+                        data.append( 'datasurat', $( '#datasuratedit' ).val());
+                        data.append( 'namakawasan', $( '#namakawasanedit' ).val());
+                        data.append( 'luas', $( '#luasedit' ).val());
+                        data.append( 'statusblok', $( '#statusblokedit' ).val());
+                        data.append( 'judulsk', $( '#judulskedit' ).val());
+                        data.append( 'nomorsk', $( '#nomorskedit' ).val());
+                        data.append( 'tanggalsk', $( '#tanggalskedit' ).val());
+                        data.append( 'penataankawasan', $( '#penataankawasanedit' )[0].files[0] );
+                        data.append( 'peta', $( '#petaedit' )[0].files[0] );
+                        data.append( 'petashp', $( '#petashpedit' )[0].files[0] );
+                        data.append( 'deskripsi', $( '#deskripsiedit' ).val());
+                        data.append( 'blokperlindungan', $( '#blokperlindunganedit' ).val());
+                        data.append( 'blokpemanfaatan', $( '#blokpemanfaatanedit' ).val());
+                        data.append( 'bloktradisional', $( '#bloktradisionaledit' ).val());
+                        data.append( 'blokreligi', $( '#blokreligiedit' ).val());
+                        data.append( 'blokkoleksi', $( '#blokkoleksiedit' ).val());
+                        data.append( 'blokperlindunganbahari', $( '#blokperlindunganbahariedit' ).val());
+                        data.append( 'blokrehabilitasi', $( '#blokrehabilitasiedit' ).val());
+                        data.append( 'blokkhusus', $( '#blokkhususedit' ).val());
+                        data.append( 'bloklainnya', $( '#bloklainnyaedit' ).val());
+                        data.append('idperkembanganbloktn',$("#idperkembanganbloktn").val());
+                        $.ajax({
+                            url:'/updateDataPerkembanganbloktn',
+                            method:'POST',
+                            data:data,
+                            contentType: false,
+                            processData:false,
+                            success:function(){
+                                Swal.fire(
+                                        'Sukses!',
+                                        'Data Sukses di simpan!',
+                                        'success'
+                                    ).then(function(){
+                                        $( '#dokumenskedit' ).val('')
+                                        $( '#datasuratedit' ).val('')
+                                        $( '#namakawasanedit' ).val('')
+                                        $( '#luasedit' ).val('')
+                                        $( '#statusblokedit' ).val('')
+                                        $( '#judulskedit' ).val('')
+                                        $( '#nomorskedit' ).val('')
+                                        $( '#tanggalskedit' ).val('')
+                                        $( '#penataankawasanedit' ).val('')
+                                        $( '#petashpedit' ).val('')
+                                        $( '#deskripsiedit' ).val('')
+                                        $( '#blokperlindunganedit' ).val('')
+                                        $( '#blokpemanfaatanedit' ).val('')
+                                        $( '#bloktradisionaledit' ).val('')
+                                        $( '#blokreligiedit' ).val('')
+                                        $( '#blokkoleksiedit' ).val('')
+                                        $( '#blokperlindunganbahariedit' ).val('')
+                                        $( '#blokrehabilitasiedit' ).val('')
+                                        $( '#blokkhususedit' ).val('')
+                                        $( '#bloklainnyaedit' ).val('')
+                                        $('#modals2').modal('toggle');
+                                    })
+                                    table.ajax.reload();
+                            }
+                        })
+                    }
                 }
             })
-            $('form[id="formperkembanganzonasiTn"]').validate({
+            $('form[id="formperkembaganbloktn"]').validate({
                     rules: {
                         luas:{
                             required:true,
@@ -428,7 +568,7 @@
                         },
                         datasurat: 'required',
                         namakawasan: 'required',
-                        statuszonasi:'required',
+                        statusblok:'required',
                         judulsk:'required',
                         nomorsk: 'required',
                         tanggalsk:'required',
@@ -436,15 +576,42 @@
                         peta:'required',
                         petashp:'required',
                         deskripsi:'required',
-                        dataluaszona:'required',
-                        zonainti:'required',
-                        zonapemanfaatan:'required',
-                        zonareligi:'required',
-                        zonarimba:'required',
-                        zonaperlindunganbahari:'required',
-                        zonarehabilitasi:'required',
-                        zonakhusus:'required',
-                        zonalainnya:'required',
+                        blokperlindungan:{
+                            required:true,
+                            number:true,
+                        },
+                        blokpemanfaatan:{
+                            required:true,
+                            number:true,
+                        },
+                        blokreligi:{
+                            required:true,
+                            number:true,
+                        },
+                        bloktradisional:{
+                            required:true,
+                            number:true,
+                        },
+                        blokkoleksi:{
+                            required:true,
+                            number:true,
+                        },
+                        blokperlindunganbahari:{
+                            required:true,
+                            number:true,
+                        },
+                        blokrehabilitasi:{
+                            required:true,
+                            number:true,
+                        },
+                        blokkhusus:{
+                            required:true,
+                            number:true,
+                        },
+                        bloklainnya:{
+                            required:true,
+                            number:true,
+                        },
                     },
                     messages: {
                         judul: 'This field is required',
@@ -457,7 +624,7 @@
                         data.append( 'datasurat', $( '#datasurat' ).val());
                         data.append( 'namakawasan', $( '#namakawasan' ).val());
                         data.append( 'luas', $( '#luas' ).val());
-                        data.append( 'statuszonasi', $( '#statuszonasi' ).val());
+                        data.append( 'statusblok', $( '#statusblok' ).val());
                         data.append( 'judulsk', $( '#judulsk' ).val());
                         data.append( 'nomorsk', $( '#nomorsk' ).val());
                         data.append( 'tanggalsk', $( '#tanggalsk' ).val());
@@ -465,18 +632,17 @@
                         data.append( 'peta', $( '#peta' )[0].files[0] );
                         data.append( 'petashp', $( '#petashp' )[0].files[0] );
                         data.append( 'deskripsi', $( '#deskripsi' ).val());
-                        data.append( 'dataluaszona', $( '#dataluaszona' ).val());
-                        data.append( 'zonainti', $( '#zonainti' ).val());
-                        data.append( 'zonapemanfaatan', $( '#zonapemanfaatan' ).val());
-                        data.append( 'zonatradisional', $( '#zonatradisional' ).val());
-                        data.append( 'zonareligi', $( '#zonareligi' ).val());
-                        data.append( 'zonarimba', $( '#zonarimba' ).val());
-                        data.append( 'zonaperlindunganbahari', $( '#zonaperlindunganbahari' ).val());
-                        data.append( 'zonarehabilitasi', $( '#zonarehabilitasi' ).val());
-                        data.append( 'zonakhusus', $( '#zonakhusus' ).val());
-                        data.append( 'zonalainnya', $( '#zonalainnya' ).val());
+                        data.append( 'blokperlindungan', $( '#blokperlindungan' ).val());
+                        data.append( 'blokpemanfaatan', $( '#blokpemanfaatan' ).val());
+                        data.append( 'bloktradisional', $( '#bloktradisional' ).val());
+                        data.append( 'blokreligi', $( '#blokreligi' ).val());
+                        data.append( 'blokkoleksi', $( '#blokkoleksi' ).val());
+                        data.append( 'blokperlindunganbahari', $( '#blokperlindunganbahari' ).val());
+                        data.append( 'blokrehabilitasi', $( '#blokrehabilitasi' ).val());
+                        data.append( 'blokkhusus', $( '#blokkhusus' ).val());
+                        data.append( 'bloklainnya', $( '#bloklainnya' ).val());
                         $.ajax({
-                            url:'/savedDataperkembanganzonasitn',
+                            url:'/savedDataperkembanganbloktn',
                             method:'POST',
                             data:data,
                             contentType: false,
@@ -498,26 +664,22 @@
                                         $( '#penataankawasan' ).val('')
                                         $( '#petashp' ).val('')
                                         $( '#deskripsi' ).val('')
-                                        $( '#dataluaszona' ).val('')
-                                        $( '#zonainti' ).val('')
-                                        $( '#zonapemanfaatan' ).val('')
-                                        $( '#zonatradisional' ).val('')
-                                        $( '#zonareligi' ).val('')
-                                        $( '#zonarimba' ).val('')
-                                        $( '#zonaperlindunganbahari' ).val('')
-                                        $( '#zonarehabilitasi' ).val('')
-                                        $( '#zonakhusus' ).val('')
-                                        $( '#zonalainnya' ).val('')
-                                        $('').modal('toggle');
+                                        $( '#blokinti' ).val('')
+                                        $( '#blokpemanfaatan' ).val('')
+                                        $( '#bloktradisional' ).val('')
+                                        $( '#blokreligi' ).val('')
+                                        $( '#blokrimba' ).val('')
+                                        $( '#blokperlindunganbahari' ).val('')
+                                        $( '#blokrehabilitasi' ).val('')
+                                        $( '#blokkhusus' ).val('')
+                                        $( '#bloklainnya' ).val('')
+                                        $('#exampleModal').modal('toggle');
                                     })
                                     table.ajax.reload();
                             }
                         })
                     }
             });
-            $('#SaveData').click(function(){
-              
-            })
         })
     </script>
 </body>

@@ -29,6 +29,9 @@ class PerkembanganZonasiTnController extends CI_Controller {
     public function store(){
         $client     = new GuzzleHttp\Client();
         $name = $_FILES['dokumensk']['name'];
+        $penataankawasan = $_FILES['penataankawasan']['name'];
+        $peta = $_FILES['peta']['name'];
+        $petashp = $_FILES['petashp']['name'];
         echo $this->input->post('luas');
         $result = $client->post(constant('API_URL').'/perkembanganzonasi-tn',[
             'multipart'=>[
@@ -61,37 +64,33 @@ class PerkembanganZonasiTnController extends CI_Controller {
                 [
                     'name' => 'penataan_kawasan',
                     'contents' => fopen($_FILES['penataankawasan']['tmp_name'], 'r'),
-                    'filename' => $name
+                    'filename' => $penataankawasan
                 ],
                 [
                     'name' => 'penataan_kawasan',
-                    'contents' => 'dokumenpenataankawasan/'.$name
+                    'contents' => 'dokumenpenataankawasan/'.$penataankawasan
                 ],
                 [
                     'name' => 'peta',
                     'contents' => fopen($_FILES['peta']['tmp_name'], 'r'),
-                    'filename' => $name
+                    'filename' => $peta
                 ],
                 [
                     'name' => 'peta',
-                    'contents' => 'dokumenpeta/'.$name
+                    'contents' => 'dokumenpeta/'.$peta
                 ],
                 [
                     'name' => 'peta_shp',
-                    'contents' => 'dokumenpetashp/'.$name
+                    'contents' => 'dokumenpetashp/'.$petashp
                 ],
                 [
                     'name' => 'peta_shp',
                     'contents' => fopen($_FILES['petashp']['tmp_name'], 'r'),
-                    'filename' => $name
+                    'filename' => $petashp
                 ],
                 [
                     'name' => 'deskripsi',
                     'contents' => $this->input->post('deskripsi')
-                ],
-                [
-                    'name' => 'data_luas_zona',
-                    'contents' => $this->input->post('dataluaszona')
                 ],
                 [
                     'name' => 'zona_pemanfaatan',
@@ -164,7 +163,7 @@ class PerkembanganZonasiTnController extends CI_Controller {
         $client     = new GuzzleHttp\Client();
         $status = $this->input->post('status');
         if($status == 'filenotfound'){
-            $id = $this->input->post('idkphk');
+            $id = $this->input->post('idperkembanganzonasitn');
             var_dump($id);
             $result = $client->put(constant('API_URL').'/perkembanganzonasi-tn/'.$id,[
                 'multipart'=>[
@@ -173,33 +172,72 @@ class PerkembanganZonasiTnController extends CI_Controller {
                         'contents' => $this->input->post('dokumensk')
                     ],
                     [
-                        'name' => 'tanggal_pengesahan',
-                        'contents' => $this->input->post('tanggalpengesahan')
+                        'name' => 'luas',
+                        'contents' => $this->input->post('luas')
                     ],
                     [
-                        'name' => 'nama_kphk',
-                        'contents' => $this->input->post('namakhpk')
+                        'name' => 'datasurat',
+                        'contents' => $this->input->post('datasurat')
                     ],
                     [
                         'name' => 'nama_kawasan',
                         'contents' => $this->input->post('namakawasan')
                     ],
-                
                     [
-                        'name' => 'tahun_pengesahaan',
-                        'contents' => $this->input->post('tahunpengesahan')
+                        'name' => 'status_zonasi',
+                        'contents' => $this->input->post('statuszonasi')
                     ],
                     [
-                        'name' => 'luas_kphk',
-                        'contents' => $this->input->post('luaskphk')
+                        'name' => 'penataan_kawasan',
+                        'contents' => $this->input->post('penataankawasan')
                     ],
                     [
-                        'name' => 'provinsi',
-                        'contents' => $this->input->post('provinsi')
+                        'name' => 'peta',
+                        'contents' => $this->input->post('peta')
                     ],
                     [
-                        'name' => 'kabupaten_kota_kphk',
-                        'contents' => $this->input->post('kabupaten_kota_kphk')
+                        'name' => 'peta_shp',
+                        'contents' => $this->input->post('petashp')
+                    ],
+                    [
+                        'name' => 'deskripsi',
+                        'contents' => $this->input->post('deskripsi')
+                    ],
+                    [
+                        'name' => 'zona_pemanfaatan',
+                        'contents' => $this->input->post('zonapemanfaatan')
+                    ],
+                    [
+                        'name' => 'zona_tradisional',
+                        'contents' => $this->input->post('zonatradisional')
+                    ],
+                    [
+                        'name' => 'zona_inti',
+                        'contents' => $this->input->post('zonainti')
+                    ],
+                    [
+                        'name' => 'zona_religi',
+                        'contents' => $this->input->post('zonareligi')
+                    ],
+                    [
+                        'name' => 'zona_rimba',
+                        'contents' => $this->input->post('zonarimba')
+                    ],
+                    [
+                        'name' => 'zona_perlindungan_bahari',
+                        'contents' => $this->input->post('zonaperlindunganbahari')
+                    ],
+                    [
+                        'name' => 'zona_rehabilitasi',
+                        'contents' => $this->input->post('zonarehabilitasi')
+                    ],
+                    [
+                        'name' => 'zona_khusus',
+                        'contents' => $this->input->post('zonakhusus')
+                    ],
+                    [
+                        'name' => 'zona_lainnya',
+                        'contents' => $this->input->post('zonalainnya')
                     ],
                     [
                         'name' => 'judul_sk',
@@ -217,10 +255,11 @@ class PerkembanganZonasiTnController extends CI_Controller {
             ]);
         }else{
             
-        $id = $this->input->post('idkphk');
-       
+            $id = $this->input->post('idperkembanganzonasitn');
             $name = $_FILES['dokumensk']['name'];
-            var_dump($id);
+            $penataankawasan = $_FILES['penataankawasan']['name'];
+            $peta = $_FILES['peta']['name'];
+            $petashp = $_FILES['petashp']['name'];
             $result = $client->put(constant('API_URL').'/perkembanganzonasi-tn/'.$id,[
                 'multipart'=>[
                     [
@@ -233,32 +272,88 @@ class PerkembanganZonasiTnController extends CI_Controller {
                         'contents' => 'skkphktn/'.$name
                     ],
                     [
-                        'name' => 'tanggal_pengesahan',
-                        'contents' => $this->input->post('tanggalpengesahan')
+                        'name' => 'luas',
+                        'contents' => $this->input->post('luas')
                     ],
                     [
-                        'name' => 'nama_kphk',
-                        'contents' => $this->input->post('namakhpk')
+                        'name' => 'datasurat',
+                        'contents' => $this->input->post('datasurat')
                     ],
                     [
                         'name' => 'nama_kawasan',
                         'contents' => $this->input->post('namakawasan')
                     ],
                     [
-                        'name' => 'tahun_pengesahaan',
-                        'contents' => $this->input->post('tahunpengesahan')
+                        'name' => 'status_zonasi',
+                        'contents' => $this->input->post('statuszonasi')
+                    ],
+                    
+                    [
+                        'name' => 'penataan_kawasan',
+                        'contents' => fopen($_FILES['penataankawasan']['tmp_name'], 'r'),
+                        'filename' => $penataankawasan
                     ],
                     [
-                        'name' => 'luas_kphk',
-                        'contents' => $this->input->post('luaskphk')
+                        'name' => 'penataan_kawasan',
+                        'contents' => 'dokumenpenataankawasan/'.$penataankawasan
                     ],
                     [
-                        'name' => 'provinsi',
-                        'contents' => $this->input->post('provinsi')
+                        'name' => 'peta',
+                        'contents' => fopen($_FILES['peta']['tmp_name'], 'r'),
+                        'filename' => $peta
                     ],
                     [
-                        'name' => 'kabupaten_kota_kphk',
-                        'contents' => $this->input->post('kabupaten_kota_kphk')
+                        'name' => 'peta',
+                        'contents' => 'dokumenpeta/'.$peta
+                    ],
+                    [
+                        'name' => 'peta_shp',
+                        'contents' => 'dokumenpetashp/'.$petashp
+                    ],
+                    [
+                        'name' => 'peta_shp',
+                        'contents' => fopen($_FILES['petashp']['tmp_name'], 'r'),
+                        'filename' => $petashp
+                    ],
+                    [
+                        'name' => 'deskripsi',
+                        'contents' => $this->input->post('deskripsi')
+                    ],
+                    [
+                        'name' => 'zona_pemanfaatan',
+                        'contents' => $this->input->post('zonapemanfaatan')
+                    ],
+                    [
+                        'name' => 'zona_tradisional',
+                        'contents' => $this->input->post('zonatradisional')
+                    ],
+                    [
+                        'name' => 'zona_inti',
+                        'contents' => $this->input->post('zonainti')
+                    ],
+                    [
+                        'name' => 'zona_religi',
+                        'contents' => $this->input->post('zonareligi')
+                    ],
+                    [
+                        'name' => 'zona_rimba',
+                        'contents' => $this->input->post('zonarimba')
+                    ],
+                    [
+                        'name' => 'zona_perlindungan_bahari',
+                        'contents' => $this->input->post('zonaperlindunganbahari')
+                    ],
+                    [
+                        'name' => 'zona_rehabilitasi',
+                        'contents' => $this->input->post('zonarehabilitasi')
+                    ],
+                    [
+                        'name' => 'zona_khusus',
+                        'contents' => $this->input->post('zonakhusus')
+                    ],
+                    [
+                        'name' => 'zona_lainnya',
+                        'contents' => $this->input->post('zonalainnya')
                     ],
                     [
                         'name' => 'judul_sk',

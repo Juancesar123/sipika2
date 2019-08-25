@@ -343,6 +343,22 @@ $route['showDataPetaKawasanKonsevarsi/(:any)'] = "PetaKawasanKonsevarsiControlle
 $route['deleteDataPetaKawasanKonsevarsi/(:any)'] = "PetaKawasanKonsevarsiController/destroy/$1";
 $route['getAllImagesKawasanKonsevarsi/(:any)'] = "PetaKawasanKonsevarsiController/getimages/$1";
 //endroute
+//Route untuk Perkembangan Blok TN
+$route['perkembangan-blok-tn'] ='PerkembanganBlokTnController';
+$route['getDataPerkembanganbloktn'] ='PerkembanganBlokTnController/get';
+$route['savedDataperkembanganbloktn'] ='PerkembanganBlokTnController/store';
+$route['updateDataPerkembanganbloktn'] ='PerkembanganBlokTnController/update';
+$route['showDataPerkembanganbloktn/(:any)'] ='PerkembanganBlokTnController/show/$1';
+$route['deletePerkembanganbloktn/(:any)'] ='PerkembanganBlokTnController/destroy/$1';
+//endroute
+//Route untuk Potensi PIAPS
+$route['potensi-piaps'] ='PotensiPIAPSController';
+$route['getDataPotensipiaps'] ='PotensiPIAPSController/get';
+$route['savedDataPotensipiaps'] ='PotensiPIAPSController/store';
+$route['updateDataPotensipiaps'] ='PotensiPIAPSController/update';
+$route['showDataPotensipiaps/(:any)'] ='PotensiPIAPSController/show/$1';
+$route['deletePotensipiaps/(:any)'] ='PotensiPIAPSController/destroy/$1';
+//endroute
 //route Dashboard
 $route['getDataDashboard/(:any)'] = "DashboardController/getCountData/$1";
 $route['getDataAllDashboard'] = "DashboardController/getAllData/$1";

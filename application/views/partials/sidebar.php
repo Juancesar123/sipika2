@@ -69,10 +69,10 @@
             <div class="collapse" id="penataan">
               <ul class="nav flex-column sub-menu">
                 <li class="nav-item"><a class="nav-link <?php if($this->uri->segment(1)=="perkembangan-zonasi-tn"){echo "active";}?>" href="<?=base_url('perkembangan-zonasi-tn')?>">Perkembangan Zonasi TN</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?=base_url('kphk-nontn')?>">Perkembangan Blok TN</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?=base_url('usulan-tahura')?>">Progres Blok</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?=base_url('usulan-tahura')?>">Progres Zonasi</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?=base_url('usulan-tahura')?>">Progres PIAPS</a></li>
+                <li class="nav-item"><a class="nav-link <?php if($this->uri->segment(1)=="perkembangan-blok-tn"){echo "active";}?>" href="<?=base_url('perkembangan-blok-tn')?>">Perkembangan Blok TN</a></li>
+                <li class="nav-item"><a class="nav-link " href="#">Progres Blok</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Progres Zonasi</a></li>
+                <li class="nav-item"><a class="nav-link <?php if($this->uri->segment(1)=="potensi-piaps"){echo "active";}?>" href="<?=base_url('potensi-piaps')?>">Progres PIAPS</a></li>
               </ul>
             </div>
           </li>
@@ -97,7 +97,7 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php if($this->uri->segment(1)=="tata-usaha"){echo "active";}?>" href="<?=base_url('tata-usaha')?>">
+            <a class="nav-link" href="#">
               <i class="fa fa-users menu-icon"></i>
               <span class="menu-title">Tata Usaha</span>
             </a>
@@ -115,7 +115,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php if($this->uri->segment(1)=="resources"){echo "active";}?>" href="<?=base_url('resources')?>">
+            <a class="nav-link" href="#">
               <i class="fa fa-bullhorn menu-icon"></i>
               <span class="menu-title">Resources</span>
             </a>
