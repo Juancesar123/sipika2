@@ -41,7 +41,7 @@
                                             <strong>Profile Kawasan</strong>
                                         </div>
                                         <div class="list-group list-group-flush">
-                                            <a data-toggle="tab" href="#home" class="list-group-item list-group-item-action bg-light" style="color:blue">Profile</a>
+                                            <a data-toggle="tab" href="#profile" class="list-group-item list-group-item-action bg-light" id="profilku" style="color:blue"  role="tab">Profile</a>
                                         </div>
                                         <br>
                                         <div class="sidebar-heading">
@@ -87,7 +87,7 @@
                         </div>
                         <div class="col-md-9">
                             <div class="tab-content">
-                                <div id="home" class="card tab-pane fade in ">
+                                <div id="profile" class="card tab-pane fade">
                                     <div class="card-header" style="padding-bottom: 30px;">
                                         Profile Kawasan
                                         <div class="float-right">
@@ -2111,23 +2111,25 @@
                                                 </div>
 
                                                 <!-- Modal body -->
-                                                <div class="modal-body">
-                                                    <div class="form-group">
-                                                        <label>Jenis Potensi Kawasan Konservarsi</label>
-                                                        <input class="form-control" id="jenispotensikonservarsi">
+                                                <form id="formpotensikawasankonservarsi">
+                                                    <div class="modal-body">
+                                                        <div class="form-group">
+                                                            <label>Jenis Potensi Kawasan Konservarsi</label>
+                                                            <input class="form-control" id="jenispotensikonservarsi" name="jenispotensikonservarsi">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Deskripsi Potensi Kawasan Konservarsi</label>
+                                                            <textarea class="form-control" id="deskripsipotensikonservarsi" name="deskripsipotensikonservarsi"></textarea>
+                                                            <input class="form-control" type="hidden" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
+                                                        </div>
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label>Deskripsi Potensi Kawasan Konservarsi</label>
-                                                        <textarea class="form-control" id="deskripsipotensikonservarsi"></textarea>
-                                                        <input class="form-control" type="hidden" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
-                                                    </div>
-                                                </div>
 
-                                                <!-- Modal footer -->
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                                    <button type="button" class="btn btn-primary" id="SaveDataPotensiKawasanKonservarsi">Simpan</button>
-                                                </div>
+                                                    <!-- Modal footer -->
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Simpan</button>
+                                                    </div>
+                                                </form>
                                                 </div>
                                             </div>
                                         </div>
@@ -2140,26 +2142,27 @@
                                                     <h4 class="modal-title">Ubah Potensi Kawasan Konservarsi</h4>
                                                     <button type="button" class="close" data-dismiss="modal">&times;</button>
                                                 </div>
-
-                                                <!-- Modal body -->
-                                                <div class="modal-body">
-                                                    <div class="form-group">
-                                                        <label>Jenis Potensi Kawasan Konservarsi</label>
-                                                        <input class="form-control" id="jenispotensikonservarsiedit">
-                                                        <input type="hidden" id="idpotensi">
+                                                <form id="formpotensikawasankonservarsiedit">
+                                                    <!-- Modal body -->
+                                                    <div class="modal-body">
+                                                        <div class="form-group">
+                                                            <label>Jenis Potensi Kawasan Konservarsi</label>
+                                                            <input class="form-control" id="jenispotensikonservarsiedit" name="jenispotensikonservarsiedit">
+                                                            <input type="hidden" id="idpotensi">
+                                                        </div>
+                                                        <div class="form-group">
+                                                            <label>Deskripsi Potensi Kawasan Konservarsi</label>
+                                                            <textarea class="form-control" id="deskripsipotensikonservarsiedit" name="deskripsipotensikonservarsiedit"></textarea>
+                                                            <input class="form-control" type="hidden" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
+                                                        </div>
                                                     </div>
-                                                    <div class="form-group">
-                                                        <label>Deskripsi Potensi Kawasan Konservarsi</label>
-                                                        <textarea class="form-control" id="deskripsipotensikonservarsiedit"></textarea>
-                                                        <input class="form-control" type="hidden" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
-                                                    </div>
-                                                </div>
 
-                                                <!-- Modal footer -->
-                                                <div class="modal-footer">
-                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                                    <button type="button" class="btn btn-primary" id="UpdateDataPotensiKawasanKonservarsi">Simpan</button>
-                                                </div>
+                                                    <!-- Modal footer -->
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                        <button type="submit" class="btn btn-primary">Simpan</button>
+                                                    </div>
+                                                </form>
                                                 </div>
                                             </div>
                                         </div>
@@ -2830,7 +2833,7 @@
                                                                 </div>
                                                                 <div class="form-group">
                                                                     <label>Upaya Permasalahan</label>
-                                                                    <textarea type="text" class="form-control" id="upayapermasalahan" name="luaspermasalahan"></textarea>
+                                                                    <textarea type="text" class="form-control" id="upayapermasalahan" name="upayapermasalahan"></textarea>
                                                                 </div>
                                                             </div>
                                                         </div>
@@ -6167,8 +6170,11 @@
                 }
             })
             })
-            $('[href="#home"]').tab('show');
+            $('[href="#profile"]').tab('show');
            //$('#home a:first').tab('show')
+           $(".list-group a").click(function(){
+                $("#profilku").removeClass('active');
+              });
             table61.columns.adjust().draw();
                 $.ajax({
                     type:'GET',
@@ -6214,6 +6220,7 @@
                             $("#uptpembangunan").append(html);
                             $("#uptpembangunanedit").append(html);
                             $("#uptpenguatanfungsi").append(html);
+                            $("#unitpengelolakondisikawasan").append(html);
                         });
                     }
                 })
@@ -8307,7 +8314,7 @@
                                             $( '#nomorskwilayahadat' ).val('')
                                             $( '#judulskwilayahadat' ).val('')
                                             $( '#dokumenskwilayahadat' ).val('')
-                                            $('#myModal20').modal('toggle')
+                                            $('#myModal32').modal('toggle')
                                         })
                                     tablewilayahadat.ajax.reload();
                             }
@@ -8325,6 +8332,9 @@
                         nomorskwilayahadatedit:{
                             required:true,
                             number: true
+                        },
+                        tanggalskwilayahadat:{
+                            required:true,
                         },
                         judulskwilayahadatedit:{
                             required:true,
@@ -8364,7 +8374,15 @@
                                             'Sukses!',
                                             'Data Sukses di simpan!',
                                             'success'
-                                        )
+                                        ).then(function(){
+                                            $( '#luaswilayahadat' ).val('')
+                                            $( '#namawilayahadat' ).val('')
+                                            $( '#kepalakeluargaadat' ).val('')
+                                            $( '#nomorskwilayahadat' ).val('')
+                                            $( '#judulskwilayahadat' ).val('')
+                                            $( '#dokumenskwilayahadat' ).val('')
+                                            $('#myModal21').modal('toggle')
+                                        })
                                         table.ajax.reload();
                                 }
                             })
@@ -8387,11 +8405,19 @@
                                 contentType: false,
                                 processData:false,
                                 success:function(){
-                                    Swal.fire(
+                                     Swal.fire(
                                             'Sukses!',
                                             'Data Sukses di simpan!',
                                             'success'
-                                        )
+                                        ).then(function(){
+                                            $( '#luaswilayahadat' ).val('')
+                                            $( '#namawilayahadat' ).val('')
+                                            $( '#kepalakeluargaadat' ).val('')
+                                            $( '#nomorskwilayahadat' ).val('')
+                                            $( '#judulskwilayahadat' ).val('')
+                                            $( '#dokumenskwilayahadat' ).val('')
+                                            $('#myModal21').modal('toggle')
+                                        })
                                         table.ajax.reload();
                                 }
                             })
@@ -8534,55 +8560,88 @@
                                 'Sukses!',
                                 'Data Sukses di simpan!',
                                 'success'
-                            )
+                            ).then(function(){
                             document.location.reload()
+                        })
                     }
                 })
             })
-            $('#SaveDataPotensiKawasanKonservarsi').click(function(){
-                var data;
-                data = new FormData();
-                data.append('jenis_potensi', $('#jenispotensikonservarsi').val());
-                data.append('deskripsi_potensi',$('#deskripsipotensikonservarsi').val());
-                data.append('nama_kawasan',$('#namakawasan').val());
-                $.ajax({
-                    url:'/saveDataPotensiKawasanKonservarsi',
-                    method:'POST',
-                    data:data,
-                    contentType: false,
-                    processData:false,
-                    success:function(){
-                         Swal.fire(
-                                'Sukses!',
-                                'Data Sukses di simpan!',
-                                'success'
-                            )
-                            table5.ajax.reload();
-                    }
-                })
+             $('form[id="formpotensikawasankonservarsi"]').validate({
+                rules: {
+                    nama_kawasan: 'required',
+                    deskripsipotensikonservarsi: 'required',
+                    jenispotensikonservarsi: 'required',
+                },
+                messages: {
+                    judul: 'This field is required',
+                    file:'This field mustbe images'
+
+                },
+                submitHandler: function(form) {
+                    var data;
+                    data = new FormData();
+                    data.append('jenis_potensi', $('#jenispotensikonservarsi').val());
+                    data.append('deskripsi_potensi',$('#deskripsipotensikonservarsi').val());
+                    data.append('nama_kawasan',$('#namakawasan').val());
+                    $.ajax({
+                        url:'/saveDataPotensiKawasanKonservarsi',
+                        method:'POST',
+                        data:data,
+                        contentType: false,
+                        processData:false,
+                        success:function(){
+                             Swal.fire(
+                                    'Sukses!',
+                                    'Data Sukses di simpan!',
+                                    'success'
+                                ).then(function(){
+                                    $("#jenispotensikonservarsi").val('');
+                                    $("#deskripsipotensi").val('');
+                                    $("#myModal11").modal('toggle');
+                                    table5.ajax.reload();
+                            })
+                        }
+                    })
+                }
             })
-            $('#UpdateDataPotensiKawasanKonservarsi').click(function(){
-                var data;
-                data = new FormData();
-                data.append('jenis_potensi', $('#jenispotensikonservarsiedit').val());
-                data.append('deskripsi_potensi',$('#deskripsipotensikonservarsiedit').val());
-                data.append('id_potensi',$('#idpotensi').val());
-                data.append('nama_kawasan',$('#namakawasan').val());
-                $.ajax({
-                    url:'/updateDataPotensiKawasanKonservarsi',
-                    method:'POST',
-                    data:data,
-                    contentType: false,
-                    processData:false,
-                    success:function(){
-                         Swal.fire(
-                                'Sukses!',
-                                'Data Sukses di simpan!',
-                                'success'
-                            )
-                            table5.ajax.reload();
-                    }
-                })
+            $('form[id="formpotensikawasankonservarsiedit"]').validate({
+                rules: {
+                    nama_kawasan: 'required',
+                    deskripsipotensikonservarsiedit: 'required',
+                    jenispotensikonservarsiedit: 'required',
+                },
+                messages: {
+                    judul: 'This field is required',
+                    file:'This field mustbe images'
+
+                },
+                submitHandler: function(form) {
+                    var data;
+                    data = new FormData();
+                    data.append('jenis_potensi', $('#jenispotensikonservarsiedit').val());
+                    data.append('deskripsi_potensi',$('#deskripsipotensikonservarsiedit').val());
+                    data.append('id_potensi',$('#idpotensi').val());
+                    data.append('nama_kawasan',$('#namakawasan').val());
+                    $.ajax({
+                        url:'/updateDataPotensiKawasanKonservarsi',
+                        method:'POST',
+                        data:data,
+                        contentType: false,
+                        processData:false,
+                        success:function(){
+                             Swal.fire(
+                                    'Sukses!',
+                                    'Data Sukses di simpan!',
+                                    'success'
+                                ).then(function(){
+                                    $("#jenispotensikonservarsiedit").val('');
+                                    $("#deskripsipotensiedit").val('');
+                                    $("#myModal12").modal('toggle');
+                            })
+                                table5.ajax.reload();
+                        }
+                    })
+                }
             })
             $('#SaveDataKondisiKawasanKosong').click(function(){
                 var data;
@@ -8605,11 +8664,12 @@
                     processData:false,
                     success:function(){
                          Swal.fire(
-                                'Sukses!',
-                                'Data Sukses di simpan!',
-                                'success'
-                            )
+                            'Sukses!',
+                            'Data Sukses di simpan!',
+                            'success'
+                        ).then(function(){
                             document.location.reload()
+                        })
                     }
                 })
             })

@@ -72,7 +72,7 @@
             </div>
           </div>
           <div class="col-lg-6 login-half-bg d-flex flex-row">
-            <p class="text-white font-weight-medium text-center flex-grow align-self-end">Copyright &copy; 2018  All rights reserved.</p>
+            <p class="text-white font-weight-medium text-center flex-grow align-self-end">Copyright &copy; 2019 Direktorat Pemolaan Dan Sistem Konservasi Alam  All rights reserved.</p>
           </div>
         </div>
       </div>

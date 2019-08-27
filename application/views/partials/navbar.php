@@ -4,13 +4,13 @@
           <!-- <img src="../../images/logo.svg" alt="logo"/> -->
           SIPIKA
         </a>
-        <a class="navbar-brand brand-logo-mini" href="index.html"><img src="../../images/logo-mini.svg" alt="logo"/></a>
+        <a class="navbar-brand brand-logo-mini" href="/"><img src="../../images/logo-mini.svg" alt="logo"/></a>
       </div>
       <div class="navbar-menu-wrapper d-flex align-items-center justify-content-end">
         <button class="navbar-toggler navbar-toggler align-self-center" type="button" data-toggle="minimize">
           <span class="fas fa-align-justify"></span>
         </button>
-        <ul class="navbar-nav mr-lg-2">
+      <!--   <ul class="navbar-nav mr-lg-2">
           <li class="nav-item nav-search d-none d-lg-block">
             <div class="input-group">
               <div class="input-group-prepend">
@@ -18,10 +18,11 @@
                   <i class="fa fa-search"></i>
                 </span>
               </div>
+              
               <input type="text" class="form-control" placeholder="Search Now" aria-label="search" aria-describedby="search">
             </div>
           </li>
-        </ul>
+        </ul> -->
         <ul class="navbar-nav navbar-nav-right">
           
           
