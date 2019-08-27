@@ -91,9 +91,9 @@
                                     <div class="card-header" style="padding-bottom: 30px;">
                                         Profile Kawasan
                                         <div class="float-right">
-                                           
+                                           <?php  if($userdata['id_roles'] == 1){?>
                                                 <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#myModal"><i class="fa fa-wrench"></i> Edit</button>
-                                              
+                                            <?php } ?>
                                         </div>
                                     </div>
                                     <div class="card-body">
@@ -259,7 +259,9 @@
                                         </ul>
                                         <div class="tab-content" id="pills-tabContent">
                                           <div class="tab-pane fade show active" id="tumbuhan" role="tabpanel" aria-labelledby="pills-home-tab">
-                                                <button class="btn btn-primary" data-toggle="modal" data-target="#myModal38">Tambah Data</button>
+                                                <?php  if($userdata['id_roles'] == 1){?>
+                                                    <button class="btn btn-primary" data-toggle="modal" data-target="#myModal38">Tambah Data</button>
+                                                <?php }; ?>
                                                 <br>
                                                 <br>
                                                 <div class="modal fade" id="myModal38">
@@ -331,12 +333,16 @@
                                                     <thead>
                                                         <th>Nama</th>
                                                         <th>Nama Latin</th>
-                                                        <th>Action</th>
+                                                        <?php  if($userdata['id_roles'] == 1){?>
+                                                            <th>Action</th>
+                                                        <?php }; ?>
                                                     </thead>
                                                 </table>
                                           </div>
                                           <div class="tab-pane fade" id="satwa" role="tabpanel" aria-labelledby="pills-profile-tab">
+                                            <?php  if($userdata['id_roles'] == 1){?>
                                               <button class="btn btn-primary" data-toggle="modal" data-target="#myModal40">Tambah Data</button>
+                                            <?php } ?>
                                                 <br>
                                                 <br>
                                                 <div class="modal fade" id="myModal40">
@@ -408,7 +414,9 @@
                                                     <thead>
                                                         <th>Nama</th>
                                                         <th>Nama Latin</th>
-                                                        <th>Action</th>
+                                                        <?php  if($userdata['id_roles'] == 1){?>
+                                                            <th>Action</th>
+                                                        <?php }; ?>
                                                     </thead>
                                                 </table>
                                           </div>
@@ -427,7 +435,9 @@
                                                  <input class="form-control" type="hidden" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
                                                 </div>
                                               </div>
-                                              <button class="btn btn-primary" id="saveDataSatwaEndemik">Save</button>
+                                              <?php  if($userdata['id_roles'] == 1){?>
+                                                <button class="btn btn-primary" id="saveDataSatwaEndemik">Save</button>
+                                              <?php }; ?>
                                           </div>
                                           <div class="tab-pane fade" id="tumbuhanendemik" role="tabpanel" aria-labelledby="pills-profile-tab">
                                               <div class="form-group">
@@ -444,7 +454,9 @@
                                                  <input class="form-control" type="hidden" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
                                                 </div>
                                               </div>
-                                              <button class="btn btn-primary" id="saveDataTumbuhanEndemik">Save</button>
+                                              <?php  if($userdata['id_roles'] == 1){?>
+                                                <button class="btn btn-primary" id="saveDataTumbuhanEndemik">Save</button>
+                                              <?php }; ?>
                                           </div>
                                             <div class="tab-pane fade" id="25satwaprioritas" role="tabpanel" aria-labelledby="pills-profile-tab">
 
@@ -536,11 +548,14 @@
                                                  <input class="form-control" type="hidden" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
                                                  <input type="hidden" id="idsatwaprioritas">
                                                 </div>
-
-                                              <button class="btn btn-primary" id="saveDatasatwaprioritas">Save</button>
+                                               <?php  if($userdata['id_roles'] == 1){?>
+                                                <button class="btn btn-primary" id="saveDatasatwaprioritas">Save</button>
+                                                <?php }; ?>
                                           </div>
                                           <div class="tab-pane fade" id="spesieskunci" role="tabpanel" aria-labelledby="pills-contact-tab">
-                                               <button class="btn btn-primary" data-toggle="modal" data-target="#myModal42">Tambah Data</button>
+                                                <?php  if($userdata['id_roles'] == 1){?>
+                                                    <button class="btn btn-primary" data-toggle="modal" data-target="#myModal42">Tambah Data</button>
+                                                <?php }; ?>
                                                 <br>
                                                 <br>
                                                 <div class="modal fade" id="myModal42">
@@ -612,12 +627,16 @@
                                                     <thead>
                                                         <th>Nama</th>
                                                         <th>Nama Latin</th>
-                                                        <th>Action</th>
+                                                        <?php  if($userdata['id_roles'] == 1){?>
+                                                            <th>Action</th>
+                                                        <?php }; ?>
                                                     </thead>
                                                 </table>
                                           </div>
                                           <div class="tab-pane fade" id="jenistumbuhandilindungi" role="tabpanel" aria-labelledby="pills-contact-tab">
-                                               <button class="btn btn-primary" data-toggle="modal" data-target="#myModal50">Tambah Data</button>
+                                                <?php  if($userdata['id_roles'] == 1){?>
+                                                    <button class="btn btn-primary" data-toggle="modal" data-target="#myModal50">Tambah Data</button>
+                                                <?php }; ?>
                                                 <br>
                                                 <br>
                                                 <div class="modal fade" id="myModal50">
@@ -689,12 +708,16 @@
                                                     <thead>
                                                         <th>Nama</th>
                                                         <th>Nama Latin</th>
-                                                        <th>Action</th>
+                                                        <?php  if($userdata['id_roles'] == 1){?>
+                                                            <th>Action</th>
+                                                        <?php }; ?>
                                                     </thead>
                                                 </table>
                                           </div>
                                           <div class="tab-pane fade" id="jenissatwadilindungi" role="tabpanel" aria-labelledby="pills-contact-tab">
-                                               <button class="btn btn-primary" data-toggle="modal" data-target="#myModal52">Tambah Data</button>
+                                                <?php  if($userdata['id_roles'] == 1){?>
+                                                    <button class="btn btn-primary" data-toggle="modal" data-target="#myModal52">Tambah Data</button>
+                                                <?php }; ?>
                                                 <br>
                                                 <br>
                                                 <div class="modal fade" id="myModal52">
@@ -766,12 +789,16 @@
                                                     <thead>
                                                         <th>Nama</th>
                                                         <th>Nama Latin</th>
-                                                        <th>Action</th>
+                                                        <?php  if($userdata['id_roles'] == 1){?>
+                                                            <th>Action</th>
+                                                        <?php }; ?>
                                                     </thead>
                                                 </table>
                                           </div>
                                           <div class="tab-pane fade" id="habitatsatwaprioritas" role="tabpanel" aria-labelledby="pills-contact-tab">
+                                            <?php  if($userdata['id_roles'] == 1){?>
                                                <button class="btn btn-primary" data-toggle="modal" data-target="#myModal54">Tambah Data</button>
+                                            <?php }; ?>
                                                 <br>
                                                 <br>
                                                 <div class="modal fade" id="myModal54">
@@ -843,12 +870,16 @@
                                                     <thead>
                                                         <th>Nama</th>
                                                         <th>Nama Latin</th>
-                                                        <th>Action</th>
+                                                        <?php  if($userdata['id_roles'] == 1){?>
+                                                            <th>Action</th>
+                                                        <?php }; ?>
                                                     </thead>
                                                 </table>
                                           </div>
                                           <div class="tab-pane fade" id="tumbuhansatwaliar" role="tabpanel" aria-labelledby="pills-contact-tab">
-                                               <button class="btn btn-primary" data-toggle="modal" data-target="#myModal56">Tambah Data</button>
+                                                <?php  if($userdata['id_roles'] == 1){?>
+                                                    <button class="btn btn-primary" data-toggle="modal" data-target="#myModal56">Tambah Data</button>
+                                                <?php }; ?>
                                                 <br>
                                                 <br>
                                                 <div class="modal fade" id="myModal56">
@@ -920,12 +951,16 @@
                                                     <thead>
                                                         <th>Nama</th>
                                                         <th>Nama Latin</th>
-                                                        <th>Action</th>
+                                                        <?php  if($userdata['id_roles'] == 1){?>
+                                                            <th>Action</th>
+                                                        <?php } ?>
                                                     </thead>
                                                 </table>
                                           </div>
                                           <div class="tab-pane fade" id="potensihhbk" role="tabpanel" aria-labelledby="pills-contact-tab">
-                                               <button class="btn btn-primary" data-toggle="modal" data-target="#myModal58">Tambah Data</button>
+                                                <?php  if($userdata['id_roles'] == 1){?>
+                                                    <button class="btn btn-primary" data-toggle="modal" data-target="#myModal58">Tambah Data</button>
+                                                <?php }; ?>
                                                 <br>
                                                 <br>
                                                 <div class="modal fade" id="myModal58">
@@ -997,7 +1032,9 @@
                                                     <thead>
                                                         <th>Nama</th>
                                                         <th>Deskripsi</th>
-                                                        <th>Action</th>
+                                                        <?php  if($userdata['id_roles'] == 1){?>
+                                                            <th>Action</th>
+                                                        <?php }; ?>
                                                     </thead>
                                                 </table>
                                           </div>
@@ -1011,7 +1048,9 @@
                                         Perkembangan Pengukuhan Kawasan
                                     </div>
                                     <div class="card-body">
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal1">Tambah Data</button>
+                                        <?php  if($userdata['id_roles'] == 2){?>
+                                            <button class="btn btn-primary" data-toggle="modal" data-target="#myModal1">Tambah Data</button>
+                                        <?php }; ?>
                                         <br>
                                         <br>
                                         <div class="modal fade" id="myModal1">
@@ -1201,7 +1240,9 @@
                                                 <th>Register</th>
                                                 <th>Nama Kawasan</th>
                                                 <th>Luas Kawasan</th>
-                                                <th>Action</th>
+                                                <?php  if($userdata['id_roles'] == 2){?>
+                                                    <th>Action</th>
+                                                <?php }; ?>
                                             </thead>
                                         </table>
                                     </div>
@@ -1212,7 +1253,9 @@
                                         Evaluasi Fungsi Desk Study
                                     </div>
                                     <div class="card-body">
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal3">Tambah Data</button>
+                                         <?php  if($userdata['id_roles'] == 2){?>
+                                            <button class="btn btn-primary" data-toggle="modal" data-target="#myModal3">Tambah Data</button>
+                                        <?php }; ?>
                                         <br>
                                         <br>
                                         <div class="modal fade" id="myModal3">
@@ -1314,7 +1357,9 @@
                                                 <th>Rekomendasi</th>
                                                 <th>Tahun Pelaksanaan</th>
                                                 <th>UPT</th>
-                                                <th>Action</th>
+                                                <?php  if($userdata['id_roles'] == 2){?>
+                                                    <th>Action</th>
+                                                <?php };?>
                                             </thead>
                                         </table>
                                     </div>
@@ -1324,7 +1369,9 @@
                                         Evaluasi Fungsi EKF Lapangan
                                     </div>
                                     <div class="card-body">
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal5">Tambah Data</button>
+                                         <?php  if($userdata['id_roles'] == 2){?>
+                                            <button class="btn btn-primary" data-toggle="modal" data-target="#myModal5">Tambah Data</button>
+                                        <?php }; ?>
                                         <div class="modal fade" id="myModal5">
                                             <div class="modal-dialog modal-lg">
                                                 <div class="modal-content">
@@ -1476,7 +1523,9 @@
                                                 <th>Rekomendasi</th>
                                                 <th>Tahun Pelaksanaan</th>
                                                 <th>UPT</th>
-                                                <th>Action</th>
+                                                <?php  if($userdata['id_roles'] == 2){?>
+                                                    <th>Action</th>
+                                                <?php }; ?>
                                             </thead>
                                         </table>
                                     </div>
@@ -1486,7 +1535,9 @@
                                         Penguatan Fungsi KK
                                     </div>
                                     <div class="card-body">
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal34">Tambah Data</button>
+                                        <?php  if($userdata['id_roles'] == 3){?>
+                                            <button class="btn btn-primary" data-toggle="modal" data-target="#myModal34">Tambah Data</button>
+                                        <?php }; ?>
                                         <br>
                                         <br>
                                         <div class="modal fade" id="myModal34">
@@ -1756,7 +1807,9 @@
                                                 <th>Mitra Kerja</th>
                                                 <th>Kategori Mitra</th>
                                                 <th>UPT</th>
-                                                <th>Action</th>
+                                                <?php  if($userdata['id_roles'] == 3){?>
+                                                    <th>Action</th>
+                                                <?php }; ?>
                                             </thead>
                                         </table>
                                     </div>
@@ -1766,7 +1819,9 @@
                                         Pembangunan Strategis
                                     </div>
                                     <div class="card-body">
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal36">Tambah Data</button>
+                                        <?php  if($userdata['id_roles'] == 3){?>
+                                            <button class="btn btn-primary" data-toggle="modal" data-target="#myModal36">Tambah Data</button>
+                                        <?php }; ?>
                                         <br>
                                         <br>
                                         <div class="modal fade" id="myModal36">
@@ -2086,7 +2141,9 @@
                                                 <th>Mitra Kerja</th>
                                                 <th>Kategori Mitra</th>
                                                 <th>UPT</th>
-                                                <th>Action</th>
+                                                <?php  if($userdata['id_roles'] == 3){?>
+                                                    <th>Action</th>
+                                                <?php }; ?>
                                             </thead>
                                         </table>
                                     </div>
@@ -2097,7 +2154,9 @@
                                         
                                     </div>
                                     <div class="card-body">
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal11"><i class="fa fa-plus"></i> Tambah Data</button>
+                                        <?php  if($userdata['id_roles'] == 1){?>
+                                            <button class="btn btn-primary" data-toggle="modal" data-target="#myModal11"><i class="fa fa-plus"></i> Tambah Data</button>
+                                        <?php }; ?>
                                         <br>
                                         <br>
                                         <div class="modal fade" id="myModal11">
@@ -2170,7 +2229,9 @@
                                             <thead>
                                                     <th>Jenis Potensi Kawasan Konservarsi</th>
                                                     <th>Deskripsi Potensi Kawasan Konservarsi</th>
-                                                    <th>Action</th>
+                                                    <?php  if($userdata['id_roles'] == 1){?>
+                                                        <th>Action</th>
+                                                    <?php }; ?>
                                             </thead>
                                         </table>
                                     </div>
@@ -2178,7 +2239,9 @@
                                 <div id="kondisikawasankonservarsi" class="card tab-pane fade">
                                     <div class="card-header" style="height: 55;">
                                         Kondisi Kawasan Konservarsi
-                                        <button class="btn btn-default btn-sm float-right" style="margin-bottom:10px" data-toggle="modal" data-target="#myModal7"><i class="fa fa-pencil"></i> Edit Data</button>
+                                        <?php  if($userdata['id_roles'] == 1){?>
+                                            <button class="btn btn-default btn-sm float-right" style="margin-bottom:10px" data-toggle="modal" data-target="#myModal7"><i class="fa fa-pencil"></i> Edit Data</button>
+                                        <?php }; ?>
                                     </div>
                                     <div class="card-body">
                                         <?php if(empty($kondisikawasan)){ ?>
@@ -2528,7 +2591,9 @@
                                         Desa Sekitar KK
                                     </div>
                                     <div class="card-body">
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal18">Tambah Data</button>
+                                        <?php  if($userdata['id_roles'] == 1){?>
+                                            <button class="btn btn-primary" data-toggle="modal" data-target="#myModal18">Tambah Data</button>
+                                        <?php }; ?>
                                         <br>
                                         <br>
                                         <div class="modal fade" id="myModal18">
@@ -2626,7 +2691,9 @@
                                                 <th>Kota Atau Kabupaten</th>
                                                 <th>Kecamatan</th>
                                                 <th>Desa</th>
-                                                <th>Action</th>
+                                                <?php  if($userdata['id_roles'] == 1){?>
+                                                    <th>Action</th>
+                                                <?php }; ?>
                                             </thead>
                                         </table>
                                     </div>
@@ -2636,7 +2703,9 @@
                                         Indikasi Tora Dalam KK
                                     </div>
                                     <div class="card-body">
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal15">Tambah Data</button>
+                                        <?php  if($userdata['id_roles'] == 2){?>
+                                            <button class="btn btn-primary" data-toggle="modal" data-target="#myModal15">Tambah Data</button>
+                                        <?php }; ?>
                                         <br>
                                         <br>
                                         <div class="modal fade" id="myModal15">
@@ -2763,7 +2832,9 @@
                                                 <th>Nama Kawasan</th>
                                                 <th>Luas</th>
                                                 <th>Luas Kawasan</th>
-                                                <th>Action</th>
+                                                <?php  if($userdata['id_roles'] == 2){?>
+                                                    <th>Action</th>
+                                                <?php }; ?>
                                             </thead>
                                         </table>
                                     </div>
@@ -2773,7 +2844,9 @@
                                         Permasalahan Pengelolaan KK
                                     </div>
                                     <div class="card-body">
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal20">Tambah Data</button>
+                                        <?php  if($userdata['id_roles'] == 1){?>
+                                            <button class="btn btn-primary" data-toggle="modal" data-target="#myModal20">Tambah Data</button>
+                                        <?php }; ?>
                                         <br>
                                         <br>
                                         <div class="modal fade" id="myModal20">
@@ -2925,7 +2998,9 @@
                                                 <th>Nama Pengelola</th>
                                                 <th>Kategori Permasalahan</th>
                                                 <th>Lainnya</th>
-                                                <th>Action</th>
+                                                <?php  if($userdata['id_roles'] == 1){?>
+                                                    <th>Action</th>
+                                                <?php }; ?>
                                             </thead>
                                         </table>
                                     </div>
@@ -2935,7 +3010,9 @@
                                         Wilayah Adat
                                     </div>
                                     <div class="card-body">
+                                        <?php  if($userdata['id_roles'] == 1){?>
                                         <button class="btn btn-primary" data-toggle="modal" data-target="#myModal32">Tambah Data</button>
+                                        <?php }; ?>
                                         <br>
                                         <br>
                                         <div class="modal fade" id="myModal32">
@@ -3060,7 +3137,9 @@
                                                 <th>Nama Wilayah Adat</th>
                                                 <th>Luas</th>
                                                 <th>Jumlah Kepala Keluarga</th>
-                                                <th>Action</th>
+                                                <?php  if($userdata['id_roles'] == 1){?>
+                                                    <th>Action</th>
+                                                <?php }; ?>
                                             </thead>
                                         </table>
                                     </div>
@@ -3070,7 +3149,9 @@
                                         Peta Kawasan Konsevarsi
                                     </div>
                                     <div class="card-body">
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal46">Tambah Data</button>
+                                        <?php  if($userdata['id_roles'] == 1){?>
+                                            <button class="btn btn-primary" data-toggle="modal" data-target="#myModal46">Tambah Data</button>
+                                        <?php }; ?>
                                         <br>
                                         <br>
                                         <div class="modal fade" id="myModal46">
@@ -3167,7 +3248,9 @@
                                                 <th>Peta Batas Kawasan Konsevarsi</th>
                                                 <th>Peta Atlas Kawasan Konsevarsi</th>
                                                  <th>Peta SHP</th>
-                                                <th>Action</th>
+                                                <?php  if($userdata['id_roles'] == 1){?>
+                                                    <th>Action</th>
+                                                <?php }; ?>
                                             </thead>
                                         </table>
                                     </div>
@@ -3177,7 +3260,9 @@
                                         Sosekbud
                                     </div>
                                     <div class="card-body">
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal24">Tambah Data</button>
+                                        <?php  if($userdata['id_roles'] == 1){?>
+                                            <button class="btn btn-primary" data-toggle="modal" data-target="#myModal24">Tambah Data</button>
+                                        <?php }; ?>
                                         <br>
                                         <br>
                                         <div class="modal fade" id="myModal24">
@@ -3269,7 +3354,9 @@
                                                 <th>Demografi Desa</th>
                                                 <th>Sejarah Pemukiman dalam Kawasan</th>
                                                 <th>Ketergantungan Sumber daya alam</th>
-                                                <th>Action</th>
+                                                <?php  if($userdata['id_roles'] == 1){?>
+                                                    <th>Action</th>
+                                                <?php }; ?>
                                             </thead>
                                         </table>
                                     </div>
@@ -3279,7 +3366,9 @@
                                         Penutupan Lahan Per Kawasan
                                     </div>
                                     <div class="card-body">
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal26">Tambah Data</button>
+                                        <?php  if($userdata['id_roles'] == 1){?>
+                                            <button class="btn btn-primary" data-toggle="modal" data-target="#myModal26">Tambah Data</button>
+                                        <?php }; ?>
                                         <br>
                                         <br>
                                         <div class="modal fade" id="myModal26">
@@ -3364,7 +3453,9 @@
                                                 <th>File SHP</th>
                                                 <th>File Table</th>
                                                 <th>File Jpeg</th>
-                                                <th>Action</th>
+                                                <?php  if($userdata['id_roles'] == 1){?>
+                                                    <th>Action</th>
+                                                <?php }; ?>
                                             </thead>
                                         </table>
                                     </div>
@@ -3384,7 +3475,9 @@
                                                 <!-- Modal Header -->
                                                 <div class="modal-header">
                                                     <h4 class="modal-title">Input Kemitraan Kawasan Konservasi</h4>
-                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <?php  if($userdata['id_roles'] == 3){?>
+                                                        <button type="button" class="close" data-dismiss="modal">&times;</button>
+                                                    <?php }; ?>
                                                 </div>
                                                 <form id="formkemitraankonservasi">
                                                     <!-- Modal body -->
@@ -3465,7 +3558,9 @@
                                                 <th>Nomor PKS</th>
                                                 <th>Luas PKS</th>
                                                 <th>Peta PKS</th>
-                                                <th>Action</th>
+                                                <?php  if($userdata['id_roles'] == 3){?>
+                                                    <th>Action</th>
+                                                <?php }; ?>
                                             </thead>
                                         </table>
                                     </div>
@@ -3475,7 +3570,9 @@
                                         Open Area Per Kawasan
                                     </div>
                                     <div class="card-body">
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal28">Tambah Data</button>
+                                        <?php  if($userdata['id_roles'] == 1){?>
+                                            <button class="btn btn-primary" data-toggle="modal" data-target="#myModal28">Tambah Data</button>
+                                        <?php }; ?>
                                         <br>
                                         <br>
                                         <div class="modal fade" id="myModal28">
@@ -3560,7 +3657,9 @@
                                                 <th>File SHP</th>
                                                 <th>File Table</th>
                                                 <th>File Jpeg</th>
-                                                <th>Action</th>
+                                                <?php  if($userdata['id_roles'] == 1){?>
+                                                    <th>Action</th>
+                                                <?php }; ?>
                                             </thead>
                                         </table>
                                     </div>
@@ -3570,7 +3669,9 @@
                                         Hutan adat dalam KK
                                     </div>
                                     <div class="card-body">
-                                        <button class="btn btn-primary" data-toggle="modal" data-target="#myModal9">Tambah Data</button>
+                                        <?php  if($userdata['id_roles'] == 2){?>
+                                            <button class="btn btn-primary" data-toggle="modal" data-target="#myModal9">Tambah Data</button>
+                                        <?php }; ?>
                                         <br>
                                         <br>
                                         <div class="modal fade" id="myModal9">
@@ -3704,7 +3805,9 @@
                                                 <th>Nama Kawasan</th>
                                                 <th>Luas</th>
                                                 <th>Nama Adat</th>
-                                                <th>Action</th>
+                                                <?php  if($userdata['id_roles'] == 2){?>
+                                                    <th>Action</th>
+                                                <?php };?>
                                             </thead>
                                         </table>
                                     </div>
@@ -4829,12 +4932,15 @@
                             { data: 'register' },
                             { data: 'nama_kawasan' },
                             { data: 'luas' },
+                              <?php  if($userdata['id_roles'] == 2){?>
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button>";
+                                        return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button>";
+                
                                 }
                             }
+                        <?php }; ?>
                         ]
                     });
             var table1 =  $('#myTable2').DataTable({
@@ -4870,12 +4976,14 @@
                             { data: 'rekomendasi' },
                             { data: 'tahun_pelaksanaan' },
                             { data: 'upt' },
-                            {
-                                data: null,
-                                render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal4'onclick='editfunc1("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc1("+data.id+")'>Delete</button>";
+                            <?php  if($userdata['id_roles'] == 2){?>
+                                {
+                                    data: null,
+                                    render: function ( data, type, row ) {
+                                        return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal4'onclick='editfunc1("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc1("+data.id+")'>Delete</button>";
+                                    }
                                 }
-                            }
+                            <?php }; ?>
                         ]
                     });
             var table2 =  $('#myTable3').DataTable({
@@ -4908,12 +5016,14 @@
                             { data: 'rekomendasi' },
                             { data: 'tahun_pelaksanaan' },
                             { data: 'upt' },
-                            {
-                                data: null,
-                                render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal6'onclick='editfunc2("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc2("+data.id+")'>Delete</button>";
+                            <?php  if($userdata['id_roles'] == 2){?>
+                                {
+                                    data: null,
+                                    render: function ( data, type, row ) {
+                                        return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal6'onclick='editfunc2("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc2("+data.id+")'>Delete</button>";
+                                    }
                                 }
-                            }
+                            <?php }; ?>
                         ]
                     });
             var table3 =  $('#myTable4').DataTable({
@@ -4946,12 +5056,14 @@
                             { data: 'nama_kawasan' },
                             { data: 'luas' },
                             { data: 'luas_kawasan' },
-                            {
-                                data: null,
-                                render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal16'onclick='editfunc3("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc3("+data.id+")'>Delete</button>";
+                            <?php  if($userdata['id_roles'] == 2){?>
+                                {
+                                    data: null,
+                                    render: function ( data, type, row ) {
+                                        return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal16'onclick='editfunc3("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc3("+data.id+")'>Delete</button>";
+                                    }
                                 }
-                            }
+                            <?php }; ?>
                         ]
                     });
             var table4 =  $('#myTable5').DataTable({
@@ -4984,12 +5096,14 @@
                             { data: 'nama_kawasan' },
                             { data: 'luas' },
                             { data: 'nama_adat' },
+                            <?php  if($userdata['id_roles'] == 2){?>
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
                                     return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal10'onclick='editfunc4("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc4("+data.id+")'>Delete</button>";
                                 }
                             }
+                        <?php }; ?>
                         ]
                     });
             var table5 =  $('#myTable7').DataTable({
@@ -4997,14 +5111,14 @@
                         buttons: [
                              {
                                 extend: 'excel',
-                                title :'Evaluasi Fungsi EKF Lapangan',
+                                title :'Potensi Kawasan Konservarsi',
                                 exportOptions: {
                                     columns: [ 0,1 ]
                                 }
                             }, 
                             {
                                 extend: 'pdf',
-                                title :'Evaluasi Fungsi EKF Lapangan',
+                                title :'Potensi Kawasan Konservarsi',
                                 exportOptions: {
                                     columns: [ 0,1 ]
                                 }
@@ -5021,12 +5135,14 @@
                         columns: [
                             { data: 'jenis_potensi' },
                             { data: 'deskripsi_potensi' },
-                            {
-                                data: null,
-                                render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal12'onclick='editfunc5("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc5("+data.id+")'>Delete</button>";
+                            <?php  if($userdata['id_roles'] == 1){?>
+                                {
+                                    data: null,
+                                    render: function ( data, type, row ) {
+                                        return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal12'onclick='editfunc5("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc5("+data.id+")'>Delete</button>";
+                                    }
                                 }
-                            }
+                            <?php }; ?>
                         ]
                     });
              // Kenakaragaman hayati table       
@@ -5096,12 +5212,14 @@
                         columns: [
                             { data: 'nama' },
                             { data: 'nama_latin' },
-                            {
-                                data: null,
-                                render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal39' onclick='editfunc19("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc19("+data.id+")'>Delete</button>";
+                            <?php  if($userdata['id_roles'] == 1){?>
+                                {
+                                    data: null,
+                                    render: function ( data, type, row ) {
+                                        return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal39' onclick='editfunc19("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc19("+data.id+")'>Delete</button>";
+                                    }
                                 }
-                            }
+                            <?php }; ?>
                         ]
                     });
                     
@@ -5134,12 +5252,14 @@
                         columns: [
                             { data: 'nama' },
                             { data: 'nama_latin' },
+                            <?php  if($userdata['id_roles'] == 1){?>
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
                                     return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal41' onclick='editfunc20("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc20("+data.id+")'>Delete</button>";
                                 }
                             }
+                            <?php }; ?>
                         ]
                     });
                     var table63 =  $('#myTable83').DataTable({
@@ -5171,12 +5291,14 @@
                         columns: [
                             { data: 'nama' },
                             { data: 'nama_latin' },
-                            {
-                                data: null,
-                                render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal43' onclick='editfunc21("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc21("+data.id+")'>Delete</button>";
+                            <?php  if($userdata['id_roles'] == 1){?>
+                                {
+                                    data: null,
+                                    render: function ( data, type, row ) {
+                                        return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal43' onclick='editfunc21("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc21("+data.id+")'>Delete</button>";
+                                    }
                                 }
-                            }
+                            <?php }; ?>
                         ]
                     });
                     var table64 =  $('#myTable84').DataTable({
@@ -5271,12 +5393,14 @@
                         columns: [
                             { data: 'nama' },
                             { data: 'nama_latin' },
-                            {
-                                data: null,
-                                render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal51' onclick='editfunc25("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc25("+data.id+")'>Delete</button>";
+                            <?php  if($userdata['id_roles'] == 1){?>
+                                {
+                                    data: null,
+                                    render: function ( data, type, row ) {
+                                        return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal51' onclick='editfunc25("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc25("+data.id+")'>Delete</button>";
+                                    }
                                 }
-                            }
+                            <?php }; ?>
                         ]
                     });
                     var table68 =  $('#myTable88').DataTable({
@@ -5308,12 +5432,14 @@
                         columns: [
                             { data: 'nama' },
                             { data: 'nama_latin' },
+                            <?php  if($userdata['id_roles'] == 1){?>
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
                                     return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal53' onclick='editfunc26("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc26("+data.id+")'>Delete</button>";
                                 }
                             }
+                            <?php }; ?>
                         ]
                     });
                      var table69 =  $('#myTable89').DataTable({
@@ -5345,12 +5471,14 @@
                         columns: [
                             { data: 'nama' },
                             { data: 'nama_latin' },
-                            {
-                                data: null,
-                                render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal55' onclick='editfunc27("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc27("+data.id+")'>Delete</button>";
+                            <?php  if($userdata['id_roles'] == 1){?>
+                                {
+                                    data: null,
+                                    render: function ( data, type, row ) {
+                                        return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal55' onclick='editfunc27("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc27("+data.id+")'>Delete</button>";
+                                    }
                                 }
-                            }
+                            <?php }; ?>
                         ]
                     }); 
                      var table610 =  $('#myTable810').DataTable({
@@ -5382,12 +5510,14 @@
                         columns: [
                             { data: 'nama' },
                             { data: 'nama_latin' },
-                            {
-                                data: null,
-                                render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal57' onclick='editfunc28("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc28("+data.id+")'>Delete</button>";
+                            <?php  if($userdata['id_roles'] == 1){?>
+                                {
+                                    data: null,
+                                    render: function ( data, type, row ) {
+                                        return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal57' onclick='editfunc28("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc28("+data.id+")'>Delete</button>";
+                                    }
                                 }
-                            }
+                            <?php } ?>
                         ]
                     });
                     var table611 =  $('#myTable811').DataTable({
@@ -5419,12 +5549,14 @@
                         columns: [
                             { data: 'nama' },
                             { data: 'deskripsi' },
-                            {
-                                data: null,
-                                render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal59' onclick='editfunc29("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc29("+data.id+")'>Delete</button>";
+                            <?php  if($userdata['id_roles'] == 1){?>
+                                {
+                                    data: null,
+                                    render: function ( data, type, row ) {
+                                        return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal59' onclick='editfunc29("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc29("+data.id+")'>Delete</button>";
+                                    }
                                 }
-                            }
+                            <?php }; ?>
                         ]
                     });
               
@@ -5459,12 +5591,14 @@
                             { data: 'kota_kabupaten' },
                             { data: 'kecamatan' },
                             { data: 'desa' },
-                            {
-                                data: null,
-                                render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal19'onclick='editfunc10("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc10("+data.id+")'>Delete</button>";
+                            <?php  if($userdata['id_roles'] == 1){?>
+                                {
+                                    data: null,
+                                    render: function ( data, type, row ) {
+                                        return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal19'onclick='editfunc10("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc10("+data.id+")'>Delete</button>";
+                                    }
                                 }
-                            }
+                            <?php }; ?>
                         ]
                     });
                     //-------------------------------Wilayah Adat ---------------------//
@@ -5498,12 +5632,14 @@
                             { data: 'nama_wilayah_adat' },
                             { data: 'luas' },
                             { data: 'jumlah_kepala_keluarga' },
-                            {
-                                data: null,
-                                render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal21'onclick='editfunc11("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc11("+data.id+")'>Delete</button>";
+                            <?php  if($userdata['id_roles'] == 1){?>
+                                {
+                                    data: null,
+                                    render: function ( data, type, row ) {
+                                        return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal21'onclick='editfunc11("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc11("+data.id+")'>Delete</button>";
+                                    }
                                 }
-                            }
+                            <?php }; ?>
                         ]
                     });
                     //-------------------------------END---------------------------------//
@@ -5538,12 +5674,14 @@
                             { data: 'unit_pengelolaan_kawasan.nama_pengelola' },
                             { data: 'kategori_permasalahan' },
                             { data: 'lainnya' },
-                            {
-                                data: null,
-                                render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal23'onclick='editfunc12("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc12("+data.id+")'>Delete</button>";
+                            <?php  if($userdata['id_roles'] == 1){?>
+                                {
+                                    data: null,
+                                    render: function ( data, type, row ) {
+                                        return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal23'onclick='editfunc12("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc12("+data.id+")'>Delete</button>";
+                                    }
                                 }
-                            }
+                            <?php }; ?>
                         ]
                     });
                     //-------------------------------END------------------------------//
@@ -5589,12 +5727,14 @@
                             { data: 'demografi_desa' },
                             { data: 'sejarah_pemukiman' },
                             { data: 'sumber_daya_alam' },
-                            {
-                                data: null,
-                                render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal25'onclick='editfunc13("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc13("+data.id+")'>Delete</button>";
+                            <?php  if($userdata['id_roles'] == 1){?>
+                                {
+                                    data: null,
+                                    render: function ( data, type, row ) {
+                                        return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal25'onclick='editfunc13("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc13("+data.id+")'>Delete</button>";
+                                    }
                                 }
-                            }
+                            <?php }; ?>
                         ]
                     });
                     var table13 = $('#myTable13').DataTable({
@@ -5653,12 +5793,14 @@
                                     return "<a href='<?php echo constant('API_URL');?>/"+data.file_jpeg+"' target='_blank'>Download</a>";
                                 }
                             },
-                            {
-                                data: null,
-                                render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal27'onclick='editfunc14("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc14("+data.id+")'>Delete</button>";
+                            <?php  if($userdata['id_roles'] == 1){?>
+                                {
+                                    data: null,
+                                    render: function ( data, type, row ) {
+                                        return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal27'onclick='editfunc14("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc14("+data.id+")'>Delete</button>";
+                                    }
                                 }
-                            }
+                            <?php }; ?>
                         ]
                     });
                     var table14 = $('#myTable14').DataTable({
@@ -5717,12 +5859,14 @@
                                     return "<a href='<?php echo constant('API_URL');?>/"+data.file_table+"' target='_blank'>Download</a>";
                                 }
                             },
-                            {
-                                data: null,
-                                render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal29'onclick='editfunc15("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc15("+data.id+")'>Delete</button>";
+                            <?php  if($userdata['id_roles'] == 1){?>
+                                {
+                                    data: null,
+                                    render: function ( data, type, row ) {
+                                        return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal29'onclick='editfunc15("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc15("+data.id+")'>Delete</button>";
+                                    }
                                 }
-                            }
+                            <?php }; ?>
                         ]
                     });
                      var table15 = $('#myTable15').DataTable({
@@ -5771,12 +5915,14 @@
                                     return "<a href='<?php echo constant('API_URL');?>/"+data.peta_pks+"' target='_blank'>View Peta PKS</a>";
                                 }
                             },
+                            <?php  if($userdata['id_roles'] == 3){?>
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
                                     return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal31'onclick='editfunc16("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc16("+data.id+")'>Delete</button>";
                                 }
                             }
+                            <?php }; ?>
                         ]
                     });
                      var table16 = $('#myTable16').DataTable({
@@ -5821,12 +5967,14 @@
                             { data: 'mitra_kerja' },
                             { data: 'kategori_mitra' },
                             { data: 'upt' },
-                            {
-                                data: null,
-                                render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal35'onclick='editfunc17("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc17("+data.id+")'>Delete</button>";
+                            <?php  if($userdata['id_roles'] == 3){?>
+                                {
+                                    data: null,
+                                    render: function ( data, type, row ) {
+                                        return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal35'onclick='editfunc17("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc17("+data.id+")'>Delete</button>";
+                                    }
                                 }
-                            }
+                            <?php }; ?>
                         ]
                     });
                      var table17 = $('#myTable17').DataTable({
@@ -5871,12 +6019,14 @@
                             { data: 'mitra_kerja' },
                             { data: 'kategori_mitra' },
                             { data: 'upt' },
-                            {
-                                data: null,
-                                render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal37'onclick='editfunc18("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc18("+data.id+")'>Delete</button>";
+                            <?php  if($userdata['id_roles'] == 3){?>
+                                {
+                                    data: null,
+                                    render: function ( data, type, row ) {
+                                        return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal37'onclick='editfunc18("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc18("+data.id+")'>Delete</button>";
+                                    }
                                 }
-                            }
+                            <?php }; ?>
                         ]
                     });
                      var table18 = $('#myTable18').DataTable({
@@ -5935,12 +6085,14 @@
                                     return "<a href='<?php echo constant('API_URL');?>/"+data.peta_shp+"' target='_blank'>Download</a>";
                                 }
                             },
-                            {
-                                data: null,
-                                render: function ( data, type, row ) {
-                                    return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal47'onclick='editfunc22("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc22("+data.id+")'>Delete</button>";
+                            <?php  if($userdata['id_roles'] == 1){?>
+                                {
+                                    data: null,
+                                    render: function ( data, type, row ) {
+                                        return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal47'onclick='editfunc22("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc22("+data.id+")'>Delete</button>";
+                                    }
                                 }
-                            }
+                            <?php }; ?>
                         ]
                     });
         $('document').ready(function(){
