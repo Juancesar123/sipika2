@@ -91,7 +91,7 @@
                                     <div class="card-header" style="padding-bottom: 30px;">
                                         Profile Kawasan
                                         <div class="float-right">
-                                           <?php  if($userdata['id_roles'] == 1){?>
+                                           <?php  if($userdata['id_roles'] == 2){?>
                                                 <button class="btn btn-default btn-sm" data-toggle="modal" data-target="#myModal"><i class="fa fa-wrench"></i> Edit</button>
                                             <?php } ?>
                                         </div>
@@ -1068,8 +1068,6 @@
                                                         <div class="row">
                                                             <div class="col-6">
                                                                  <h5>Basic Info </h5>
-                                                               
-                                
                                                                     <input class="form-control" type="hidden" id="nama_kawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
                                                                     <input type="hidden" id="idkawasan" value="<?php echo  $hasil['id'];?>">
                                                                 <div class="form-group">
@@ -1240,6 +1238,11 @@
                                                 <th>Register</th>
                                                 <th>Nama Kawasan</th>
                                                 <th>Luas Kawasan</th>
+                                                <th>Jenis SK</th>
+                                                <th>Judul SK</th>
+                                                 <th>Nomor SK</th>
+                                                <th>Permasalahan</th>
+                                                <th>Usulan Penyelesaian</th>
                                                 <?php  if($userdata['id_roles'] == 2){?>
                                                     <th>Action</th>
                                                 <?php }; ?>
@@ -2832,6 +2835,9 @@
                                                 <th>Nama Kawasan</th>
                                                 <th>Luas</th>
                                                 <th>Luas Kawasan</th>
+                                                <th>Judul SK</th>
+                                                <th>Nomor SK</th>
+                                                <th>Tanggal SK</th>
                                                 <?php  if($userdata['id_roles'] == 2){?>
                                                     <th>Action</th>
                                                 <?php }; ?>
@@ -3805,6 +3811,11 @@
                                                 <th>Nama Kawasan</th>
                                                 <th>Luas</th>
                                                 <th>Nama Adat</th>
+                                                <th>Provinsi</th>
+                                                <th>Kabupaten</th>
+                                                <th>judul SK</th>
+                                                <th>Nomor SK</th>
+                                                <th>Tanggal SK</th>
                                                 <?php  if($userdata['id_roles'] == 2){?>
                                                     <th>Action</th>
                                                 <?php };?>
@@ -4909,17 +4920,28 @@
                                 extend: 'excel',
                                 title :'Perkembangan Pengukuhan Kawasan',
                                 exportOptions: {
-                                    columns: [ 0,1,2 ]
+                                    columns: [ 0,1,2,3,4,5,6,7 ]
                                 }
                             }, 
                             {
                                 extend: 'pdf',
                                 title :'Perkembangan Pengukuhan Kawasan',
                                 exportOptions: {
-                                    columns: [ 0,1,2 ]
+                                    columns: [ 0,1,2,3,4,5,6,7 ]
                                 }
                             }
                         ],
+                        responsive: {
+                            details: {
+                                display: $.fn.dataTable.Responsive.display.modal( {
+                                    header: function ( row ) {
+                                        var data = row.data();
+                                        return 'Details for Perkembangan Pengukuhan Kawasan';
+                                    }
+                                } ),
+                                renderer: $.fn.dataTable.Responsive.renderer.tableAll()
+                            }
+                        },
                         deferRender: true,
                         ajax: {
                             url: "/getDataPengukuhanKawasan/"+"<?php echo $hasil['nama_kawasan'];?>",
@@ -4932,6 +4954,11 @@
                             { data: 'register' },
                             { data: 'nama_kawasan' },
                             { data: 'luas' },
+                            { data: 'jenis_sk' },
+                            { data: 'judul_sk' },
+                            { data: 'nomor_sk' },
+                            { data: 'permasalahan' },
+                            { data: 'usulan_penyelesaian' },
                               <?php  if($userdata['id_roles'] == 2){?>
                             {
                                 data: null,
@@ -4939,7 +4966,7 @@
                                         return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal2'onclick='editfunc("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc("+data.id+")'>Delete</button>";
                 
                                 }
-                            }
+                            },
                         <?php }; ?>
                         ]
                     });
@@ -5033,14 +5060,14 @@
                                 extend: 'excel',
                                 title :'Indikasi Tora Dalam KK',
                                 exportOptions: {
-                                    columns: [ 0,1,2 ]
+                                    columns: [ 0,1,2,3,4,5 ]
                                 }
                             }, 
                             {
                                 extend: 'pdf',
                                 title :'Indikasi Tora Dalam KK',
                                 exportOptions: {
-                                    columns: [ 0,1,2 ]
+                                    columns: [ 0,1,2,3,4,5 ]
                                 }
                             }
                         ],
@@ -5052,10 +5079,24 @@
                                 return d
                             }
                         },
+                         responsive: {
+                            details: {
+                                display: $.fn.dataTable.Responsive.display.modal( {
+                                    header: function ( row ) {
+                                        var data = row.data();
+                                        return 'Details for Indikasi Tora Dalam KK';
+                                    }
+                                } ),
+                                renderer: $.fn.dataTable.Responsive.renderer.tableAll()
+                            }
+                        },
                         columns: [
                             { data: 'nama_kawasan' },
                             { data: 'luas' },
                             { data: 'luas_kawasan' },
+                            { data: 'judul_sk' },
+                            { data: 'nomor_sk' },
+                            { data: 'tanggal_sk' },
                             <?php  if($userdata['id_roles'] == 2){?>
                                 {
                                     data: null,
@@ -5073,14 +5114,14 @@
                                 extend: 'excel',
                                 title :'Hutan Adat',
                                 exportOptions: {
-                                    columns: [ 0,1,2 ]
+                                    columns: [ 0,1,2,3,4,5,6,7 ]
                                 }
                             }, 
                             {
                                 extend: 'pdf',
                                 title :'Hutan Adat',
                                 exportOptions: {
-                                    columns: [ 0,1,2 ]
+                                    columns: [ 0,1,2,3,4,5,6,7 ]
                                 }
                             }
                         ],
@@ -5092,10 +5133,26 @@
                                 return d
                             }
                         },
+                        responsive: {
+                            details: {
+                                display: $.fn.dataTable.Responsive.display.modal( {
+                                    header: function ( row ) {
+                                        var data = row.data();
+                                        return 'Details for Hutan Adat Dalam KK';
+                                    }
+                                } ),
+                                renderer: $.fn.dataTable.Responsive.renderer.tableAll()
+                            }
+                        },
                         columns: [
                             { data: 'nama_kawasan' },
                             { data: 'luas' },
                             { data: 'nama_adat' },
+                            { data: 'provinsi' },
+                            { data: 'kabupaten' },
+                            { data: 'judul_sk' },
+                            { data: 'nomor_sk' },
+                            { data: 'tanggal_sk' },
                             <?php  if($userdata['id_roles'] == 2){?>
                             {
                                 data: null,

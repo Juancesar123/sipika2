@@ -363,5 +363,9 @@ $route['deletePotensipiaps/(:any)'] ='PotensiPIAPSController/destroy/$1';
 $route['getDataDashboard/(:any)'] = "DashboardController/getCountData/$1";
 $route['getDataAllDashboard'] = "DashboardController/getAllData/$1";
 //endroute
+// route Profile
+$route['profile'] = "ProfileController";
+$route['updateprofile/(:any)'] = "ProfileController/editprofile/$1";
+//endroute profile
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;

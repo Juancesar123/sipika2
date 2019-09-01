@@ -8,6 +8,7 @@ class AuthtenticationController extends CI_Controller {
           
     }
     public function login(){
+        //var_dump($this->session->userdata());
         return $this->load->view('pages/login');
     }
     public function register(){
@@ -33,7 +34,7 @@ class AuthtenticationController extends CI_Controller {
             $result = json_decode($hasil,TRUE);
             $this->session->set_userdata('token', $result['accessToken']);
             $userdata = $this->session->userdata('token');
-            $result1 = $client->get(constant('API_URL').'/users',[
+            $result1 = $client->get(constant('API_URL').'/users?email='.$this->input->post('username'),[
                 'headers' => [
                     'Authorization' => $userdata
                 ]
@@ -42,6 +43,7 @@ class AuthtenticationController extends CI_Controller {
             $convert = json_decode($hasil1,TRUE);
             $this->session->set_userdata('userdata', $convert[0]);
             redirect('/');
+            //var_dump($convert);
         } catch (GuzzleHttp\Exception\ClientException $exception) {
             // $responseBody = $exception->getResponse()->getBody(true);
             //echo "<script>alert('This card was not approved, Thanks.');</script>";
@@ -50,8 +52,12 @@ class AuthtenticationController extends CI_Controller {
         }
     }
     public function logout(){
-        $this->session->unset_userdata('userdata');
-        $this->session->unset_userdata('token');
+        // $this->session->sess_destroy();
+        // $this->session->unset_userdata('userdata');
+        // $this->session->unset_userdata('token');
+        unset($_SESSION['userdata']);
+        unset($_SESSION['token']);
+        //var_dump($this->session->userdata());
         redirect('/login');
     }
 }

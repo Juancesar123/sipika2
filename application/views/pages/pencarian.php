@@ -36,9 +36,15 @@
                                         <div class="col-md-6">
                                             <div class="form-group">
                                                 <label>Masukkan Kata Kunci</label>
-                                                <input type="text"  class="form-control" id="katakunci" name="">
+                                                <?php 
+                                                    if(isset($_GET['seacrh'])){
+                                                ?>
+                                                    <input type="text"  class="form-control" id="katakunci" name="" value="<?php echo $_GET['seacrh'];?>">
+                                                 <?php } else { ?>
+                                                    <input type="text"  class="form-control" id="katakunci" name="">
+                                                <?php }; ?>
                                             </div>
-                                            <button class="btn btn-primary" id="cari2"><i class="fa fa-search"></i> Cari</button>
+                                            <button class="btn btn-primary" id="cari2"><i class="fa fa-search" ></i> Cari</button>
                                         </div>
                                     </div>
                                     <div class="row" style="margin-top:10px;" id="listresult">

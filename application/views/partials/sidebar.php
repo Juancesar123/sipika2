@@ -2,7 +2,11 @@
         <ul class="nav">
           <li class="profile">
             <div class="profile-wrapper">
-              <img src="../../images/faces/face28.jpg" alt="profile">
+                 <?php if(empty($userdata['foto'])){?>
+                    <img src="../../images/user.png">
+                <?php }else{ ?>
+                    <img src="<?php echo constant('API_URL').'/'.$userdata['foto']; ?>">
+                <?php }; ?>
               <div class="profile-details">
                 <p class="name"><?php echo $userdata['fullname']?></p>
                 <small class="designation"> <?php echo $userdata['role']['roles']; ?></small>
@@ -10,7 +14,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php if($this->uri->uri_string() == '') { echo 'active'; } ?>" href="<?=base_url()?>">
+            <a class="nav-link <?php if($this->uri->uri_string() == base_url()) { echo 'active'; } ?>" href="<?=base_url()?>">
               <i class="fa fa-home menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
@@ -144,6 +148,12 @@
             <a class="nav-link <?php if($this->uri->segment(1)=="pencarian"){echo "active";}?>" href="<?=base_url('pencarian')?>">
               <i class="fa fa-search menu-icon"></i>
               <span class="menu-title">Pencarian</span>
+            </a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link <?php if($this->uri->segment(1)=="profile"){echo "active";}?>" href="<?=base_url('profile')?>">
+              <i class="fa fa-user menu-icon"></i>
+              <span class="menu-title">Profile</span>
             </a>
           </li>
         </ul>
