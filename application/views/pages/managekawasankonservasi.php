@@ -1810,6 +1810,14 @@
                                                 <th>Mitra Kerja</th>
                                                 <th>Kategori Mitra</th>
                                                 <th>UPT</th>
+                                                <th>Persetujuan</th>
+                                                <th>Nota Kesepakatan</th>
+                                                <th>Perjanjian Kerjasama</th>
+                                                <th>Dari</th>
+                                                <th>Ke</th>
+                                                <th>Keterangan</th>
+                                                <th>Hibah</th>
+                                                <th>Jumlah Hibah</th>
                                                 <?php  if($userdata['id_roles'] == 3){?>
                                                     <th>Action</th>
                                                 <?php }; ?>
@@ -2144,6 +2152,19 @@
                                                 <th>Mitra Kerja</th>
                                                 <th>Kategori Mitra</th>
                                                 <th>UPT</th>
+                                                <th>Kategori Kerjasama Strategis</th>
+                                                <th>Jumlah Tower (Komunikasi)</th>
+                                                <th>Jumlah Tower (Listrik)</th>
+                                                <th>Luar Area</th>
+                                                <th>Panjang Jalan</th>
+                                                <th>Keterangan (jika ada mitigasi bencana)</th>
+                                                <th>Luas Area Militer </th>
+                                                <th>Luas Area Migas</th>
+                                                <th>Persetujuan</th>
+                                                <th>Pertimbangan Tekhnis</th>
+                                                <th>Dari</th>
+                                                <th>Ke</th>
+                                                <th>Keterangan</th>
                                                 <?php  if($userdata['id_roles'] == 3){?>
                                                     <th>Action</th>
                                                 <?php }; ?>
@@ -3004,6 +3025,12 @@
                                                 <th>Nama Pengelola</th>
                                                 <th>Kategori Permasalahan</th>
                                                 <th>Lainnya</th>
+                                                <th>Nama Kawasan</th>
+                                                <th>Keterangan</th>
+                                                <th>Nomor Surat</th>
+                                                <th>Luas Permasalahan</th>
+                                                <th>Tanggal</th>
+                                                <th>Upaya Permasalahan</th>
                                                 <?php  if($userdata['id_roles'] == 1){?>
                                                     <th>Action</th>
                                                 <?php }; ?>
@@ -3143,6 +3170,9 @@
                                                 <th>Nama Wilayah Adat</th>
                                                 <th>Luas</th>
                                                 <th>Jumlah Kepala Keluarga</th>
+                                                <th>Judul SK</th>
+                                                <th>Nomor SK</th>
+                                                <th>Tanggal SK</th>
                                                 <?php  if($userdata['id_roles'] == 1){?>
                                                     <th>Action</th>
                                                 <?php }; ?>
@@ -5666,14 +5696,14 @@
                                 extend: 'excel',
                                 title :'Wilayah Adat',
                                 exportOptions: {
-                                    columns: [ 0,1,2 ]
+                                    columns: [ 0,1,2,3,4,5 ]
                                 }
                             }, 
                             {
                                 extend: 'pdf',
                                 title :'Wilayah Adat',
                                 exportOptions: {
-                                    columns: [ 0,1,2 ]
+                                    columns: [ 0,1,2,3,4,5 ]
                                 }
                             }
                         ],
@@ -5685,10 +5715,24 @@
                                 return d
                             }
                         },
+                         responsive: {
+                            details: {
+                                display: $.fn.dataTable.Responsive.display.modal( {
+                                    header: function ( row ) {
+                                        var data = row.data();
+                                        return 'Details for Wilayah Adat';
+                                    }
+                                } ),
+                                renderer: $.fn.dataTable.Responsive.renderer.tableAll()
+                            }
+                        },
                         columns: [
                             { data: 'nama_wilayah_adat' },
                             { data: 'luas' },
                             { data: 'jumlah_kepala_keluarga' },
+                            { data: 'judul_sk' },
+                            { data: 'nomor_sk' },
+                            { data: 'tanggal_sk' },
                             <?php  if($userdata['id_roles'] == 1){?>
                                 {
                                     data: null,
@@ -5708,14 +5752,14 @@
                                 extend: 'excel',
                                 title :'Permasalahan Pengelolaan KK',
                                 exportOptions: {
-                                    columns: [ 0,1,2 ]
+                                    columns: [ 0,1,2,3,4,5,6,7,8 ]
                                 }
                             }, 
                             {
                                 extend: 'pdf',
                                 title :'Permasalahan Pengelolaan KK',
                                 exportOptions: {
-                                    columns: [ 0,1,2 ]
+                                    columns: [ 0,1,2,3,4,5,6,7,8 ]
                                 }
                             }
                         ],
@@ -5727,10 +5771,28 @@
                                 return d
                             }
                         },
+                        responsive: {
+                            details: {
+                                display: $.fn.dataTable.Responsive.display.modal( {
+                                    header: function ( row ) {
+                                        var data = row.data();
+                                        return 'Details for Permasalahan Pengelolaan KK';
+                                    }
+                                } ),
+                                renderer: $.fn.dataTable.Responsive.renderer.tableAll()
+                            }
+                        },
                         columns: [
                             { data: 'unit_pengelolaan_kawasan.nama_pengelola' },
                             { data: 'kategori_permasalahan' },
                             { data: 'lainnya' },
+                            { data: 'nama_kawasan' },
+                            { data: 'keterangan' },
+                            { data: 'no_surat' },
+                            { data: 'luas_permasalahan' },
+                            { data: 'tanggal' },
+                            { data: 'upaya' },
+
                             <?php  if($userdata['id_roles'] == 1){?>
                                 {
                                     data: null,
@@ -5989,14 +6051,14 @@
                                 extend: 'excel',
                                 title :'Penguatan Fungsi KK',
                                 exportOptions: {
-                                    columns: [ 0,1,2,3 ]
+                                    columns: [ 0,1,2,3,4,5,6,7,8,9,10,11 ]
                                 }
                             }, 
                             {
                                 extend: 'pdf',
                                 title :'Penguatan Fungsi KK',
                                 exportOptions: {
-                                    columns: [ 0,1,2,3 ]
+                                    columns: [ 0,1,2,3,4,5,6,7,8,9,10,11 ]
                                 }
                             }
                         ],
@@ -6024,6 +6086,14 @@
                             { data: 'mitra_kerja' },
                             { data: 'kategori_mitra' },
                             { data: 'upt' },
+                            { data: 'persetujuan' },
+                            { data: 'nota_kesepahaman' },
+                            { data: 'perjanjian_kerjasama' },
+                            { data: 'dari' },
+                            { data: 'ke' },
+                            { data: 'keterangan' },
+                            { data: 'hibah' },
+                            { data: 'jumlah_hibah' },
                             <?php  if($userdata['id_roles'] == 3){?>
                                 {
                                     data: null,
@@ -6041,14 +6111,14 @@
                                 extend: 'excel',
                                 title :'Pembangunan Strategis',
                                 exportOptions: {
-                                    columns: [ 0,1,2,3 ]
+                                    columns: [ 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 ]
                                 }
                             }, 
                             {
                                 extend: 'pdf',
                                 title :'Pembangunan Strategis',
                                 exportOptions: {
-                                    columns: [ 0,1,2,3 ]
+                                    columns: [ 0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15 ]
                                 }
                             }
                         ],
@@ -6076,6 +6146,18 @@
                             { data: 'mitra_kerja' },
                             { data: 'kategori_mitra' },
                             { data: 'upt' },
+                            { data: 'kategori_kerjasama_strategis' },
+                            { data: 'jumlah_tower_komunikasi' },
+                            { data: 'jumlah_tower_listrik' },
+                            { data: 'luar_area' },
+                            { data: 'panjang_jalan' },
+                            { data: 'keterangan_mitigasi_bencana' },
+                            { data: 'luas_area_militer' },
+                            { data: 'luas_area_migas' },
+                            { data: 'persetujuan' },
+                            { data: 'dari' },
+                            { data: 'ke' },
+                            { data: 'keterangan' },
                             <?php  if($userdata['id_roles'] == 3){?>
                                 {
                                     data: null,
