@@ -45,6 +45,22 @@
               </ul>
             </div>
           </li>
+           <li class="nav-item">
+            <a class="nav-link" data-toggle="collapse" href="#penataan" aria-expanded="false" aria-controls="dasboards">
+              <i class="fa fa-check-circle menu-icon"></i>
+              <span class="menu-title">Subdit Penataan</span>
+              <i class="menu-arrow"></i>
+            </a>
+            <div class="collapse" id="penataan">
+              <ul class="nav flex-column sub-menu">
+                <li class="nav-item"><a class="nav-link <?php if($this->uri->segment(1)=="perkembangan-zonasi-tn"){echo "active";}?>" href="<?=base_url('perkembangan-zonasi-tn')?>">Perkembangan Zonasi TN</a></li>
+                <li class="nav-item"><a class="nav-link <?php if($this->uri->segment(1)=="perkembangan-blok-tn"){echo "active";}?>" href="<?=base_url('perkembangan-blok-tn')?>">Perkembangan Blok TN</a></li>
+                <li class="nav-item"><a class="nav-link " href="#">Progres Blok</a></li>
+                <li class="nav-item"><a class="nav-link" href="#">Progres Zonasi</a></li>
+                <li class="nav-item"><a class="nav-link <?php if($this->uri->segment(1)=="potensi-piaps"){echo "active";}?>" href="<?=base_url('potensi-piaps')?>">Progres PIAPS</a></li>
+              </ul>
+            </div>
+          </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#usermanagement" aria-expanded="false" aria-controls="usermanagement">
               <i class="fa fa-users menu-icon"></i>
@@ -64,36 +80,7 @@
               <span class="menu-title">Kawasan Konservasi</span>
             </a>
           </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#penataan" aria-expanded="false" aria-controls="dasboards">
-              <i class="fa fa-check-circle menu-icon"></i>
-              <span class="menu-title">Subdit Penataan</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="penataan">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link <?php if($this->uri->segment(1)=="perkembangan-zonasi-tn"){echo "active";}?>" href="<?=base_url('perkembangan-zonasi-tn')?>">Perkembangan Zonasi TN</a></li>
-                <li class="nav-item"><a class="nav-link <?php if($this->uri->segment(1)=="perkembangan-blok-tn"){echo "active";}?>" href="<?=base_url('perkembangan-blok-tn')?>">Perkembangan Blok TN</a></li>
-                <li class="nav-item"><a class="nav-link " href="#">Progres Blok</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Progres Zonasi</a></li>
-                <li class="nav-item"><a class="nav-link <?php if($this->uri->segment(1)=="potensi-piaps"){echo "active";}?>" href="<?=base_url('potensi-piaps')?>">Progres PIAPS</a></li>
-              </ul>
-            </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" data-toggle="collapse" href="#pks" aria-expanded="false" aria-controls="dasbopksards">
-              <i class="fa fa-exclamation-triangle  menu-icon"></i>
-              <span class="menu-title">Subdit PKS</span>
-              <i class="menu-arrow"></i>
-            </a>
-            <div class="collapse" id="pks">
-              <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link" href="<?=base_url('zonasi-tn')?>">Penguatan Fungsi KK</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?=base_url('kphk-nontn')?>">Pembangunan Strategis</a></li>
-                <li class="nav-item"><a class="nav-link" href="<?=base_url('usulan-tahura')?>">Kemitraan Konservarsi</a></li>
-              </ul>
-            </div>
-          </li>
+         
           <li class="nav-item">
             <a class="nav-link <?php if($this->uri->segment(1)=="peraturan"){echo "active";}?>" href="<?=base_url('peraturan')?>">
               <i class="fa fa-exclamation-circle  menu-icon"></i>

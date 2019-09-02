@@ -6642,9 +6642,11 @@
                     rules: {
                         petaatlaskawasankonsevarsiedit: {
                             accept: "image/*",
+                            filesize: 1000000,
                         },
                         petabataskonsevarsiedit:{
                             accept: "image/*",
+                            filesize: 1000000,
                         },
                     },
                     messages: {
@@ -6727,10 +6729,12 @@
                         petaatlaskawasankonsevarsi: {
                             required:true,
                             accept: "image/*",
+                            filesize: 1000000,
                         },
                         petabataskonsevarsi:{
                             required:true,
                             accept: "image/*",
+                            filesize: 1000000,
                         },
                          petashpkawasan:{
                             required:true
@@ -7933,7 +7937,8 @@
                         },
                         filejpegopenkawasanedit:{
                             required:true,
-                            accept: "image/*"
+                            accept: "image/*",
+                            filesize: 1000000,
                         },
                     },
                     messages: {
@@ -8019,7 +8024,8 @@
                         },
                         petapks:{
                             required:true,
-                            accept: "image/*"
+                            accept: "image/*",
+                            filesize: 1000000,
                         },
                         namakelompok:'required'
                     },
@@ -8068,7 +8074,8 @@
                         },
                         filejpegopenkawasan:{
                             required:true,
-                            accept: "image/*"
+                            accept: "image/*",
+                              filesize: 1000000,
                         },
                     },
                     messages: {
@@ -8114,7 +8121,8 @@
                         },
                         filejpegopenkawasanedit:{
                             required:true,
-                            accept: "image/*"
+                            accept: "image/*",
+                            filesize: 1000000,
                         },
                     },
                     messages: {
@@ -8193,7 +8201,8 @@
                         },
                         filejpegkawasan:{
                             required:true,
-                            accept: "image/*"
+                            accept: "image/*",
+                            filesize: 1000000,
                         },
                     },
                     messages: {
@@ -8239,7 +8248,8 @@
                         },
                         filejpegkawasan:{
                             required:true,
-                            accept: "image/*"
+                            accept: "image/*",
+                            filesize: 1000000,
                         },
                     },
                     messages: {
