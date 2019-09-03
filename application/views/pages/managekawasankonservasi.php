@@ -78,7 +78,7 @@
                                         <div class="list-group list-group-flush">
                                             <a  data-toggle="tab" data-toggle="tab" href="#penguatanfungsikk" class="list-group-item list-group-item-action bg-light" style="color:blue">Penguatan Fungsi KK</a>
                                             <a   data-toggle="tab" href="#pembangunanstrategis" class="list-group-item list-group-item-action bg-light" style="color:blue">Pembangunan Strategis</a>
-                                            <a  data-toggle="tab" href="#kemitraankonservasi" class="list-group-item list-group-item-action bg-light"style="color:blue">Kemitrataan Konservarsi</a>
+                                            <a  data-toggle="tab" href="#kemitraankonservasi" class="list-group-item list-group-item-action bg-light"style="color:blue">Kemitraan Konservasi</a>
                                         </div>
                                     </div>
 
@@ -2653,6 +2653,10 @@
                                                             <label>Desa</label>
                                                             <input class="form-control" type="text" id="desakk" name="desakk" >
                                                         </div>
+                                                        <div class="form-group">
+                                                            <label>Jumlah Penduduk</label>
+                                                            <input class="form-control" type="text" id="jumlahpenduduk" name="jumlahpenduduk" >
+                                                        </div>
                                                     </div>
 
                                                     <!-- Modal footer -->
@@ -2698,7 +2702,10 @@
                                                         <label>Desa</label>
                                                         <input class="form-control" type="text" id="desakkedit" >
                                                     </div>
-                                                        
+                                                    <div class="form-group">
+                                                        <label>Jumlah Penduduk</label>
+                                                        <input class="form-control" type="text" id="jumlahpenduduk" name="jumlahpendudukedit" >
+                                                    </div>   
                                                 </div>
 
                                                 <!-- Modal footer -->
@@ -2715,6 +2722,7 @@
                                                 <th>Kota Atau Kabupaten</th>
                                                 <th>Kecamatan</th>
                                                 <th>Desa</th>
+                                                <th>Jumlah Penduduk</th>
                                                 <?php  if($userdata['id_roles'] == 1){?>
                                                     <th>Action</th>
                                                 <?php }; ?>
@@ -5655,14 +5663,14 @@
                                 extend: 'excel',
                                 title :'Desa Sekitar KK',
                                 exportOptions: {
-                                    columns: [ 0,1,2 ]
+                                    columns: [ 0,1,2,3 ]
                                 }
                             }, 
                             {
                                 extend: 'pdf',
                                 title :'Desa Sekitar KK',
                                 exportOptions: {
-                                    columns: [ 0,1,2 ]
+                                    columns: [ 0,1,2,3 ]
                                 }
                             }
                         ],
@@ -5678,6 +5686,7 @@
                             { data: 'kota_kabupaten' },
                             { data: 'kecamatan' },
                             { data: 'desa' },
+                            { data: 'jumlah_penduduk' },
                             <?php  if($userdata['id_roles'] == 1){?>
                                 {
                                     data: null,
@@ -8730,6 +8739,10 @@
                     kotakabupatendesakk: 'required',
                     desakk: 'required',
                     kecamatandesakk: 'required',
+                    jumlahpenduduk:{
+                        required:true,
+                        number:true
+                    }
                 },
                 messages: {
                     judul: 'This field is required',
@@ -8742,6 +8755,7 @@
                     data.append('kotakbupaten', $('#kotakabupatendesakk').val());
                     data.append('desa',$('#desakk').val());
                     data.append('kecamatan', $('#kecamatandesakk').val());
+                    data.append('jumlah_penduduk', $('#jumlahpenduduk').val());
                     data.append('namakawasan', $('#nama_kawasan').val());
                     $.ajax({
                         url:'/saveDataDesaKK',
@@ -8757,6 +8771,7 @@
                                     ).then(function(){
                                         $( '#kotakabupatendesakk' ).val('')
                                         $( '#desakk' ).val('')
+                                        $( '#jumlahpenduduk' ).val('')
                                         $( '#kecamatandesakk' ).val('')
                                         $('#myModal18').modal('toggle')
                                     })
@@ -8770,6 +8785,10 @@
                     kotakabupatendesakkedi: 'required',
                     desakkedit: 'required',
                     kecamatandesakkedit: 'required',
+                    jumlahpendudukedit:{
+                        required:true,
+                        number:true
+                    }
                 },
                 messages: {
                     judul: 'This field is required',
@@ -8783,6 +8802,7 @@
                     data.append('desa',$('#desakkedit').val());
                     data.append('kecamatan', $('#kecamatandesakkedit').val());
                     data.append('namakawasan', $('#nama_kawasan').val());
+                    data.append('jumlah_penduduk', $('#jumlahpendudukedit').val());
                     data.append('iddesakk', $('#iddesakk').val());
                     $.ajax({
                         url:'/updateDataDesaKK',
@@ -8797,6 +8817,7 @@
                                     'success'
                                 ).then(function(){
                                     $( '#kotakabupatendesakkedit' ).val('')
+                                    $( '#jumlahpendudukedit' ).val('')
                                     $( '#desakkedit' ).val('')
                                     $( '#kecamatandesakkedit' ).val('')
                                     $('#myModal19').modal('toggle')

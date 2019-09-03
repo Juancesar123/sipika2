@@ -28,7 +28,8 @@ class DesaSekitarKKController extends CI_Controller {
                 'kota_kabupaten' => $this->input->post('kotakbupaten'),
                 'desa' => $this->input->post('desa'),
                 'nama_kawasan' => $this->input->post('namakawasan'),
-                'kecamatan' => $this->input->post('kecamatan')
+                'kecamatan' => $this->input->post('kecamatan'),
+                'jumlah_penduduk' => $this->input->post('jumlah_penduduk')
             ]
         ]);
     }
@@ -67,7 +68,8 @@ class DesaSekitarKKController extends CI_Controller {
                 'kota_kabupaten' => $this->input->post('kotakbupaten'),
                 'desa' => $this->input->post('desa'),
                 'nama_kawasan' => $this->input->post('namakawasan'),
-                'kecamatan' => $this->input->post('kecamatan')
+                'kecamatan' => $this->input->post('kecamatan'),
+                'jumlah_penduduk' => $this->input->post('jumlah_penduduk')
             ]
         ]);
     }
