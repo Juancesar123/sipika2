@@ -113,7 +113,7 @@ $route['deleteDataPeraturan/(:any)'] ='PeraturanController/destroy/$1';
 //endroute
 //Route untuk Perkembangan Zonasi TN
 $route['perkembangan-zonasi-tn'] ='PerkembanganZonasiTnController';
-$route['getDataPerkembanganzonasiTn'] ='PerkembanganZonasiTnController/get';
+$route['getDataPerkembanganzonasiTn/(:any)'] ='PerkembanganZonasiTnController/get/$1';
 $route['savedDataperkembanganzonasitn'] ='PerkembanganZonasiTnController/store';
 $route['updateDataPerkembanganzonasitn'] ='PerkembanganZonasiTnController/update';
 $route['showDataPerkembanganzonasiTn/(:any)'] ='PerkembanganZonasiTnController/show/$1';
@@ -346,7 +346,7 @@ $route['getAllImagesKawasanKonsevarsi/(:any)'] = "PetaKawasanKonsevarsiControlle
 //endroute
 //Route untuk Perkembangan Blok TN
 $route['perkembangan-blok-tn'] ='PerkembanganBlokTnController';
-$route['getDataPerkembanganbloktn'] ='PerkembanganBlokTnController/get';
+$route['getDataPerkembanganbloktn/(:any)'] ='PerkembanganBlokTnController/get/$1';
 $route['savedDataperkembanganbloktn'] ='PerkembanganBlokTnController/store';
 $route['updateDataPerkembanganbloktn'] ='PerkembanganBlokTnController/update';
 $route['showDataPerkembanganbloktn/(:any)'] ='PerkembanganBlokTnController/show/$1';

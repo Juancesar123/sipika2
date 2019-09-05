@@ -15,9 +15,9 @@ class PerkembanganZonasiTnController extends CI_Controller {
         $data['userdata'] = $this->session->userdata('userdata');
         return $this->load->view('pages/perkembanganzonasitn',$data);
     }
-    public function get(){
+    public function get($id){
         $client     = new GuzzleHttp\Client();
-        $result = $client->get(constant('API_URL').'/perkembanganzonasi-tn');
+        $result = $client->get(constant('API_URL').'/perkembanganzonasi-tn/?nama_kawasan='.$id);
         /*
             Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
             ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string

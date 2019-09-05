@@ -16,9 +16,9 @@ class PerkembanganBlokTnController extends CI_Controller {
         $data['userdata'] = $this->session->userdata('userdata');
         return $this->load->view('pages/perkembanganbloktn',$data);
     }
-    public function get(){
+    public function get($id){
         $client     = new GuzzleHttp\Client();
-        $result = $client->get(constant('API_URL').'/perkembanganblok-tn');
+        $result = $client->get(constant('API_URL').'/perkembanganblok-tn/?nama_kawasan='.$id);
         /*
             Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
             ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
@@ -48,8 +48,8 @@ class PerkembanganBlokTnController extends CI_Controller {
                     'name' => 'luas',
                     'contents' => $this->input->post('luas')
                 ],
-                [
-                    'name' => 'datasurat ',
+             	[
+                    'name' => 'datasurat',
                     'contents' => $this->input->post('datasurat')
                 ],
                 [

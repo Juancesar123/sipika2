@@ -53,10 +53,6 @@
             </a>
             <div class="collapse" id="penataan">
               <ul class="nav flex-column sub-menu">
-                <li class="nav-item"><a class="nav-link <?php if($this->uri->segment(1)=="perkembangan-zonasi-tn"){echo "active";}?>" href="<?=base_url('perkembangan-zonasi-tn')?>">Perkembangan Zonasi TN</a></li>
-                <li class="nav-item"><a class="nav-link <?php if($this->uri->segment(1)=="perkembangan-blok-tn"){echo "active";}?>" href="<?=base_url('perkembangan-blok-tn')?>">Perkembangan Blok TN</a></li>
-                <li class="nav-item"><a class="nav-link " href="#">Progres Blok</a></li>
-                <li class="nav-item"><a class="nav-link" href="#">Progres Zonasi</a></li>
                 <li class="nav-item"><a class="nav-link <?php if($this->uri->segment(1)=="potensi-piaps"){echo "active";}?>" href="<?=base_url('potensi-piaps')?>">Progres PIAPS</a></li>
               </ul>
             </div>
