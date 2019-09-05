@@ -42,7 +42,7 @@ class AuthtenticationController extends CI_Controller {
             $hasil1 = $result1->getBody()->getContents();
             $convert = json_decode($hasil1,TRUE);
             $this->session->set_userdata('userdata', $convert[0]);
-            redirect('/');
+            redirect('/dashboard');
             //var_dump($convert);
         } catch (GuzzleHttp\Exception\ClientException $exception) {
             // $responseBody = $exception->getResponse()->getBody(true);

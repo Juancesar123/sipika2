@@ -14,7 +14,7 @@
             </div>
           </li>
           <li class="nav-item">
-            <a class="nav-link <?php if($this->uri->uri_string() == base_url()) { echo 'active'; } ?>" href="<?=base_url()?>">
+            <a class="nav-link <?php if($this->uri->uri_string() == 'dashboard') { echo 'active'; } ?>" href="<?=base_url('dashboard')?>">
               <i class="fa fa-home menu-icon"></i>
               <span class="menu-title">Dashboard</span>
             </a>
