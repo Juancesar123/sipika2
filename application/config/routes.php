@@ -49,7 +49,7 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 | Examples:	my-controller/index	-> my_controller/index
 |		my-controller/my-method	-> my_controller/my_method
 */
-//$route['default_controller'] = 'welcome';
+$route['default_controller'] = 'AuthtenticationController';
 $route['dashboard']='Welcome';
 //Route untuk perkembangan kawasan
 $route['perkembangan-kawasan'] ='perkembanganKawasanController';
@@ -363,6 +363,13 @@ $route['deletePotensipiaps/(:any)'] ='PotensiPIAPSController/destroy/$1';
 //route Dashboard
 $route['getDataDashboard/(:any)'] = "DashboardController/getCountData/$1";
 $route['getDataAllDashboard'] = "DashboardController/getAllData/$1";
+//endroute
+//route Foto Kawasan Konservasi
+$route['saveDataFotoKawasanKonservasi'] = "FotoKawasanKonservasiController/store";
+$route['updateDataFotoKawasanKonservasi'] = "FotoKawasanKonservasiController/update";
+$route['getDataFotoKawasanKonservasi/(:any)'] = "FotoKawasanKonservasiController/getData/$1";
+$route['showDataKawasanKonservasi/(:any)'] = "FotoKawasanKonservasiController/show/$1";
+$route['deleteFotoKawasanKonservasi/(:any)'] = "FotoKawasanKonservasiController/destroy/$1";
 //endroute
 // route Profile
 $route['profile'] = "ProfileController";

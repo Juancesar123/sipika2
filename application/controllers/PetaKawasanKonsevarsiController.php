@@ -41,15 +41,6 @@ class PetaKawasanKonsevarsiController extends CI_Controller {
         $petaatlaskawasankonsevarsi = $_FILES['petaatlaskawasankonsevarsi']['name'];
         $petabataskonsevarsi = $_FILES['petabataskonsevarsi']['name'];
         $petashpkawasan = $_FILES['petashpkawasan']['name'];
-        $fotokawasan = $_FILES['fotokawasan']['name'];
-        for($i=0 ; $i < count($fotokawasan) ; $i++){
-
-            $datafoto[] =[
-                'name' => 'fotoarray',
-                'contents' => fopen($_FILES['fotokawasan']['tmp_name'][$i], 'r'),
-                'filename' => $_FILES['fotokawasan']['name'][$i]
-            ];
-        };
         $datafoto[] = [
             'name' => 'nama_kawasan',
             'contents' => $this->input->post('nama_kawasan')
@@ -74,10 +65,6 @@ class PetaKawasanKonsevarsiController extends CI_Controller {
             'contents' => 'petakawasankonsevarsi/'.$petashpkawasan
          ];
          $datafoto[] = [
-            'name' => 'foto',
-            'contents' => 'petakawasankonsevarsi/'.implode(",petakawasankonsevarsi/",$fotokawasan)
-         ];
-         $datafoto[] = [
             'name' => 'peta_batas_kawasan_konsevarsi',
             'contents' => fopen($_FILES['petabataskonsevarsi']['tmp_name'], 'r'),
             'filename' => $petabataskonsevarsi
@@ -86,7 +73,6 @@ class PetaKawasanKonsevarsiController extends CI_Controller {
             'name' => 'peta_batas_kawasan_konsevarsi',
             'contents' => 'petakawasankonsevarsi/'.$petabataskonsevarsi
          ];
-        var_dump($datafoto);
         $result = $client->post(constant('API_URL').'/peta-kawasan-konsevarsi',[
             'multipart'=> $datafoto
         ]);
@@ -126,11 +112,6 @@ class PetaKawasanKonsevarsiController extends CI_Controller {
                         'name' => 'peta_batas_kawasan_konsevarsi',
                         'contents' => $this->input->post('petabataskonsevarsi')
                     ],
-                     [
-                        'name' => 'foto',
-                        'contents' => $this->input->post('fotokawasan')
-                    ],
-
                     [
                         'name' => 'nama_kawasan',
                         'contents' => $this->input->post('nama_kawasan')
@@ -142,16 +123,6 @@ class PetaKawasanKonsevarsiController extends CI_Controller {
             $petaatlaskawasankonsevarsi = $_FILES['petaatlaskawasankonsevarsi']['name'];
             $petabataskonsevarsi = $_FILES['petabataskonsevarsi']['name'];
             $petashpkawasan = $_FILES['petashpkawasan']['name'];
-            $fotokawasan = $_FILES['fotokawasan']['name'];
-            $fotokawasan = $_FILES['fotokawasan']['name'];
-            for($i=0 ; $i < count($fotokawasan) ; $i++){
-
-                $datafoto[] =[
-                    'name' => 'fotoarray',
-                    'contents' => fopen($_FILES['fotokawasan']['tmp_name'][$i], 'r'),
-                    'filename' => $_FILES['fotokawasan']['name'][$i]
-                ];
-            };
             $datafoto[] = [
                 'name' => 'nama_kawasan',
                 'contents' => $this->input->post('nama_kawasan')
@@ -174,10 +145,6 @@ class PetaKawasanKonsevarsiController extends CI_Controller {
              $datafoto[] = [
                 'name' => 'peta_shp',
                 'contents' => 'petakawasankonsevarsi/'.$petashpkawasan
-             ];
-             $datafoto[] = [
-                'name' => 'foto',
-                'contents' => 'petakawasankonsevarsi/'.implode(",petakawasankonsevarsi/",$fotokawasan)
              ];
              $datafoto[] = [
                 'name' => 'peta_batas_kawasan_konsevarsi',

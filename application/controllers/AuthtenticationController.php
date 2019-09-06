@@ -7,6 +7,9 @@ class AuthtenticationController extends CI_Controller {
             parent::__construct();
           
     }
+    public function index(){
+        return redirect('dashboard');
+    }
     public function login(){
         //var_dump($this->session->userdata());
         return $this->load->view('pages/login');
