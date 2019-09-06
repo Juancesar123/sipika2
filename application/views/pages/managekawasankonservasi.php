@@ -483,7 +483,9 @@
                                             <th>Data Surat</th>
                                             <th>Nama Kawasan</th>
                                             <th>Status Zonasi</th>
-                                            <th>Action</th>
+                                            <?php  if($userdata['id_roles'] == 4){?>
+                                                <th>Action</th>
+                                            <?php }; ?>
                                         </thead>
                                     </table>
                                     </div>
@@ -742,7 +744,9 @@
                                                 <th>Data Surat</th>
                                                 <th>Nama Kawasan</th>
                                                 <th>Status Blok</th>
-                                                <th>Action</th>
+                                                <?php  if($userdata['id_roles'] == 4){?>
+                                                    <th>Action</th>
+                                                <?php }; ?>
                                             </thead>
                                         </table>
                                         </div>
@@ -7020,13 +7024,15 @@
                         columns: [
                             { data: 'datasurat' },
                             { data: 'nama_kawasan' },
-                            { data: 'status_zonasi' },                              
+                            { data: 'status_zonasi' },    
+                        <?php  if($userdata['id_roles'] == 4){?>                          
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
                                     return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal61'onclick='editfunc23("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc23("+data.id+")'>Delete</button>";
                                 }
                             }
+                        <?php }; ?>
                         ]
                     });
                      var table21 =  $('#myTable21').DataTable({
@@ -7058,13 +7064,15 @@
                         columns: [
                             { data: 'datasurat' },
                             { data: 'nama_kawasan' },
-                            { data: 'status_blok' },                                
+                            { data: 'status_blok' },   
+                            <?php  if($userdata['id_roles'] == 4){?>                             
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
                                     return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal63'onclick='editfunc30("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc30("+data.id+")'>Delete</button>";
                                 }
                             }
+                            <?php }; ?>
                         ]
                     });
                     var table22=  $('#mytable22').DataTable({
@@ -7082,13 +7090,15 @@
                                 render:function (data,type,row){
                                     return "<a href='<?php echo constant('API_URL');?>/"+data.foto+"' download target='_blank'>View</a>";
                                 }
-                            },                          
+                            },   
+                            <?php  if($userdata['id_roles'] == 1){?>                          
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
                                     return "<button class='btn btn-primary' data-toggle='modal' data-target='#myModal65'onclick='editfunc31("+data.id+")'>Edit</button> <button class='btn btn-danger' onclick='myfunc31("+data.id+")'>Delete</button>";
                                 }
                             }
+                        <?php }; ?>
                         ]
                     });
                      
