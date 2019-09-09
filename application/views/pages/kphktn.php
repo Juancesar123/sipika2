@@ -246,6 +246,9 @@
                                             <th>Luas KPHK</th>
                                             <th>Kabupaten Atau Kota</th>
                                             <th>Provinsi</th>
+                                            <th>Judul SK</th>
+                                            <th>Tanggal SK</th>
+                                            <th>Nomor SK</th>
                                             <th>Action</th>
                                         </thead>
                                     </table>
@@ -318,6 +321,23 @@
             })
         }
         var table =  $('#myTable').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: [
+                             {
+                                extend: 'excel',
+                                title :'KPHK TN',
+                                exportOptions: {
+                                    columns: [ 0,1,2,3,4,5,6 ]
+                                }
+                            }, 
+                            {
+                                extend: 'pdf',
+                                title :'KPHK TN',
+                                exportOptions: {
+                                    columns: [ 0,1,2,3,4,5,6 ]
+                                }
+                            }
+                        ],
                         responsive: {
                             details: {
                                 display: $.fn.dataTable.Responsive.display.modal( {
@@ -341,7 +361,10 @@
                             { data: 'tahun_pengesahaan' },
                             { data: 'luas_kphk' },
                             { data: 'kabupaten' },   
-                            { data: 'provinsi' },                            	
+                            { data: 'provinsi' },
+                            { data: 'judul_sk' },                            	
+                            { data: 'tanggal_sk' },
+                            { data: 'nomor_sk' },
                             {
                                 data: null,
                                 render: function ( data, type, row ) {

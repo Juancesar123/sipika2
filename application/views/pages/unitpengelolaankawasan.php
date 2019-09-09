@@ -167,8 +167,15 @@
                                     <table class="table" id="myTable">
                                         <thead>
                                             <th>Nama Pengelola</th>
+                                            <th>Provinsi</th>
+                                            <th>Kabupaten</th>
+                                            <th>Kecamatan</th>
+                                            <th>Alamat Detail</th>
                                             <th>Nomor Telepon</th>
                                             <th>Nomor Fax</th>
+                                            <th>Email</th>
+                                            <th>Website</th>
+                                            <th>Call Center</th>
                                             <th>Action</th>
                                         </thead>
                                     </table>
@@ -232,6 +239,34 @@
             })
         }
         var table =  $('#myTable').DataTable({
+                dom: 'Bfrtip',
+                        buttons: [
+                             {
+                                extend: 'excel',
+                                title :'Unit Pengelolaan Kawasan',
+                                exportOptions: {
+                                    columns: [ 0,1,2,3,4,5,6,7,8,9 ]
+                                }
+                            }, 
+                            {
+                                extend: 'pdf',
+                                title :'Unit Pengelolaan Kawasan',
+                                exportOptions: {
+                                    columns: [ 0,1,2,3,4,5,6,7,8,9 ]
+                                }
+                            }
+                        ],
+                        responsive: {
+                            details: {
+                                display: $.fn.dataTable.Responsive.display.modal( {
+                                    header: function ( row ) {
+                                        var data = row.data();
+                                        return 'Details Unit Pengelolaan Kawasan';
+                                    }
+                                } ),
+                                renderer: $.fn.dataTable.Responsive.renderer.tableAll()
+                            }
+                        },
                         deferRender: true,
                         ajax: {
                             url: "/getUnitPengelolaanKawasan",
@@ -242,8 +277,15 @@
                         },
                         columns: [
                             { data: 'nama_pengelola' },
+                            { data: 'provinsi' },
+                            { data: 'kabupaten' },
+                            { data: 'kecamatan' },
+                            { data: 'alamat' },
                             { data: 'nomor_telepon' },
                             { data: 'nomor_fax' },
+                            { data: 'email' },
+                            { data: 'website' },
+                            { data: 'call_center' },
                             {
                                 data: null,
                                 render: function ( data, type, row ) {

@@ -150,6 +150,34 @@
             })
         }
         var table =  $('#myTable').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: [
+                             {
+                                extend: 'excel',
+                                title :'Sketsa Sejarah',
+                                exportOptions: {
+                                    columns: [ 0 ]
+                                }
+                            }, 
+                            {
+                                extend: 'pdf',
+                                title :'Sketsa Sejarah',
+                                exportOptions: {
+                                    columns: [ 0 ]
+                                }
+                            }
+                        ],
+                        responsive: {
+                            details: {
+                                display: $.fn.dataTable.Responsive.display.modal( {
+                                    header: function ( row ) {
+                                        var data = row.data();
+                                        return 'Details Sketsa Sejarah';
+                                    }
+                                } ),
+                                renderer: $.fn.dataTable.Responsive.renderer.tableAll()
+                            }
+                        },
                         deferRender: true,
                         ajax: {
                             url: "/getDataSketsaSejarah",

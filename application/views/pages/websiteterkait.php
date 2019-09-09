@@ -149,6 +149,34 @@
             })
         }
         var table =  $('#myTable').DataTable({
+                    dom: 'Bfrtip',
+                        buttons: [
+                             {
+                                extend: 'excel',
+                                title :'Website Terkait',
+                                exportOptions: {
+                                    columns: [ 0,1 ]
+                                }
+                            }, 
+                            {
+                                extend: 'pdf',
+                                title :'Website Terkait',
+                                exportOptions: {
+                                    columns: [ 0,1 ]
+                                }
+                            }
+                        ],
+                        responsive: {
+                            details: {
+                                display: $.fn.dataTable.Responsive.display.modal( {
+                                    header: function ( row ) {
+                                        var data = row.data();
+                                        return 'Details Website Terkait';
+                                    }
+                                } ),
+                                renderer: $.fn.dataTable.Responsive.renderer.tableAll()
+                            }
+                        },
                         deferRender: true,
                         ajax: {
                             url: "/getwebsiteterkait",

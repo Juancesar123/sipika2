@@ -139,6 +139,7 @@
                                             <th>Judul SK</th>
                                             <th>Nomor SK</th>
                                             <th>Tanggal SK</th>
+                                            <th>Luas Zona / Blok </th>
                                             <th>Action</th>
                                         </thead>
                                     </table>
@@ -199,6 +200,34 @@
             })
         }
         var table =  $('#myTable').DataTable({
+            dom: 'Bfrtip',
+                        buttons: [
+                             {
+                                extend: 'excel',
+                                title :'Potensi Piaps',
+                                exportOptions: {
+                                    columns: [ 0,1,2,3 ]
+                                }
+                            }, 
+                            {
+                                extend: 'pdf',
+                                title :'Potensi Piaps',
+                                exportOptions: {
+                                    columns: [ 0,1,2,3 ]
+                                }
+                            }
+                        ],
+                        responsive: {
+                            details: {
+                                display: $.fn.dataTable.Responsive.display.modal( {
+                                    header: function ( row ) {
+                                        var data = row.data();
+                                        return 'Details Potensi Piaps';
+                                    }
+                                } ),
+                                renderer: $.fn.dataTable.Responsive.renderer.tableAll()
+                            }
+                        },
                         deferRender: true,
                         ajax: {
                             url: "/getDataPotensipiaps",
@@ -211,6 +240,7 @@
                             { data: 'judul_sk' },
                             { data: 'nomor_sk' },
                             { data: 'tanggal_sk' },
+                            { data: 'luas_zona' },
                             {
                                 data: null,
                                 render: function ( data, type, row ) {

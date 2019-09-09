@@ -264,6 +264,12 @@
                                             <th>Tahun Pengesahan</th>
                                             <th>Luas KPHK</th>
                                             <th>Provinsi</th>
+                                            <th>Tanggal Pengesahan</th>
+                                            <th>Nama KPHK</th>
+                                            <th>Kabupaten</th>
+                                            <th>Judul SK</th>
+                                            <th>Nomor SK</th>
+                                            <th>Tanggal SK</th>
                                             <th>Action</th>
                                         </thead>
                                     </table>
@@ -330,12 +336,29 @@
             })
         }
         var table =  $('#myTable').DataTable({
+                        dom: 'Bfrtip',
+                        buttons: [
+                             {
+                                extend: 'excel',
+                                title :'KPHK Non TN',
+                                exportOptions: {
+                                    columns: [ 0,1,2,3,4,5,6,7,8 ]
+                                }
+                            }, 
+                            {
+                                extend: 'pdf',
+                                title :'KPHK Non TN',
+                                exportOptions: {
+                                    columns: [ 0,1,2,3,4,5,6,7,8 ]
+                                }
+                            }
+                        ],
                         responsive: {
                             details: {
                                 display: $.fn.dataTable.Responsive.display.modal( {
                                     header: function ( row ) {
                                         var data = row.data();
-                                        return 'Details for KPHK TN';
+                                        return 'Details for KPHK Non TN';
                                     }
                                 } ),
                                 renderer: $.fn.dataTable.Responsive.renderer.tableAll()
@@ -352,7 +375,13 @@
                         columns: [
                             { data: 'tahun_pengesahaan' },
                             { data: 'luas_kphk' },
-                            { data: 'master_provinsi.nama' },                            	
+                            { data: 'master_provinsi.nama' }, 
+                            { data: 'tanggal_pengesahan' },                                                          	
+                            { data: 'nama_kphk' },                               
+                            { data: 'kabupaten_kota_kphk' },                               
+                            { data: 'judul_sk' },                               
+                            { data: 'nomor_sk' },                               
+                            { data: 'tanggal_sk' },                               
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
