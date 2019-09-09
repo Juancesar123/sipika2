@@ -12,7 +12,7 @@ class ManagekawasankonservasiController extends CI_Controller {
     }
     public function show($id){
         $client     = new GuzzleHttp\Client();
-        $result = $client->get(constant('API_URL').'/perkembangan-kawasan/'.$id);
+        $result = $client->get(constant('API_URL').'/perkembangan_kawasan/'.$id);
         $hasil = $result->getBody()->getContents();
         $data['hasil'] =  json_decode($hasil,true);
         $resultkondisikawasan = $client->get(constant('API_URL').'/kondisi-kawasan-konservarsi/?nama_kawasan='.$data['hasil']['nama_kawasan']);
@@ -38,7 +38,7 @@ class ManagekawasankonservasiController extends CI_Controller {
         */
         $name = $_FILES['gambar']['name'];
         $client     = new GuzzleHttp\Client();
-        $client->patch(constant('API_URL').'/perkembangan-kawasan/'.$id, [
+        $client->patch(constant('API_URL').'/perkembangan_kawasan/'.$id, [
             /*
                 isi yang akan di lempar ke api.
                 'nama_kawasan' variable apinya.

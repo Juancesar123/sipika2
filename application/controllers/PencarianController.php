@@ -17,7 +17,7 @@ class PencarianController extends CI_Controller {
     }
     public function cari($id){
         $client     = new GuzzleHttp\Client();
-        $result = $client->get(constant('API_URL').'/perkembangan-kawasan?nama_kawasan[$like]='.$id.'%');
+        $result = $client->get(constant('API_URL').'/keanekaragaman-hayati/?jenis='.$id);
         /*
             Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
             ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
@@ -26,5 +26,15 @@ class PencarianController extends CI_Controller {
         $hasil =  json_decode($data,true);
         echo json_encode($hasil);
     }
-   
+   public function tumbuhan($id){
+        $client     = new GuzzleHttp\Client();
+        $result = $client->get(constant('API_URL').'/keanekaragaman-hayati/?jenis=1');
+        /*
+            Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
+            ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
+        */
+        $data = $result->getBody()->getContents();
+        $hasil =  json_decode($data,true);
+        echo json_encode($hasil);
+    }
 }

@@ -24,7 +24,7 @@ class PetaKawasanKonsevarsiController extends CI_Controller {
     }
      public function getimages($id){
         $client     = new GuzzleHttp\Client();
-        $result = $client->get(constant('API_URL').'/peta-kawasan-konsevarsi?nama_kawasan='.$id);
+        $result = $client->get(constant('API_URL').'/foto-kawasan?nama_kawasan='.$id);
         /*
             Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
             ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string

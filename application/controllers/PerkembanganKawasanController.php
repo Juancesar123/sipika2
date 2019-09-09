@@ -23,7 +23,7 @@ class PerkembanganKawasanController extends CI_Controller {
             di ubah untuk semua.
         */
         $client     = new GuzzleHttp\Client();
-        $client->post(constant('API_URL').'/perkembangan-kawasan', [
+        $client->post(constant('API_URL').'/perkembangan_kawasan', [
             /*
                 isi yang akan di lempar ke api.
                 'nama_kawasan' variable apinya.
@@ -43,7 +43,7 @@ class PerkembanganKawasanController extends CI_Controller {
     public function get($id){
         if($id == 1){
             $client     = new GuzzleHttp\Client();
-            $result = $client->get(constant('API_URL').'/perkembangan-kawasan?fungsi=1');
+            $result = $client->get(constant('API_URL').'/perkembangan_kawasan?fungsi=1');
             /*
                 Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
                 ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
@@ -53,7 +53,7 @@ class PerkembanganKawasanController extends CI_Controller {
             echo json_encode($hasil);
         }else if($id == 2){
             $client     = new GuzzleHttp\Client();
-            $result = $client->get(constant('API_URL').'/perkembangan-kawasan?fungsi=2');
+            $result = $client->get(constant('API_URL').'/perkembangan_kawasan?fungsi=2');
             /*
                 Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
                 ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
@@ -63,7 +63,7 @@ class PerkembanganKawasanController extends CI_Controller {
             echo json_encode($hasil);
         }else if($id == 3){
             $client     = new GuzzleHttp\Client();
-            $result = $client->get(constant('API_URL').'/perkembangan-kawasan?fungsi=3');
+            $result = $client->get(constant('API_URL').'/perkembangan_kawasan?fungsi=3');
             /*
                 Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
                 ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
@@ -73,7 +73,7 @@ class PerkembanganKawasanController extends CI_Controller {
             echo json_encode($hasil);
         }else if($id == 4){
             $client     = new GuzzleHttp\Client();
-            $result = $client->get(constant('API_URL').'/perkembangan-kawasan?fungsi=4');
+            $result = $client->get(constant('API_URL').'/perkembangan_kawasan?fungsi=4');
             /*
                 Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
                 ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
@@ -83,7 +83,7 @@ class PerkembanganKawasanController extends CI_Controller {
             echo json_encode($hasil);
         }else if($id == 5){
             $client     = new GuzzleHttp\Client();
-            $result = $client->get(constant('API_URL').'/perkembangan-kawasan?fungsi=5');
+            $result = $client->get(constant('API_URL').'/perkembangan_kawasan?fungsi=5');
             /*
                 Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
                 ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
@@ -93,7 +93,7 @@ class PerkembanganKawasanController extends CI_Controller {
             echo json_encode($hasil);
         }else if($id == 6){
             $client     = new GuzzleHttp\Client();
-            $result = $client->get(constant('API_URL').'/perkembangan-kawasan?fungsi=6');
+            $result = $client->get(constant('API_URL').'/perkembangan_kawasan?fungsi=6');
             /*
                 Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
                 ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
@@ -103,7 +103,7 @@ class PerkembanganKawasanController extends CI_Controller {
             echo json_encode($hasil);
         }else if($id == 7){
             $client     = new GuzzleHttp\Client();
-            $result = $client->get(constant('API_URL').'/perkembangan-kawasan?fungsi=7');
+            $result = $client->get(constant('API_URL').'/perkembangan_kawasan?fungsi=7');
             /*
                 Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
                 ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
@@ -113,7 +113,7 @@ class PerkembanganKawasanController extends CI_Controller {
             echo json_encode($hasil);
         }else{
             $client     = new GuzzleHttp\Client();
-            $result = $client->get(constant('API_URL').'/perkembangan-kawasan');
+            $result = $client->get(constant('API_URL').'/perkembangan_kawasan');
             /*
                 Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
                 ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string

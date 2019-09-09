@@ -969,7 +969,7 @@
                                                 </div>
                                                 <div class="radio disabled">
                                                   <label><input type="radio" name="pilihansatwa" id="pilihansatwa" value="nasional"> Nasional</label>
-                                                 <input class="form-control" type="hidden" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
+                                                 <input class="form-control" type="hidden" id="namakawasan" value="<?php echo $hasil['id'];?>" disabled>
                                                 </div>
                                               </div>
                                               <?php  if($userdata['id_roles'] == 1){?>
@@ -988,7 +988,7 @@
                                                 </div>
                                                 <div class="radio disabled">
                                                   <label><input type="radio" name="pilihantumbuhan" id="pilihantumbuhan" value="nasional"> Nasional</label>
-                                                 <input class="form-control" type="hidden" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
+                                                 <input class="form-control" type="hidden" id="namakawasan" value="<?php echo $hasil['id'];?>" disabled>
                                                 </div>
                                               </div>
                                               <?php  if($userdata['id_roles'] == 1){?>
@@ -1082,7 +1082,7 @@
                                                         </div>
                                                     </div>
                                                 </div>
-                                                 <input class="form-control" type="hidden" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
+                                                 <input class="form-control" type="hidden" id="namakawasan" value="<?php echo $hasil['id'];?>" disabled>
                                                  <input type="hidden" id="idsatwaprioritas">
                                                 </div>
                                                <?php  if($userdata['id_roles'] == 1){?>
@@ -5257,12 +5257,8 @@
                 success:function(data){
                     var hasil = JSON.parse(data);
                     hasil.forEach(function(element) {
-                        var fotokawasan = element.foto.split(",");
-                        for(var i = 0; i < fotokawasan.length; i++){
-                            var html ="<div class='col-md-3'><img class='img-fluid' src='<?php echo constant('API_URL');?>/"+fotokawasan[i]+"' ></div>";
-                            $("#resultimages").append(html);
-                        }
-                       
+                        var html ="<div class='col-md-3'><img class='img-fluid' src='<?php echo constant('API_URL');?>/"+element.foto+"' ></div>";
+                        $("#resultimages").append(html);
                     });
                 }
             })
@@ -6050,7 +6046,7 @@
                         ],
                         deferRender: true,
                         ajax: {
-                            url: "/getDataKeanekaragamHayatiTumbuhan/"+"<?php echo $hasil['nama_kawasan'];?>",
+                            url: "/getDataKeanekaragamHayatiTumbuhan/"+"<?php echo $hasil['id'];?>",
                             type: "GET",
                             dataSrc: function (d) {
                                 return d
@@ -6090,7 +6086,7 @@
                             }
                         ],
                         ajax: {
-                            url: "/getDataKeanekaragamHayatiSatwa/"+"<?php echo $hasil['nama_kawasan'];?>",
+                            url: "/getDataKeanekaragamHayatiSatwa/"+"<?php echo $hasil['id'];?>",
                             type: "GET",
                             dataSrc: function (d) {
                                 return d
@@ -7105,7 +7101,7 @@
         $('document').ready(function(){
             $.ajax({
                 type:'GET',
-                url:'/getDataSatwaEndemik/'+"<?php echo $hasil['nama_kawasan'];?>",
+                url:'/getDataSatwaEndemik/'+"<?php echo $hasil['id'];?>",
                 success:function(data){
                     var result = JSON.parse(data);
                     console.log(result.length);
@@ -7963,7 +7959,7 @@
                         var data;
                         data = new FormData();
                         data.append('jenis', $('input[name=pilihansatwa]:checked').val());
-                        data.append('namakawasan',$('#namakawasan').val());
+                        data.append('namakawasan',"<?php echo $hasil['id'];?>");
                         $.ajax({
                             type:'POST',
                             url:'/setDataSatwaEndemik',
@@ -7984,7 +7980,7 @@
                         var data;
                         data = new FormData();
                         data.append('jenis', $('input[name=pilihansatwa]:checked').val());
-                        data.append('namakawasan',$('#namakawasan').val());
+                        data.append('namakawasan',"<?php echo $hasil['id'];?>");
                         data.append('idsatwaendemik',$('#idsatwaendemik').val());
                         $.ajax({
                             type:'POST',
@@ -8697,7 +8693,7 @@
                         data = new FormData();
                         data.append('nama', $('#namasatwaedit').val());
                         data.append('namalatin',$('#namalatinsatwaedit').val());
-                        data.append('nama_kawasan',$('#namakawasan').val());
+                        data.append('nama_kawasan',"<?php echo $hasil['id']; ?>");
                         data.append('idsatwa',$('#idsatwa').val());
                          $.ajax({
                                 url:'/ubahDataKeanekaRagamanHayatiSatwa',
@@ -8737,7 +8733,7 @@
                         data = new FormData();
                         data.append('nama', $('#namasatwa').val());
                         data.append('namalatin',$('#namalatinsatwa').val());
-                        data.append('nama_kawasan',$('#namakawasan').val());
+                        data.append('nama_kawasan',"<?php echo $hasil['id']; ?>");
                          $.ajax({
                                 url:'/simpanDataKeanekaRagamanHayatiSatwa',
                                 method:'POST',
@@ -8776,7 +8772,7 @@
                         data = new FormData();
                         data.append('nama', $('#namatumbuhanedit').val());
                         data.append('namalatin',$('#namalatintumbuhanedit').val());
-                        data.append('nama_kawasan',$('#namakawasan').val());
+                        data.append('nama_kawasan',"<?php echo $hasil['id'];?>");
                          data.append('idtumbuhan',$('#idtumbuhan').val());
                          $.ajax({
                                 url:'/ubahDataKeanekaRagamanHayatiTumbuhan',
@@ -8816,7 +8812,7 @@
                         data = new FormData();
                         data.append('nama', $('#namatumbuhan').val());
                         data.append('namalatin',$('#namalatintumbuhan').val());
-                        data.append('nama_kawasan',$('#namakawasan').val());
+                        data.append('nama_kawasan',"<?php echo $hasil['id'];?>");
                          $.ajax({
                                 url:'/simpanDataKeanekaRagamanHayatiTumbuhan',
                                 method:'POST',
