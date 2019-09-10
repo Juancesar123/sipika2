@@ -334,7 +334,8 @@ $route['updateDataSatwaPrioritas'] = "KeanekaragamHayatiController/updateSatwaPr
 //endroute
 //Route Pencarian
 $route['pencarian'] = "PencarianController";
-$route['pencarian/cari/(:any)'] = "PencarianController/cari/$1";
+$route['pencarian/cari'] = "PencarianController/cari";
+$route['pencarian/advance/(:any)'] = "PencarianController/advance/$1";
 //end Route
 //route Peta Kawasan Konsevarsi
 $route['saveDataPetaKawasanKonsevarsi'] = "PetaKawasanKonsevarsiController/store";

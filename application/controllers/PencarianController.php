@@ -15,7 +15,18 @@ class PencarianController extends CI_Controller {
          $data['userdata'] = $this->session->userdata('userdata');
          return $this->load->view('pages/pencarian',$data);
     }
-    public function cari($id){
+    public function cari(){
+        $client     = new GuzzleHttp\Client();
+        $result = $client->get(constant('API_URL').'/keanekaragaman-hayati');
+        /*
+            Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
+            ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
+        */
+        $data = $result->getBody()->getContents();
+        $hasil =  json_decode($data,true);
+        echo json_encode($hasil);
+    }
+    public function advance($id){
         $client     = new GuzzleHttp\Client();
         $result = $client->get(constant('API_URL').'/keanekaragaman-hayati/?jenis='.$id);
         /*
