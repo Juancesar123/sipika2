@@ -94,6 +94,7 @@
                                     <table class="table" id="myTable">
                                         <thead>
                                             <th>Judul</th>
+                                             <th>File</th>
                                             <th>Action</th>
                                         </thead>
                                     </table>
@@ -188,6 +189,12 @@
                         },
                         columns: [
                             { data: 'judul' },
+                            {
+                                data:null,
+                                render:function (data,type,row){
+                                    return "<a href='<?php echo constant('API_URL');?>/"+data.file+"' target='_blank'>Download</a>";
+                                }
+                            },
                             {
                                 data: null,
                                 render: function ( data, type, row ) {

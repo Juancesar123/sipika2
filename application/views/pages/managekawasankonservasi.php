@@ -28,7 +28,7 @@
                     <div class="row">
                         <div class="col-md-3">
                             <div class="card">
-                                <div class="card-body bg-light">
+                                <div class="card-body bg-light" id="scrollup">
                                     <img src="<?php echo constant('API_URL') .'/'. $hasil['gambar'];?>" class="img-fluid">
                                     <br>
                                     <br>
@@ -91,9 +91,10 @@
                                             <?php }; ?>
                                             <?php if($hasil['fungsi'] == 5){ ?>
                                                 <a   data-toggle="tab" href="#perkembanganblok-tn" class="list-group-item list-group-item-action bg-light" style="color:blue">Perkembangan Blok TN</a>
+                                            <?php }else{ ?>
+                                                <a  data-toggle="tab" href="#progresblok" class="list-group-item list-group-item-action bg-light"style="color:blue">Progres Blok</a>
+                                                <a  data-toggle="tab" href="#progreszonasi" class="list-group-item list-group-item-action bg-light"style="color:blue">Progres Zonasi</a>
                                             <?php }; ?>
-                                            <a  data-toggle="tab" href="#progresblok" class="list-group-item list-group-item-action bg-light"style="color:blue">Progres Blok</a>
-                                            <a  data-toggle="tab" href="#progreszonasi" class="list-group-item list-group-item-action bg-light"style="color:blue">Progres Zonasi</a>
                                         </div>
                                     </div>
 
@@ -6424,7 +6425,7 @@
                         ],
                         deferRender: true,
                         ajax: {
-                            url: "/getDataDesaKK/"+"<?php echo $hasil['nama_kawasan'];?>",
+                            url: "/getDataDesaKK/"+"<?php echo $hasil['id'];?>",
                             type: "GET",
                             dataSrc: function (d) {
                                 return d
@@ -7099,6 +7100,13 @@
                     });
                      
         $('document').ready(function(){
+          // $.scrollTo(100, {
+          //     onAfter: function() {
+          //       requestAnimationFrame(function() {
+          //           $("#scrollup").addClass("selected");
+          //       });
+          //     }
+          //   });
             $.ajax({
                 type:'GET',
                 url:'/getDataSatwaEndemik/'+"<?php echo $hasil['id'];?>",
@@ -10203,7 +10211,7 @@
                     data.append('desa',$('#desakk').val());
                     data.append('kecamatan', $('#kecamatandesakk').val());
                     data.append('jumlah_penduduk', $('#jumlahpenduduk').val());
-                    data.append('namakawasan', $('#nama_kawasan').val());
+                    data.append('namakawasan', "<?php echo $hasil['id'];?>");
                     $.ajax({
                         url:'/saveDataDesaKK',
                         method:'POST',
@@ -10248,7 +10256,7 @@
                     data.append('kotakbupaten', $('#kotakabupatendesakkedit').val());
                     data.append('desa',$('#desakkedit').val());
                     data.append('kecamatan', $('#kecamatandesakkedit').val());
-                    data.append('namakawasan', $('#nama_kawasan').val());
+                    data.append('namakawasan', "<?php echo $hasil['id'];?>");
                     data.append('jumlah_penduduk', $('#jumlahpendudukedit').val());
                     data.append('iddesakk', $('#iddesakk').val());
                     $.ajax({

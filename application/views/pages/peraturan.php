@@ -53,6 +53,19 @@
                                                             <option value="SE">SE</option>
                                                         </select>
                                                     </div>
+                                                     <div class="form-group">
+                                                        <label>Upload By</label>
+                                                        <select class="form-control" name="uploadby" id="uploadby">
+                                                            <option value="Subdit IIKA">Subdit IIKA</option>
+                                                            <option value="Subdit Pemolaan">Subdit Pemolaan</option>
+                                                            <option value="Subdit PKS">Subdit PKS</option>
+                                                            <option value="Subdit Penataan">Subdit Penataan</option>
+                                                        </select>
+                                                    </div>
+                                                     <div class="form-group">
+                                                        <label>Nomor</label>
+                                                        <input class="form-control" type="text" id="nomor" name="nomor">
+                                                    </div>
                                                     <div class="form-group">
                                                         <label>File</label>
                                                         <input class="form-control" type="file" id="file" name="file">
@@ -91,6 +104,19 @@
                                                             <input type="hidden" id="filehidden">
                                                         </div>
                                                         <div class="form-group">
+                                                        <label>Upload By</label>
+                                                        <select class="form-control" name="uploadbyedit" id="uploadbyedit">
+                                                            <option value="Subdit IIKA">Subdit IIKA</option>
+                                                            <option value="Subdit Pemolaan">Subdit Pemolaan</option>
+                                                            <option value="Subdit PKS">Subdit PKS</option>
+                                                            <option value="Subdit Penataan">Subdit Penataan</option>
+                                                        </select>
+                                                    </div>
+                                                     <div class="form-group">
+                                                        <label>Nomor</label>
+                                                        <input class="form-control" type="text" id="nomoredit" name="nomoredit">
+                                                    </div>
+                                                        <div class="form-group">
                                                             <label>File</label>
                                                             <input class="form-control" type="file" id="fileedit" name="fileedit">
                                                         </div>  
@@ -106,6 +132,9 @@
                                     <table class="table" id="myTable">
                                         <thead>
                                             <th>Jenis Peraturan</th>
+                                            <th>Nomor</th>
+                                            <th>Upload By</th>
+                                            <th>File</th>
                                             <th>Action</th>
                                         </thead>
                                     </table>
@@ -156,6 +185,8 @@
                     $( '#idperaturan' ).val(hasil.id);
                     $( '#filehidden' ).val(hasil.file);
                     $( '#jenisperaturanedit' ).val(hasil.jenis_peraturan);
+                    $( '#nomoredit' ).val(hasil.nomor);
+                    $( '#uploadbyedit' ).val(hasil.uploadby);
                 }
             })
         }
@@ -166,14 +197,14 @@
                                 extend: 'excel',
                                 title :'Peraturan',
                                 exportOptions: {
-                                    columns: [ 0 ]
+                                    columns: [ 0,1,2,3 ]
                                 }
                             }, 
                             {
                                 extend: 'pdf',
                                 title :'Peraturan',
                                 exportOptions: {
-                                    columns: [ 0 ]
+                                    columns: [ 0,1,2,3 ]
                                 }
                             }
                         ],
@@ -198,6 +229,14 @@
                         },
                         columns: [
                             { data: 'jenis_peraturan' },
+                            { data: 'nomor' },
+                            { data: 'upload_by' },
+                            {
+                                data:null,
+                                render:function (data,type,row){
+                                    return "<a href='<?php echo constant('API_URL');?>/"+data.file+"' target='_blank'>Download</a>";
+                                }
+                            },
                             {
                                 data: null,
                                 render: function ( data, type, row ) {
@@ -209,7 +248,9 @@
         $('document').ready(function(){
             $('form[id="peraturanformedit"]').validate({
                 rules: {
-                    jenisperaturanedit: 'required'
+                    jenisperaturanedit: 'required',
+                    nomoredit:'required',
+                    uploadbyedit:'required'
                 },
                 messages: {
                     roles: 'This field is required',
@@ -222,6 +263,8 @@
                         data.append( 'idperaturan', $( '#idperaturan' ).val());
                         data.append( 'file', $( '#filehidden' ).val());
                         data.append( 'jenis_peraturan', $( '#jenisperaturanedit' ).val());
+                        data.append( 'nomor', $( '#nomoredit' ).val());
+                        data.append( 'uploadby', $( '#uploadbyedit' ).val());
                         data.append( 'status',  'filenotfound');
                         $.ajax({
                             url:'/updateDataPeraturan',
@@ -248,6 +291,8 @@
                         data.append( 'file', $( '#fileedit' )[0].files[0] );
                         data.append( 'jenis_peraturan', $( '#jenisperaturanedit' ).val());
                         data.append( 'idperaturan', $( '#idperaturan' ).val());
+                        data.append( 'nomor', $( '#nomoredit' ).val());
+                        data.append( 'uploadby', $( '#uploadbyedit' ).val());
                         $.ajax({
                             url:'/updateDataSketsaSejarah',
                             method:'POST',
@@ -274,6 +319,8 @@
                 rules: {
                     jenisperaturan: 'required',
                     file:'required',
+                    uploadby:'required',
+                    nomor:'required',
                 },
                 messages: {
                     roles: 'This field is required',
@@ -283,6 +330,8 @@
                     data = new FormData();
                     data.append( 'file', $( '#file' )[0].files[0] );
                     data.append( 'jenis_peraturan', $( '#jenisperaturan' ).val());
+                    data.append( 'nomor', $( '#nomor' ).val());
+                    data.append( 'uploadby', $( '#uploadby' ).val());
                     $.ajax({
                         url:'/savedDataPeraturan',
                         method:'POST',
@@ -297,6 +346,8 @@
                                 ).then(function(){
                                     $( '#jenisperaturan' ).val('');
                                     $( '#file' ).val('');
+                                    $( '#uploadby' ).val('');
+                                    $( '#nomor' ).val('');
                                     $('#exampleModal').modal('toggle');
                                 })
                                 table.ajax.reload();

@@ -13,7 +13,7 @@ class DashboardController extends CI_Controller {
     }
     public function getCountData($id){
         $client     = new GuzzleHttp\Client();
-        $result = $client->get(constant('API_URL').'/perkembangan-kawasan?fungsi='.$id);
+        $result = $client->get(constant('API_URL').'/perkembangan_kawasan?fungsi='.$id);
         /*
             Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
             ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
@@ -24,7 +24,7 @@ class DashboardController extends CI_Controller {
     }
    public function getAllData(){
     $client     = new GuzzleHttp\Client();
-    $result = $client->get(constant('API_URL').'/perkembangan-kawasan');
+    $result = $client->get(constant('API_URL').'/perkembangan_kawasan');
     /*
         Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
         ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string

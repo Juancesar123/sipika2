@@ -44,6 +44,14 @@ class PeraturanController extends CI_Controller {
                     'name' => 'jenis_peraturan',
                     'contents' => $this->input->post('jenis_peraturan')
                 ],
+                [
+                    'name' => 'upload_by',
+                    'contents' => $this->input->post('uploadby')
+                ],
+                [
+                    'name' => 'nomor',
+                    'contents' => $this->input->post('nomor')
+                ],
             ]
         ]);
     }
@@ -78,6 +86,14 @@ class PeraturanController extends CI_Controller {
                         'name' => 'jenis_peraturan',
                         'contents' => $this->input->post('jenis_peraturan')
                     ],
+                    [
+                        'name' => 'upload_by',
+                        'contents' => $this->input->post('uploadby')
+                    ],
+                    [
+                        'name' => 'nomor',
+                        'contents' => $this->input->post('nomor')
+                    ],
                 ]
             ]);
         }else{
@@ -97,6 +113,14 @@ class PeraturanController extends CI_Controller {
                     [
                         'name' => 'jenis_peraturan',
                         'contents' => $this->input->post('jenis_peraturan')
+                    ],
+                    [
+                        'name' => 'upload_by',
+                        'contents' => $this->input->post('uploadby')
+                    ],
+                    [
+                        'name' => 'nomor',
+                        'contents' => $this->input->post('nomor')
                     ],
                 ]
             ]);

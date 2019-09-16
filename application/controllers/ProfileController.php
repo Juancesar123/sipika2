@@ -43,6 +43,13 @@ class ProfileController extends CI_Controller {
                     ],
                 ]
             ]);
+            $detailsData    =   $this->session->userdata('userdata');
+            $detailsData['email']= $this->input->post('email');
+            $detailsData['fullname']= $this->input->post('name');
+            $detailsData['nomor_telepon']= $this->input->post('nomortelepon');
+            $this->session->set_userdata('userdata', $detailsData); 
+            redirect('/profile', 'refresh');
+            //print_r($detailsData);
         }else{
             $foto = $_FILES['foto']['name'];
             $result = $client->patch(constant('API_URL').'/users/'.$id,[
@@ -77,8 +84,16 @@ class ProfileController extends CI_Controller {
                     ],
                 ] 
             ]);
+            $detailsData    =   $this->session->userdata('userdata');
+            $detailsData['email']= $this->input->post('email');
+            $detailsData['fullname']= $this->input->post('name');
+            $detailsData['nomor_telepon']= $this->input->post('nomortelepon');
+            $detailsData['foto']= 'userfoto/'.$foto;
+            $this->session->set_userdata('userdata', $detailsData); 
+            redirect('/profile', 'refresh');
+            //print_r($detailsData);
         }
-         redirect('/profile', 'refresh');
+         
     }
     public function store(){
         $client     = new GuzzleHttp\Client();

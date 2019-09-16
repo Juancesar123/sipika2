@@ -50,11 +50,13 @@
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Provinsi</label>
-                                                            <input class="form-control" type="text" id="provinsi" name="provinsi">
+                                                            <select class="form-control" type="text" id="provinsi" name="provinsi">
+                                                            </select>
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Kabupaten</label>
-                                                            <input class="form-control" type="text" id="kabupaten" name="kabupaten">
+                                                            <select class="form-control" type="text" id="kabupaten" name="kabupaten">
+                                                            </select>
                                                         </div>
                                                         <div class="form-group">
                                                             <label>Kecamatan</label>
@@ -295,6 +297,35 @@
                         ]
                     });
         $('document').ready(function(){
+            $.ajax({
+                type:'GET',
+                url:'/getDataMasterProvinsi',
+                dataType:'json',
+                success:function(data){
+                    var html;
+                    data.forEach(element => {
+                         html = "<option value='"+element.kode+"'>"+element.nama+"</option>";
+                         $("#provinsi").append(html);
+                         $("#provinsiedit").append(html);
+                    });
+                }
+            })
+            $('#provinsi').change(function(){
+                var idprovinsi = $('#provinsi').val();
+                $.ajax({
+                    type:'GET',
+                    url:'/getDataMasterProvinsiKota/'+idprovinsi,
+                    dataType:'json',
+                    success:function(data){
+                        var html;
+                        data.forEach(element => {
+                            html = "<option value='"+element.nama+"'>"+element.nama+"</option>";
+                            $("#kabupaten").append(html);
+                            $("#kabupatenedit").append(html);
+                        });
+                    }
+                })
+            })
             $('form[id="unitpengelolaankawasanformedit"]').validate({
                 rules: {
                     namapengelolaedit: 'required',
