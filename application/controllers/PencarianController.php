@@ -14,10 +14,19 @@ class PencarianController extends CI_Controller {
     public function index(){
          $data['userdata'] = $this->session->userdata('userdata');
          return $this->load->view('pages/pencarian',$data);
-    }
+    } 
     public function cari(){
         $client     = new GuzzleHttp\Client();
-        $result = $client->get(constant('API_URL').'/perkembangan_kawasan');
+        $namakawasan = $this->input->get('namakawasan', TRUE);
+        $namatumbuhan = $this->input->get('tumbuhan', TRUE);
+        $namsatwa = $this->input->get('satwa', TRUE);
+        $namadesa = $this->input->get('desa', TRUE);
+        if($namatumbuhan == 'null' && $namsatwa == 'null' && $namadesa == 'null'){
+            $result = $client->get(constant('API_URL').'/pencarian/?nama_kawasan[$like]='.$namakawasan.'%');
+        }else{
+            $result = $client->get(constant('API_URL').'/pencarian/?nama_kawasan[$like]='.$namakawasan.'%&nama[$in]='.$namatumbuhan.'&nama[$in]='.$namsatwa.'&desa[$like]='.$namadesa.'%'); 
+        };
+        
         /*
             Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
             ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string

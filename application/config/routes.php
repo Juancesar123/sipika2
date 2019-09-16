@@ -51,6 +51,9 @@ defined('BASEPATH') OR exit('No direct script access allowed');
 */
 $route['default_controller'] = 'AuthtenticationController';
 $route['dashboard']='Welcome';
+$route['getallsatwa'] = 'KeanekaragamHayatiController/allsatwa';
+$route['getalltumbuhan'] = 'KeanekaragamHayatiController/alltumbuhan';
+$route['getalldesa'] = 'DesaSekitarKKController/alldesa';
 //Route untuk perkembangan kawasan
 $route['perkembangan-kawasan'] ='perkembanganKawasanController';
 $route['savedDatakawasan'] = 'perkembanganKawasanController/store';

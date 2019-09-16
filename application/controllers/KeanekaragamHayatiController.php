@@ -22,6 +22,30 @@ class KeanekaragamHayatiController extends CI_Controller {
         $hasil =  json_decode($data,true);
         echo json_encode($hasil);
     }
+    public function alltumbuhan(){
+      $namatumbuhan = $this->input->get('nama', TRUE);
+       $client     = new GuzzleHttp\Client();
+        $result = $client->get(constant('API_URL').'/keanekaragaman-hayati/?jenis=1&nama[$like]='.$namatumbuhan.'%');
+        /*
+            Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
+            ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
+        */
+        $data = $result->getBody()->getContents();
+        $hasil =  json_decode($data,true);
+        echo json_encode($hasil);
+    }
+    public function allsatwa(){
+       $namasatwa = $this->input->get('nama', TRUE);
+       $client     = new GuzzleHttp\Client();
+        $result = $client->get(constant('API_URL').'/keanekaragaman-hayati/?jenis=2&nama[$like]='.$namasatwa.'%');
+        /*
+            Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
+            ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
+        */
+        $data = $result->getBody()->getContents();
+        $hasil =  json_decode($data,true);
+        echo json_encode($hasil);
+    }
     public function Savetumbuhan(){
         $client     = new GuzzleHttp\Client();
         $client->post(constant('API_URL').'/keanekaragaman-hayati', [
