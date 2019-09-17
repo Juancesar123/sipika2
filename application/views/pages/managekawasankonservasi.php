@@ -29,14 +29,38 @@
                         <div class="col-md-3">
                             <div class="card">
                                 <div class="card-body bg-light" id="scrollup">
-                                    <img src="<?php echo constant('API_URL') .'/'. $hasil['gambar'];?>" class="img-fluid">
+                                    
+                                    <div id="resultdefaultimage">
+                                    </div>
                                     <br>
                                     <br>
                                     <h2><center><?php   echo $hasil['nama_kawasan'];?></center></h2>
                                     <p><center>REGISTER : <?php   echo $hasil['register'];?></center></p>
-                                    <p><center><button class="btn btn-outline-success" onclick="viewallimages()" data-toggle="modal" data-target="#modalsimages">View all images </button></center></p>
+                                    <p><center><button class="btn btn-outline-success" id="viewallimages" data-toggle="modal" data-target="#modalsimages">View all images </button></center></p>
                                     <br>
                                     <div class="bg-light border-right" id="sidebar-wrapper">
+                                        <div class="modal fade" id="modalsimages">
+                                            <div class="modal-dialog modal-lg">
+                                                <div class="modal-content">
+
+                                                <!-- Modal Header -->
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title">View Images Kawasan Konsevarsi</h4>
+                                                    <button type="button" class="close" id="clearappend" data-dismiss="modal">&times;</button>
+                                                </div>
+                                                    <div class="modal-body">
+                                                        <div class="row" id="resultimages">
+                                                           
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Modal footer -->
+                                                    <div class="modal-footer">
+                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
                                     <div class="sidebar-heading">
                                             <strong>Profile Kawasan</strong>
                                         </div>
@@ -113,28 +137,7 @@
                                         </div>
                                     </div>
                                     <div class="card-body">
-                                        <div class="modal fade" id="modalsimages">
-                                            <div class="modal-dialog modal-lg">
-                                                <div class="modal-content">
-
-                                                <!-- Modal Header -->
-                                                <div class="modal-header">
-                                                    <h4 class="modal-title">View Images Kawasan Konsevarsi</h4>
-                                                    <button type="button" class="close" data-dismiss="modal">&times;</button>
-                                                </div>
-                                                    <div class="modal-body">
-                                                        <div class="row" id="resultimages">
-                                                           
-                                                        </div>
-                                                    </div>
-
-                                                    <!-- Modal footer -->
-                                                    <div class="modal-footer">
-                                                        <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
+                                        
                                         <div class="modal fade" id="myModal">
                                             <div class="modal-dialog">
                                                 <div class="modal-content">
@@ -1815,6 +1818,20 @@
                                                             <input type="file" id="fotokawasankonservasi1" name="fotokawasankonservasi1" class="form-control">
                                                         </div>
                                                         <input class="form-control" type="hidden" id="namakawasan" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
+                                                        <div class="form-group">
+                                                            <label>Set As Default Images?</label>
+                                                            <br>
+                                                            <div class="form-check-inline">
+                                                              <label class="form-check-label">
+                                                                <input type="radio" class="form-check-input" name="defaultimages" id="defaultimages" value="yes"> Yes
+                                                              </label>
+                                                            </div>
+                                                            <div class="form-check-inline">
+                                                              <label class="form-check-label">
+                                                                <input type="radio" class="form-check-input" name="defaultimages" id="defaultimages" value="no">No
+                                                              </label>
+                                                            </div>
+                                                        </div>
                                                     </div>
 
                                                     <!-- Modal footer -->
@@ -1844,6 +1861,20 @@
                                                             <input type="hidden" id="idfotokawasankonservasi">
                                                         </div>
                                                             <input class="form-control" type="hidden" id="namakawasanedit" value="<?php echo $hasil['nama_kawasan'];?>" disabled>
+                                                        <div class="form-group">
+                                                            <label>Set As Default Images?</label>
+                                                            <br>
+                                                            <div class="form-check-inline">
+                                                              <label class="form-check-label">
+                                                                <input type="radio" class="form-check-input" name="defaultimagesedit" id="defaultimagesedit">Yes
+                                                              </label>
+                                                            </div>
+                                                            <div class="form-check-inline">
+                                                              <label class="form-check-label">
+                                                                <input type="radio" class="form-check-input" name="defaultimagesedit" id="defaultimagesedit">No
+                                                              </label>
+                                                            </div>
+                                                        </div>
                                                     </div>
 
                                                     <!-- Modal footer -->
@@ -5251,19 +5282,7 @@
                 }
             })
         }
-        function viewallimages(){
-            $.ajax({
-                url:'/getAllImagesKawasanKonsevarsi/'+"<?php echo $hasil['nama_kawasan'];?>",
-                type:'GET',
-                success:function(data){
-                    var hasil = JSON.parse(data);
-                    hasil.forEach(function(element) {
-                        var html ="<div class='col-md-3'><img class='img-fluid' src='<?php echo constant('API_URL');?>/"+element.foto+"' ></div>";
-                        $("#resultimages").append(html);
-                    });
-                }
-            })
-        }
+       
         function editfunc1(id){
             $.ajax({
                 url:'/showDataEvaluasiFungsiDeskStudy/'+id,
@@ -7100,6 +7119,37 @@
                     });
                      
         $('document').ready(function(){
+            $.ajax({
+                url:'/getalldatadefaultimages/'+"<?php echo $hasil['nama_kawasan'];?>",
+                type:'GET',
+                success:function(data){
+                    var hasil = JSON.parse(data);
+                    if(hasil.length == 0){
+                        var html ="<img class='img-fluid' src='<?php echo constant('API_URL');?>/default.jpg'>";
+                        $("#resultdefaultimage").html(html);
+                    }else{
+                        var html ="<img class='img-fluid' src='<?php echo constant('API_URL');?>/"+hasil[0].foto+"' >";
+                        $("#resultdefaultimage").html(html);
+                    }
+                }
+            })
+            $("#viewallimages").click(function(){
+               $("#resultimages").html('');
+                $.ajax({
+                    url:'/getAllImagesKawasanKonsevarsi/'+"<?php echo $hasil['nama_kawasan'];?>",
+                    type:'GET',
+                    success:function(data){
+                        
+                        var hasil = JSON.parse(data);
+                        hasil.forEach(function(element) {
+                            var html ="<div class='col-md-3' id='elementtest'><img class='img-fluid' src='<?php echo constant('API_URL');?>/"+element.foto+"' ></div>";
+
+                            $("#resultimages").append(html);
+                        });
+
+                    }
+                })
+            })
           // $.scrollTo(100, {
           //     onAfter: function() {
           //       requestAnimationFrame(function() {
@@ -7174,6 +7224,9 @@
                             required:true,
                             accept: "image/*"
                         },
+                        defaultimagesedit:{
+                            required:true
+                        }
                     },
                     messages: {
                         judul: 'This field is required',
@@ -7184,6 +7237,7 @@
                         data = new FormData();
                         data.append( 'fotokawasan', $( '#fotokawasankonservasiedit1' )[0].files[0]);
                         data.append( 'namakawasan', $( '#namakawasanedit' ).val());
+                        data.append( 'defaultimages', $( '#defaultimagesedit' ).val());
                         data.append( 'idfotokawasankonservasi', $( '#idfotokawasankonservasi' ).val());
                         $.ajax({
                             url:'/updateDataFotoKawasanKonservasi',
@@ -7210,8 +7264,10 @@
                         fotokawasankonservasi1:{
                             required:true,
                             accept: "image/*",
-                            filesize: 1000000
                         },
+                        defaultimages:{
+                            required:true
+                        }
                     },
                     messages: {
                         judul: 'This field is required',
@@ -7222,6 +7278,7 @@
                         data = new FormData();
                         data.append( 'fotokawasan', $( '#fotokawasankonservasi1' )[0].files[0]);
                         data.append( 'namakawasan', $( '#namakawasan' ).val());
+                        data.append( 'defaultimages', $( '#defaultimages' ).val());
                         $.ajax({
                             url:'/saveDataFotoKawasanKonservasi',
                             method:'POST',

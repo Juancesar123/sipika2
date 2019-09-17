@@ -22,6 +22,17 @@ class FotoKawasanKonservasiController extends CI_Controller {
         $hasil =  json_decode($data,true);
         echo json_encode($hasil);
     }
+    public function getdatadefaultimages($id){
+         $client     = new GuzzleHttp\Client();
+        $result = $client->get(constant('API_URL').'/foto-kawasan?nama_kawasan='.$id.'&default_images=yes');
+        /*
+            Hasil  data dari api tadi di getBody()->getContents(); agar semua isi data di api
+            ke ambil. lalu jangan lupa di parse ke json karna datanya berupa stream string
+        */
+        $data = $result->getBody()->getContents();
+        $hasil =  json_decode($data,true);
+        echo json_encode($hasil);
+    }
     public function show($id){
         $client     = new GuzzleHttp\Client();
         $result = $client->get(constant('API_URL').'/foto-kawasan/'.$id);
@@ -51,6 +62,10 @@ class FotoKawasanKonservasiController extends CI_Controller {
                     'name' => 'nama_kawasan',
                     'contents' => $this->input->post('namakawasan')
                 ],
+                [
+                    'name' => 'default_images',
+                    'contents' => $this->input->post('defaultimages')
+                ],
             ]
         ]);
     }
@@ -72,6 +87,10 @@ class FotoKawasanKonservasiController extends CI_Controller {
                 [
                     'name' => 'nama_kawasan',
                     'contents' => $this->input->post('namakawasan')
+                ],
+                [
+                    'name' => 'default_images',
+                    'contents' => $this->input->post('defaultimages')
                 ],
             ]
         ]);

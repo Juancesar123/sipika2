@@ -54,6 +54,7 @@ $route['dashboard']='Welcome';
 $route['getallsatwa'] = 'KeanekaragamHayatiController/allsatwa';
 $route['getalltumbuhan'] = 'KeanekaragamHayatiController/alltumbuhan';
 $route['getalldesa'] = 'DesaSekitarKKController/alldesa';
+$route['getalldatadefaultimages/(:any)'] = 'FotoKawasanKonservasiController/getdatadefaultimages/$1';
 //Route untuk perkembangan kawasan
 $route['perkembangan-kawasan'] ='perkembanganKawasanController';
 $route['savedDatakawasan'] = 'perkembanganKawasanController/store';

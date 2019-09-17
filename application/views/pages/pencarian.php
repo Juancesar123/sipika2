@@ -75,7 +75,7 @@
                                             <button class="btn btn-primary" id="showfilter">Advance Search</button>
                                         </div>
                                     </div>
-                                    <div class="row" style="margin-top:10px;" id="listresult">
+                                    <div class="row" id="listresult" style="margin-top: 10px">
 
                                     </div>
                             </div>
@@ -199,10 +199,10 @@
                         console.log(result);
                        result.forEach(function(element) {
                             if(element.jenis == 1){
-                                var html = "<div class='col-md-3'><div class='card' style='width: 18rem;'> <img src='<?php echo constant('API_URL');?>/"+element.gambar+"' class='card-img-top' alt=...'><div class='card-body'> <h5 class='card-title'>"+ element.nama_kawasan +"</h5> <p class='card-text'>Pulau : "+element.pulau+"</p><p class='card-text'>Provinsi : "+element.provinsi+"</p> <p class='card-text'>Kabupaten : "+element.kabupaten+"</p><p class='card-text'>Nama Tumbuhan : "+element.nama+"</p> <p class='card-text'>Nama Desa : "+element.desa+"</p><p class='card-text'>Jumlah Penduduk : "+element.jumlah_penduduk+"</p><p class='card-text'>Luas : "+element.luas_kawasan+" <br><a href='perkembangan-kawasan/managekawasan/"+element.id+"' class='btn btn-primary'>More Info</a> </div></div></div>";
+                                var html = "<div class='col-4' style='margin-bottom:10px;'><div class='card'><img src='<?php echo constant('API_URL');?>/"+element.gambar+"' class='card-img-top' alt=...'><div class='card-body'> <h5 class='card-title'>"+ element.nama_kawasan +"</h5> <p class='card-text'>Pulau : "+element.pulau+"</p><p class='card-text'>Provinsi : "+element.provinsi+"</p> <p class='card-text'>Kabupaten : "+element.kabupaten+"</p><p class='card-text'>Nama Tumbuhan : "+element.nama+"</p> <p class='card-text'>Nama Desa : "+element.desa+"</p><p class='card-text'>Jumlah Penduduk : "+element.jumlah_penduduk+"</p><p class='card-text'>Luas : "+element.luas_kawasan+" <br><a href='perkembangan-kawasan/managekawasan/"+element.id+"' class='btn btn-primary'>More Info</a> </div></div></div>";
                                  $("#listresult").append(html);
                             }else{
-                                var html = "<div class='col-md-3'><div class='card' style='width: 18rem;'> <img src='<?php echo constant('API_URL');?>/"+element.gambar+"' class='card-img-top' alt=...'><div class='card-body'> <h5 class='card-title'>"+ element.nama_kawasan +"</h5> <p class='card-text'>Pulau : "+element.pulau+"</p><p class='card-text'>Provinsi : "+element.provinsi+"</p> <p class='card-text'>Kabupaten : "+element.kabupaten+"</p><p class='card-text'>Nama Desa : "+element.desa+"</p><p class='card-text'>Jumlah Penduduk : "+element.jumlah_penduduk+"<p class='card-text'>Nama Satwa : "+element.nama+"</p><p class='card-text'>Luas : "+element.luas_kawasan+" <br><a href='perkembangan-kawasan/managekawasan/"+element.id+"' class='btn btn-primary'>More Info</a> </div></div></div>";
+                                var html = "<div class='col-4' style='margin-bottom:10px;'><div class='card'> <img src='<?php echo constant('API_URL');?>/"+element.gambar+"' class='card-img-top' alt=...'><div class='card-body'> <h5 class='card-title'>"+ element.nama_kawasan +"</h5> <p class='card-text'>Pulau : "+element.pulau+"</p><p class='card-text'>Provinsi : "+element.provinsi+"</p> <p class='card-text'>Kabupaten : "+element.kabupaten+"</p><p class='card-text'>Nama Desa : "+element.desa+"</p><p class='card-text'>Jumlah Penduduk : "+element.jumlah_penduduk+"<p class='card-text'>Nama Satwa : "+element.nama+"</p><p class='card-text'>Luas : "+element.luas_kawasan+" <br><a href='perkembangan-kawasan/managekawasan/"+element.id+"' class='btn btn-primary'>More Info</a> </div></div></div>";
                                  $("#listresult").append(html);
                             }
                        });
