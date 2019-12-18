@@ -31,6 +31,7 @@
                                 <div class="card-header">
                                     <h4>KPHK NON TN</h4>
                                     <button class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">Tambah</button>
+                                    <a class="btn btn-success" href="downloadtemplatekphknontn"><i class="fa fa-download"></i> Download Template</a>
                                 </div>
                                 <div class="card-body">
                                 <div class="modal fade bd-example-modal-lg" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

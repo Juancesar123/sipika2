@@ -31,6 +31,7 @@
                                 <div class="card-header">
                                     <h4>Sketsa Sejarah</h4>
                                     <button class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">Tambah Sketsa Sejarah</button>
+                                    <a class="btn btn-success" href="downloadsketsasejarah"><i class="fa fa-download"></i> Download Template</a>
                                 </div>
                                 <div class="card-body">
                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true" data-keyboard='false' data-backdrop='static'>

@@ -31,6 +31,7 @@
                                 <div class="card-header">
                                     <h4>Master Provinsi</h4>
                                     <button class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">Tambah Data Provinsi</button>
+                                    <a class="btn btn-success" href="downloadtemplateprovinsi"><i class="fa fa-download"></i> Download Template</a>
                                 </div>
                                 <div class="card-body">
                                 <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

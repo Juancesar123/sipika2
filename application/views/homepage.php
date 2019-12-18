@@ -3,7 +3,53 @@
 
 <?php $this->load->view("partials/head.php") ?>
 <!-- Mirrored from www.urbanui.com/appular/template/demo/vertical-default-light/index.html by HTTrack Website Copier/3.x [XR&CO'2014], Mon, 04 Feb 2019 16:31:32 GMT -->
+<style>
+  /* padding-bottom and top for image */
+.mfp-no-margins img.mfp-img {
+  padding: 0;
+}
+/* position of shadow behind the image */
+.mfp-no-margins .mfp-figure:after {
+  top: 0;
+  bottom: 0;
+}
+/* padding for main container */
+.mfp-no-margins .mfp-container {
+  padding: 0;
+}
 
+
+/* 
+
+for zoom animation 
+uncomment this part if you haven't added this code anywhere else
+
+*/
+/*
+
+.mfp-with-zoom .mfp-container,
+.mfp-with-zoom.mfp-bg {
+  opacity: 0;
+  -webkit-backface-visibility: hidden;
+  -webkit-transition: all 0.3s ease-out; 
+  -moz-transition: all 0.3s ease-out; 
+  -o-transition: all 0.3s ease-out; 
+  transition: all 0.3s ease-out;
+}
+
+.mfp-with-zoom.mfp-ready .mfp-container {
+    opacity: 1;
+}
+.mfp-with-zoom.mfp-ready.mfp-bg {
+    opacity: 0.8;
+}
+
+.mfp-with-zoom.mfp-removing .mfp-container, 
+.mfp-with-zoom.mfp-removing.mfp-bg {
+  opacity: 0;
+}
+*/
+</style>
 <body>
   <div class="container-scroller">
   <?php $this->load->view("partials/navbar")?>
@@ -36,8 +82,8 @@
                   </div>
                   <div data-u="slides" style="cursor:default;position:relative;top:0px;left:0px;width:980px;height:380px;overflow:hidden;">
                       <div>
-                          <img data-u="image" class="img-fluid" src="<?php echo base_url('images/peta_KK_indonesia_A0_10042018_001.jpg')?>" />
-                          <img data-u="thumb" src="<?php echo base_url('images/peta_KK_indonesia_A0_10042018_001.jpg')?>" />
+                          <img data-u="image" class="img-fluid image-popup-no-margins" src="<?php echo base_url('images/peta_KK_indonesia_A0_10042018_001.jpg')?>" />
+                          <img data-u="thumb" class="image-popup-no-margins" src="<?php echo base_url('images/peta_KK_indonesia_A0_10042018_001.jpg')?>" />
                       </div>
                       <div>
                           <img data-u="image" class="img-fluid" src="<?php echo base_url('images/peta_indonesia_A0_2018_Sumatera_001.jpg')?>" />
@@ -234,6 +280,20 @@
   <script>
     var arr = [];
     $('document').ready(function(){
+      $('.image-popup-no-margins').magnificPopup({
+        type: 'image',
+        closeOnContentClick: true,
+        closeBtnInside: false,
+        fixedContentPos: true,
+        mainClass: 'mfp-no-margins mfp-with-zoom', // class to remove default margin from left and right side
+        image: {
+          verticalFit: true
+        },
+        zoom: {
+          enabled: true,
+          duration: 300 // don't foget to change the duration also in CSS
+        }
+      });
       $.ajax({
         method:'GET',
         url:'getDataDashboard/1',
@@ -306,7 +366,6 @@
          arr.splice(6,0,result.length);
         }
       })
-      console.log(arr);
       var ctx = document.getElementById('myChart').getContext('2d');
       var myChart = new Chart(ctx, {
           type: 'pie',
@@ -340,7 +399,7 @@
             scales: {
                 yAxes: [{
                     ticks: {
-                        beginAtZero: true
+                        beginAtZero: false
                     }
                 }]
             },

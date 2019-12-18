@@ -32,6 +32,7 @@
                                 <div class="card-header">
                                     <h4>Potensi PIAPS</h4>
                                     <button class="btn btn-primary float-right" data-toggle="modal" data-target="#exampleModal">Tambah Data</button>
+                                    <a class="btn btn-success" href="downloadtemplatepotensipiaps"><i class="fa fa-download"></i> Download Template</a>
                                 </div>
                                 <div class="card-body">
                                     <div class="modal fade" id="exampleModal"  tabindex='-1' data-keyboard='false' data-backdrop='static' role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">

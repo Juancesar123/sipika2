@@ -243,6 +243,7 @@
                                     <div class="card-body">
                                          <?php  if($userdata['id_roles'] == 4){?>
                                             <button class="btn btn-primary" data-toggle="modal" data-target="#myModal60">Tambah Data</button>
+                                            <a class="btn btn-success" href="/downloadtemplateperkembanganzonasitn"><i class="fa fa-download"></i> Download Template</a>
                                         <?php }; ?>
                                         <br>
                                         <br>
@@ -503,6 +504,7 @@
                                         <div class="card-body">
                                              <?php  if($userdata['id_roles'] == 4){?>
                                                 <button class="btn btn-primary" data-toggle="modal" data-target="#myModal62">Tambah Data</button>
+                                                <a class="btn btn-success" href="/downloadtemplateperkembanganbloktn"><i class="fa fa-download"></i> Download Template</a>
                                             <?php }; ?>
                                             <br>
                                             <br>
@@ -761,7 +763,8 @@
                                         Keanekaragaman Hayati
                                     </div>
                                     <div class="card-body">
-                                        
+                                        <a class="btn btn-success" href="/downloadtemplatekeanekaragamanhayati"><i class="fa fa-download"></i> Download Template</a>
+                                        <br>
                                         <ul class="nav nav-pills mb-3" id="pills-tab" role="tablist">
                                           <li class="nav-item">
                                             <a class="nav-link active" id="pills-home-tab" data-toggle="pill" href="#tumbuhan" role="tab" aria-controls="pills-home" aria-selected="true">Tumbuhan</a>
@@ -1591,8 +1594,10 @@
                                     <div class="card-body">
                                         <?php  if($userdata['id_roles'] == 2){?>
                                             <button class="btn btn-primary" data-toggle="modal" data-target="#myModal1">Tambah Data</button>
+                                            <a href="/downloadtemplatepengukuhankawasan" class="btn btn-success"><i class="fa fa-download"></i> Download Template</a>
+                         
                                         <?php }; ?>
-                                        <br>
+                                                         <br>
                                         <br>
                                         <div class="modal fade" id="myModal1">
                                             <div class="modal-dialog modal-lg">
@@ -1798,6 +1803,7 @@
                                     <div class="card-body">
                                          <?php  if($userdata['id_roles'] == 1){?>
                                             <button class="btn btn-primary" data-toggle="modal" data-target="#myModal64">Tambah Data</button>
+                                            <a class="btn btn-success" href="/downloadtemplatefotokawasankonservarsi"><i class="fa fa-download"></i> Download Template</a>
                                         <?php }; ?>
                                         <br>
                                         <br>
@@ -1903,6 +1909,7 @@
                                     <div class="card-body">
                                          <?php  if($userdata['id_roles'] == 2){?>
                                             <button class="btn btn-primary" data-toggle="modal" data-target="#myModal3">Tambah Data</button>
+                                            <a class="btn btn-success" href="/downloadtemplateevaluasideskstudy"><i class="fa fa-download"></i> Download Template</a>
                                         <?php }; ?>
                                         <br>
                                         <br>
@@ -2019,6 +2026,7 @@
                                     <div class="card-body">
                                          <?php  if($userdata['id_roles'] == 2){?>
                                             <button class="btn btn-primary" data-toggle="modal" data-target="#myModal5">Tambah Data</button>
+                                            <a class="btn btn-success" href="/downloadtemplateekflapangan"><i class="fa fa-download"></i> Download Template</a>
                                         <?php }; ?>
                                         <div class="modal fade" id="myModal5">
                                             <div class="modal-dialog modal-lg">
@@ -2185,6 +2193,7 @@
                                     <div class="card-body">
                                         <?php  if($userdata['id_roles'] == 3){?>
                                             <button class="btn btn-primary" data-toggle="modal" data-target="#myModal34">Tambah Data</button>
+                                            <a class="btn btn-success" href="/downloadtemplatepenguatanfungsikk"><i class="fa fa-download"></i> Download Template</a>
                                         <?php }; ?>
                                         <br>
                                         <br>
@@ -2477,6 +2486,7 @@
                                     <div class="card-body">
                                         <?php  if($userdata['id_roles'] == 3){?>
                                             <button class="btn btn-primary" data-toggle="modal" data-target="#myModal36">Tambah Data</button>
+                                            <a class="btn btn-success" href="/downloadtemplatepembangunanstrategis"><i class="fa fa-download"></i> Download Template</a>
                                         <?php }; ?>
                                         <br>
                                         <br>
@@ -2825,6 +2835,7 @@
                                     <div class="card-body">
                                         <?php  if($userdata['id_roles'] == 1){?>
                                             <button class="btn btn-primary" data-toggle="modal" data-target="#myModal11"><i class="fa fa-plus"></i> Tambah Data</button>
+                                            <a class="btn btn-success" href="/downloadpotensikawasankonservarsi"><i class="fa fa-download"></i> Download Template</a>
                                         <?php }; ?>
                                         <br>
                                         <br>
@@ -3262,6 +3273,7 @@
                                     <div class="card-body">
                                         <?php  if($userdata['id_roles'] == 1){?>
                                             <button class="btn btn-primary" data-toggle="modal" data-target="#myModal18">Tambah Data</button>
+                                            <a class="btn btn-success" href="/downloadtemplatedesasekitarkk"><i class="fa fa-download"></i> Download Template</a>
                                         <?php }; ?>
                                         <br>
                                         <br>
@@ -3382,6 +3394,7 @@
                                     <div class="card-body">
                                         <?php  if($userdata['id_roles'] == 2){?>
                                             <button class="btn btn-primary" data-toggle="modal" data-target="#myModal15">Tambah Data</button>
+                                            <a class="btn btn-success" href="/downloadtemplateindikasitora"><i class="fa fa-download"></i>Download Template</a>
                                         <?php }; ?>
                                         <br>
                                         <br>
@@ -3526,6 +3539,7 @@
                                     <div class="card-body">
                                         <?php  if($userdata['id_roles'] == 1){?>
                                             <button class="btn btn-primary" data-toggle="modal" data-target="#myModal20">Tambah Data</button>
+                                            <a class="btn btn-success" href="/downloadtemplatepermasalaanpengelolaankk"><i class="fa fa-download"></i> Download Template</a>
                                         <?php }; ?>
                                         <br>
                                         <br>
@@ -3698,6 +3712,7 @@
                                     <div class="card-body">
                                         <?php  if($userdata['id_roles'] == 1){?>
                                         <button class="btn btn-primary" data-toggle="modal" data-target="#myModal32">Tambah Data</button>
+                                        <a class="btn btn-success" href="/downloadtemplatewilayahadat"><i class="fa fa-download"></i> Download Template</a>
                                         <?php }; ?>
                                         <br>
                                         <br>
@@ -3840,6 +3855,7 @@
                                     <div class="card-body">
                                         <?php  if($userdata['id_roles'] == 1){?>
                                             <button class="btn btn-primary" data-toggle="modal" data-target="#myModal46">Tambah Data</button>
+                                            <a class="btn btn-success" href="/downloadpetakawasankonsevarsi"><i class="fa fa-download"></i> Download Template</a>
                                         <?php }; ?>
                                         <br>
                                         <br>
@@ -3942,6 +3958,7 @@
                                     <div class="card-body">
                                         <?php  if($userdata['id_roles'] == 1){?>
                                             <button class="btn btn-primary" data-toggle="modal" data-target="#myModal24">Tambah Data</button>
+                                            <a class="btn btn-success" href="/downloadtemplatesosekbud"><i class="fa fa-download"></i> Download Template</a>
                                         <?php }; ?>
                                         <br>
                                         <br>
@@ -4048,6 +4065,7 @@
                                     <div class="card-body">
                                         <?php  if($userdata['id_roles'] == 1){?>
                                             <button class="btn btn-primary" data-toggle="modal" data-target="#myModal26">Tambah Data</button>
+                                            <a class="btn btn-success" href="/downloadtemplatepenutupanlahan"><i class="fa fa-download"></i> Download Template</a>
                                         <?php }; ?>
                                         <br>
                                         <br>
@@ -4146,6 +4164,7 @@
                                     </div>
                                     <div class="card-body">
                                         <button class="btn btn-primary" data-toggle="modal" data-target="#myModal30">Tambah Data</button>
+                                        <a class="btn btn-success" href="/downloadtemplatekemitraankonservarsi"><i class="fa fa-download"></i> Download Template</a>
                                         <br>
                                         <br>
                                         <div class="modal fade" id="myModal30">
@@ -4252,6 +4271,7 @@
                                     <div class="card-body">
                                         <?php  if($userdata['id_roles'] == 1){?>
                                             <button class="btn btn-primary" data-toggle="modal" data-target="#myModal28">Tambah Data</button>
+                                            <a class="btn btn-success" href="/downloadtemplateopenareaperkawasan"><i class="fa fa-download"></i> Download Template</a>
                                         <?php }; ?>
                                         <br>
                                         <br>
@@ -4351,6 +4371,7 @@
                                     <div class="card-body">
                                         <?php  if($userdata['id_roles'] == 2){?>
                                             <button class="btn btn-primary" data-toggle="modal" data-target="#myModal9">Tambah Data</button>
+                                            <a class="btn btn-success" href="/downloadtemplatehutanadatdalamkk"><i class="fa fa-download"></i> Download Template</a>
                                         <?php }; ?>
                                         <br>
                                         <br>

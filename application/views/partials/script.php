@@ -28,6 +28,12 @@
   <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.html5.min.js"></script>
   <script type="text/javascript" src="https://cdn.datatables.net/buttons/1.5.6/js/buttons.print.min.js"></script>
   <script src="js/jssor.slider-27.5.0.min.js" type="text/javascript"></script>
+
+  <script src="js/jquery.magnific-popup.js"></script>
+
+  <script type="text/javascript" src="js/fancybox/jquery.fancybox.pack.js"></script>
+  <script type="text/javascript" src="js/fancybox/jquery.easing-1.4.pack.js"></script>
+  <script type="text/javascript" src="js/fancybox/jquery.mousewheel-3.0.4.pack.js"></script>
   <script type="text/javascript">
         jssor_1_slider_init = function() {
 
