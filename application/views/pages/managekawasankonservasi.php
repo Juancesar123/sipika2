@@ -116,8 +116,8 @@
                                             <?php if($hasil['fungsi'] == 5){ ?>
                                                 <a   data-toggle="tab" href="#perkembanganblok-tn" class="list-group-item list-group-item-action bg-light" style="color:blue">Perkembangan Blok TN</a>
                                             <?php }else{ ?>
-                                                <a  data-toggle="tab" href="#progresblok" class="list-group-item list-group-item-action bg-light"style="color:blue">Progres Blok</a>
-                                                <a  data-toggle="tab" href="#progreszonasi" class="list-group-item list-group-item-action bg-light"style="color:blue">Progres Zonasi</a>
+                                                <!-- <a  data-toggle="tab" href="#progresblok" class="list-group-item list-group-item-action bg-light"style="color:blue">Progres Blok</a>
+                                                <a  data-toggle="tab" href="#progreszonasi" class="list-group-item list-group-item-action bg-light"style="color:blue">Progres Zonasi</a> -->
                                             <?php }; ?>
                                         </div>
                                     </div>

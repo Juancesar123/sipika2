@@ -84,12 +84,6 @@
             </a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="fa fa-users menu-icon"></i>
-              <span class="menu-title">Tata Usaha</span>
-            </a>
-          </li>
-          <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#masterdata" aria-expanded="false" aria-controls="masterdata">
               <i class="fa fa-database menu-icon"></i>
               <span class="menu-title">Master Data</span>
@@ -100,12 +94,6 @@
                 <li class="nav-item"><a class="nav-link <?php if($this->uri->segment(1)=="master-provinsi"){echo "active";}?>" href="<?=base_url('master-provinsi')?>">Provinsi</a></li>
               </ul>
             </div>
-          </li>
-          <li class="nav-item">
-            <a class="nav-link" href="#">
-              <i class="fa fa-bullhorn menu-icon"></i>
-              <span class="menu-title">Resources</span>
-            </a>
           </li>
           <li class="nav-item">
             <a class="nav-link" data-toggle="collapse" href="#profildirektoratpika" aria-expanded="false" aria-controls="profildirektoratpika">

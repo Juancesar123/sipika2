@@ -63,6 +63,9 @@ $route['DeletedDataKonservasi/(:any)'] = 'perkembanganKawasanController/destroy/
 $route['ubahDataKawasan'] = 'perkembanganKawasanController/update';
 $route['getsingleDataKonservasi/(:any)']='perkembanganKawasanController/show/$1';
 //end routenya
+//Route untuk potensi Piaps
+$route['potensi-piaps'] ='PotensiPiapsController';
+//end routenya
 //routeuntukkphktn
 $route['kphk-tn'] ='KphktnController';
 $route['getDatakphkTn'] ='KphktnController/get';
